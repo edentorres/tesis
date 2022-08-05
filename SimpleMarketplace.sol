@@ -11,7 +11,6 @@ contract SimpleMarketplace
     address public InstanceOwner;
     string public Description;
     int public AskingPrice;
-    //int public State;
     StateType public StateEnum;
 
     address public InstanceBuyer;
@@ -80,6 +79,15 @@ contract SimpleMarketplace
 
     // Estados: {makeOffer}, {acceptOffer}, {rejectOffer}, {acceptOffer, rejectOffer}, {makeOffer, acceptOffer}, {makeOffer, rejectOffer}
 
+    // {makeOffer}: state == 0 && state != 1
+    // {acceptOffer}: state == 1 && state != 1
+    // {rejectOffer}: state == 1 && state != 1
+    // {acceptOffer, rejectOffer}: state == 1 && state != 0
+    // {makeOffer, acceptOffer}: state == 0 && state == 1 && state != 1
+    // {makeOffer, rejectOffer}: state == 0 && state == 1 && state != 1
+    // {makeOffer, acceptOffer, rejectOffer}: state == 0 && state == 1
+    // {}: state != 0 && state != 1
+
     //Pres:
     // MakeOffer: offerPrice !=0, state = 0, Instance Owner != msg.sender
     // AcceptOffer: Instance Owner == msg.sender, state = 1
@@ -88,7 +96,7 @@ contract SimpleMarketplace
 
         // Estoy en {makeOffer}
         // makeOffer_MakeOffer(offerPrice);
-        // makeOffer_RejectOffer(offerPrice);
+         makeOffer_RejectOffer(offerPrice);
         // makeOffer_AcceptOffer(offerPrice);
 
         // Estoy en {acceptOffer, rejectOffer}
@@ -98,6 +106,47 @@ contract SimpleMarketplace
         // rejectOffer_MakeOffer(offerPrice);
         // rejectOffer_RejectOffer();
         // rejectOffer_AcceptOffer();
+    }
+
+    function toBinaryString(uint8 n) public pure returns (string) {
+        // revert on out of range input
+        require(n < 32);
+
+        bytes memory output = new bytes(5);
+
+        for (uint8 i = 0; i < 5; i++) {
+            output[4 - i] = (n % 2 == 1) ? "1 ": "0";
+            n /= 2;
+        }
+
+        return string(output);
+    }
+
+    function GetCombination(int[] memory list) private {
+        // int count = 2 ** list.Count;
+        // for (int i = 1; i <= count - 1; i++)
+        // {
+        //     string str = Convert.ToString(i, 2).PadLeft(list.Count, '0');
+        //     string str2 = Strings.toString(i)
+        //     for (int j = 0; j < str.Length; j++)
+        //     {
+        //         if (str[j] == '1')
+        //         {
+        //             //Console.Write(list[j]);
+        //         }
+        //     }
+        //     //Console.WriteLine();
+        // }
+
+        uint count = 2 ** list.length;
+        // for (int i = 1; i <= count - 1; i++) {
+        //     toBinaryString(i);
+        // }
+
+        // hacer combinaciones de metodos
+        // si esta la combinación agrego la pre condición
+        // sino la agrego negada
+        // Y asi tengo todos los estados
     }
 
     function rejectOffer_MakeOffer(int offerPrice) private {
