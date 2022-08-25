@@ -1,4 +1,6 @@
 pragma solidity >=0.4.25 <0.9.0;
+pragma experimental ABIEncoderV2;
+//import "hardhat/console.sol";
 
 contract SimpleMarketplace
 {
@@ -12,6 +14,7 @@ contract SimpleMarketplace
     string public Description;
     int public AskingPrice;
     StateType public StateEnum;
+    int256[][] result;
 
     address public InstanceBuyer;
     int public OfferPrice;
@@ -80,8 +83,8 @@ contract SimpleMarketplace
     // Estados: {makeOffer}, {acceptOffer}, {rejectOffer}, {acceptOffer, rejectOffer}, {makeOffer, acceptOffer}, {makeOffer, rejectOffer}
 
     // {makeOffer}: state == 0 && state != 1
-    // {acceptOffer}: state == 1 && state != 1
-    // {rejectOffer}: state == 1 && state != 1
+    // {acceptOffer}: state == 1 && state != 1 &&  state != 0
+    // {rejectOffer}: state == 1 && state != 1  && state != 0
     // {acceptOffer, rejectOffer}: state == 1 && state != 0
     // {makeOffer, acceptOffer}: state == 0 && state == 1 && state != 1
     // {makeOffer, rejectOffer}: state == 0 && state == 1 && state != 1
@@ -92,11 +95,43 @@ contract SimpleMarketplace
     // MakeOffer: offerPrice !=0, state = 0, Instance Owner != msg.sender
     // AcceptOffer: Instance Owner == msg.sender, state = 1
     // Reject offer: state = 1, Instance Owner == msg.sender
-    function SimpleMarket(int offerPrice) public {
+    event algo(int[] result, uint num);
+    function SimpleMarket(int offerPrice) external payable {
+
+        
+        int256[] memory states = new int256[](3);
+        states[0] = 1;
+        states[1] = 2;
+        states[2] = 3;
+
+        int256[] memory states2 = new int256[](3);
+        states2[0] = 1;
+        states2[1] = 2;
+        states2[2] = 3;
+
+        uint countComnbinations = 2 ** 3;
+
+        result = new int256[][](countComnbinations);
+
+        combinations(states, states2, uint(0));
+        //console.log("Termine");
+
+
+        for (uint i = 0; i < result.length; i++) {
+            //console.log("Resultado", i);
+            for (uint y = 0; y < result[i].length; y++) {
+                //uint z = uint(result[i][y]);
+                //console.log(z);
+            }
+            //console.log("pre", checkPreconditions(result[i]));
+            require(checkPreconditions(result[i]));
+            assert(checkPreconditions(result[i]));
+           
+        }
 
         // Estoy en {makeOffer}
         // makeOffer_MakeOffer(offerPrice);
-         makeOffer_RejectOffer(offerPrice);
+        // makeOffer_RejectOffer(offerPrice);
         // makeOffer_AcceptOffer(offerPrice);
 
         // Estoy en {acceptOffer, rejectOffer}
@@ -108,45 +143,93 @@ contract SimpleMarketplace
         // rejectOffer_AcceptOffer();
     }
 
-    function toBinaryString(uint8 n) public pure returns (string) {
-        // revert on out of range input
-        require(n < 32);
+    // function GetCombination(int[] memory list) public view returns (int[][] memory) {
+    //     uint countComnbinations = 2 ** list.length;
 
-        bytes memory output = new bytes(5);
+    //     int[][] memory result = new int[][](countComnbinations);
 
-        for (uint8 i = 0; i < 5; i++) {
-            output[4 - i] = (n % 2 == 1) ? "1 ": "0";
-            n /= 2;
+    //     uint solutionsCounter = 0;
+
+    //     uint count = list.length;
+
+    //     for (uint i = 0; i <= count - 1; i++) {
+    //         int[] memory partialResult = new int[](count);
+    //         partialResult[i] = list[i];
+    //         //console.log("i", i);
+    //         for (uint k = i; k <= count - 1; k++) {
+    //             //console.log("k", k);
+    //             partialResult[k] = list[k];
+    //             result[solutionsCounter] = partialResult;
+    //             solutionsCounter ++;  
+    //         }
+    //     }
+    //     return result;
+
+    //     // hacer combinaciones de metodos
+    //     // si esta la combinación agrego la pre condición
+    //     // sino la agrego negada
+    //     // Y asi tengo todos los estados
+    // }
+
+    function combinations(int256[] memory list , int256[] memory left, uint256 number) private returns (int[][] memory) {
+
+        //console.log("Length first", left.length);
+        //console.log("Number", number);
+        if (left.length == 0) {
+            return result;
+        }
+        uint256 count = number;       
+        for (uint i = 0; i < 2 ** number; i++) {
+            int[] memory partialResult = new int[](list.length);
+            if (i != 2 ** number - 1) {
+                for (uint y = 0; y < number; y++) {
+                    partialResult[y] = result[i][y];
+                }
+            }
+            partialResult[number] = left[0];
+            result[2 ** number - 1 + i] = partialResult; 
+        }
+        int[] memory leftNew = new int[](left.length - 1);
+        
+        for (uint z = 1; z < left.length; z++) {
+            leftNew[z-1] = left[z];
+        }
+        //console.log("Length", leftNew.length);
+        uint256 numberNew = number + 1;
+        //console.log("ACA", numberNew);
+        combinations(list, leftNew, uint(numberNew));
+    } 
+
+    function checkPreconditions(int[] memory combination) public view returns (bool) {
+        bool result = true;
+        if (ifPresent(combination, 1)) {
+            result = result && StateEnum == StateType.ItemAvailable;
+        } else {
+            result = result && StateEnum != StateType.ItemAvailable;
         }
 
-        return string(output);
+        if (ifPresent(combination, 2)) {
+            result = result && StateEnum == StateType.OfferPlaced;
+        } else {
+            result = result && StateEnum != StateType.OfferPlaced;
+        }
+
+        if (ifPresent(combination, 1)) {
+            result = result && StateEnum == StateType.OfferPlaced;
+        } else {
+            result = result && StateEnum != StateType.OfferPlaced;
+        }
+        return result;
     }
 
-    function GetCombination(int[] memory list) private {
-        // int count = 2 ** list.Count;
-        // for (int i = 1; i <= count - 1; i++)
-        // {
-        //     string str = Convert.ToString(i, 2).PadLeft(list.Count, '0');
-        //     string str2 = Strings.toString(i)
-        //     for (int j = 0; j < str.Length; j++)
-        //     {
-        //         if (str[j] == '1')
-        //         {
-        //             //Console.Write(list[j]);
-        //         }
-        //     }
-        //     //Console.WriteLine();
-        // }
-
-        uint count = 2 ** list.length;
-        // for (int i = 1; i <= count - 1; i++) {
-        //     toBinaryString(i);
-        // }
-
-        // hacer combinaciones de metodos
-        // si esta la combinación agrego la pre condición
-        // sino la agrego negada
-        // Y asi tengo todos los estados
+    function ifPresent(int[] memory combination, int num) public view returns(bool) {
+        uint arrayLength = combination.length;
+        for (uint i=0; i<arrayLength; i++) {
+            if(combination[i] == num){
+                return true;
+            }
+        }
+        return false;
     }
 
     function rejectOffer_MakeOffer(int offerPrice) private {

@@ -1,0 +1,2 @@
+/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol(6,1): : RefundableCrowdsale::Constructor (this = address!0, msg.sender = address!2, msg.value = 4, goal = 238)
+/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol(285,1): : ASSERTION FAILS!

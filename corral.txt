@@ -1,0 +1,23 @@
+Single threaded program detected
+Verifying program while tracking: {assertsPassed}
+Program has a potential bug: False bug
+Verifying program while tracking: {assertsPassed, M_int_int}
+Program has a potential bug: False bug
+Verifying program while tracking: {assertsPassed, M_int_int, StateEnum_SimpleMarketplace}
+Program has a potential bug: False bug
+Verifying program while tracking: {assertsPassed, M_int_int, StateEnum_SimpleMarketplace, Length}
+Program has a potential bug: False bug
+Verifying program while tracking: {assertsPassed, M_int_int, StateEnum_SimpleMarketplace, Length, M_int_Ref, result_SimpleMarketplace}
+Program has no bugs
+Reached recursion bound of 4
+
+Boogie verification time: 3.28 s
+Time spent reading-writing programs: 1.00 s
+
+Time spent checking a program (5): 2.61 s
+Time spent checking a path (12): 2.34 s
+
+Number of procedures inlined: 318
+Number of variables tracked: 6
+Total Time: 5.582056 s
+Total User CPU time: 13.6438419 s
