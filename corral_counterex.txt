@@ -1,2 +1,4 @@
-/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol(6,1): : RefundableCrowdsale::Constructor (this = address!0, msg.sender = address!2, msg.value = 4, goal = 238)
-/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol(285,1): : ASSERTION FAILS!
+/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol(28,1): : SimpleMarketplace::Constructor (this = address!0, msg.sender = address!2, msg.value = 8, description = 1265563051, price = 655, sender = address!3)
+/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol(36,1): : SimpleMarketplace::MakeOffer (this = address!0, msg.sender = address!4, msg.value = 12, offerPrice = 887)
+/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol(6,1): : SimpleMarketplace::prueba (this = address!0, msg.sender = address!3, msg.value = 13, offerPrice = 14)
+/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol(10,1): : ASSERTION FAILS!

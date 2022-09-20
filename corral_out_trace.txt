@@ -1,243 +1,86 @@
 s
 #
-1 35 3 1 c
-1 35 6 94 Context_Context_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|6|
-1 55 3 1 c
-1 55 6 112 ReentrancyGuard_ReentrancyGuard_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|462|
+1 47 3 1 c
+1 47 6 110 SimpleMarketplace_SimpleMarketplace_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|28|
+1 48 3 1 c
+1 48 6 110 SimpleMarketplace_SimpleMarketplace_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|29|
+1 50 3 1 c
+1 50 6 110 SimpleMarketplace_SimpleMarketplace_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|29|
+1 50 4 27 InstanceOwner = T@Ref!val!3
+1 51 3 1 c
+1 51 6 110 SimpleMarketplace_SimpleMarketplace_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|30|
+1 53 3 1 c
+1 53 6 110 SimpleMarketplace_SimpleMarketplace_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|30|
+1 53 4 17 AskingPrice = 655
+1 54 3 1 c
+1 54 6 110 SimpleMarketplace_SimpleMarketplace_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|31|
 1 56 3 1 c
-1 56 6 112 ReentrancyGuard_ReentrancyGuard_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|469|
-1 58 3 1 c
-1 58 6 112 ReentrancyGuard_ReentrancyGuard_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|469|
-1 58 4 18 _notEntered = true
-1 84 3 1 c
-1 84 6 94 Context_Context_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|6|
-1 104 3 1 c
-1 104 6 112 ReentrancyGuard_ReentrancyGuard_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|462|
-1 105 3 1 c
-1 105 6 112 ReentrancyGuard_ReentrancyGuard_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|469|
-1 107 3 1 c
-1 107 6 112 ReentrancyGuard_ReentrancyGuard_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|469|
-1 107 4 18 _notEntered = true
-1 120 3 1 c
-1 120 6 122 FinalizableCrowdsale_FinalizableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|773|
-1 121 3 1 c
-1 121 6 122 FinalizableCrowdsale_FinalizableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|774|
-1 123 3 1 c
-1 123 6 122 FinalizableCrowdsale_FinalizableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|774|
-1 123 4 18 _finalized = false
-1 137 3 1 c
-1 137 6 120 RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|822|
-1 138 3 1 c
-1 138 6 120 RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|823|
-1 141 3 1 c
-1 141 6 120 RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|824|
-1 142 3 1 c
-1 142 6 120 RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|824|
-1 142 4 22 CALL FreshRefGenerator
-1 148 3 1 c
-1 148 6 120 RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|824|
-1 148 4 30 RETURN from FreshRefGenerator 
+1 56 6 110 SimpleMarketplace_SimpleMarketplace_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|31|
+1 56 4 24 Description = 1265563051
+1 57 3 1 c
+1 57 6 110 SimpleMarketplace_SimpleMarketplace_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|32|
+1 61 3 1 c
+1 61 6 93 CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|32|
+1 64 3 1 c
+1 64 6 93 CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|32|
+1 64 4 35 CALL CorralChoice_SimpleMarketplace
+1 99 3 1 c
+1 99 6 184 MakeOffer_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|36|CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|32|
+1 100 3 1 c
+1 100 6 184 MakeOffer_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|37|CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|32|
+1 103 3 1 c
+1 103 6 184 MakeOffer_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|42|CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|32|
+1 106 3 1 c
+1 106 6 184 MakeOffer_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|47|CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|32|
+1 109 3 1 c
+1 109 6 184 MakeOffer_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|52|CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|32|
+1 111 3 1 c
+1 111 6 184 MakeOffer_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|52|CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|32|
+1 111 4 27 InstanceBuyer = T@Ref!val!4
+1 112 3 1 c
+1 112 6 184 MakeOffer_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|53|CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|32|
+1 114 3 1 c
+1 114 6 184 MakeOffer_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|53|CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|32|
+1 114 4 16 OfferPrice = 887
+1 115 3 1 c
+1 115 6 184 MakeOffer_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|54|CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|32|
+1 118 3 1 c
+1 118 6 93 CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|32|
+1 118 4 43 RETURN from CorralChoice_SimpleMarketplace 
+1 119 3 1 c
+1 119 6 93 CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|32|
+1 122 3 1 c
+1 122 6 93 CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|32|
+1 122 4 35 CALL CorralChoice_SimpleMarketplace
+1 155 3 1 c
+1 155 6 180 prueba_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|6|CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|32|
+1 156 3 1 c
+1 156 6 180 prueba_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|8|CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|32|
 1 158 3 1 c
-1 158 6 86 wallet_Crowdsale|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|560|
+1 158 6 180 prueba_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|9|CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|32|
 1 159 3 1 c
-1 159 6 86 wallet_Crowdsale|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 162 3 1 c
-1 162 6 120 RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 164 3 1 c
-1 164 6 120 RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 164 4 30 CALL RefundEscrow_RefundEscrow
-1 188 3 1 c
-1 188 6 214 Context_Context_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|6|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 227 3 1 c
-1 227 6 220 Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|187|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 228 3 1 c
-1 228 6 220 Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|188|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 231 3 1 c
-1 231 6 220 Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|188|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 231 4 23 CALL _msgSender_Context
-1 238 3 1 c
-1 238 6 306 _msgSender_Context|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|9|Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|188|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 239 3 1 c
-1 239 6 307 _msgSender_Context|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|10|Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|188|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 241 3 1 c
-1 241 6 220 Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|188|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 241 4 31 RETURN from _msgSender_Context 
-1 242 3 1 c
-1 242 6 219 Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|10|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 244 3 1 c
-1 244 6 219 Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|10|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 244 4 23 msgSender = T@Ref!val!0
-1 245 3 1 c
-1 245 6 220 Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|189|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 247 3 1 c
-1 247 6 220 Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|189|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 247 4 22 _primary = T@Ref!val!0
-1 248 3 1 c
-1 248 6 220 Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|190|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 259 3 1 c
-1 259 6 203 Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 260 3 1 c
-1 260 6 203 Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 260 4 20 CALL Context_Context
-1 276 3 1 c
-1 276 6 297 Context_Context_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|6|Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 278 3 1 c
-1 278 6 203 Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 278 4 28 RETURN from Context_Context 
-1 279 3 1 c
-1 279 6 203 Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 279 4 24 CALL Secondary_Secondary
-1 302 3 1 c
-1 302 6 297 Context_Context_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|6|Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 315 3 1 c
-1 315 6 303 Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|187|Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 316 3 1 c
-1 316 6 303 Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|188|Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 319 3 1 c
-1 319 6 303 Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|188|Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 319 4 23 CALL _msgSender_Context
-1 326 3 1 c
-1 326 6 389 _msgSender_Context|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|9|Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|188|Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 327 3 1 c
-1 327 6 390 _msgSender_Context|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|10|Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|188|Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 329 3 1 c
-1 329 6 303 Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|188|Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 329 4 31 RETURN from _msgSender_Context 
-1 330 3 1 c
-1 330 6 302 Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|10|Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 332 3 1 c
-1 332 6 302 Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|10|Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 332 4 23 msgSender = T@Ref!val!0
-1 333 3 1 c
-1 333 6 303 Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|189|Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 335 3 1 c
-1 335 6 303 Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|189|Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 335 4 22 _primary = T@Ref!val!0
-1 336 3 1 c
-1 336 6 303 Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|190|Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 339 3 1 c
-1 339 6 203 Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 339 4 32 RETURN from Secondary_Secondary 
-1 340 3 1 c
-1 340 6 203 Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 340 4 29 CALL Escrow_Escrow_NoBaseCtor
-1 353 3 1 c
-1 353 6 203 Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 353 4 37 RETURN from Escrow_Escrow_NoBaseCtor 
-1 362 3 1 c
-1 362 6 225 ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 363 3 1 c
-1 363 6 225 ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 363 4 20 CALL Context_Context
-1 379 3 1 c
-1 379 6 319 Context_Context_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|6|ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 381 3 1 c
-1 381 6 225 ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 381 4 28 RETURN from Context_Context 
-1 382 3 1 c
-1 382 6 225 ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 382 4 24 CALL Secondary_Secondary
-1 405 3 1 c
-1 405 6 319 Context_Context_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|6|ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 418 3 1 c
-1 418 6 325 Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|187|ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 419 3 1 c
-1 419 6 325 Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|188|ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 422 3 1 c
-1 422 6 325 Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|188|ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 422 4 23 CALL _msgSender_Context
-1 429 3 1 c
-1 429 6 411 _msgSender_Context|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|9|Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|188|ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 430 3 1 c
-1 430 6 412 _msgSender_Context|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|10|Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|188|ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 432 3 1 c
-1 432 6 325 Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|188|ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 432 4 31 RETURN from _msgSender_Context 
-1 433 3 1 c
-1 433 6 324 Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|10|ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 435 3 1 c
-1 435 6 324 Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|10|ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 435 4 23 msgSender = T@Ref!val!0
-1 436 3 1 c
-1 436 6 325 Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|189|ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 438 3 1 c
-1 438 6 325 Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|189|ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 438 4 22 _primary = T@Ref!val!0
-1 439 3 1 c
-1 439 6 325 Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|190|ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 442 3 1 c
-1 442 6 225 ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 442 4 32 RETURN from Secondary_Secondary 
-1 443 3 1 c
-1 443 6 225 ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 443 4 18 CALL Escrow_Escrow
-1 450 3 1 c
-1 450 6 308 Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 451 3 1 c
-1 451 6 308 Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 451 4 20 CALL Context_Context
-1 467 3 1 c
-1 467 6 402 Context_Context_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|6|Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 469 3 1 c
-1 469 6 308 Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 469 4 28 RETURN from Context_Context 
-1 470 3 1 c
-1 470 6 308 Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 470 4 24 CALL Secondary_Secondary
-1 493 3 1 c
-1 493 6 402 Context_Context_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|6|Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 506 3 1 c
-1 506 6 408 Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|187|Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 507 3 1 c
-1 507 6 408 Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|188|Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 510 3 1 c
-1 510 6 408 Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|188|Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 510 4 23 CALL _msgSender_Context
-1 517 3 1 c
-1 517 6 494 _msgSender_Context|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|9|Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|188|Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 518 3 1 c
-1 518 6 495 _msgSender_Context|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|10|Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|188|Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 520 3 1 c
-1 520 6 408 Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|188|Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 520 4 31 RETURN from _msgSender_Context 
-1 521 3 1 c
-1 521 6 407 Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|10|Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 523 3 1 c
-1 523 6 407 Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|10|Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 523 4 23 msgSender = T@Ref!val!0
-1 524 3 1 c
-1 524 6 408 Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|189|Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 526 3 1 c
-1 526 6 408 Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|189|Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 526 4 22 _primary = T@Ref!val!0
-1 527 3 1 c
-1 527 6 408 Secondary_Secondary_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|190|Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 530 3 1 c
-1 530 6 308 Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 530 4 32 RETURN from Secondary_Secondary 
-1 531 3 1 c
-1 531 6 308 Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 531 4 29 CALL Escrow_Escrow_NoBaseCtor
-1 544 3 1 c
-1 544 6 308 Escrow_Escrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|219|ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 544 4 37 RETURN from Escrow_Escrow_NoBaseCtor 
-1 545 3 1 c
-1 545 6 225 ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 545 4 26 RETURN from Escrow_Escrow 
-1 546 3 1 c
-1 546 6 225 ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 546 4 51 CALL ConditionalEscrow_ConditionalEscrow_NoBaseCtor
-1 550 3 1 c
-1 550 6 225 ConditionalEscrow_ConditionalEscrow|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|257|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 550 4 59 RETURN from ConditionalEscrow_ConditionalEscrow_NoBaseCtor 
-1 563 3 1 c
-1 563 6 226 RefundEscrow_RefundEscrow_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|284|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 564 3 1 c
-1 564 6 226 RefundEscrow_RefundEscrow_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|285|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 565 3 1 c
-1 565 6 226 RefundEscrow_RefundEscrow_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|285|RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 565 4 31 ASSERTION FAILS assert false;
+1 159 6 180 prueba_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|9|CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|32|
+1 159 4 29 CALL Reject_SimpleMarketplace
+1 166 3 1 c
+1 166 6 268 Reject_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|58|prueba_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|9|CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|32|
+1 167 3 1 c
+1 167 6 268 Reject_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|59|prueba_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|9|CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|32|
+1 170 3 1 c
+1 170 6 268 Reject_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|64|prueba_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|9|CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|32|
+1 173 3 1 c
+1 173 6 268 Reject_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|70|prueba_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|9|CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|32|
+1 175 3 1 c
+1 175 6 180 prueba_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|9|CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|32|
+1 175 4 37 RETURN from Reject_SimpleMarketplace 
+1 176 3 1 c
+1 176 6 181 prueba_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|10|CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|32|
+1 177 3 1 c
+1 177 6 181 prueba_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|10|CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|32|
+1 177 4 151 ASSERTION FAILS assert !(StateEnum_SimpleMarketplace[this] == 0 && StateEnum_SimpleMarketplace[this] != 1 && StateEnum_SimpleMarketplace[this] != 1);
  
-1 567 3 1 c
-1 567 6 120 RefundableCrowdsale_RefundableCrowdsale_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/RefundableCrowdsaleOld.sol|561|
-1 567 4 38 RETURN from RefundEscrow_RefundEscrow 
+1 179 3 1 c
+1 179 6 93 CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|32|
+1 179 4 43 RETURN from CorralChoice_SimpleMarketplace 
+1 180 3 1 c
+1 180 6 93 CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/SimpleMarketplace.sol|32|
+1 180 4 4 Done

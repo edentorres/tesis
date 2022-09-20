@@ -3,6 +3,76 @@ pragma experimental ABIEncoderV2;
 //import "hardhat/console.sol";
 
 contract SimpleMarketplace{
+function prueba() public {
+int256[][] memory result = new int256[][](8);
+int256[] memory state0 = new int256[](3);
+state0[0] = 0;
+state0[1] = 0;
+state0[2] = 0;
+result[0]= state0;
+int256[] memory state1 = new int256[](3);
+state1[0] = 1;
+state1[1] = 0;
+state1[2] = 0;
+result[1]= state1;
+int256[] memory state2 = new int256[](3);
+state2[0] = 0;
+state2[1] = 2;
+state2[2] = 0;
+result[2]= state2;
+int256[] memory state3 = new int256[](3);
+state3[0] = 0;
+state3[1] = 0;
+state3[2] = 3;
+result[3]= state3;
+int256[] memory state4 = new int256[](3);
+state4[0] = 1;
+state4[1] = 2;
+state4[2] = 0;
+result[4]= state4;
+int256[] memory state5 = new int256[](3);
+state5[0] = 1;
+state5[1] = 0;
+state5[2] = 3;
+result[5]= state5;
+int256[] memory state6 = new int256[](3);
+state6[0] = 0;
+state6[1] = 2;
+state6[2] = 3;
+result[6]= state6;
+int256[] memory state7 = new int256[](3);
+state7[0] = 1;
+state7[1] = 2;
+state7[2] = 3;
+result[7]= state7;
+
+
+bool[] memory precondtions = new bool[](8);
+precondtions[0]= StateEnum != StateType.ItemAvailable && StateEnum != StateType.OfferPlaced && StateEnum != StateType.OfferPlaced;
+precondtions[1]= StateEnum == StateType.ItemAvailable && StateEnum != StateType.OfferPlaced && StateEnum != StateType.OfferPlaced;
+precondtions[2]= StateEnum != StateType.ItemAvailable && StateEnum == StateType.OfferPlaced && StateEnum != StateType.OfferPlaced;
+precondtions[3]= StateEnum != StateType.ItemAvailable && StateEnum != StateType.OfferPlaced && StateEnum == StateType.OfferPlaced;
+precondtions[4]= StateEnum == StateType.ItemAvailable && StateEnum == StateType.OfferPlaced && StateEnum != StateType.OfferPlaced;
+precondtions[5]= StateEnum == StateType.ItemAvailable && StateEnum != StateType.OfferPlaced && StateEnum == StateType.OfferPlaced;
+precondtions[6]= StateEnum != StateType.ItemAvailable && StateEnum == StateType.OfferPlaced && StateEnum == StateType.OfferPlaced;
+precondtions[7]= StateEnum == StateType.ItemAvailable && StateEnum == StateType.OfferPlaced && StateEnum == StateType.OfferPlaced;
+
+
+acbc
+require(precondtions[6]);
+Reject();
+precondtions[0]= StateEnum != StateType.ItemAvailable && StateEnum != StateType.OfferPlaced && StateEnum != StateType.OfferPlaced;
+precondtions[1]= StateEnum == StateType.ItemAvailable && StateEnum != StateType.OfferPlaced && StateEnum != StateType.OfferPlaced;
+precondtions[2]= StateEnum != StateType.ItemAvailable && StateEnum == StateType.OfferPlaced && StateEnum != StateType.OfferPlaced;
+precondtions[3]= StateEnum != StateType.ItemAvailable && StateEnum != StateType.OfferPlaced && StateEnum == StateType.OfferPlaced;
+precondtions[4]= StateEnum == StateType.ItemAvailable && StateEnum == StateType.OfferPlaced && StateEnum != StateType.OfferPlaced;
+precondtions[5]= StateEnum == StateType.ItemAvailable && StateEnum != StateType.OfferPlaced && StateEnum == StateType.OfferPlaced;
+precondtions[6]= StateEnum != StateType.ItemAvailable && StateEnum == StateType.OfferPlaced && StateEnum == StateType.OfferPlaced;
+precondtions[7]= StateEnum == StateType.ItemAvailable && StateEnum == StateType.OfferPlaced && StateEnum == StateType.OfferPlaced;
+
+
+assert(!(precondtions[1]));
+}
     enum StateType { 
       ItemAvailable,
       OfferPlaced,
