@@ -1,0 +1,16 @@
+Single threaded program detected
+Verifying program while tracking: {assertsPassed}
+Program has a potential bug: False bug
+Verifying program while tracking: {assertsPassed, StateEnum_SimpleMarketplace}
+Program has no bugs
+
+Boogie verification time: 0.54 s
+Time spent reading-writing programs: 0.22 s
+
+Time spent checking a program (2): 0.74 s
+Time spent checking a path (3): 0.41 s
+
+Number of procedures inlined: 12
+Number of variables tracked: 2
+Total Time: 1.79851 s
+Total User CPU time: 4.2885918 s
