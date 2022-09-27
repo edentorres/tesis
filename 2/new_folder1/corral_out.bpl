@@ -90,11 +90,12 @@ axiom (forall __i__0_0: Ref, __i__0_1: Ref :: { abiEncodePacked1R(__i__0_0), abi
 
 axiom (forall __i__0_0: Ref, __i__0_1: Ref, __i__1_0: int, __i__1_1: int :: { abiEncodePacked2R(__i__0_0, __i__1_0), abiEncodePacked2R(__i__0_1, __i__1_1) } (__i__0_0 == __i__0_1 && __i__1_0 == __i__1_1) || abiEncodePacked2R(__i__0_0, __i__1_0) != abiEncodePacked2R(__i__0_1, __i__1_1));
 
-procedure {:public} prueba_SimpleMarketplace(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s35: int);
+procedure {:public} prueba_SimpleMarketplace(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s65: int);
+  modifies InstanceBuyer_SimpleMarketplace, OfferPrice_SimpleMarketplace, StateEnum_SimpleMarketplace;
 
 
 
-implementation {:ForceInline} prueba_SimpleMarketplace(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s35: int)
+implementation {:ForceInline} prueba_SimpleMarketplace(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s65: int)
 {
 
   anon0:
@@ -102,7 +103,7 @@ implementation {:ForceInline} prueba_SimpleMarketplace(this: Ref, msgsender_MSG:
     call {:si_unique_call 1} {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
     call {:si_unique_call 2} {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
     call {:si_unique_call 3} {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-    call {:si_unique_call 4} {:cexpr "offerPrice"} boogie_si_record_sol2Bpl_int(offerPrice_s35);
+    call {:si_unique_call 4} {:cexpr "offerPrice"} boogie_si_record_sol2Bpl_int(offerPrice_s65);
     call {:si_unique_call 5} {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
     goto corral_source_split_1;
 
@@ -110,11 +111,19 @@ implementation {:ForceInline} prueba_SimpleMarketplace(this: Ref, msgsender_MSG:
     goto corral_source_split_2;
 
   corral_source_split_2:
-    assume !(StateEnum_SimpleMarketplace[this] == 0) && !(StateEnum_SimpleMarketplace[this] == 1) && !(StateEnum_SimpleMarketplace[this] == 1);
+    assume StateEnum_SimpleMarketplace[this] == 0 && !(StateEnum_SimpleMarketplace[this] == 1) && !(StateEnum_SimpleMarketplace[this] == 1);
     goto corral_source_split_3;
 
   corral_source_split_3:
-    assert false;
+    assume offerPrice_s65 != 0 && msgsender_MSG != InstanceOwner_SimpleMarketplace[this];
+    goto corral_source_split_4;
+
+  corral_source_split_4:
+    call {:si_unique_call 6} MakeOffer_SimpleMarketplace(this, msgsender_MSG, msgvalue_MSG, offerPrice_s65);
+    goto corral_source_split_5;
+
+  corral_source_split_5:
+    assert !(!(StateEnum_SimpleMarketplace[this] == 0) && StateEnum_SimpleMarketplace[this] == 1 && StateEnum_SimpleMarketplace[this] == 1);
     return;
 }
 
@@ -134,12 +143,12 @@ var InstanceBuyer_SimpleMarketplace: [Ref]Ref;
 
 var OfferPrice_SimpleMarketplace: [Ref]int;
 
-procedure SimpleMarketplace_SimpleMarketplace_NoBaseCtor(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s82: int, price_s82: int, sender_s82: Ref);
+procedure SimpleMarketplace_SimpleMarketplace_NoBaseCtor(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s112: int, price_s112: int, sender_s112: Ref);
   modifies Balance, InstanceOwner_SimpleMarketplace, Description_SimpleMarketplace, AskingPrice_SimpleMarketplace, Alloc, result_SimpleMarketplace, InstanceBuyer_SimpleMarketplace, OfferPrice_SimpleMarketplace, StateEnum_SimpleMarketplace;
 
 
 
-implementation {:ForceInline} SimpleMarketplace_SimpleMarketplace_NoBaseCtor(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s82: int, price_s82: int, sender_s82: Ref)
+implementation {:ForceInline} SimpleMarketplace_SimpleMarketplace_NoBaseCtor(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s112: int, price_s112: int, sender_s112: Ref)
 {
   var __var_1: Ref;
 
@@ -147,108 +156,108 @@ implementation {:ForceInline} SimpleMarketplace_SimpleMarketplace_NoBaseCtor(thi
     assume msgsender_MSG != null;
     Balance[this] := 0;
     InstanceOwner_SimpleMarketplace[this] := null;
-    Description_SimpleMarketplace[this] := 925712668;
+    Description_SimpleMarketplace[this] := 1221810319;
     AskingPrice_SimpleMarketplace[this] := 0;
-    call {:si_unique_call 6} __var_1 := FreshRefGenerator();
+    call {:si_unique_call 7} __var_1 := FreshRefGenerator();
     result_SimpleMarketplace[this] := __var_1;
     assume Length[result_SimpleMarketplace[this]] == 0;
     InstanceBuyer_SimpleMarketplace[this] := null;
     OfferPrice_SimpleMarketplace[this] := 0;
-    call {:si_unique_call 7} {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
-    call {:si_unique_call 8} {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
-    call {:si_unique_call 9} {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
-    call {:si_unique_call 10} {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-    call {:si_unique_call 11} {:cexpr "description"} boogie_si_record_sol2Bpl_int(description_s82);
-    call {:si_unique_call 12} {:cexpr "price"} boogie_si_record_sol2Bpl_int(price_s82);
-    call {:si_unique_call 13} {:cexpr "sender"} boogie_si_record_sol2Bpl_ref(sender_s82);
-    call {:si_unique_call 14} {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-    goto corral_source_split_5;
-
-  corral_source_split_5:
-    goto corral_source_split_6;
-
-  corral_source_split_6:
-    InstanceOwner_SimpleMarketplace[this] := sender_s82;
-    call {:si_unique_call 15} {:cexpr "InstanceOwner"} boogie_si_record_sol2Bpl_ref(InstanceOwner_SimpleMarketplace[this]);
+    call {:si_unique_call 8} {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
+    call {:si_unique_call 9} {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
+    call {:si_unique_call 10} {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
+    call {:si_unique_call 11} {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
+    call {:si_unique_call 12} {:cexpr "description"} boogie_si_record_sol2Bpl_int(description_s112);
+    call {:si_unique_call 13} {:cexpr "price"} boogie_si_record_sol2Bpl_int(price_s112);
+    call {:si_unique_call 14} {:cexpr "sender"} boogie_si_record_sol2Bpl_ref(sender_s112);
+    call {:si_unique_call 15} {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
     goto corral_source_split_7;
 
   corral_source_split_7:
-    AskingPrice_SimpleMarketplace[this] := price_s82;
-    call {:si_unique_call 16} {:cexpr "AskingPrice"} boogie_si_record_sol2Bpl_int(AskingPrice_SimpleMarketplace[this]);
     goto corral_source_split_8;
 
   corral_source_split_8:
-    Description_SimpleMarketplace[this] := description_s82;
-    call {:si_unique_call 17} {:cexpr "Description"} boogie_si_record_sol2Bpl_int(Description_SimpleMarketplace[this]);
+    InstanceOwner_SimpleMarketplace[this] := sender_s112;
+    call {:si_unique_call 16} {:cexpr "InstanceOwner"} boogie_si_record_sol2Bpl_ref(InstanceOwner_SimpleMarketplace[this]);
     goto corral_source_split_9;
 
   corral_source_split_9:
+    AskingPrice_SimpleMarketplace[this] := price_s112;
+    call {:si_unique_call 17} {:cexpr "AskingPrice"} boogie_si_record_sol2Bpl_int(AskingPrice_SimpleMarketplace[this]);
+    goto corral_source_split_10;
+
+  corral_source_split_10:
+    Description_SimpleMarketplace[this] := description_s112;
+    call {:si_unique_call 18} {:cexpr "Description"} boogie_si_record_sol2Bpl_int(Description_SimpleMarketplace[this]);
+    goto corral_source_split_11;
+
+  corral_source_split_11:
     StateEnum_SimpleMarketplace[this] := 0;
     return;
 }
 
 
 
-procedure {:constructor} {:public} SimpleMarketplace_SimpleMarketplace(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s82: int, price_s82: int, sender_s82: Ref);
+procedure {:constructor} {:public} SimpleMarketplace_SimpleMarketplace(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s112: int, price_s112: int, sender_s112: Ref);
   modifies Balance, InstanceOwner_SimpleMarketplace, Description_SimpleMarketplace, AskingPrice_SimpleMarketplace, Alloc, result_SimpleMarketplace, InstanceBuyer_SimpleMarketplace, OfferPrice_SimpleMarketplace, StateEnum_SimpleMarketplace;
 
 
 
-implementation {:ForceInline} SimpleMarketplace_SimpleMarketplace(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s82: int, price_s82: int, sender_s82: Ref)
+implementation {:ForceInline} SimpleMarketplace_SimpleMarketplace(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s112: int, price_s112: int, sender_s112: Ref)
 {
   var __var_1: Ref;
 
   anon0:
-    call {:si_unique_call 18} {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
-    call {:si_unique_call 19} {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
-    call {:si_unique_call 20} {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
-    call {:si_unique_call 21} {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-    call {:si_unique_call 22} {:cexpr "description"} boogie_si_record_sol2Bpl_int(description_s82);
-    call {:si_unique_call 23} {:cexpr "price"} boogie_si_record_sol2Bpl_int(price_s82);
-    call {:si_unique_call 24} {:cexpr "sender"} boogie_si_record_sol2Bpl_ref(sender_s82);
-    call {:si_unique_call 25} {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-    call {:si_unique_call 26} SimpleMarketplace_SimpleMarketplace_NoBaseCtor(this, msgsender_MSG, msgvalue_MSG, description_s82, price_s82, sender_s82);
+    call {:si_unique_call 19} {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
+    call {:si_unique_call 20} {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
+    call {:si_unique_call 21} {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
+    call {:si_unique_call 22} {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
+    call {:si_unique_call 23} {:cexpr "description"} boogie_si_record_sol2Bpl_int(description_s112);
+    call {:si_unique_call 24} {:cexpr "price"} boogie_si_record_sol2Bpl_int(price_s112);
+    call {:si_unique_call 25} {:cexpr "sender"} boogie_si_record_sol2Bpl_ref(sender_s112);
+    call {:si_unique_call 26} {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
+    call {:si_unique_call 27} SimpleMarketplace_SimpleMarketplace_NoBaseCtor(this, msgsender_MSG, msgvalue_MSG, description_s112, price_s112, sender_s112);
     return;
 }
 
 
 
-procedure {:public} MakeOffer_SimpleMarketplace(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s128: int);
+procedure {:public} MakeOffer_SimpleMarketplace(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s158: int);
   modifies InstanceBuyer_SimpleMarketplace, OfferPrice_SimpleMarketplace, StateEnum_SimpleMarketplace;
 
 
 
-implementation {:ForceInline} MakeOffer_SimpleMarketplace(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s128: int)
+implementation {:ForceInline} MakeOffer_SimpleMarketplace(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s158: int)
 {
 
   anon0:
-    call {:si_unique_call 27} {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
-    call {:si_unique_call 28} {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
-    call {:si_unique_call 29} {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
-    call {:si_unique_call 30} {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-    call {:si_unique_call 31} {:cexpr "offerPrice"} boogie_si_record_sol2Bpl_int(offerPrice_s128);
-    call {:si_unique_call 32} {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-    goto corral_source_split_11;
+    call {:si_unique_call 28} {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
+    call {:si_unique_call 29} {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
+    call {:si_unique_call 30} {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
+    call {:si_unique_call 31} {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
+    call {:si_unique_call 32} {:cexpr "offerPrice"} boogie_si_record_sol2Bpl_int(offerPrice_s158);
+    call {:si_unique_call 33} {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
+    goto corral_source_split_13;
 
-  corral_source_split_11:
-    goto corral_source_split_12;
-
-  corral_source_split_12:
-    goto anon7_Then, anon7_Else;
-
-  anon7_Then:
-    assume {:partition} offerPrice_s128 == 0;
+  corral_source_split_13:
     goto corral_source_split_14;
 
   corral_source_split_14:
-    goto corral_source_split_15;
+    goto anon7_Then, anon7_Else;
 
-  corral_source_split_15:
+  anon7_Then:
+    assume {:partition} offerPrice_s158 == 0;
+    goto corral_source_split_16;
+
+  corral_source_split_16:
+    goto corral_source_split_17;
+
+  corral_source_split_17:
     assume false;
     goto anon2;
 
   anon7_Else:
-    assume {:partition} offerPrice_s128 != 0;
+    assume {:partition} offerPrice_s158 != 0;
     goto anon2;
 
   anon2:
@@ -256,12 +265,12 @@ implementation {:ForceInline} MakeOffer_SimpleMarketplace(this: Ref, msgsender_M
 
   anon8_Then:
     assume {:partition} StateEnum_SimpleMarketplace[this] != 0;
-    goto corral_source_split_17;
+    goto corral_source_split_19;
 
-  corral_source_split_17:
-    goto corral_source_split_18;
+  corral_source_split_19:
+    goto corral_source_split_20;
 
-  corral_source_split_18:
+  corral_source_split_20:
     assume false;
     goto anon4;
 
@@ -274,12 +283,12 @@ implementation {:ForceInline} MakeOffer_SimpleMarketplace(this: Ref, msgsender_M
 
   anon9_Then:
     assume {:partition} InstanceOwner_SimpleMarketplace[this] == msgsender_MSG;
-    goto corral_source_split_20;
+    goto corral_source_split_22;
 
-  corral_source_split_20:
-    goto corral_source_split_21;
+  corral_source_split_22:
+    goto corral_source_split_23;
 
-  corral_source_split_21:
+  corral_source_split_23:
     assume false;
     goto anon6;
 
@@ -289,15 +298,15 @@ implementation {:ForceInline} MakeOffer_SimpleMarketplace(this: Ref, msgsender_M
 
   anon6:
     InstanceBuyer_SimpleMarketplace[this] := msgsender_MSG;
-    call {:si_unique_call 33} {:cexpr "InstanceBuyer"} boogie_si_record_sol2Bpl_ref(InstanceBuyer_SimpleMarketplace[this]);
-    goto corral_source_split_23;
+    call {:si_unique_call 34} {:cexpr "InstanceBuyer"} boogie_si_record_sol2Bpl_ref(InstanceBuyer_SimpleMarketplace[this]);
+    goto corral_source_split_25;
 
-  corral_source_split_23:
-    OfferPrice_SimpleMarketplace[this] := offerPrice_s128;
-    call {:si_unique_call 34} {:cexpr "OfferPrice"} boogie_si_record_sol2Bpl_int(OfferPrice_SimpleMarketplace[this]);
-    goto corral_source_split_24;
+  corral_source_split_25:
+    OfferPrice_SimpleMarketplace[this] := offerPrice_s158;
+    call {:si_unique_call 35} {:cexpr "OfferPrice"} boogie_si_record_sol2Bpl_int(OfferPrice_SimpleMarketplace[this]);
+    goto corral_source_split_26;
 
-  corral_source_split_24:
+  corral_source_split_26:
     StateEnum_SimpleMarketplace[this] := 1;
     return;
 }
@@ -313,27 +322,27 @@ implementation {:ForceInline} Reject_SimpleMarketplace(this: Ref, msgsender_MSG:
 {
 
   anon0:
-    call {:si_unique_call 35} {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
-    call {:si_unique_call 36} {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
-    call {:si_unique_call 37} {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
-    call {:si_unique_call 38} {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-    call {:si_unique_call 39} {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-    goto corral_source_split_26;
+    call {:si_unique_call 36} {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
+    call {:si_unique_call 37} {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
+    call {:si_unique_call 38} {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
+    call {:si_unique_call 39} {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
+    call {:si_unique_call 40} {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
+    goto corral_source_split_28;
 
-  corral_source_split_26:
-    goto corral_source_split_27;
+  corral_source_split_28:
+    goto corral_source_split_29;
 
-  corral_source_split_27:
+  corral_source_split_29:
     goto anon5_Then, anon5_Else;
 
   anon5_Then:
     assume {:partition} StateEnum_SimpleMarketplace[this] != 1;
-    goto corral_source_split_29;
+    goto corral_source_split_31;
 
-  corral_source_split_29:
-    goto corral_source_split_30;
+  corral_source_split_31:
+    goto corral_source_split_32;
 
-  corral_source_split_30:
+  corral_source_split_32:
     assume false;
     goto anon2;
 
@@ -346,12 +355,12 @@ implementation {:ForceInline} Reject_SimpleMarketplace(this: Ref, msgsender_MSG:
 
   anon6_Then:
     assume {:partition} InstanceOwner_SimpleMarketplace[this] != msgsender_MSG;
-    goto corral_source_split_32;
+    goto corral_source_split_34;
 
-  corral_source_split_32:
-    goto corral_source_split_33;
+  corral_source_split_34:
+    goto corral_source_split_35;
 
-  corral_source_split_33:
+  corral_source_split_35:
     assume false;
     goto anon4;
 
@@ -375,27 +384,27 @@ implementation {:ForceInline} AcceptOffer_SimpleMarketplace(this: Ref, msgsender
 {
 
   anon0:
-    call {:si_unique_call 40} {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
-    call {:si_unique_call 41} {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
-    call {:si_unique_call 42} {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
-    call {:si_unique_call 43} {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-    call {:si_unique_call 44} {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-    goto corral_source_split_35;
+    call {:si_unique_call 41} {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
+    call {:si_unique_call 42} {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
+    call {:si_unique_call 43} {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
+    call {:si_unique_call 44} {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
+    call {:si_unique_call 45} {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
+    goto corral_source_split_37;
 
-  corral_source_split_35:
-    goto corral_source_split_36;
+  corral_source_split_37:
+    goto corral_source_split_38;
 
-  corral_source_split_36:
+  corral_source_split_38:
     goto anon5_Then, anon5_Else;
 
   anon5_Then:
     assume {:partition} StateEnum_SimpleMarketplace[this] != 1;
-    goto corral_source_split_38;
+    goto corral_source_split_40;
 
-  corral_source_split_38:
-    goto corral_source_split_39;
+  corral_source_split_40:
+    goto corral_source_split_41;
 
-  corral_source_split_39:
+  corral_source_split_41:
     assume false;
     goto anon2;
 
@@ -408,12 +417,12 @@ implementation {:ForceInline} AcceptOffer_SimpleMarketplace(this: Ref, msgsender
 
   anon6_Then:
     assume {:partition} msgsender_MSG != InstanceOwner_SimpleMarketplace[this];
-    goto corral_source_split_41;
+    goto corral_source_split_43;
 
-  corral_source_split_41:
-    goto corral_source_split_42;
+  corral_source_split_43:
+    goto corral_source_split_44;
 
-  corral_source_split_42:
+  corral_source_split_44:
     assume false;
     goto anon4;
 
@@ -466,22 +475,22 @@ implementation CorralChoice_SimpleMarketplace(this: Ref)
   var msgsender_MSG: Ref;
   var msgvalue_MSG: int;
   var choice: int;
-  var offerPrice_s35: int;
-  var description_s82: int;
-  var price_s82: int;
-  var sender_s82: Ref;
-  var offerPrice_s128: int;
+  var offerPrice_s65: int;
+  var description_s112: int;
+  var price_s112: int;
+  var sender_s112: Ref;
+  var offerPrice_s158: int;
   var tmpNow: int;
 
   anon0:
     havoc msgsender_MSG;
     havoc msgvalue_MSG;
     havoc choice;
-    havoc offerPrice_s35;
-    havoc description_s82;
-    havoc price_s82;
-    havoc sender_s82;
-    havoc offerPrice_s128;
+    havoc offerPrice_s65;
+    havoc description_s112;
+    havoc price_s112;
+    havoc sender_s112;
+    havoc offerPrice_s158;
     havoc tmpNow;
     tmpNow := now;
     havoc now;
@@ -493,7 +502,7 @@ implementation CorralChoice_SimpleMarketplace(this: Ref)
 
   anon5_Then:
     assume {:partition} choice == 4;
-    call {:si_unique_call 45} prueba_SimpleMarketplace(this, msgsender_MSG, msgvalue_MSG, offerPrice_s35);
+    call {:si_unique_call 46} prueba_SimpleMarketplace(this, msgsender_MSG, msgvalue_MSG, offerPrice_s65);
     return;
 
   anon5_Else:
@@ -502,7 +511,7 @@ implementation CorralChoice_SimpleMarketplace(this: Ref)
 
   anon6_Then:
     assume {:partition} choice == 3;
-    call {:si_unique_call 46} MakeOffer_SimpleMarketplace(this, msgsender_MSG, msgvalue_MSG, offerPrice_s128);
+    call {:si_unique_call 47} MakeOffer_SimpleMarketplace(this, msgsender_MSG, msgvalue_MSG, offerPrice_s158);
     return;
 
   anon6_Else:
@@ -511,7 +520,7 @@ implementation CorralChoice_SimpleMarketplace(this: Ref)
 
   anon7_Then:
     assume {:partition} choice == 2;
-    call {:si_unique_call 47} Reject_SimpleMarketplace(this, msgsender_MSG, msgvalue_MSG);
+    call {:si_unique_call 48} Reject_SimpleMarketplace(this, msgsender_MSG, msgvalue_MSG);
     return;
 
   anon7_Else:
@@ -520,7 +529,7 @@ implementation CorralChoice_SimpleMarketplace(this: Ref)
 
   anon8_Then:
     assume {:partition} choice == 1;
-    call {:si_unique_call 48} AcceptOffer_SimpleMarketplace(this, msgsender_MSG, msgvalue_MSG);
+    call {:si_unique_call 49} AcceptOffer_SimpleMarketplace(this, msgsender_MSG, msgvalue_MSG);
     return;
 
   anon8_Else:
@@ -540,15 +549,15 @@ implementation CorralEntry_SimpleMarketplace()
   var this: Ref;
   var msgsender_MSG: Ref;
   var msgvalue_MSG: int;
-  var description_s82: int;
-  var price_s82: int;
-  var sender_s82: Ref;
+  var description_s112: int;
+  var price_s112: int;
+  var sender_s112: Ref;
 
   anon0:
-    call {:si_unique_call 49} this := FreshRefGenerator();
+    call {:si_unique_call 50} this := FreshRefGenerator();
     assume now >= 0;
     assume DType[this] == SimpleMarketplace;
-    call {:si_unique_call 50} SimpleMarketplace_SimpleMarketplace(this, msgsender_MSG, msgvalue_MSG, description_s82, price_s82, sender_s82);
+    call {:si_unique_call 51} SimpleMarketplace_SimpleMarketplace(this, msgsender_MSG, msgvalue_MSG, description_s112, price_s112, sender_s112);
     goto anon2_LoopHead;
 
   anon2_LoopHead:
@@ -556,7 +565,7 @@ implementation CorralEntry_SimpleMarketplace()
 
   anon2_LoopBody:
     assume {:partition} true;
-    call {:si_unique_call 51} CorralChoice_SimpleMarketplace(this);
+    call {:si_unique_call 52} CorralChoice_SimpleMarketplace(this);
     goto anon2_LoopHead;
 
   anon2_LoopDone:

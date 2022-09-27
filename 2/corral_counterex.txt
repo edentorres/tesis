@@ -1,4 +1,5 @@
-/Users/etorres/Proyectos/verisol-test/2/CombinationsTemp2Â¡.sol(29,1): : SimpleMarketplace::Constructor (this = address!0, msg.sender = address!2, msg.value = 9, description = -21769623, price = 655, sender = address!3)
-/Users/etorres/Proyectos/verisol-test/2/CombinationsTemp2Â¡.sol(37,1): : SimpleMarketplace::MakeOffer (this = address!0, msg.sender = address!4, msg.value = 13, offerPrice = 162)
-/Users/etorres/Proyectos/verisol-test/2/CombinationsTemp2Â¡.sol(5,1): : SimpleMarketplace::prueba (this = address!0, msg.sender = address!3, msg.value = 14, offerPrice = 15)
-/Users/etorres/Proyectos/verisol-test/2/CombinationsTemp2Â¡.sol(10,1): : ASSERTION FAILS!
+/Users/etorres/Proyectos/verisol-test/2/CombinationsTemp0.sol(28,1): : SimpleMarketplace::Constructor (this = address!0, msg.sender = address!2, msg.value = 9, description = 906, price = -723, sender = address!4)
+/Users/etorres/Proyectos/verisol-test/2/CombinationsTemp0.sol(36,1): : SimpleMarketplace::MakeOffer (this = address!0, msg.sender = address!5, msg.value = 14, offerPrice = 268)
+/Users/etorres/Proyectos/verisol-test/2/CombinationsTemp0.sol(74,1): : SimpleMarketplace::AcceptOffer (this = address!0, msg.sender = address!4, msg.value = 15)
+/Users/etorres/Proyectos/verisol-test/2/CombinationsTemp0.sol(5,1): : SimpleMarketplace::prueba (this = address!0, msg.sender = address!3, msg.value = 16, offerPrice = 17)
+/Users/etorres/Proyectos/verisol-test/2/CombinationsTemp0.sol(8,1): : ASSERTION FAILS!

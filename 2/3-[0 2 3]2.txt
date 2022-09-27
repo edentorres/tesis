@@ -1,0 +1,3 @@
+SpecFilesDir = /Users/etorres/Proyectos/verisol-test/2/new_folder3
+... Hola running Solc on /Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol
+Run Solc /Users/etorres/Library/Python/3.8/bin/solc, /Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol

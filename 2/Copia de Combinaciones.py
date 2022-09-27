@@ -1,17 +1,103 @@
 import itertools
+import subprocess
 import os
 import shutil
+import numpy  as np
 from threading import Thread
 from time import sleep
 
-def threaded_function(arg):
-    for i in range(arg):
-        print("running")
-        sleep(1)
+def reduceCombinations(arg):
+    global tool_output, fileName, threadCount, preconditionsThreads, finalResultsThreads, lastOutputs
+    
+    preconditionsTemp = preconditionsThreads[arg]
+    finalResultsTemp = finalResultsThreads[arg]
+
+    current_directory = os.getcwd()
+    final_directory = os.path.join(current_directory, r'new_folder'+str(arg))
+    if not os.path.exists(final_directory):
+        os.makedirs(final_directory)
+
+    fileNameTemp = "CombinationsTemp"+str(arg)+".sol"
+    fileNameTemp = final_directory +"/"+ fileNameTemp
+    tool = "Verisol " + fileNameTemp + " " + contractName
+    if os.path.isfile(fileNameTemp):
+        os.remove(fileNameTemp)
+
+    functionOutput = "function prueba(" + functionVariables + ") public {"
+
+    lastOutput = lastOutputs[arg]
+
+    shutil.copyfile(fileName, fileNameTemp)
+
+    inputfile = open(fileNameTemp, 'r').readlines()
+    write_file = open(fileNameTemp,'w')
+    for line in inputfile:
+        write_file.write(line)
+        if 'contract ' + contractName + ' {' in line:
+            write_file.write(functionOutput + "\n")
+            write_file.write(lastOutput + "\n")
+            write_file.write("}" + "\n") 
+    write_file.close()
+
+    preconditionsTemp2 = []
+    finalResultsTemp2 = []
+    for indexPreconditionRequire, preconditionRequire in enumerate(preconditionsTemp):
+        oldValue = lastOutput
+        newValue = replace_checkPredOutput(preconditionRequire)
+        replace_values(newValue, oldValue, fileNameTemp)
+        lastOutput = newValue
+        # fileNameOutput = str(arg)+"-"+str(finalResultsTemp[indexPreconditionRequire])+ ".txt"
+        # f = open(fileNameOutput, "w")
+        result = subprocess.run([tool, ""], shell = True, cwd=final_directory, stdout=subprocess.PIPE)
+        # inputfile = open(fileNameOutput, 'r').readlines()
+        # for line in inputfile:
+        if tool_output in str(result.stdout.decode('utf-8')):
+                print_combination(indexPreconditionRequire, finalResultsTemp)
+                preconditionsTemp2.append(preconditionRequire)
+                finalResultsTemp2.append(finalResultsTemp[indexPreconditionRequire])
+        # os.remove(fileNameOutput)
+    preconditionsThreads[arg] = preconditionsTemp2
+    finalResultsThreads[arg] = finalResultsTemp2
+    lastOutputs[arg] = lastOutput
+
+
+def validCombinations(arg):
+
+    global tool_output, fileName, threadCount, preconditionsThreads, finalResultsThreads, lastOutputs, preconditions, finalResults
+
+    preconditionsTemp = preconditionsThreads[arg]
+    finalResultsTemp = finalResultsThreads[arg]
+    lastOutput = lastOutputs[arg]
+
+    current_directory = os.getcwd()
+    final_directory = os.path.join(current_directory, r'new_folder'+str(arg))
+    if not os.path.exists(final_directory):
+        os.makedirs(final_directory)
+
+    fileNameTemp = "CombinationsTemp"+str(arg)+".sol"
+    fileNameTemp = final_directory +"/"+ fileNameTemp
+    tool = "Verisol " + fileNameTemp + " " + contractName
+
+    for indexPreconditionRequire, preconditionRequire in enumerate(preconditionsTemp):
+        for indexPreconditionAssert, preconditionAssert in enumerate(preconditions):
+            for indexFunction, function in enumerate(functions):
+                if (indexFunction + 1) in finalResultsTemp[indexPreconditionRequire]:
+                    oldValue = lastOutput
+                    lastOutput = replace_functionOutput(preconditionRequire, function, preconditionAssert, indexFunction)
+                    replace_values(lastOutput, oldValue, fileNameTemp)
+                    # fileNameOutput = str(arg)+"-"+str(finalResultsTemp[indexPreconditionRequire])+ "2.txt"
+                    # f = open(fileNameOutput, "w")
+                    result = subprocess.run([tool, ""], shell = True, cwd=final_directory, stdout=subprocess.PIPE)
+                    # inputfile = open(fileNameOutput, 'r').readlines()
+                    # for line in inputfile:
+                        # print(line)
+                    if tool_output in str(result.stdout.decode('utf-8')):
+                        print_output(indexPreconditionRequire, indexFunction, indexPreconditionAssert, finalResultsTemp, finalResults)
+                    # os.remove(fileNameOutput)
+    os.remove(fileNameTemp) 
 
 results=[]
 finalResults = []
-verisolFucntionOutput = ""
 
 fileName = "SimpleMarketplace.sol"
 contractName = "SimpleMarketplace"
@@ -80,45 +166,42 @@ tool_output = "Found a counterexample"
 
 count = len(functions)
 funcionesNumeros = list(range(1, count + 1))
-fileNameTemp = "CombinationsTemp2¡.sol"
-tool = "Verisol " + fileNameTemp + " " + contractName
 
-def replace_values(newValue, oldValue):
-    with open(fileNameTemp, 'r') as file :
+
+def replace_values(newValue, oldValue, filename):
+    with open(filename, 'r') as file :
         filedata = file.read()
 
     filedata = filedata.replace(oldValue, newValue)
 
-    with open(fileNameTemp, 'w') as file:
+    with open(filename, 'w') as file:
         file.write(filedata)
 
 def replace_functionOutput(preconditionRequire, function, preconditionAssert, functionIndex):
-    global verisolFucntionOutput
     precondictionFunction = functionPreconditions[functionIndex]
     verisolFucntionOutput = "//Remplazar acá \nrequire("+preconditionRequire+");\nrequire("+precondictionFunction+");\n"+function+"\nassert(!(" + preconditionAssert + "));"
     return verisolFucntionOutput
 
 def replace_checkPredOutput(preconditionRequire):
-    global verisolFucntionOutput
-    verisolFucntionOutput = "//Remplazar acá \nrequire("+preconditionRequire+");\nassert(false);\n"
-    return verisolFucntionOutput
+    return "//Remplazar acá \nrequire("+preconditionRequire+");\nassert(false);\n"
 
-
-def print_combination(indexCombination):
-    combination = finalResults[indexCombination]
+def output_combination(indexCombination, tempCombinations):
+    combination = tempCombinations[indexCombination]
+    output = ""
     for function in combination:
         if function != 0:
-            print(functions[function-1])
+            output += functions[function-1] +"\n"
+    if output == "":
+        output = "Vacio\n"
+    return output
 
-def print_output(indexPreconditionRequire, indexFunction, indexPreconditionAssert):
-    print("Desde este estado:")
-    print_combination(indexPreconditionRequire)
-    print("")
-    print("Haciendo " + functions[indexFunction])
-    print("")
-    print("Llegas al estado:")
-    print_combination(indexPreconditionAssert)
-    print("-------------------------")
+def print_combination(indexCombination, tempCombinations):
+    output = output_combination(indexCombination, tempCombinations)
+    print(output + "---------")
+
+def print_output(indexPreconditionRequire, indexFunction, indexPreconditionAssert, combinations, fullCombination):
+    output ="Desde este estado:\n"+ output_combination(indexPreconditionRequire, combinations) + "\nHaciendo " + functions[indexFunction] + "\n\nLlegas al estado:\n" + output_combination(indexPreconditionAssert, fullCombination) + "\n---------"
+    print(output)
 
 # Combinations
 for L in range(len(funcionesNumeros) + 1):
@@ -146,57 +229,48 @@ for result in finalResults:
             precondition += "!(" + statePreconditions[number-1] + ")"
     preconditions.append(precondition)
 
+threadCount = 4
+threads = []
 
-functionOutput = "function prueba(" + functionVariables + ") public {"
+preconditionsThreads = preconditions
+preconditionsThreads = np.array_split(preconditionsThreads, threadCount)
 
-verisolFucntionOutput = "//Remplazar acá"
+finalResultsThreads = finalResults
+finalResultsThreads = np.array_split(finalResultsThreads, threadCount)
 
-shutil.copyfile(fileName, fileNameTemp)
+lastOutputs = ["//Remplazar acá" for x in range(threadCount)]
 
-inputfile = open(fileNameTemp, 'r').readlines()
-write_file = open(fileNameTemp,'w')
-for line in inputfile:
-    write_file.write(line)
-    if 'contract ' + contractName + ' {' in line:
-        write_file.write(functionOutput + "\n")
-        write_file.write(verisolFucntionOutput + "\n")
-        write_file.write("}" + "\n") 
-write_file.close()
+for i in range(threadCount):
+    thread = Thread(target = reduceCombinations, args = [i])
+    thread.start()
+    threads.append(thread)
+print("threads started")
 
-thread = Thread(target = threaded_function, args = (10, ))
-thread.start()
-thread.join()
-print("thread finished...exiting")
-
-preconditionsTemp = []
-finalResultsTemp = []
-for indexPreconditionRequire, preconditionRequire in enumerate(preconditions):
-    oldValue = verisolFucntionOutput
-    newValue = replace_checkPredOutput(preconditionRequire)
-    replace_values(newValue, oldValue)
-    out  = os.popen(tool).readlines()
-    for line in out:
-    #print(line)
-        if tool_output in line:
-            print_combination(indexPreconditionRequire)
-            preconditionsTemp.append(preconditionRequire)
-            finalResultsTemp.append(finalResults[indexPreconditionRequire])
-            print("-------------------------")
-preconditions = preconditionsTemp
-finalResults = finalResultsTemp
+for thread in threads:
+    thread.join()
+print("threads finished")
 
 
-for indexPreconditionRequire, preconditionRequire in enumerate(preconditions):
-    for indexPreconditionAssert, preconditionAssert in enumerate(preconditions):
-        for indexFunction, function in enumerate(functions):
-            if (indexFunction + 1) in finalResults[indexPreconditionRequire]:
-                oldValue = verisolFucntionOutput
-                newValue = replace_functionOutput(preconditionRequire, function, preconditionAssert, indexFunction)
-                replace_values(newValue, oldValue)
-                out  = os.popen(tool).readlines()
-                for line in out:
-                    # print(line)
-                    if tool_output in line:
-                        print_output(indexPreconditionRequire, indexFunction, indexPreconditionAssert)
-os.remove(fileNameTemp)
+# preconditionsThreads.remove([])
+# finalResultsThreads.remove([])
+preconditionsThreads = [x for x in preconditionsThreads if x != []]
+finalResultsThreads = [x for x in finalResultsThreads if x != []]
 
+preconditionsThreads = np.concatenate(preconditionsThreads)
+finalResultsThreads = np.concatenate(finalResultsThreads)
+
+finalResults = finalResultsThreads
+preconditions = preconditionsThreads
+
+preconditionsThreads = np.array_split(preconditionsThreads, threadCount)
+finalResultsThreads = np.array_split(finalResultsThreads, threadCount)
+
+for i in range(threadCount):
+    thread = Thread(target = validCombinations, args = [i])
+    thread.start()
+    threads.append(thread)
+print("threads started")
+
+for thread in threads:
+    thread.join()
+print("threads finished")

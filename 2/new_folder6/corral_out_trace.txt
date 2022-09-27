@@ -1,0 +1,70 @@
+s
+#
+1 47 3 1 c
+1 47 6 124 SimpleMarketplace_SimpleMarketplace_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|28|
+1 48 3 1 c
+1 48 6 124 SimpleMarketplace_SimpleMarketplace_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|29|
+1 50 3 1 c
+1 50 6 124 SimpleMarketplace_SimpleMarketplace_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|29|
+1 50 4 27 InstanceOwner = T@Ref!val!4
+1 51 3 1 c
+1 51 6 124 SimpleMarketplace_SimpleMarketplace_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|30|
+1 53 3 1 c
+1 53 6 124 SimpleMarketplace_SimpleMarketplace_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|30|
+1 53 4 17 AskingPrice = 322
+1 54 3 1 c
+1 54 6 124 SimpleMarketplace_SimpleMarketplace_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|31|
+1 56 3 1 c
+1 56 6 124 SimpleMarketplace_SimpleMarketplace_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|31|
+1 56 4 25 Description = -1318766384
+1 57 3 1 c
+1 57 6 124 SimpleMarketplace_SimpleMarketplace_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|32|
+1 61 3 1 c
+1 61 6 107 CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|32|
+1 64 3 1 c
+1 64 6 107 CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|32|
+1 64 4 35 CALL CorralChoice_SimpleMarketplace
+1 93 3 1 c
+1 93 6 212 MakeOffer_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|36|CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|32|
+1 94 3 1 c
+1 94 6 212 MakeOffer_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|37|CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|32|
+1 97 3 1 c
+1 97 6 212 MakeOffer_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|42|CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|32|
+1 100 3 1 c
+1 100 6 212 MakeOffer_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|47|CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|32|
+1 103 3 1 c
+1 103 6 212 MakeOffer_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|52|CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|32|
+1 105 3 1 c
+1 105 6 212 MakeOffer_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|52|CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|32|
+1 105 4 27 InstanceBuyer = T@Ref!val!5
+1 106 3 1 c
+1 106 6 212 MakeOffer_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|53|CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|32|
+1 108 3 1 c
+1 108 6 212 MakeOffer_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|53|CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|32|
+1 108 4 16 OfferPrice = 887
+1 109 3 1 c
+1 109 6 212 MakeOffer_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|54|CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|32|
+1 112 3 1 c
+1 112 6 107 CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|32|
+1 112 4 43 RETURN from CorralChoice_SimpleMarketplace 
+1 113 3 1 c
+1 113 6 107 CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|32|
+1 116 3 1 c
+1 116 6 107 CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|32|
+1 116 4 35 CALL CorralChoice_SimpleMarketplace
+1 143 3 1 c
+1 143 6 208 prueba_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|5|CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|32|
+1 144 3 1 c
+1 144 6 208 prueba_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|7|CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|32|
+1 146 3 1 c
+1 146 6 208 prueba_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|8|CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|32|
+1 147 3 1 c
+1 147 6 208 prueba_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|8|CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|32|
+1 147 4 31 ASSERTION FAILS assert false;
+ 
+1 149 3 1 c
+1 149 6 107 CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|32|
+1 149 4 43 RETURN from CorralChoice_SimpleMarketplace 
+1 150 3 1 c
+1 150 6 107 CorralEntry_SimpleMarketplace|/Users/etorres/Proyectos/verisol-test/2/new_folder6/CombinationsTemp6.sol|32|
+1 150 4 4 Done

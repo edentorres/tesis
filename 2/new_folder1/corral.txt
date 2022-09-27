@@ -1,0 +1,48 @@
+Single threaded program detected
+Verifying program while tracking: {assertsPassed}
+Program has a potential bug: True bug
+/Users/etorres/Proyectos/verisol-test/2/new_folder1/CombinationsTemp1.sol(10,1): error PF5001: This assertion can fail
+
+Execution trace:
+/Users/etorres/Proyectos/verisol-test/2/new_folder1/CombinationsTemp1.sol(29,1): Trace: Thread=1  (CALL FreshRefGenerator, RETURN from FreshRefGenerator , CALL SimpleMarketplace_SimpleMarketplace, _verisolFirstArg = false, this = T@Ref!val!0, msg.sender = T@Ref!val!2, msg.value = 7, description = 1221811239, price = -25, sender = T@Ref!val!3, _verisolLastArg = true, CALL SimpleMarketplace_SimpleMarketplace_NoBaseCtor, CALL FreshRefGenerator, RETURN from FreshRefGenerator , _verisolFirstArg = false, this = T@Ref!val!0, msg.sender = T@Ref!val!2, msg.value = 7, description = 1221811239, price = -25, sender = T@Ref!val!3, _verisolLastArg = true)
+/Users/etorres/Proyectos/verisol-test/2/new_folder1/CombinationsTemp1.sol(30,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder1/CombinationsTemp1.sol(30,1): Trace: Thread=1  (InstanceOwner = T@Ref!val!3)
+/Users/etorres/Proyectos/verisol-test/2/new_folder1/CombinationsTemp1.sol(31,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder1/CombinationsTemp1.sol(31,1): Trace: Thread=1  (AskingPrice = -25)
+/Users/etorres/Proyectos/verisol-test/2/new_folder1/CombinationsTemp1.sol(32,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder1/CombinationsTemp1.sol(32,1): Trace: Thread=1  (Description = 1221811239)
+/Users/etorres/Proyectos/verisol-test/2/new_folder1/CombinationsTemp1.sol(33,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder1/CombinationsTemp1.sol(33,1): Trace: Thread=1  (RETURN from SimpleMarketplace_SimpleMarketplace_NoBaseCtor , RETURN from SimpleMarketplace_SimpleMarketplace )
+/Users/etorres/Proyectos/verisol-test/2/new_folder1/CombinationsTemp1.sol(33,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder1/CombinationsTemp1.sol(33,1): Trace: Thread=1  (CALL CorralChoice_SimpleMarketplace)
+/Users/etorres/Proyectos/verisol-test/2/new_folder1/CombinationsTemp1.sol(5,1): Trace: Thread=1  (CALL prueba_SimpleMarketplace, _verisolFirstArg = false, this = T@Ref!val!0, msg.sender = T@Ref!val!5, msg.value = 10, offerPrice = 4336, _verisolLastArg = true)
+/Users/etorres/Proyectos/verisol-test/2/new_folder1/CombinationsTemp1.sol(7,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder1/CombinationsTemp1.sol(8,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder1/CombinationsTemp1.sol(9,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder1/CombinationsTemp1.sol(9,1): Trace: Thread=1  (CALL MakeOffer_SimpleMarketplace)
+/Users/etorres/Proyectos/verisol-test/2/new_folder1/CombinationsTemp1.sol(37,1): Trace: Thread=1  (_verisolFirstArg = false, this = T@Ref!val!0, msg.sender = T@Ref!val!5, msg.value = 10, offerPrice = 4336, _verisolLastArg = true)
+/Users/etorres/Proyectos/verisol-test/2/new_folder1/CombinationsTemp1.sol(38,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder1/CombinationsTemp1.sol(43,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder1/CombinationsTemp1.sol(48,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder1/CombinationsTemp1.sol(53,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder1/CombinationsTemp1.sol(53,1): Trace: Thread=1  (InstanceBuyer = T@Ref!val!5)
+/Users/etorres/Proyectos/verisol-test/2/new_folder1/CombinationsTemp1.sol(54,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder1/CombinationsTemp1.sol(54,1): Trace: Thread=1  (OfferPrice = 4336)
+/Users/etorres/Proyectos/verisol-test/2/new_folder1/CombinationsTemp1.sol(55,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder1/CombinationsTemp1.sol(9,1): Trace: Thread=1  (RETURN from MakeOffer_SimpleMarketplace )
+/Users/etorres/Proyectos/verisol-test/2/new_folder1/CombinationsTemp1.sol(10,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder1/CombinationsTemp1.sol(10,1): Trace: Thread=1  (ASSERTION FAILS assert !(!(StateEnum_SimpleMarketplace[this] == 0) && StateEnum_SimpleMarketplace[this] == 1 && StateEnum_SimpleMarketplace[this] == 1);
+ )
+/Users/etorres/Proyectos/verisol-test/2/new_folder1/CombinationsTemp1.sol(33,1): Trace: Thread=1  (RETURN from prueba_SimpleMarketplace , RETURN from CorralChoice_SimpleMarketplace )
+/Users/etorres/Proyectos/verisol-test/2/new_folder1/CombinationsTemp1.sol(33,1): Trace: Thread=1  (Done)
+
+Boogie verification time: 0.27 s
+Time spent reading-writing programs: 0.11 s
+
+Time spent checking a program (1): 0.42 s
+Time spent checking a path (1): 0.16 s
+
+Number of procedures inlined: 12
+Number of variables tracked: 1
+Total Time: 1.033674 s
+Total User CPU time: 2.6511718 s

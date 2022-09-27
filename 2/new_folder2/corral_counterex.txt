@@ -1,0 +1,4 @@
+/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol(29,1): : SimpleMarketplace::Constructor (this = address!0, msg.sender = address!2, msg.value = 9, description = -989211030, price = 655, sender = address!3)
+/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol(37,1): : SimpleMarketplace::MakeOffer (this = address!0, msg.sender = address!4, msg.value = 13, offerPrice = 5942)
+/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol(5,1): : SimpleMarketplace::prueba (this = address!0, msg.sender = address!3, msg.value = 14, offerPrice = 15)
+/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol(10,1): : ASSERTION FAILS!
