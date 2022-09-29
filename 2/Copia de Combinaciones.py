@@ -46,16 +46,11 @@ def reduceCombinations(arg):
         newValue = replace_checkPredOutput(preconditionRequire)
         replace_values(newValue, oldValue, fileNameTemp)
         lastOutput = newValue
-        # fileNameOutput = str(arg)+"-"+str(finalResultsTemp[indexPreconditionRequire])+ ".txt"
-        # f = open(fileNameOutput, "w")
         result = subprocess.run([tool, ""], shell = True, cwd=final_directory, stdout=subprocess.PIPE)
-        # inputfile = open(fileNameOutput, 'r').readlines()
-        # for line in inputfile:
         if tool_output in str(result.stdout.decode('utf-8')):
                 print_combination(indexPreconditionRequire, finalResultsTemp)
                 preconditionsTemp2.append(preconditionRequire)
                 finalResultsTemp2.append(finalResultsTemp[indexPreconditionRequire])
-        # os.remove(fileNameOutput)
     preconditionsThreads[arg] = preconditionsTemp2
     finalResultsThreads[arg] = finalResultsTemp2
     lastOutputs[arg] = lastOutput
@@ -85,27 +80,21 @@ def validCombinations(arg):
                     oldValue = lastOutput
                     lastOutput = replace_functionOutput(preconditionRequire, function, preconditionAssert, indexFunction)
                     replace_values(lastOutput, oldValue, fileNameTemp)
-                    # fileNameOutput = str(arg)+"-"+str(finalResultsTemp[indexPreconditionRequire])+ "2.txt"
-                    # f = open(fileNameOutput, "w")
                     result = subprocess.run([tool, ""], shell = True, cwd=final_directory, stdout=subprocess.PIPE)
-                    # inputfile = open(fileNameOutput, 'r').readlines()
-                    # for line in inputfile:
-                        # print(line)
                     if tool_output in str(result.stdout.decode('utf-8')):
                         print_output(indexPreconditionRequire, indexFunction, indexPreconditionAssert, finalResultsTemp, finalResults)
-                    # os.remove(fileNameOutput)
     os.remove(fileNameTemp) 
 
 results=[]
 finalResults = []
 
-fileName = "SimpleMarketplace.sol"
-contractName = "SimpleMarketplace"
-functions = ["MakeOffer(offerPrice);", "AcceptOffer();", "Reject();"]
-statePreconditions = ["StateEnum == StateType.ItemAvailable", "StateEnum == StateType.OfferPlaced", "StateEnum == StateType.OfferPlaced"]
-functionPreconditions = ["offerPrice != 0 && msg.sender != InstanceOwner", "msg.sender == InstanceOwner", "msg.sender == InstanceOwner"]
-functionVariables = "int offerPrice"
-tool_output = "Found a counterexample"
+# fileName = "SimpleMarketplace.sol"
+# contractName = "SimpleMarketplace"
+# functions = ["MakeOffer(offerPrice);", "AcceptOffer();", "Reject();"]
+# statePreconditions = ["StateEnum == StateType.ItemAvailable", "StateEnum == StateType.OfferPlaced", "StateEnum == StateType.OfferPlaced"]
+# functionPreconditions = ["offerPrice != 0 && msg.sender != InstanceOwner", "msg.sender == InstanceOwner", "msg.sender == InstanceOwner"]
+# functionVariables = "int offerPrice"
+# tool_output = "Found a counterexample"
 
 # fileName = "RoomThermostat.sol"
 # contractName = "RoomThermostat"
@@ -123,49 +112,52 @@ tool_output = "Found a counterexample"
 # functionVariables = "int humidity, int temperature, int timestamp, address newCounterparty"
 # tool_output = "Found a counterexample"
 
-# fileName = "AssetTransfer.sol"
-# contractName = "AssetTransfer"
-# functions = [
-# # "Terminate();", 
-# "Modify(description, price);", 
-# "MakeOffer(inspector, appraiser, offerPrice);", 
-# "AcceptOffer();", 
-# "Reject();", 
-# # "Accept();", 
-# "ModifyOffer(offerPrice);", 
-# "RescindOffer();", 
-# "MarkAppraised();", 
-# "MarkInspected();"
-# ]
-# statePreconditions = [
-# # "true", 
-# "State == StateType.Active", 
-# "State == StateType.Active",
-# "State == StateType.OfferPlaced",
-# "(State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)",
-# # "true",
-# "State == StateType.OfferPlaced",
-# "(State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)",
-# "(State != StateType.PendingInspection || State != StateType.Inspected)",
-# "(State != StateType.PendingInspection || State != StateType.Appraised)"
-# ]
-# functionPreconditions = [
-# # "InstanceOwner == msg.sender", 
-# "InstanceOwner == msg.sender", 
-# "InstanceOwner != msg.sender && inspector != address(0x0) && appraiser != address(0x0) && offerPrice != 0",
-# "InstanceOwner == msg.sender",
-# "InstanceOwner == msg.sender",
-# # "(msg.sender == InstanceBuyer || msg.sender == InstanceOwner) && (msg.sender != InstanceOwner || State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted) && (msg.sender != InstanceBuyer || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)",
-# "InstanceBuyer == msg.sender && offerPrice != 0",
-# "InstanceBuyer == msg.sender",
-# "InstanceAppraiser == msg.sender",
-# "InstanceInspector == msg.sender"
-# ]
-# functionVariables = "uint256 offerPrice, address inspector, address appraiser, string memory description, uint256 price"
-# tool_output = "Found a counterexample"
+fileName = "AssetTransfer.sol"
+contractName = "AssetTransfer"
+functions = [
+"Terminate();", 
+"Modify(description, price);", 
+"MakeOffer(inspector, appraiser, offerPrice);", 
+"AcceptOffer();", 
+"Reject();", 
+"Accept();", 
+"ModifyOffer(offerPrice);", 
+"RescindOffer();", 
+"MarkAppraised();", 
+"MarkInspected();"
+]
+statePreconditions = [
+"true", 
+"State == StateType.Active", 
+"State == StateType.Active",
+"State == StateType.OfferPlaced",
+"(State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)",
+"true",
+"State == StateType.OfferPlaced",
+"(State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)",
+"(State != StateType.PendingInspection || State != StateType.Inspected)",
+"(State != StateType.PendingInspection || State != StateType.Appraised)"
+]
+functionPreconditions = [
+"InstanceOwner == msg.sender", 
+"InstanceOwner == msg.sender", 
+"InstanceOwner != msg.sender && inspector != address(0x0) && appraiser != address(0x0) && offerPrice != 0",
+"InstanceOwner == msg.sender",
+"InstanceOwner == msg.sender",
+"(msg.sender == InstanceBuyer || msg.sender == InstanceOwner) && (msg.sender != InstanceOwner || State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted) && (msg.sender != InstanceBuyer || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)",
+"InstanceBuyer == msg.sender && offerPrice != 0",
+"InstanceBuyer == msg.sender",
+"InstanceAppraiser == msg.sender",
+"InstanceInspector == msg.sender"
+]
+functionVariables = "uint256 offerPrice, address inspector, address appraiser, string memory description, uint256 price"
+tool_output = "Found a counterexample"
 
 count = len(functions)
 funcionesNumeros = list(range(1, count + 1))
+
+threadCount = 8
+threads = []
 
 
 def replace_values(newValue, oldValue, filename):
@@ -229,8 +221,6 @@ for result in finalResults:
             precondition += "!(" + statePreconditions[number-1] + ")"
     preconditions.append(precondition)
 
-threadCount = 4
-threads = []
 
 preconditionsThreads = preconditions
 preconditionsThreads = np.array_split(preconditionsThreads, threadCount)
@@ -250,9 +240,6 @@ for thread in threads:
     thread.join()
 print("threads finished")
 
-
-# preconditionsThreads.remove([])
-# finalResultsThreads.remove([])
 preconditionsThreads = [x for x in preconditionsThreads if x != []]
 finalResultsThreads = [x for x in finalResultsThreads if x != []]
 

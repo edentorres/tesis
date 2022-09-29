@@ -50,6 +50,7 @@ contract SimpleMarketplace {
 
     function Reject() public
     {
+        assert(false);
         if ( StateEnum != StateType.OfferPlaced )
         {
             revert();
