@@ -5,6 +5,8 @@ import shutil
 import numpy  as np
 from threading import Thread
 from time import sleep
+import graphviz
+
 
 def reduceCombinations(arg):
     global tool_output, fileName, threadCount, preconditionsThreads, finalResultsThreads, lastOutputs
@@ -23,37 +25,35 @@ def reduceCombinations(arg):
     if os.path.isfile(fileNameTemp):
         os.remove(fileNameTemp)
 
-    functionOutput = "function prueba(" + functionVariables + ") public {"
-
-    lastOutput = lastOutputs[arg]
-
     shutil.copyfile(fileName, fileNameTemp)
 
     inputfile = open(fileNameTemp, 'r').readlines()
     write_file = open(fileNameTemp,'w')
+    fuctionCombinations = []
     for line in inputfile:
         write_file.write(line)
         if 'contract ' + contractName + ' {' in line:
-            write_file.write(functionOutput + "\n")
-            write_file.write(lastOutput + "\n")
-            write_file.write("}" + "\n") 
+            for indexPreconditionRequire, preconditionRequire in enumerate(preconditionsTemp):
+                fuctionCombinations.append(str(indexPreconditionRequire))
+                write_file.write(functionOutput(str(indexPreconditionRequire)) + "\n")
+                newValue = replace_checkPredOutput(preconditionRequire)
+                write_file.write(newValue + "\n")
+                write_file.write("}" + "\n") 
     write_file.close()
+
 
     preconditionsTemp2 = []
     finalResultsTemp2 = []
     for indexPreconditionRequire, preconditionRequire in enumerate(preconditionsTemp):
-        oldValue = lastOutput
-        newValue = replace_checkPredOutput(preconditionRequire)
-        replace_values(newValue, oldValue, fileNameTemp)
-        lastOutput = newValue
-        result = subprocess.run([tool, ""], shell = True, cwd=final_directory, stdout=subprocess.PIPE)
+        command = getToolCommand(str(indexPreconditionRequire), tool, fuctionCombinations)
+        result = subprocess.run([command, ""], shell = True, cwd=final_directory, stdout=subprocess.PIPE)
         if tool_output in str(result.stdout.decode('utf-8')):
                 print_combination(indexPreconditionRequire, finalResultsTemp)
                 preconditionsTemp2.append(preconditionRequire)
                 finalResultsTemp2.append(finalResultsTemp[indexPreconditionRequire])
     preconditionsThreads[arg] = preconditionsTemp2
     finalResultsThreads[arg] = finalResultsTemp2
-    lastOutputs[arg] = lastOutput
+    write_file.close()
 
 
 def validCombinations(arg):
@@ -73,17 +73,41 @@ def validCombinations(arg):
     fileNameTemp = final_directory +"/"+ fileNameTemp
     tool = "Verisol " + fileNameTemp + " " + contractName
 
+    if os.path.isfile(fileNameTemp):
+        os.remove(fileNameTemp)
+
+    shutil.copyfile(fileName, fileNameTemp)
+
+    inputfile = open(fileNameTemp, 'r').readlines()
+    write_file = open(fileNameTemp,'w')
+    fuctionCombinations = []
+    for line in inputfile:
+        write_file.write(line)
+        if 'contract ' + contractName + ' {' in line:
+            for indexPreconditionRequire, preconditionRequire in enumerate(preconditionsTemp):
+                for indexPreconditionAssert, preconditionAssert in enumerate(preconditions):
+                    for indexFunction, function in enumerate(functions):
+                        if (indexFunction + 1) in finalResultsTemp[indexPreconditionRequire]:
+                            functionName = str(indexPreconditionRequire) + "x" + str(indexPreconditionAssert) + "x" + str(indexFunction)
+                            fuctionCombinations.append(functionName)
+                            write_file.write(functionOutput(functionName) + "\n")
+                            # print(functionOutput(functionName) + "\n")
+                            newValue = replace_functionOutput(preconditionRequire, function, preconditionAssert, indexFunction)
+                            write_file.write(newValue + "\n")
+                            write_file.write("}" + "\n") 
+    write_file.close()
+
     for indexPreconditionRequire, preconditionRequire in enumerate(preconditionsTemp):
         for indexPreconditionAssert, preconditionAssert in enumerate(preconditions):
             for indexFunction, function in enumerate(functions):
                 if (indexFunction + 1) in finalResultsTemp[indexPreconditionRequire]:
-                    oldValue = lastOutput
-                    lastOutput = replace_functionOutput(preconditionRequire, function, preconditionAssert, indexFunction)
-                    replace_values(lastOutput, oldValue, fileNameTemp)
-                    result = subprocess.run([tool, ""], shell = True, cwd=final_directory, stdout=subprocess.PIPE)
+                    functionName = str(indexPreconditionRequire) + "x" + str(indexPreconditionAssert) + "x" + str(indexFunction)
+                    command = getToolCommand(functionName, tool, fuctionCombinations)
+                    # print(command)
+                    result = subprocess.run([command, ""], shell = True, cwd=final_directory, stdout=subprocess.PIPE)
                     if tool_output in str(result.stdout.decode('utf-8')):
                         print_output(indexPreconditionRequire, indexFunction, indexPreconditionAssert, finalResultsTemp, finalResults)
-    os.remove(fileNameTemp) 
+    # os.remove(fileNameTemp) 
 
 results=[]
 finalResults = []
@@ -156,9 +180,19 @@ tool_output = "Found a counterexample"
 count = len(functions)
 funcionesNumeros = list(range(1, count + 1))
 
-threadCount = 4
+threadCount = 8
 threads = []
 
+def functionOutput(number):
+    return "function validCombination" + number + "(" + functionVariables + ") public {"
+
+def getToolCommand(includeNumber, toolCommand, combinations):
+    global contractName
+    command = toolCommand + " " 
+    for indexCombination, combi in enumerate(combinations):
+        if combi != includeNumber:
+            command += "/ignoreMethod:validCombination"+ combi +"@" + contractName + " "
+    return command
 
 def replace_values(newValue, oldValue, filename):
     with open(filename, 'r') as file :
@@ -195,15 +229,25 @@ def print_output(indexPreconditionRequire, indexFunction, indexPreconditionAsser
     output ="Desde este estado:\n"+ output_combination(indexPreconditionRequire, combinations) + "\nHaciendo " + functions[indexFunction] + "\n\nLlegas al estado:\n" + output_combination(indexPreconditionAssert, fullCombination) + "\n---------"
     print(output)
 
+truePreconditions = []
+for index, statePrecondition in enumerate(statePreconditions):
+    if statePrecondition == "true":
+        truePreconditions.append(index + 1)
+
 # Combinations
 for L in range(len(funcionesNumeros) + 1):
     for subset in itertools.combinations(funcionesNumeros, L):
-        results.append(subset)
+        isTrue = True
+        for truePre in truePreconditions:
+            if truePre not in subset:
+                isTrue = False
+        if isTrue == True:
+            results.append(subset)
 
 for partialResult in results:
     paddingResult = []
     paddingResult = [0 for i in range(count)] 
-    for i in range(3):
+    for i in range(count):
         if len(partialResult) > i and partialResult[i] >=0:
             indice = partialResult[i]
             paddingResult[indice-1] = indice
@@ -249,10 +293,12 @@ finalResultsThreads = np.concatenate(finalResultsThreads)
 finalResults = finalResultsThreads
 preconditions = preconditionsThreads
 
-preconditionsThreads = np.array_split(preconditionsThreads, threadCount)
-finalResultsThreads = np.array_split(finalResultsThreads, threadCount)
+divideCount = threadCount if len(preconditionsThreads) > threadCount else len(preconditionsThreads)
 
-for i in range(threadCount):
+preconditionsThreads = np.array_split(preconditionsThreads, divideCount)
+finalResultsThreads = np.array_split(finalResultsThreads, divideCount)
+
+for i in range(divideCount):
     thread = Thread(target = validCombinations, args = [i])
     thread.start()
     threads.append(thread)

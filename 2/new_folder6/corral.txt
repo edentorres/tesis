@@ -4,13 +4,13 @@ Program has a potential bug: False bug
 Verifying program while tracking: {assertsPassed, State_AssetTransfer}
 Program has no bugs
 
-Boogie verification time: 1.29 s
-Time spent reading-writing programs: 0.54 s
+Boogie verification time: 0.67 s
+Time spent reading-writing programs: 0.45 s
 
-Time spent checking a program (2): 2.00 s
-Time spent checking a path (3): 0.84 s
+Time spent checking a program (2): 1.18 s
+Time spent checking a path (3): 0.50 s
 
 Number of procedures inlined: 17
 Number of variables tracked: 2
-Total Time: 4.478534 s
-Total User CPU time: 9.1549298 s
+Total Time: 2.754727 s
+Total User CPU time: 5.6660989 s

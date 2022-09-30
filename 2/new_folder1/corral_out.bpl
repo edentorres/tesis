@@ -86,12 +86,60 @@ axiom (forall __i__0_0: Ref, __i__0_1: Ref :: { abiEncodePacked1R(__i__0_0), abi
 
 axiom (forall __i__0_0: Ref, __i__0_1: Ref, __i__1_0: int, __i__1_1: int :: { abiEncodePacked2R(__i__0_0, __i__1_0), abiEncodePacked2R(__i__0_1, __i__1_1) } (__i__0_0 == __i__0_1 && __i__1_0 == __i__1_1) || abiEncodePacked2R(__i__0_0, __i__1_0) != abiEncodePacked2R(__i__0_1, __i__1_1));
 
-procedure {:public} prueba_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s259: int, inspector_s259: Ref, appraiser_s259: Ref, description_s259: int, price_s259: int);
-  modifies State_AssetTransfer;
+procedure {:public} validCombination0x0x0_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s269: int, inspector_s269: Ref, appraiser_s269: Ref, description_s269: int, price_s269: int);
 
 
 
-implementation {:ForceInline} prueba_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s259: int, inspector_s259: Ref, appraiser_s259: Ref, description_s259: int, price_s259: int)
+procedure {:public} validCombination0x0x5_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s575: int, inspector_s575: Ref, appraiser_s575: Ref, description_s575: int, price_s575: int);
+
+
+
+procedure {:public} validCombination0x0x7_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s843: int, inspector_s843: Ref, appraiser_s843: Ref, description_s843: int, price_s843: int);
+
+
+
+procedure {:public} validCombination0x0x8_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s1111: int, inspector_s1111: Ref, appraiser_s1111: Ref, description_s1111: int, price_s1111: int);
+
+
+
+procedure {:public} validCombination0x0x9_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s1379: int, inspector_s1379: Ref, appraiser_s1379: Ref, description_s1379: int, price_s1379: int);
+
+
+
+procedure {:public} validCombination0x1x0_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s1645: int, inspector_s1645: Ref, appraiser_s1645: Ref, description_s1645: int, price_s1645: int);
+
+
+
+procedure {:public} validCombination0x1x5_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s1949: int, inspector_s1949: Ref, appraiser_s1949: Ref, description_s1949: int, price_s1949: int);
+
+
+
+procedure {:public} validCombination0x1x7_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s2215: int, inspector_s2215: Ref, appraiser_s2215: Ref, description_s2215: int, price_s2215: int);
+
+
+
+procedure {:public} validCombination0x1x8_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s2481: int, inspector_s2481: Ref, appraiser_s2481: Ref, description_s2481: int, price_s2481: int);
+
+
+
+procedure {:public} validCombination0x1x9_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s2747: int, inspector_s2747: Ref, appraiser_s2747: Ref, description_s2747: int, price_s2747: int);
+
+
+
+procedure {:public} validCombination0x2x0_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s3011: int, inspector_s3011: Ref, appraiser_s3011: Ref, description_s3011: int, price_s3011: int);
+
+
+
+procedure {:public} validCombination0x2x5_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s3313: int, inspector_s3313: Ref, appraiser_s3313: Ref, description_s3313: int, price_s3313: int);
+
+
+
+procedure {:public} validCombination0x2x7_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s3577: int, inspector_s3577: Ref, appraiser_s3577: Ref, description_s3577: int, price_s3577: int);
+  modifies InstanceBuyer_AssetTransfer, OfferPrice_AssetTransfer, State_AssetTransfer;
+
+
+
+implementation {:ForceInline} validCombination0x2x7_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s3577: int, inspector_s3577: Ref, appraiser_s3577: Ref, description_s3577: int, price_s3577: int)
 {
 
   anon0:
@@ -99,11 +147,11 @@ implementation {:ForceInline} prueba_AssetTransfer(this: Ref, msgsender_MSG: Ref
     call {:si_unique_call 1} {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
     call {:si_unique_call 2} {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
     call {:si_unique_call 3} {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-    call {:si_unique_call 4} {:cexpr "offerPrice"} boogie_si_record_sol2Bpl_int(offerPrice_s259);
-    call {:si_unique_call 5} {:cexpr "inspector"} boogie_si_record_sol2Bpl_ref(inspector_s259);
-    call {:si_unique_call 6} {:cexpr "appraiser"} boogie_si_record_sol2Bpl_ref(appraiser_s259);
-    call {:si_unique_call 7} {:cexpr "description"} boogie_si_record_sol2Bpl_int(description_s259);
-    call {:si_unique_call 8} {:cexpr "price"} boogie_si_record_sol2Bpl_int(price_s259);
+    call {:si_unique_call 4} {:cexpr "offerPrice"} boogie_si_record_sol2Bpl_int(offerPrice_s3577);
+    call {:si_unique_call 5} {:cexpr "inspector"} boogie_si_record_sol2Bpl_ref(inspector_s3577);
+    call {:si_unique_call 6} {:cexpr "appraiser"} boogie_si_record_sol2Bpl_ref(appraiser_s3577);
+    call {:si_unique_call 7} {:cexpr "description"} boogie_si_record_sol2Bpl_int(description_s3577);
+    call {:si_unique_call 8} {:cexpr "price"} boogie_si_record_sol2Bpl_int(price_s3577);
     call {:si_unique_call 9} {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
     goto corral_source_split_1;
 
@@ -111,21 +159,69 @@ implementation {:ForceInline} prueba_AssetTransfer(this: Ref, msgsender_MSG: Ref
     goto corral_source_split_2;
 
   corral_source_split_2:
-    assume !(State_AssetTransfer[this] == 0) && !(State_AssetTransfer[this] == 0) && !(State_AssetTransfer[this] == 1) && !(State_AssetTransfer[this] == 1 || State_AssetTransfer[this] == 2 || State_AssetTransfer[this] == 3 || (State_AssetTransfer[this] == 4 && State_AssetTransfer[this] == 5) || State_AssetTransfer[this] == 6) && !(State_AssetTransfer[this] == 1) && (State_AssetTransfer[this] == 1 || State_AssetTransfer[this] == 2 || State_AssetTransfer[this] == 3 || State_AssetTransfer[this] == 4 || State_AssetTransfer[this] == 5 || State_AssetTransfer[this] == 7) && (State_AssetTransfer[this] != 2 || State_AssetTransfer[this] != 3) && (State_AssetTransfer[this] != 2 || State_AssetTransfer[this] != 4);
+    assume true && !(State_AssetTransfer[this] == 0) && !(State_AssetTransfer[this] == 0) && !(State_AssetTransfer[this] == 1) && !(State_AssetTransfer[this] == 1 || State_AssetTransfer[this] == 2 || State_AssetTransfer[this] == 3 || (State_AssetTransfer[this] == 4 && State_AssetTransfer[this] == 5) || State_AssetTransfer[this] == 6) && true && !(State_AssetTransfer[this] == 1) && (State_AssetTransfer[this] == 1 || State_AssetTransfer[this] == 2 || State_AssetTransfer[this] == 3 || State_AssetTransfer[this] == 4 || State_AssetTransfer[this] == 5 || State_AssetTransfer[this] == 7) && (State_AssetTransfer[this] != 2 || State_AssetTransfer[this] != 3) && (State_AssetTransfer[this] != 2 || State_AssetTransfer[this] != 4);
     goto corral_source_split_3;
 
   corral_source_split_3:
-    assume InstanceInspector_AssetTransfer[this] == msgsender_MSG;
+    assume InstanceBuyer_AssetTransfer[this] == msgsender_MSG;
     goto corral_source_split_4;
 
   corral_source_split_4:
-    call {:si_unique_call 10} MarkInspected_AssetTransfer(this, msgsender_MSG, msgvalue_MSG);
+    call {:si_unique_call 10} RescindOffer_AssetTransfer(this, msgsender_MSG, msgvalue_MSG);
     goto corral_source_split_5;
 
   corral_source_split_5:
-    assert !(!(State_AssetTransfer[this] == 0) && !(State_AssetTransfer[this] == 0) && !(State_AssetTransfer[this] == 1) && !(State_AssetTransfer[this] == 1 || State_AssetTransfer[this] == 2 || State_AssetTransfer[this] == 3 || (State_AssetTransfer[this] == 4 && State_AssetTransfer[this] == 5) || State_AssetTransfer[this] == 6) && !(State_AssetTransfer[this] == 1) && (State_AssetTransfer[this] == 1 || State_AssetTransfer[this] == 2 || State_AssetTransfer[this] == 3 || State_AssetTransfer[this] == 4 || State_AssetTransfer[this] == 5 || State_AssetTransfer[this] == 7) && (State_AssetTransfer[this] != 2 || State_AssetTransfer[this] != 3) && (State_AssetTransfer[this] != 2 || State_AssetTransfer[this] != 4));
+    assert !(true && State_AssetTransfer[this] == 0 && State_AssetTransfer[this] == 0 && !(State_AssetTransfer[this] == 1) && !(State_AssetTransfer[this] == 1 || State_AssetTransfer[this] == 2 || State_AssetTransfer[this] == 3 || (State_AssetTransfer[this] == 4 && State_AssetTransfer[this] == 5) || State_AssetTransfer[this] == 6) && true && !(State_AssetTransfer[this] == 1) && !(State_AssetTransfer[this] == 1 || State_AssetTransfer[this] == 2 || State_AssetTransfer[this] == 3 || State_AssetTransfer[this] == 4 || State_AssetTransfer[this] == 5 || State_AssetTransfer[this] == 7) && (State_AssetTransfer[this] != 2 || State_AssetTransfer[this] != 3) && (State_AssetTransfer[this] != 2 || State_AssetTransfer[this] != 4));
     return;
 }
+
+
+
+procedure {:public} validCombination0x2x8_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s3841: int, inspector_s3841: Ref, appraiser_s3841: Ref, description_s3841: int, price_s3841: int);
+
+
+
+procedure {:public} validCombination0x2x9_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s4105: int, inspector_s4105: Ref, appraiser_s4105: Ref, description_s4105: int, price_s4105: int);
+
+
+
+procedure {:public} validCombination0x3x0_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s4369: int, inspector_s4369: Ref, appraiser_s4369: Ref, description_s4369: int, price_s4369: int);
+
+
+
+procedure {:public} validCombination0x3x5_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s4671: int, inspector_s4671: Ref, appraiser_s4671: Ref, description_s4671: int, price_s4671: int);
+
+
+
+procedure {:public} validCombination0x3x7_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s4935: int, inspector_s4935: Ref, appraiser_s4935: Ref, description_s4935: int, price_s4935: int);
+
+
+
+procedure {:public} validCombination0x3x8_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s5199: int, inspector_s5199: Ref, appraiser_s5199: Ref, description_s5199: int, price_s5199: int);
+
+
+
+procedure {:public} validCombination0x3x9_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s5463: int, inspector_s5463: Ref, appraiser_s5463: Ref, description_s5463: int, price_s5463: int);
+
+
+
+procedure {:public} validCombination0x4x0_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s5723: int, inspector_s5723: Ref, appraiser_s5723: Ref, description_s5723: int, price_s5723: int);
+
+
+
+procedure {:public} validCombination0x4x5_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s6021: int, inspector_s6021: Ref, appraiser_s6021: Ref, description_s6021: int, price_s6021: int);
+
+
+
+procedure {:public} validCombination0x4x7_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s6281: int, inspector_s6281: Ref, appraiser_s6281: Ref, description_s6281: int, price_s6281: int);
+
+
+
+procedure {:public} validCombination0x4x8_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s6541: int, inspector_s6541: Ref, appraiser_s6541: Ref, description_s6541: int, price_s6541: int);
+
+
+
+procedure {:public} validCombination0x4x9_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s6801: int, inspector_s6801: Ref, appraiser_s6801: Ref, description_s6801: int, price_s6801: int);
 
 
 
@@ -145,19 +241,19 @@ var InstanceInspector_AssetTransfer: [Ref]Ref;
 
 var InstanceAppraiser_AssetTransfer: [Ref]Ref;
 
-procedure AssetTransfer_AssetTransfer_NoBaseCtor(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s312: int, price_s312: int);
+procedure AssetTransfer_AssetTransfer_NoBaseCtor(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s6854: int, price_s6854: int);
   modifies Balance, InstanceOwner_AssetTransfer, Description_AssetTransfer, AskingPrice_AssetTransfer, InstanceBuyer_AssetTransfer, OfferPrice_AssetTransfer, InstanceInspector_AssetTransfer, InstanceAppraiser_AssetTransfer, State_AssetTransfer;
 
 
 
-implementation {:ForceInline} AssetTransfer_AssetTransfer_NoBaseCtor(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s312: int, price_s312: int)
+implementation {:ForceInline} AssetTransfer_AssetTransfer_NoBaseCtor(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s6854: int, price_s6854: int)
 {
 
   anon0:
     assume msgsender_MSG != null;
     Balance[this] := 0;
     InstanceOwner_AssetTransfer[this] := null;
-    Description_AssetTransfer[this] := -430450587;
+    Description_AssetTransfer[this] := -1152725948;
     AskingPrice_AssetTransfer[this] := 0;
     InstanceBuyer_AssetTransfer[this] := null;
     OfferPrice_AssetTransfer[this] := 0;
@@ -167,8 +263,8 @@ implementation {:ForceInline} AssetTransfer_AssetTransfer_NoBaseCtor(this: Ref, 
     call {:si_unique_call 12} {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
     call {:si_unique_call 13} {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
     call {:si_unique_call 14} {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-    call {:si_unique_call 15} {:cexpr "description"} boogie_si_record_sol2Bpl_int(description_s312);
-    call {:si_unique_call 16} {:cexpr "price"} boogie_si_record_sol2Bpl_int(price_s312);
+    call {:si_unique_call 15} {:cexpr "description"} boogie_si_record_sol2Bpl_int(description_s6854);
+    call {:si_unique_call 16} {:cexpr "price"} boogie_si_record_sol2Bpl_int(price_s6854);
     call {:si_unique_call 17} {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
     goto corral_source_split_7;
 
@@ -182,13 +278,13 @@ implementation {:ForceInline} AssetTransfer_AssetTransfer_NoBaseCtor(this: Ref, 
 
   corral_source_split_9:
     assume AskingPrice_AssetTransfer[this] >= 0;
-    assume price_s312 >= 0;
-    AskingPrice_AssetTransfer[this] := price_s312;
+    assume price_s6854 >= 0;
+    AskingPrice_AssetTransfer[this] := price_s6854;
     call {:si_unique_call 19} {:cexpr "AskingPrice"} boogie_si_record_sol2Bpl_int(AskingPrice_AssetTransfer[this]);
     goto corral_source_split_10;
 
   corral_source_split_10:
-    Description_AssetTransfer[this] := description_s312;
+    Description_AssetTransfer[this] := description_s6854;
     call {:si_unique_call 20} {:cexpr "Description"} boogie_si_record_sol2Bpl_int(Description_AssetTransfer[this]);
     goto corral_source_split_11;
 
@@ -199,12 +295,12 @@ implementation {:ForceInline} AssetTransfer_AssetTransfer_NoBaseCtor(this: Ref, 
 
 
 
-procedure {:constructor} {:public} AssetTransfer_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s312: int, price_s312: int);
+procedure {:constructor} {:public} AssetTransfer_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s6854: int, price_s6854: int);
   modifies Balance, InstanceOwner_AssetTransfer, Description_AssetTransfer, AskingPrice_AssetTransfer, InstanceBuyer_AssetTransfer, OfferPrice_AssetTransfer, InstanceInspector_AssetTransfer, InstanceAppraiser_AssetTransfer, State_AssetTransfer;
 
 
 
-implementation {:ForceInline} AssetTransfer_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s312: int, price_s312: int)
+implementation {:ForceInline} AssetTransfer_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s6854: int, price_s6854: int)
 {
 
   anon0:
@@ -212,10 +308,10 @@ implementation {:ForceInline} AssetTransfer_AssetTransfer(this: Ref, msgsender_M
     call {:si_unique_call 22} {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
     call {:si_unique_call 23} {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
     call {:si_unique_call 24} {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-    call {:si_unique_call 25} {:cexpr "description"} boogie_si_record_sol2Bpl_int(description_s312);
-    call {:si_unique_call 26} {:cexpr "price"} boogie_si_record_sol2Bpl_int(price_s312);
+    call {:si_unique_call 25} {:cexpr "description"} boogie_si_record_sol2Bpl_int(description_s6854);
+    call {:si_unique_call 26} {:cexpr "price"} boogie_si_record_sol2Bpl_int(price_s6854);
     call {:si_unique_call 27} {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-    call {:si_unique_call 28} AssetTransfer_AssetTransfer_NoBaseCtor(this, msgsender_MSG, msgvalue_MSG, description_s312, price_s312);
+    call {:si_unique_call 28} AssetTransfer_AssetTransfer_NoBaseCtor(this, msgsender_MSG, msgvalue_MSG, description_s6854, price_s6854);
     return;
 }
 
@@ -265,12 +361,12 @@ implementation {:ForceInline} Terminate_AssetTransfer(this: Ref, msgsender_MSG: 
 
 
 
-procedure {:public} Modify_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s364: int, price_s364: int);
+procedure {:public} Modify_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s6906: int, price_s6906: int);
   modifies Description_AssetTransfer, AskingPrice_AssetTransfer;
 
 
 
-implementation {:ForceInline} Modify_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s364: int, price_s364: int)
+implementation {:ForceInline} Modify_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s6906: int, price_s6906: int)
 {
 
   anon0:
@@ -278,8 +374,8 @@ implementation {:ForceInline} Modify_AssetTransfer(this: Ref, msgsender_MSG: Ref
     call {:si_unique_call 35} {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
     call {:si_unique_call 36} {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
     call {:si_unique_call 37} {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-    call {:si_unique_call 38} {:cexpr "description"} boogie_si_record_sol2Bpl_int(description_s364);
-    call {:si_unique_call 39} {:cexpr "price"} boogie_si_record_sol2Bpl_int(price_s364);
+    call {:si_unique_call 38} {:cexpr "description"} boogie_si_record_sol2Bpl_int(description_s6906);
+    call {:si_unique_call 39} {:cexpr "price"} boogie_si_record_sol2Bpl_int(price_s6906);
     call {:si_unique_call 40} {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
     goto corral_source_split_19;
 
@@ -323,26 +419,26 @@ implementation {:ForceInline} Modify_AssetTransfer(this: Ref, msgsender_MSG: Ref
     goto anon4;
 
   anon4:
-    Description_AssetTransfer[this] := description_s364;
+    Description_AssetTransfer[this] := description_s6906;
     call {:si_unique_call 41} {:cexpr "Description"} boogie_si_record_sol2Bpl_int(Description_AssetTransfer[this]);
     goto corral_source_split_28;
 
   corral_source_split_28:
     assume AskingPrice_AssetTransfer[this] >= 0;
-    assume price_s364 >= 0;
-    AskingPrice_AssetTransfer[this] := price_s364;
+    assume price_s6906 >= 0;
+    AskingPrice_AssetTransfer[this] := price_s6906;
     call {:si_unique_call 42} {:cexpr "AskingPrice"} boogie_si_record_sol2Bpl_int(AskingPrice_AssetTransfer[this]);
     return;
 }
 
 
 
-procedure {:public} MakeOffer_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, inspector_s434: Ref, appraiser_s434: Ref, offerPrice_s434: int);
+procedure {:public} MakeOffer_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, inspector_s6976: Ref, appraiser_s6976: Ref, offerPrice_s6976: int);
   modifies InstanceBuyer_AssetTransfer, InstanceInspector_AssetTransfer, InstanceAppraiser_AssetTransfer, OfferPrice_AssetTransfer, State_AssetTransfer;
 
 
 
-implementation {:ForceInline} MakeOffer_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, inspector_s434: Ref, appraiser_s434: Ref, offerPrice_s434: int)
+implementation {:ForceInline} MakeOffer_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, inspector_s6976: Ref, appraiser_s6976: Ref, offerPrice_s6976: int)
 {
   var __var_1: Ref;
   var __var_2: Ref;
@@ -352,9 +448,9 @@ implementation {:ForceInline} MakeOffer_AssetTransfer(this: Ref, msgsender_MSG: 
     call {:si_unique_call 44} {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
     call {:si_unique_call 45} {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
     call {:si_unique_call 46} {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-    call {:si_unique_call 47} {:cexpr "inspector"} boogie_si_record_sol2Bpl_ref(inspector_s434);
-    call {:si_unique_call 48} {:cexpr "appraiser"} boogie_si_record_sol2Bpl_ref(appraiser_s434);
-    call {:si_unique_call 49} {:cexpr "offerPrice"} boogie_si_record_sol2Bpl_int(offerPrice_s434);
+    call {:si_unique_call 47} {:cexpr "inspector"} boogie_si_record_sol2Bpl_ref(inspector_s6976);
+    call {:si_unique_call 48} {:cexpr "appraiser"} boogie_si_record_sol2Bpl_ref(appraiser_s6976);
+    call {:si_unique_call 49} {:cexpr "offerPrice"} boogie_si_record_sol2Bpl_int(offerPrice_s6976);
     call {:si_unique_call 50} {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
     goto corral_source_split_30;
 
@@ -364,11 +460,11 @@ implementation {:ForceInline} MakeOffer_AssetTransfer(this: Ref, msgsender_MSG: 
   corral_source_split_31:
     __var_1 := null;
     __var_2 := null;
-    assume offerPrice_s434 >= 0;
+    assume offerPrice_s6976 >= 0;
     goto anon7_Then, anon7_Else;
 
   anon7_Then:
-    assume {:partition} inspector_s434 == null || appraiser_s434 == null || offerPrice_s434 == 0;
+    assume {:partition} inspector_s6976 == null || appraiser_s6976 == null || offerPrice_s6976 == 0;
     goto corral_source_split_33;
 
   corral_source_split_33:
@@ -379,7 +475,7 @@ implementation {:ForceInline} MakeOffer_AssetTransfer(this: Ref, msgsender_MSG: 
     goto anon2;
 
   anon7_Else:
-    assume {:partition} !(inspector_s434 == null || appraiser_s434 == null || offerPrice_s434 == 0);
+    assume {:partition} !(inspector_s6976 == null || appraiser_s6976 == null || offerPrice_s6976 == 0);
     goto anon2;
 
   anon2:
@@ -424,19 +520,19 @@ implementation {:ForceInline} MakeOffer_AssetTransfer(this: Ref, msgsender_MSG: 
     goto corral_source_split_42;
 
   corral_source_split_42:
-    InstanceInspector_AssetTransfer[this] := inspector_s434;
+    InstanceInspector_AssetTransfer[this] := inspector_s6976;
     call {:si_unique_call 52} {:cexpr "InstanceInspector"} boogie_si_record_sol2Bpl_ref(InstanceInspector_AssetTransfer[this]);
     goto corral_source_split_43;
 
   corral_source_split_43:
-    InstanceAppraiser_AssetTransfer[this] := appraiser_s434;
+    InstanceAppraiser_AssetTransfer[this] := appraiser_s6976;
     call {:si_unique_call 53} {:cexpr "InstanceAppraiser"} boogie_si_record_sol2Bpl_ref(InstanceAppraiser_AssetTransfer[this]);
     goto corral_source_split_44;
 
   corral_source_split_44:
     assume OfferPrice_AssetTransfer[this] >= 0;
-    assume offerPrice_s434 >= 0;
-    OfferPrice_AssetTransfer[this] := offerPrice_s434;
+    assume offerPrice_s6976 >= 0;
+    OfferPrice_AssetTransfer[this] := offerPrice_s6976;
     call {:si_unique_call 54} {:cexpr "OfferPrice"} boogie_si_record_sol2Bpl_int(OfferPrice_AssetTransfer[this]);
     goto corral_source_split_45;
 
@@ -743,12 +839,12 @@ implementation {:ForceInline} Accept_AssetTransfer(this: Ref, msgsender_MSG: Ref
 
 
 
-procedure {:public} ModifyOffer_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s658: int);
+procedure {:public} ModifyOffer_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s7200: int);
   modifies OfferPrice_AssetTransfer;
 
 
 
-implementation {:ForceInline} ModifyOffer_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s658: int)
+implementation {:ForceInline} ModifyOffer_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s7200: int)
 {
 
   anon0:
@@ -756,7 +852,7 @@ implementation {:ForceInline} ModifyOffer_AssetTransfer(this: Ref, msgsender_MSG
     call {:si_unique_call 72} {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
     call {:si_unique_call 73} {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
     call {:si_unique_call 74} {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-    call {:si_unique_call 75} {:cexpr "offerPrice"} boogie_si_record_sol2Bpl_int(offerPrice_s658);
+    call {:si_unique_call 75} {:cexpr "offerPrice"} boogie_si_record_sol2Bpl_int(offerPrice_s7200);
     call {:si_unique_call 76} {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
     goto corral_source_split_101;
 
@@ -782,11 +878,11 @@ implementation {:ForceInline} ModifyOffer_AssetTransfer(this: Ref, msgsender_MSG
     goto anon2;
 
   anon2:
-    assume offerPrice_s658 >= 0;
+    assume offerPrice_s7200 >= 0;
     goto anon6_Then, anon6_Else;
 
   anon6_Then:
-    assume {:partition} InstanceBuyer_AssetTransfer[this] != msgsender_MSG || offerPrice_s658 == 0;
+    assume {:partition} InstanceBuyer_AssetTransfer[this] != msgsender_MSG || offerPrice_s7200 == 0;
     goto corral_source_split_107;
 
   corral_source_split_107:
@@ -797,13 +893,13 @@ implementation {:ForceInline} ModifyOffer_AssetTransfer(this: Ref, msgsender_MSG
     goto anon4;
 
   anon6_Else:
-    assume {:partition} !(InstanceBuyer_AssetTransfer[this] != msgsender_MSG || offerPrice_s658 == 0);
+    assume {:partition} !(InstanceBuyer_AssetTransfer[this] != msgsender_MSG || offerPrice_s7200 == 0);
     goto anon4;
 
   anon4:
     assume OfferPrice_AssetTransfer[this] >= 0;
-    assume offerPrice_s658 >= 0;
-    OfferPrice_AssetTransfer[this] := offerPrice_s658;
+    assume offerPrice_s7200 >= 0;
+    OfferPrice_AssetTransfer[this] := offerPrice_s7200;
     call {:si_unique_call 77} {:cexpr "OfferPrice"} boogie_si_record_sol2Bpl_int(OfferPrice_AssetTransfer[this]);
     return;
 }
@@ -1117,38 +1213,278 @@ implementation CorralChoice_AssetTransfer(this: Ref)
   var msgsender_MSG: Ref;
   var msgvalue_MSG: int;
   var choice: int;
-  var offerPrice_s259: int;
-  var inspector_s259: Ref;
-  var appraiser_s259: Ref;
-  var description_s259: int;
-  var price_s259: int;
-  var description_s312: int;
-  var price_s312: int;
-  var description_s364: int;
-  var price_s364: int;
-  var inspector_s434: Ref;
-  var appraiser_s434: Ref;
-  var offerPrice_s434: int;
-  var offerPrice_s658: int;
+  var offerPrice_s269: int;
+  var inspector_s269: Ref;
+  var appraiser_s269: Ref;
+  var description_s269: int;
+  var price_s269: int;
+  var offerPrice_s575: int;
+  var inspector_s575: Ref;
+  var appraiser_s575: Ref;
+  var description_s575: int;
+  var price_s575: int;
+  var offerPrice_s843: int;
+  var inspector_s843: Ref;
+  var appraiser_s843: Ref;
+  var description_s843: int;
+  var price_s843: int;
+  var offerPrice_s1111: int;
+  var inspector_s1111: Ref;
+  var appraiser_s1111: Ref;
+  var description_s1111: int;
+  var price_s1111: int;
+  var offerPrice_s1379: int;
+  var inspector_s1379: Ref;
+  var appraiser_s1379: Ref;
+  var description_s1379: int;
+  var price_s1379: int;
+  var offerPrice_s1645: int;
+  var inspector_s1645: Ref;
+  var appraiser_s1645: Ref;
+  var description_s1645: int;
+  var price_s1645: int;
+  var offerPrice_s1949: int;
+  var inspector_s1949: Ref;
+  var appraiser_s1949: Ref;
+  var description_s1949: int;
+  var price_s1949: int;
+  var offerPrice_s2215: int;
+  var inspector_s2215: Ref;
+  var appraiser_s2215: Ref;
+  var description_s2215: int;
+  var price_s2215: int;
+  var offerPrice_s2481: int;
+  var inspector_s2481: Ref;
+  var appraiser_s2481: Ref;
+  var description_s2481: int;
+  var price_s2481: int;
+  var offerPrice_s2747: int;
+  var inspector_s2747: Ref;
+  var appraiser_s2747: Ref;
+  var description_s2747: int;
+  var price_s2747: int;
+  var offerPrice_s3011: int;
+  var inspector_s3011: Ref;
+  var appraiser_s3011: Ref;
+  var description_s3011: int;
+  var price_s3011: int;
+  var offerPrice_s3313: int;
+  var inspector_s3313: Ref;
+  var appraiser_s3313: Ref;
+  var description_s3313: int;
+  var price_s3313: int;
+  var offerPrice_s3577: int;
+  var inspector_s3577: Ref;
+  var appraiser_s3577: Ref;
+  var description_s3577: int;
+  var price_s3577: int;
+  var offerPrice_s3841: int;
+  var inspector_s3841: Ref;
+  var appraiser_s3841: Ref;
+  var description_s3841: int;
+  var price_s3841: int;
+  var offerPrice_s4105: int;
+  var inspector_s4105: Ref;
+  var appraiser_s4105: Ref;
+  var description_s4105: int;
+  var price_s4105: int;
+  var offerPrice_s4369: int;
+  var inspector_s4369: Ref;
+  var appraiser_s4369: Ref;
+  var description_s4369: int;
+  var price_s4369: int;
+  var offerPrice_s4671: int;
+  var inspector_s4671: Ref;
+  var appraiser_s4671: Ref;
+  var description_s4671: int;
+  var price_s4671: int;
+  var offerPrice_s4935: int;
+  var inspector_s4935: Ref;
+  var appraiser_s4935: Ref;
+  var description_s4935: int;
+  var price_s4935: int;
+  var offerPrice_s5199: int;
+  var inspector_s5199: Ref;
+  var appraiser_s5199: Ref;
+  var description_s5199: int;
+  var price_s5199: int;
+  var offerPrice_s5463: int;
+  var inspector_s5463: Ref;
+  var appraiser_s5463: Ref;
+  var description_s5463: int;
+  var price_s5463: int;
+  var offerPrice_s5723: int;
+  var inspector_s5723: Ref;
+  var appraiser_s5723: Ref;
+  var description_s5723: int;
+  var price_s5723: int;
+  var offerPrice_s6021: int;
+  var inspector_s6021: Ref;
+  var appraiser_s6021: Ref;
+  var description_s6021: int;
+  var price_s6021: int;
+  var offerPrice_s6281: int;
+  var inspector_s6281: Ref;
+  var appraiser_s6281: Ref;
+  var description_s6281: int;
+  var price_s6281: int;
+  var offerPrice_s6541: int;
+  var inspector_s6541: Ref;
+  var appraiser_s6541: Ref;
+  var description_s6541: int;
+  var price_s6541: int;
+  var offerPrice_s6801: int;
+  var inspector_s6801: Ref;
+  var appraiser_s6801: Ref;
+  var description_s6801: int;
+  var price_s6801: int;
+  var description_s6854: int;
+  var price_s6854: int;
+  var description_s6906: int;
+  var price_s6906: int;
+  var inspector_s6976: Ref;
+  var appraiser_s6976: Ref;
+  var offerPrice_s6976: int;
+  var offerPrice_s7200: int;
   var tmpNow: int;
 
   anon0:
     havoc msgsender_MSG;
     havoc msgvalue_MSG;
     havoc choice;
-    havoc offerPrice_s259;
-    havoc inspector_s259;
-    havoc appraiser_s259;
-    havoc description_s259;
-    havoc price_s259;
-    havoc description_s312;
-    havoc price_s312;
-    havoc description_s364;
-    havoc price_s364;
-    havoc inspector_s434;
-    havoc appraiser_s434;
-    havoc offerPrice_s434;
-    havoc offerPrice_s658;
+    havoc offerPrice_s269;
+    havoc inspector_s269;
+    havoc appraiser_s269;
+    havoc description_s269;
+    havoc price_s269;
+    havoc offerPrice_s575;
+    havoc inspector_s575;
+    havoc appraiser_s575;
+    havoc description_s575;
+    havoc price_s575;
+    havoc offerPrice_s843;
+    havoc inspector_s843;
+    havoc appraiser_s843;
+    havoc description_s843;
+    havoc price_s843;
+    havoc offerPrice_s1111;
+    havoc inspector_s1111;
+    havoc appraiser_s1111;
+    havoc description_s1111;
+    havoc price_s1111;
+    havoc offerPrice_s1379;
+    havoc inspector_s1379;
+    havoc appraiser_s1379;
+    havoc description_s1379;
+    havoc price_s1379;
+    havoc offerPrice_s1645;
+    havoc inspector_s1645;
+    havoc appraiser_s1645;
+    havoc description_s1645;
+    havoc price_s1645;
+    havoc offerPrice_s1949;
+    havoc inspector_s1949;
+    havoc appraiser_s1949;
+    havoc description_s1949;
+    havoc price_s1949;
+    havoc offerPrice_s2215;
+    havoc inspector_s2215;
+    havoc appraiser_s2215;
+    havoc description_s2215;
+    havoc price_s2215;
+    havoc offerPrice_s2481;
+    havoc inspector_s2481;
+    havoc appraiser_s2481;
+    havoc description_s2481;
+    havoc price_s2481;
+    havoc offerPrice_s2747;
+    havoc inspector_s2747;
+    havoc appraiser_s2747;
+    havoc description_s2747;
+    havoc price_s2747;
+    havoc offerPrice_s3011;
+    havoc inspector_s3011;
+    havoc appraiser_s3011;
+    havoc description_s3011;
+    havoc price_s3011;
+    havoc offerPrice_s3313;
+    havoc inspector_s3313;
+    havoc appraiser_s3313;
+    havoc description_s3313;
+    havoc price_s3313;
+    havoc offerPrice_s3577;
+    havoc inspector_s3577;
+    havoc appraiser_s3577;
+    havoc description_s3577;
+    havoc price_s3577;
+    havoc offerPrice_s3841;
+    havoc inspector_s3841;
+    havoc appraiser_s3841;
+    havoc description_s3841;
+    havoc price_s3841;
+    havoc offerPrice_s4105;
+    havoc inspector_s4105;
+    havoc appraiser_s4105;
+    havoc description_s4105;
+    havoc price_s4105;
+    havoc offerPrice_s4369;
+    havoc inspector_s4369;
+    havoc appraiser_s4369;
+    havoc description_s4369;
+    havoc price_s4369;
+    havoc offerPrice_s4671;
+    havoc inspector_s4671;
+    havoc appraiser_s4671;
+    havoc description_s4671;
+    havoc price_s4671;
+    havoc offerPrice_s4935;
+    havoc inspector_s4935;
+    havoc appraiser_s4935;
+    havoc description_s4935;
+    havoc price_s4935;
+    havoc offerPrice_s5199;
+    havoc inspector_s5199;
+    havoc appraiser_s5199;
+    havoc description_s5199;
+    havoc price_s5199;
+    havoc offerPrice_s5463;
+    havoc inspector_s5463;
+    havoc appraiser_s5463;
+    havoc description_s5463;
+    havoc price_s5463;
+    havoc offerPrice_s5723;
+    havoc inspector_s5723;
+    havoc appraiser_s5723;
+    havoc description_s5723;
+    havoc price_s5723;
+    havoc offerPrice_s6021;
+    havoc inspector_s6021;
+    havoc appraiser_s6021;
+    havoc description_s6021;
+    havoc price_s6021;
+    havoc offerPrice_s6281;
+    havoc inspector_s6281;
+    havoc appraiser_s6281;
+    havoc description_s6281;
+    havoc price_s6281;
+    havoc offerPrice_s6541;
+    havoc inspector_s6541;
+    havoc appraiser_s6541;
+    havoc description_s6541;
+    havoc price_s6541;
+    havoc offerPrice_s6801;
+    havoc inspector_s6801;
+    havoc appraiser_s6801;
+    havoc description_s6801;
+    havoc price_s6801;
+    havoc description_s6854;
+    havoc price_s6854;
+    havoc description_s6906;
+    havoc price_s6906;
+    havoc inspector_s6976;
+    havoc appraiser_s6976;
+    havoc offerPrice_s6976;
+    havoc offerPrice_s7200;
     havoc tmpNow;
     tmpNow := now;
     havoc now;
@@ -1156,104 +1492,320 @@ implementation CorralChoice_AssetTransfer(this: Ref)
     assume msgsender_MSG != null;
     assume DType[msgsender_MSG] != AssetTransfer;
     Alloc[msgsender_MSG] := true;
-    goto anon12_Then, anon12_Else;
+    goto anon36_Then, anon36_Else;
 
-  anon12_Then:
+  anon36_Then:
+    assume {:partition} choice == 35;
+    call {:si_unique_call 95} validCombination0x0x0_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s269, inspector_s269, appraiser_s269, description_s269, price_s269);
+    return;
+
+  anon36_Else:
+    assume {:partition} choice != 35;
+    goto anon37_Then, anon37_Else;
+
+  anon37_Then:
+    assume {:partition} choice == 34;
+    call {:si_unique_call 96} validCombination0x0x5_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s575, inspector_s575, appraiser_s575, description_s575, price_s575);
+    return;
+
+  anon37_Else:
+    assume {:partition} choice != 34;
+    goto anon38_Then, anon38_Else;
+
+  anon38_Then:
+    assume {:partition} choice == 33;
+    call {:si_unique_call 97} validCombination0x0x7_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s843, inspector_s843, appraiser_s843, description_s843, price_s843);
+    return;
+
+  anon38_Else:
+    assume {:partition} choice != 33;
+    goto anon39_Then, anon39_Else;
+
+  anon39_Then:
+    assume {:partition} choice == 32;
+    call {:si_unique_call 98} validCombination0x0x8_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s1111, inspector_s1111, appraiser_s1111, description_s1111, price_s1111);
+    return;
+
+  anon39_Else:
+    assume {:partition} choice != 32;
+    goto anon40_Then, anon40_Else;
+
+  anon40_Then:
+    assume {:partition} choice == 31;
+    call {:si_unique_call 99} validCombination0x0x9_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s1379, inspector_s1379, appraiser_s1379, description_s1379, price_s1379);
+    return;
+
+  anon40_Else:
+    assume {:partition} choice != 31;
+    goto anon41_Then, anon41_Else;
+
+  anon41_Then:
+    assume {:partition} choice == 30;
+    call {:si_unique_call 100} validCombination0x1x0_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s1645, inspector_s1645, appraiser_s1645, description_s1645, price_s1645);
+    return;
+
+  anon41_Else:
+    assume {:partition} choice != 30;
+    goto anon42_Then, anon42_Else;
+
+  anon42_Then:
+    assume {:partition} choice == 29;
+    call {:si_unique_call 101} validCombination0x1x5_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s1949, inspector_s1949, appraiser_s1949, description_s1949, price_s1949);
+    return;
+
+  anon42_Else:
+    assume {:partition} choice != 29;
+    goto anon43_Then, anon43_Else;
+
+  anon43_Then:
+    assume {:partition} choice == 28;
+    call {:si_unique_call 102} validCombination0x1x7_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s2215, inspector_s2215, appraiser_s2215, description_s2215, price_s2215);
+    return;
+
+  anon43_Else:
+    assume {:partition} choice != 28;
+    goto anon44_Then, anon44_Else;
+
+  anon44_Then:
+    assume {:partition} choice == 27;
+    call {:si_unique_call 103} validCombination0x1x8_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s2481, inspector_s2481, appraiser_s2481, description_s2481, price_s2481);
+    return;
+
+  anon44_Else:
+    assume {:partition} choice != 27;
+    goto anon45_Then, anon45_Else;
+
+  anon45_Then:
+    assume {:partition} choice == 26;
+    call {:si_unique_call 104} validCombination0x1x9_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s2747, inspector_s2747, appraiser_s2747, description_s2747, price_s2747);
+    return;
+
+  anon45_Else:
+    assume {:partition} choice != 26;
+    goto anon46_Then, anon46_Else;
+
+  anon46_Then:
+    assume {:partition} choice == 25;
+    call {:si_unique_call 105} validCombination0x2x0_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s3011, inspector_s3011, appraiser_s3011, description_s3011, price_s3011);
+    return;
+
+  anon46_Else:
+    assume {:partition} choice != 25;
+    goto anon47_Then, anon47_Else;
+
+  anon47_Then:
+    assume {:partition} choice == 24;
+    call {:si_unique_call 106} validCombination0x2x5_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s3313, inspector_s3313, appraiser_s3313, description_s3313, price_s3313);
+    return;
+
+  anon47_Else:
+    assume {:partition} choice != 24;
+    goto anon48_Then, anon48_Else;
+
+  anon48_Then:
+    assume {:partition} choice == 23;
+    call {:si_unique_call 107} validCombination0x2x7_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s3577, inspector_s3577, appraiser_s3577, description_s3577, price_s3577);
+    return;
+
+  anon48_Else:
+    assume {:partition} choice != 23;
+    goto anon49_Then, anon49_Else;
+
+  anon49_Then:
+    assume {:partition} choice == 22;
+    call {:si_unique_call 108} validCombination0x2x8_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s3841, inspector_s3841, appraiser_s3841, description_s3841, price_s3841);
+    return;
+
+  anon49_Else:
+    assume {:partition} choice != 22;
+    goto anon50_Then, anon50_Else;
+
+  anon50_Then:
+    assume {:partition} choice == 21;
+    call {:si_unique_call 109} validCombination0x2x9_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s4105, inspector_s4105, appraiser_s4105, description_s4105, price_s4105);
+    return;
+
+  anon50_Else:
+    assume {:partition} choice != 21;
+    goto anon51_Then, anon51_Else;
+
+  anon51_Then:
+    assume {:partition} choice == 20;
+    call {:si_unique_call 110} validCombination0x3x0_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s4369, inspector_s4369, appraiser_s4369, description_s4369, price_s4369);
+    return;
+
+  anon51_Else:
+    assume {:partition} choice != 20;
+    goto anon52_Then, anon52_Else;
+
+  anon52_Then:
+    assume {:partition} choice == 19;
+    call {:si_unique_call 111} validCombination0x3x5_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s4671, inspector_s4671, appraiser_s4671, description_s4671, price_s4671);
+    return;
+
+  anon52_Else:
+    assume {:partition} choice != 19;
+    goto anon53_Then, anon53_Else;
+
+  anon53_Then:
+    assume {:partition} choice == 18;
+    call {:si_unique_call 112} validCombination0x3x7_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s4935, inspector_s4935, appraiser_s4935, description_s4935, price_s4935);
+    return;
+
+  anon53_Else:
+    assume {:partition} choice != 18;
+    goto anon54_Then, anon54_Else;
+
+  anon54_Then:
+    assume {:partition} choice == 17;
+    call {:si_unique_call 113} validCombination0x3x8_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s5199, inspector_s5199, appraiser_s5199, description_s5199, price_s5199);
+    return;
+
+  anon54_Else:
+    assume {:partition} choice != 17;
+    goto anon55_Then, anon55_Else;
+
+  anon55_Then:
+    assume {:partition} choice == 16;
+    call {:si_unique_call 114} validCombination0x3x9_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s5463, inspector_s5463, appraiser_s5463, description_s5463, price_s5463);
+    return;
+
+  anon55_Else:
+    assume {:partition} choice != 16;
+    goto anon56_Then, anon56_Else;
+
+  anon56_Then:
+    assume {:partition} choice == 15;
+    call {:si_unique_call 115} validCombination0x4x0_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s5723, inspector_s5723, appraiser_s5723, description_s5723, price_s5723);
+    return;
+
+  anon56_Else:
+    assume {:partition} choice != 15;
+    goto anon57_Then, anon57_Else;
+
+  anon57_Then:
+    assume {:partition} choice == 14;
+    call {:si_unique_call 116} validCombination0x4x5_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s6021, inspector_s6021, appraiser_s6021, description_s6021, price_s6021);
+    return;
+
+  anon57_Else:
+    assume {:partition} choice != 14;
+    goto anon58_Then, anon58_Else;
+
+  anon58_Then:
+    assume {:partition} choice == 13;
+    call {:si_unique_call 117} validCombination0x4x7_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s6281, inspector_s6281, appraiser_s6281, description_s6281, price_s6281);
+    return;
+
+  anon58_Else:
+    assume {:partition} choice != 13;
+    goto anon59_Then, anon59_Else;
+
+  anon59_Then:
+    assume {:partition} choice == 12;
+    call {:si_unique_call 118} validCombination0x4x8_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s6541, inspector_s6541, appraiser_s6541, description_s6541, price_s6541);
+    return;
+
+  anon59_Else:
+    assume {:partition} choice != 12;
+    goto anon60_Then, anon60_Else;
+
+  anon60_Then:
     assume {:partition} choice == 11;
-    call {:si_unique_call 95} prueba_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s259, inspector_s259, appraiser_s259, description_s259, price_s259);
+    call {:si_unique_call 119} validCombination0x4x9_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s6801, inspector_s6801, appraiser_s6801, description_s6801, price_s6801);
     return;
 
-  anon12_Else:
+  anon60_Else:
     assume {:partition} choice != 11;
-    goto anon13_Then, anon13_Else;
+    goto anon61_Then, anon61_Else;
 
-  anon13_Then:
+  anon61_Then:
     assume {:partition} choice == 10;
-    call {:si_unique_call 96} Terminate_AssetTransfer(this, msgsender_MSG, msgvalue_MSG);
+    call {:si_unique_call 120} Terminate_AssetTransfer(this, msgsender_MSG, msgvalue_MSG);
     return;
 
-  anon13_Else:
+  anon61_Else:
     assume {:partition} choice != 10;
-    goto anon14_Then, anon14_Else;
+    goto anon62_Then, anon62_Else;
 
-  anon14_Then:
+  anon62_Then:
     assume {:partition} choice == 9;
-    call {:si_unique_call 97} Modify_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, description_s364, price_s364);
+    call {:si_unique_call 121} Modify_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, description_s6906, price_s6906);
     return;
 
-  anon14_Else:
+  anon62_Else:
     assume {:partition} choice != 9;
-    goto anon15_Then, anon15_Else;
+    goto anon63_Then, anon63_Else;
 
-  anon15_Then:
+  anon63_Then:
     assume {:partition} choice == 8;
-    call {:si_unique_call 98} MakeOffer_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, inspector_s434, appraiser_s434, offerPrice_s434);
+    call {:si_unique_call 122} MakeOffer_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, inspector_s6976, appraiser_s6976, offerPrice_s6976);
     return;
 
-  anon15_Else:
+  anon63_Else:
     assume {:partition} choice != 8;
-    goto anon16_Then, anon16_Else;
+    goto anon64_Then, anon64_Else;
 
-  anon16_Then:
+  anon64_Then:
     assume {:partition} choice == 7;
-    call {:si_unique_call 99} AcceptOffer_AssetTransfer(this, msgsender_MSG, msgvalue_MSG);
+    call {:si_unique_call 123} AcceptOffer_AssetTransfer(this, msgsender_MSG, msgvalue_MSG);
     return;
 
-  anon16_Else:
+  anon64_Else:
     assume {:partition} choice != 7;
-    goto anon17_Then, anon17_Else;
+    goto anon65_Then, anon65_Else;
 
-  anon17_Then:
+  anon65_Then:
     assume {:partition} choice == 6;
-    call {:si_unique_call 100} Reject_AssetTransfer(this, msgsender_MSG, msgvalue_MSG);
+    call {:si_unique_call 124} Reject_AssetTransfer(this, msgsender_MSG, msgvalue_MSG);
     return;
 
-  anon17_Else:
+  anon65_Else:
     assume {:partition} choice != 6;
-    goto anon18_Then, anon18_Else;
+    goto anon66_Then, anon66_Else;
 
-  anon18_Then:
+  anon66_Then:
     assume {:partition} choice == 5;
-    call {:si_unique_call 101} Accept_AssetTransfer(this, msgsender_MSG, msgvalue_MSG);
+    call {:si_unique_call 125} Accept_AssetTransfer(this, msgsender_MSG, msgvalue_MSG);
     return;
 
-  anon18_Else:
+  anon66_Else:
     assume {:partition} choice != 5;
-    goto anon19_Then, anon19_Else;
+    goto anon67_Then, anon67_Else;
 
-  anon19_Then:
+  anon67_Then:
     assume {:partition} choice == 4;
-    call {:si_unique_call 102} ModifyOffer_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s658);
+    call {:si_unique_call 126} ModifyOffer_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s7200);
     return;
 
-  anon19_Else:
+  anon67_Else:
     assume {:partition} choice != 4;
-    goto anon20_Then, anon20_Else;
+    goto anon68_Then, anon68_Else;
 
-  anon20_Then:
+  anon68_Then:
     assume {:partition} choice == 3;
-    call {:si_unique_call 103} RescindOffer_AssetTransfer(this, msgsender_MSG, msgvalue_MSG);
+    call {:si_unique_call 127} RescindOffer_AssetTransfer(this, msgsender_MSG, msgvalue_MSG);
     return;
 
-  anon20_Else:
+  anon68_Else:
     assume {:partition} choice != 3;
-    goto anon21_Then, anon21_Else;
+    goto anon69_Then, anon69_Else;
 
-  anon21_Then:
+  anon69_Then:
     assume {:partition} choice == 2;
-    call {:si_unique_call 104} MarkAppraised_AssetTransfer(this, msgsender_MSG, msgvalue_MSG);
+    call {:si_unique_call 128} MarkAppraised_AssetTransfer(this, msgsender_MSG, msgvalue_MSG);
     return;
 
-  anon21_Else:
+  anon69_Else:
     assume {:partition} choice != 2;
-    goto anon22_Then, anon22_Else;
+    goto anon70_Then, anon70_Else;
 
-  anon22_Then:
+  anon70_Then:
     assume {:partition} choice == 1;
-    call {:si_unique_call 105} MarkInspected_AssetTransfer(this, msgsender_MSG, msgvalue_MSG);
+    call {:si_unique_call 129} MarkInspected_AssetTransfer(this, msgsender_MSG, msgvalue_MSG);
     return;
 
-  anon22_Else:
+  anon70_Else:
     assume {:partition} choice != 1;
     return;
 }
@@ -1270,14 +1822,14 @@ implementation CorralEntry_AssetTransfer()
   var this: Ref;
   var msgsender_MSG: Ref;
   var msgvalue_MSG: int;
-  var description_s312: int;
-  var price_s312: int;
+  var description_s6854: int;
+  var price_s6854: int;
 
   anon0:
-    call {:si_unique_call 106} this := FreshRefGenerator();
+    call {:si_unique_call 130} this := FreshRefGenerator();
     assume now >= 0;
     assume DType[this] == AssetTransfer;
-    call {:si_unique_call 107} AssetTransfer_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, description_s312, price_s312);
+    call {:si_unique_call 131} AssetTransfer_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, description_s6854, price_s6854);
     goto anon2_LoopHead;
 
   anon2_LoopHead:
@@ -1285,7 +1837,7 @@ implementation CorralEntry_AssetTransfer()
 
   anon2_LoopBody:
     assume {:partition} true;
-    call {:si_unique_call 108} CorralChoice_AssetTransfer(this);
+    call {:si_unique_call 132} CorralChoice_AssetTransfer(this);
     goto anon2_LoopHead;
 
   anon2_LoopDone:

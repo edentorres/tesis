@@ -3,12 +3,12 @@ Verifying program while tracking: {assertsPassed}
 Program has no bugs
 
 Boogie verification time: 0.16 s
-Time spent reading-writing programs: 0.11 s
+Time spent reading-writing programs: 0.13 s
 
-Time spent checking a program (1): 0.47 s
+Time spent checking a program (1): 0.48 s
 Time spent checking a path (0): 0.00 s
 
 Number of procedures inlined: 0
 Number of variables tracked: 1
-Total Time: 1.088846 s
-Total User CPU time: 3.0853234 s
+Total Time: 1.110508 s
+Total User CPU time: 3.1378996 s

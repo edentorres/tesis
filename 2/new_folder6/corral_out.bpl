@@ -90,11 +90,11 @@ axiom (forall __i__0_0: Ref, __i__0_1: Ref :: { abiEncodePacked1R(__i__0_0), abi
 
 axiom (forall __i__0_0: Ref, __i__0_1: Ref, __i__1_0: int, __i__1_1: int :: { abiEncodePacked2R(__i__0_0, __i__1_0), abiEncodePacked2R(__i__0_1, __i__1_1) } (__i__0_0 == __i__0_1 && __i__1_0 == __i__1_1) || abiEncodePacked2R(__i__0_0, __i__1_0) != abiEncodePacked2R(__i__0_1, __i__1_1));
 
-procedure {:public} prueba_SimpleMarketplace(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s31: int);
+procedure {:public} validCombination0_SimpleMarketplace(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s31: int);
 
 
 
-implementation {:ForceInline} prueba_SimpleMarketplace(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s31: int)
+implementation {:ForceInline} validCombination0_SimpleMarketplace(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s31: int)
 {
 
   anon0:
@@ -147,7 +147,7 @@ implementation {:ForceInline} SimpleMarketplace_SimpleMarketplace_NoBaseCtor(thi
     assume msgsender_MSG != null;
     Balance[this] := 0;
     InstanceOwner_SimpleMarketplace[this] := null;
-    Description_SimpleMarketplace[this] := -1318766063;
+    Description_SimpleMarketplace[this] := 1914806792;
     AskingPrice_SimpleMarketplace[this] := 0;
     call {:si_unique_call 6} __var_1 := FreshRefGenerator();
     result_SimpleMarketplace[this] := __var_1;
@@ -493,7 +493,7 @@ implementation CorralChoice_SimpleMarketplace(this: Ref)
 
   anon5_Then:
     assume {:partition} choice == 4;
-    call {:si_unique_call 45} prueba_SimpleMarketplace(this, msgsender_MSG, msgvalue_MSG, offerPrice_s31);
+    call {:si_unique_call 45} validCombination0_SimpleMarketplace(this, msgsender_MSG, msgvalue_MSG, offerPrice_s31);
     return;
 
   anon5_Else:

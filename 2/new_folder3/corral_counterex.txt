@@ -1,4 +1,5 @@
-/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol(22,1): : RoomThermostat::Constructor (this = address!0, msg.sender = address!2, msg.value = 7, thermostatInstaller = address!3, thermostatUser = address!5)
-/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol(30,1): : RoomThermostat::StartThermostat (this = address!0, msg.sender = address!3, msg.value = 10)
-/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol(4,1): : RoomThermostat::prueba (this = address!0, msg.sender = address!4, msg.value = 11, targetTemperature = 12)
-/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol(7,1): : ASSERTION FAILS!
+/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol(228,1): : AssetTransfer::Constructor (this = address!0, msg.sender = address!2, msg.value = 43, description = 582058430, price = 111)
+/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol(264,1): : AssetTransfer::MakeOffer (this = address!0, msg.sender = address!4, msg.value = 47, inspector = address!3, appraiser = address!5, offerPrice = 578)
+/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol(288,1): : AssetTransfer::AcceptOffer (this = address!0, msg.sender = address!2, msg.value = 48)
+/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol(167,1): : AssetTransfer::validCombination0x3x9 (this = address!0, msg.sender = address!3, msg.value = 49, offerPrice = 50, inspector = address!6, appraiser = address!7, description = 51, price = 52)
+/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol(170,1): : ASSERTION FAILS!

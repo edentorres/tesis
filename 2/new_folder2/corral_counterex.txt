@@ -1,6 +1,3 @@
-/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol(23,1): : AssetTransfer::Constructor (this = address!0, msg.sender = address!2, msg.value = 16, description = -111333000, price = 7065)
-/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol(59,1): : AssetTransfer::MakeOffer (this = address!0, msg.sender = address!5, msg.value = 21, inspector = address!6, appraiser = address!3, offerPrice = 7568)
-/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol(83,1): : AssetTransfer::AcceptOffer (this = address!0, msg.sender = address!2, msg.value = 22)
-/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol(192,1): : AssetTransfer::MarkAppraised (this = address!0, msg.sender = address!3, msg.value = 23)
-/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol(4,1): : AssetTransfer::prueba (this = address!0, msg.sender = address!4, msg.value = 24, offerPrice = 25, inspector = address!7, appraiser = address!8, description = 26, price = 27)
-/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol(7,1): : ASSERTION FAILS!
+/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol(228,1): : AssetTransfer::Constructor (this = address!0, msg.sender = address!2, msg.value = 12, description = 578, price = 3960)
+/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol(188,1): : AssetTransfer::validCombination0x4x2 (this = address!0, msg.sender = address!3, msg.value = 41, offerPrice = 625, inspector = address!4, appraiser = address!5, description = 42, price = 43)
+/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol(191,1): : ASSERTION FAILS!

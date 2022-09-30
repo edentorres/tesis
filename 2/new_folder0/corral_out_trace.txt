@@ -1,58 +1,66 @@
 s
 #
-1 34 3 1 c
-1 34 6 118 RoomThermostat_RoomThermostat_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|23|
-1 35 3 1 c
-1 35 6 118 RoomThermostat_RoomThermostat_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|24|
-1 37 3 1 c
-1 37 6 118 RoomThermostat_RoomThermostat_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|24|
-1 37 4 23 Installer = T@Ref!val!3
 1 38 3 1 c
-1 38 6 118 RoomThermostat_RoomThermostat_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|25|
-1 40 3 1 c
-1 40 6 118 RoomThermostat_RoomThermostat_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|25|
-1 40 4 18 User = T@Ref!val!4
+1 38 6 117 AssetTransfer_AssetTransfer_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|158|
 1 41 3 1 c
-1 41 6 118 RoomThermostat_RoomThermostat_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|26|
-1 43 3 1 c
-1 43 6 118 RoomThermostat_RoomThermostat_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|26|
-1 43 4 22 TargetTemperature = 70
-1 44 3 1 c
-1 44 6 118 RoomThermostat_RoomThermostat_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|27|
-1 48 3 1 c
-1 48 6 104 CorralEntry_RoomThermostat|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|27|
-1 51 3 1 c
-1 51 6 104 CorralEntry_RoomThermostat|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|27|
-1 51 4 32 CALL CorralChoice_RoomThermostat
-1 79 3 1 c
-1 79 6 202 prueba_RoomThermostat|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|4|CorralEntry_RoomThermostat|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|27|
-1 80 3 1 c
-1 80 6 202 prueba_RoomThermostat|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|6|CorralEntry_RoomThermostat|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|27|
-1 82 3 1 c
-1 82 6 202 prueba_RoomThermostat|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|7|CorralEntry_RoomThermostat|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|27|
-1 84 3 1 c
-1 84 6 202 prueba_RoomThermostat|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|8|CorralEntry_RoomThermostat|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|27|
-1 85 3 1 c
-1 85 6 202 prueba_RoomThermostat|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|8|CorralEntry_RoomThermostat|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|27|
-1 85 4 35 CALL StartThermostat_RoomThermostat
-1 92 3 1 c
-1 92 6 310 StartThermostat_RoomThermostat|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|31|prueba_RoomThermostat|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|8|CorralEntry_RoomThermostat|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|27|
-1 93 3 1 c
-1 93 6 310 StartThermostat_RoomThermostat|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|32|prueba_RoomThermostat|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|8|CorralEntry_RoomThermostat|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|27|
-1 96 3 1 c
-1 96 6 310 StartThermostat_RoomThermostat|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|37|prueba_RoomThermostat|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|8|CorralEntry_RoomThermostat|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|27|
-1 98 3 1 c
-1 98 6 202 prueba_RoomThermostat|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|8|CorralEntry_RoomThermostat|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|27|
-1 98 4 43 RETURN from StartThermostat_RoomThermostat 
-1 99 3 1 c
-1 99 6 202 prueba_RoomThermostat|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|9|CorralEntry_RoomThermostat|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|27|
-1 100 3 1 c
-1 100 6 202 prueba_RoomThermostat|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|9|CorralEntry_RoomThermostat|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|27|
-1 100 4 133 ASSERTION FAILS assert !(!(State_RoomThermostat[this] == 0) && State_RoomThermostat[this] == 1 && State_RoomThermostat[this] == 1);
+1 41 6 117 AssetTransfer_AssetTransfer_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|158|
+1 41 4 27 InstanceOwner = T@Ref!val!2
+1 42 3 1 c
+1 42 6 117 AssetTransfer_AssetTransfer_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|159|
+1 46 3 1 c
+1 46 6 117 AssetTransfer_AssetTransfer_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|159|
+1 46 4 18 AskingPrice = 1391
+1 47 3 1 c
+1 47 6 117 AssetTransfer_AssetTransfer_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|160|
+1 49 3 1 c
+1 49 6 117 AssetTransfer_AssetTransfer_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|160|
+1 49 4 24 Description = -334979010
+1 50 3 1 c
+1 50 6 117 AssetTransfer_AssetTransfer_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|161|
+1 54 3 1 c
+1 54 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|161|
+1 57 3 1 c
+1 57 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|161|
+1 57 4 31 CALL CorralChoice_AssetTransfer
+1 226 3 1 c
+1 226 6 206 Terminate_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|167|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|161|
+1 230 3 1 c
+1 230 6 206 Terminate_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|172|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|161|
+1 233 3 1 c
+1 233 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|161|
+1 233 4 39 RETURN from CorralChoice_AssetTransfer 
+1 234 3 1 c
+1 234 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|161|
+1 237 3 1 c
+1 237 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|161|
+1 237 4 31 CALL CorralChoice_AssetTransfer
+1 371 3 1 c
+1 371 6 216 validCombination0x0x0_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|4|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|161|
+1 372 3 1 c
+1 372 6 216 validCombination0x0x0_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|6|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|161|
+1 374 3 1 c
+1 374 6 216 validCombination0x0x0_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|7|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|161|
+1 376 3 1 c
+1 376 6 216 validCombination0x0x0_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|8|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|161|
+1 377 3 1 c
+1 377 6 216 validCombination0x0x0_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|8|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|161|
+1 377 4 28 CALL Terminate_AssetTransfer
+1 384 3 1 c
+1 384 6 318 Terminate_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|167|validCombination0x0x0_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|8|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|161|
+1 388 3 1 c
+1 388 6 318 Terminate_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|172|validCombination0x0x0_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|8|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|161|
+1 390 3 1 c
+1 390 6 216 validCombination0x0x0_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|8|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|161|
+1 390 4 36 RETURN from Terminate_AssetTransfer 
+1 391 3 1 c
+1 391 6 216 validCombination0x0x0_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|9|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|161|
+1 392 3 1 c
+1 392 6 216 validCombination0x0x0_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|9|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|161|
+1 392 4 745 ASSERTION FAILS assert !(true && !(State_AssetTransfer[this] == 0) && !(State_AssetTransfer[this] == 0) && !(State_AssetTransfer[this] == 1) && !(State_AssetTransfer[this] == 1 || State_AssetTransfer[this] == 2 || State_AssetTransfer[this] == 3 || (State_AssetTransfer[this] == 4 && State_AssetTransfer[this] == 5) || State_AssetTransfer[this] == 6) && true && !(State_AssetTransfer[this] == 1) && !(State_AssetTransfer[this] == 1 || State_AssetTransfer[this] == 2 || State_AssetTransfer[this] == 3 || State_AssetTransfer[this] == 4 || State_AssetTransfer[this] == 5 || State_AssetTransfer[this] == 7) && (State_AssetTransfer[this] != 2 || State_AssetTransfer[this] != 3) && (State_AssetTransfer[this] != 2 || State_AssetTransfer[this] != 4));
  
-1 102 3 1 c
-1 102 6 104 CorralEntry_RoomThermostat|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|27|
-1 102 4 40 RETURN from CorralChoice_RoomThermostat 
-1 103 3 1 c
-1 103 6 104 CorralEntry_RoomThermostat|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|27|
-1 103 4 4 Done
+1 394 3 1 c
+1 394 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|161|
+1 394 4 39 RETURN from CorralChoice_AssetTransfer 
+1 395 3 1 c
+1 395 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol|161|
+1 395 4 4 Done

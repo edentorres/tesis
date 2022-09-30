@@ -54,24 +54,57 @@ axiom(forall  __i__0_0:int, __i__0_1:int, __i__1_0:int, __i__1_1:int :: {abiEnco
 axiom(forall  __i__0_0:Ref, __i__0_1:Ref :: {abiEncodePacked1R(__i__0_0), abiEncodePacked1R(__i__0_1)} (((__i__0_0) == (__i__0_1)) || ((abiEncodePacked1R(__i__0_0)) != (abiEncodePacked1R(__i__0_1)))));
 
 axiom(forall  __i__0_0:Ref, __i__0_1:Ref, __i__1_0:int, __i__1_1:int :: {abiEncodePacked2R(__i__0_0, __i__1_0), abiEncodePacked2R(__i__0_1, __i__1_1)} ((((__i__0_0) == (__i__0_1)) && ((__i__1_0) == (__i__1_1))) || ((abiEncodePacked2R(__i__0_0, __i__1_0)) != (abiEncodePacked2R(__i__0_1, __i__1_1)))));
-procedure {:public} {:inline 1} prueba_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s143: int, inspector_s143: Ref, appraiser_s143: Ref, description_s143: int, price_s143: int);
-implementation prueba_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s143: int, inspector_s143: Ref, appraiser_s143: Ref, description_s143: int, price_s143: int)
+procedure {:public} {:inline 1} validCombination0x0x0_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s267: int, inspector_s267: Ref, appraiser_s267: Ref, description_s267: int, price_s267: int);
+procedure {:public} {:inline 1} validCombination0x0x4_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s533: int, inspector_s533: Ref, appraiser_s533: Ref, description_s533: int, price_s533: int);
+procedure {:public} {:inline 1} validCombination0x0x5_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s837: int, inspector_s837: Ref, appraiser_s837: Ref, description_s837: int, price_s837: int);
+procedure {:public} {:inline 1} validCombination0x0x7_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s1103: int, inspector_s1103: Ref, appraiser_s1103: Ref, description_s1103: int, price_s1103: int);
+procedure {:public} {:inline 1} validCombination0x0x8_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s1369: int, inspector_s1369: Ref, appraiser_s1369: Ref, description_s1369: int, price_s1369: int);
+procedure {:public} {:inline 1} validCombination0x0x9_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s1635: int, inspector_s1635: Ref, appraiser_s1635: Ref, description_s1635: int, price_s1635: int);
+procedure {:public} {:inline 1} validCombination0x1x0_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s1899: int, inspector_s1899: Ref, appraiser_s1899: Ref, description_s1899: int, price_s1899: int);
+procedure {:public} {:inline 1} validCombination0x1x4_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s2163: int, inspector_s2163: Ref, appraiser_s2163: Ref, description_s2163: int, price_s2163: int);
+procedure {:public} {:inline 1} validCombination0x1x5_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s2465: int, inspector_s2465: Ref, appraiser_s2465: Ref, description_s2465: int, price_s2465: int);
+procedure {:public} {:inline 1} validCombination0x1x7_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s2729: int, inspector_s2729: Ref, appraiser_s2729: Ref, description_s2729: int, price_s2729: int);
+procedure {:public} {:inline 1} validCombination0x1x8_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s2993: int, inspector_s2993: Ref, appraiser_s2993: Ref, description_s2993: int, price_s2993: int);
+procedure {:public} {:inline 1} validCombination0x1x9_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s3257: int, inspector_s3257: Ref, appraiser_s3257: Ref, description_s3257: int, price_s3257: int);
+procedure {:public} {:inline 1} validCombination0x2x0_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s3519: int, inspector_s3519: Ref, appraiser_s3519: Ref, description_s3519: int, price_s3519: int);
+procedure {:public} {:inline 1} validCombination0x2x4_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s3781: int, inspector_s3781: Ref, appraiser_s3781: Ref, description_s3781: int, price_s3781: int);
+procedure {:public} {:inline 1} validCombination0x2x5_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s4081: int, inspector_s4081: Ref, appraiser_s4081: Ref, description_s4081: int, price_s4081: int);
+procedure {:public} {:inline 1} validCombination0x2x7_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s4343: int, inspector_s4343: Ref, appraiser_s4343: Ref, description_s4343: int, price_s4343: int);
+procedure {:public} {:inline 1} validCombination0x2x8_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s4605: int, inspector_s4605: Ref, appraiser_s4605: Ref, description_s4605: int, price_s4605: int);
+procedure {:public} {:inline 1} validCombination0x2x9_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s4867: int, inspector_s4867: Ref, appraiser_s4867: Ref, description_s4867: int, price_s4867: int);
+procedure {:public} {:inline 1} validCombination0x3x0_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s5129: int, inspector_s5129: Ref, appraiser_s5129: Ref, description_s5129: int, price_s5129: int);
+procedure {:public} {:inline 1} validCombination0x3x4_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s5391: int, inspector_s5391: Ref, appraiser_s5391: Ref, description_s5391: int, price_s5391: int);
+procedure {:public} {:inline 1} validCombination0x3x5_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s5691: int, inspector_s5691: Ref, appraiser_s5691: Ref, description_s5691: int, price_s5691: int);
+procedure {:public} {:inline 1} validCombination0x3x7_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s5953: int, inspector_s5953: Ref, appraiser_s5953: Ref, description_s5953: int, price_s5953: int);
+procedure {:public} {:inline 1} validCombination0x3x8_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s6215: int, inspector_s6215: Ref, appraiser_s6215: Ref, description_s6215: int, price_s6215: int);
+procedure {:public} {:inline 1} validCombination0x3x9_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s6477: int, inspector_s6477: Ref, appraiser_s6477: Ref, description_s6477: int, price_s6477: int);
+procedure {:public} {:inline 1} validCombination0x4x0_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s6735: int, inspector_s6735: Ref, appraiser_s6735: Ref, description_s6735: int, price_s6735: int);
+procedure {:public} {:inline 1} validCombination0x4x4_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s6993: int, inspector_s6993: Ref, appraiser_s6993: Ref, description_s6993: int, price_s6993: int);
+procedure {:public} {:inline 1} validCombination0x4x5_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s7289: int, inspector_s7289: Ref, appraiser_s7289: Ref, description_s7289: int, price_s7289: int);
+procedure {:public} {:inline 1} validCombination0x4x7_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s7547: int, inspector_s7547: Ref, appraiser_s7547: Ref, description_s7547: int, price_s7547: int);
+procedure {:public} {:inline 1} validCombination0x4x8_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s7805: int, inspector_s7805: Ref, appraiser_s7805: Ref, description_s7805: int, price_s7805: int);
+procedure {:public} {:inline 1} validCombination0x4x9_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s8063: int, inspector_s8063: Ref, appraiser_s8063: Ref, description_s8063: int, price_s8063: int);
+implementation validCombination0x4x9_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s8063: int, inspector_s8063: Ref, appraiser_s8063: Ref, description_s8063: int, price_s8063: int)
 {
 call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
 call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-call  {:cexpr "offerPrice"} boogie_si_record_sol2Bpl_int(offerPrice_s143);
-call  {:cexpr "inspector"} boogie_si_record_sol2Bpl_ref(inspector_s143);
-call  {:cexpr "appraiser"} boogie_si_record_sol2Bpl_ref(appraiser_s143);
-call  {:cexpr "description"} boogie_si_record_sol2Bpl_int(description_s143);
-call  {:cexpr "price"} boogie_si_record_sol2Bpl_int(price_s143);
+call  {:cexpr "offerPrice"} boogie_si_record_sol2Bpl_int(offerPrice_s8063);
+call  {:cexpr "inspector"} boogie_si_record_sol2Bpl_ref(inspector_s8063);
+call  {:cexpr "appraiser"} boogie_si_record_sol2Bpl_ref(appraiser_s8063);
+call  {:cexpr "description"} boogie_si_record_sol2Bpl_int(description_s8063);
+call  {:cexpr "price"} boogie_si_record_sol2Bpl_int(price_s8063);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 4} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 6} (true);
-assume ((((((((((true) && (!(((State_AssetTransfer[this]) == (0))))) && ((State_AssetTransfer[this]) == (0))) && (!(((State_AssetTransfer[this]) == (1))))) && (!(((((((State_AssetTransfer[this]) == (1)) || ((State_AssetTransfer[this]) == (2))) || ((State_AssetTransfer[this]) == (3))) || (((State_AssetTransfer[this]) == (4)) && ((State_AssetTransfer[this]) == (5)))) || ((State_AssetTransfer[this]) == (6)))))) && (true)) && (!(((State_AssetTransfer[this]) == (1))))) && (!((((((((State_AssetTransfer[this]) == (1)) || ((State_AssetTransfer[this]) == (2))) || ((State_AssetTransfer[this]) == (3))) || ((State_AssetTransfer[this]) == (4))) || ((State_AssetTransfer[this]) == (5))) || ((State_AssetTransfer[this]) == (7)))))) && (!((((State_AssetTransfer[this]) != (2)) || ((State_AssetTransfer[this]) != (3)))))) && (!((((State_AssetTransfer[this]) != (2)) || ((State_AssetTransfer[this]) != (4))))));
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 7} (true);
-assert (false);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 209} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 209} (true);
+assume ((((((((((true) && (!(((State_AssetTransfer[this]) == (0))))) && (!(((State_AssetTransfer[this]) == (0))))) && (!(((State_AssetTransfer[this]) == (1))))) && (((((((State_AssetTransfer[this]) == (1)) || ((State_AssetTransfer[this]) == (2))) || ((State_AssetTransfer[this]) == (3))) || (((State_AssetTransfer[this]) == (4)) && ((State_AssetTransfer[this]) == (5)))) || ((State_AssetTransfer[this]) == (6))))) && (true)) && (!(((State_AssetTransfer[this]) == (1))))) && ((((((((State_AssetTransfer[this]) == (1)) || ((State_AssetTransfer[this]) == (2))) || ((State_AssetTransfer[this]) == (3))) || ((State_AssetTransfer[this]) == (4))) || ((State_AssetTransfer[this]) == (5))) || ((State_AssetTransfer[this]) == (7))))) && ((((State_AssetTransfer[this]) != (2)) || ((State_AssetTransfer[this]) != (3))))) && ((((State_AssetTransfer[this]) != (2)) || ((State_AssetTransfer[this]) != (4)))));
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 210} (true);
+assume ((InstanceInspector_AssetTransfer[this]) == (msgsender_MSG));
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 212} (true);
+call MarkInspected_AssetTransfer(this, msgsender_MSG, msgvalue_MSG);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 212} (true);
+assert (!(((((((((((true) && (!(((State_AssetTransfer[this]) == (0))))) && (!(((State_AssetTransfer[this]) == (0))))) && ((State_AssetTransfer[this]) == (1))) && (((((((State_AssetTransfer[this]) == (1)) || ((State_AssetTransfer[this]) == (2))) || ((State_AssetTransfer[this]) == (3))) || (((State_AssetTransfer[this]) == (4)) && ((State_AssetTransfer[this]) == (5)))) || ((State_AssetTransfer[this]) == (6))))) && (true)) && ((State_AssetTransfer[this]) == (1))) && ((((((((State_AssetTransfer[this]) == (1)) || ((State_AssetTransfer[this]) == (2))) || ((State_AssetTransfer[this]) == (3))) || ((State_AssetTransfer[this]) == (4))) || ((State_AssetTransfer[this]) == (5))) || ((State_AssetTransfer[this]) == (7))))) && ((((State_AssetTransfer[this]) != (2)) || ((State_AssetTransfer[this]) != (3))))) && ((((State_AssetTransfer[this]) != (2)) || ((State_AssetTransfer[this]) != (4)))))));
 }
 
 var InstanceOwner_AssetTransfer: [Ref]Ref;
@@ -82,14 +115,14 @@ var InstanceBuyer_AssetTransfer: [Ref]Ref;
 var OfferPrice_AssetTransfer: [Ref]int;
 var InstanceInspector_AssetTransfer: [Ref]Ref;
 var InstanceAppraiser_AssetTransfer: [Ref]Ref;
-procedure {:inline 1} AssetTransfer_AssetTransfer_NoBaseCtor(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s196: int, price_s196: int);
-implementation AssetTransfer_AssetTransfer_NoBaseCtor(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s196: int, price_s196: int)
+procedure {:inline 1} AssetTransfer_AssetTransfer_NoBaseCtor(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s8116: int, price_s8116: int);
+implementation AssetTransfer_AssetTransfer_NoBaseCtor(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s8116: int, price_s8116: int)
 {
 // start of initialization
 assume ((msgsender_MSG) != (null));
 Balance[this] := 0;
 InstanceOwner_AssetTransfer[this] := null;
-Description_AssetTransfer[this] := 1070440857;
+Description_AssetTransfer[this] := 545043050;
 AskingPrice_AssetTransfer[this] := 0;
 InstanceBuyer_AssetTransfer[this] := null;
 OfferPrice_AssetTransfer[this] := 0;
@@ -100,36 +133,36 @@ call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
 call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-call  {:cexpr "description"} boogie_si_record_sol2Bpl_int(description_s196);
-call  {:cexpr "price"} boogie_si_record_sol2Bpl_int(price_s196);
+call  {:cexpr "description"} boogie_si_record_sol2Bpl_int(description_s8116);
+call  {:cexpr "price"} boogie_si_record_sol2Bpl_int(price_s8116);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 23} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 24} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 228} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 229} (true);
 InstanceOwner_AssetTransfer[this] := msgsender_MSG;
 call  {:cexpr "InstanceOwner"} boogie_si_record_sol2Bpl_ref(InstanceOwner_AssetTransfer[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 25} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 230} (true);
 assume ((AskingPrice_AssetTransfer[this]) >= (0));
-assume ((price_s196) >= (0));
-AskingPrice_AssetTransfer[this] := price_s196;
+assume ((price_s8116) >= (0));
+AskingPrice_AssetTransfer[this] := price_s8116;
 call  {:cexpr "AskingPrice"} boogie_si_record_sol2Bpl_int(AskingPrice_AssetTransfer[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 26} (true);
-Description_AssetTransfer[this] := description_s196;
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 231} (true);
+Description_AssetTransfer[this] := description_s8116;
 call  {:cexpr "Description"} boogie_si_record_sol2Bpl_int(Description_AssetTransfer[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 27} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 232} (true);
 State_AssetTransfer[this] := 0;
 }
 
-procedure {:constructor} {:public} {:inline 1} AssetTransfer_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s196: int, price_s196: int);
-implementation AssetTransfer_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s196: int, price_s196: int)
+procedure {:constructor} {:public} {:inline 1} AssetTransfer_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s8116: int, price_s8116: int);
+implementation AssetTransfer_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s8116: int, price_s8116: int)
 {
 call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
 call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-call  {:cexpr "description"} boogie_si_record_sol2Bpl_int(description_s196);
-call  {:cexpr "price"} boogie_si_record_sol2Bpl_int(price_s196);
+call  {:cexpr "description"} boogie_si_record_sol2Bpl_int(description_s8116);
+call  {:cexpr "price"} boogie_si_record_sol2Bpl_int(price_s8116);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-call AssetTransfer_AssetTransfer_NoBaseCtor(this, msgsender_MSG, msgvalue_MSG, description_s196, price_s196);
+call AssetTransfer_AssetTransfer_NoBaseCtor(this, msgsender_MSG, msgvalue_MSG, description_s8116, price_s8116);
 }
 
 procedure {:public} {:inline 1} Terminate_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int);
@@ -140,52 +173,52 @@ call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 32} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 33} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 237} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 237} (true);
 if ((InstanceOwner_AssetTransfer[this]) != (msgsender_MSG)) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 34} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 35} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 240} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 242} (true);
 assume (false);
 }
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 38} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 243} (true);
 State_AssetTransfer[this] := 9;
 }
 
-procedure {:public} {:inline 1} Modify_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s248: int, price_s248: int);
-implementation Modify_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s248: int, price_s248: int)
+procedure {:public} {:inline 1} Modify_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s8168: int, price_s8168: int);
+implementation Modify_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s8168: int, price_s8168: int)
 {
 call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
 call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-call  {:cexpr "description"} boogie_si_record_sol2Bpl_int(description_s248);
-call  {:cexpr "price"} boogie_si_record_sol2Bpl_int(price_s248);
+call  {:cexpr "description"} boogie_si_record_sol2Bpl_int(description_s8168);
+call  {:cexpr "price"} boogie_si_record_sol2Bpl_int(price_s8168);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 43} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 44} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 248} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 248} (true);
 if ((State_AssetTransfer[this]) != (0)) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 45} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 46} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 251} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 252} (true);
 assume (false);
 }
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 48} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 252} (true);
 if ((InstanceOwner_AssetTransfer[this]) != (msgsender_MSG)) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 49} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 50} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 255} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 257} (true);
 assume (false);
 }
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 53} (true);
-Description_AssetTransfer[this] := description_s248;
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 258} (true);
+Description_AssetTransfer[this] := description_s8168;
 call  {:cexpr "Description"} boogie_si_record_sol2Bpl_int(Description_AssetTransfer[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 54} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 259} (true);
 assume ((AskingPrice_AssetTransfer[this]) >= (0));
-assume ((price_s248) >= (0));
-AskingPrice_AssetTransfer[this] := price_s248;
+assume ((price_s8168) >= (0));
+AskingPrice_AssetTransfer[this] := price_s8168;
 call  {:cexpr "AskingPrice"} boogie_si_record_sol2Bpl_int(AskingPrice_AssetTransfer[this]);
 }
 
-procedure {:public} {:inline 1} MakeOffer_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, inspector_s318: Ref, appraiser_s318: Ref, offerPrice_s318: int);
-implementation MakeOffer_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, inspector_s318: Ref, appraiser_s318: Ref, offerPrice_s318: int)
+procedure {:public} {:inline 1} MakeOffer_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, inspector_s8238: Ref, appraiser_s8238: Ref, offerPrice_s8238: int);
+implementation MakeOffer_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, inspector_s8238: Ref, appraiser_s8238: Ref, offerPrice_s8238: int)
 {
 var __var_1: Ref;
 var __var_2: Ref;
@@ -193,47 +226,47 @@ call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
 call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-call  {:cexpr "inspector"} boogie_si_record_sol2Bpl_ref(inspector_s318);
-call  {:cexpr "appraiser"} boogie_si_record_sol2Bpl_ref(appraiser_s318);
-call  {:cexpr "offerPrice"} boogie_si_record_sol2Bpl_int(offerPrice_s318);
+call  {:cexpr "inspector"} boogie_si_record_sol2Bpl_ref(inspector_s8238);
+call  {:cexpr "appraiser"} boogie_si_record_sol2Bpl_ref(appraiser_s8238);
+call  {:cexpr "offerPrice"} boogie_si_record_sol2Bpl_int(offerPrice_s8238);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 59} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 60} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 264} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 264} (true);
 __var_1 := null;
 __var_2 := null;
-assume ((offerPrice_s318) >= (0));
-if ((((inspector_s318) == (null)) || ((appraiser_s318) == (null))) || ((offerPrice_s318) == (0))) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 61} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 62} (true);
+assume ((offerPrice_s8238) >= (0));
+if ((((inspector_s8238) == (null)) || ((appraiser_s8238) == (null))) || ((offerPrice_s8238) == (0))) {
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 267} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 268} (true);
 assume (false);
 }
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 64} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 268} (true);
 if ((State_AssetTransfer[this]) != (0)) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 65} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 66} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 271} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 272} (true);
 assume (false);
 }
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 69} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 273} (true);
 if ((InstanceOwner_AssetTransfer[this]) == (msgsender_MSG)) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 70} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 71} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 276} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 278} (true);
 assume (false);
 }
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 74} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 279} (true);
 InstanceBuyer_AssetTransfer[this] := msgsender_MSG;
 call  {:cexpr "InstanceBuyer"} boogie_si_record_sol2Bpl_ref(InstanceBuyer_AssetTransfer[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 75} (true);
-InstanceInspector_AssetTransfer[this] := inspector_s318;
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 279} (true);
+InstanceInspector_AssetTransfer[this] := inspector_s8238;
 call  {:cexpr "InstanceInspector"} boogie_si_record_sol2Bpl_ref(InstanceInspector_AssetTransfer[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 76} (true);
-InstanceAppraiser_AssetTransfer[this] := appraiser_s318;
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 280} (true);
+InstanceAppraiser_AssetTransfer[this] := appraiser_s8238;
 call  {:cexpr "InstanceAppraiser"} boogie_si_record_sol2Bpl_ref(InstanceAppraiser_AssetTransfer[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 77} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 282} (true);
 assume ((OfferPrice_AssetTransfer[this]) >= (0));
-assume ((offerPrice_s318) >= (0));
-OfferPrice_AssetTransfer[this] := offerPrice_s318;
+assume ((offerPrice_s8238) >= (0));
+OfferPrice_AssetTransfer[this] := offerPrice_s8238;
 call  {:cexpr "OfferPrice"} boogie_si_record_sol2Bpl_int(OfferPrice_AssetTransfer[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 78} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 282} (true);
 State_AssetTransfer[this] := 1;
 }
 
@@ -245,20 +278,20 @@ call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 83} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 84} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 288} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 288} (true);
 if ((State_AssetTransfer[this]) != (1)) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 85} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 86} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 291} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 292} (true);
 assume (false);
 }
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 88} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 292} (true);
 if ((InstanceOwner_AssetTransfer[this]) != (msgsender_MSG)) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 89} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 90} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 295} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 297} (true);
 assume (false);
 }
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 93} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 297} (true);
 State_AssetTransfer[this] := 2;
 }
 
@@ -271,24 +304,24 @@ call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 98} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 99} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 303} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 303} (true);
 if (((((((State_AssetTransfer[this]) != (1)) && ((State_AssetTransfer[this]) != (2))) && ((State_AssetTransfer[this]) != (3))) && ((State_AssetTransfer[this]) != (4))) && ((State_AssetTransfer[this]) != (5))) && ((State_AssetTransfer[this]) != (6))) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 100} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 101} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 306} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 307} (true);
 assume (false);
 }
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 103} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 307} (true);
 if ((InstanceOwner_AssetTransfer[this]) != (msgsender_MSG)) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 104} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 105} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 310} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 312} (true);
 assume (false);
 }
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 108} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 313} (true);
 __var_3 := null;
 InstanceBuyer_AssetTransfer[this] := __var_3;
 call  {:cexpr "InstanceBuyer"} boogie_si_record_sol2Bpl_ref(InstanceBuyer_AssetTransfer[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 109} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 314} (true);
 State_AssetTransfer[this] := 0;
 }
 
@@ -300,86 +333,86 @@ call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 114} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 115} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 319} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 319} (true);
 if (((msgsender_MSG) != (InstanceBuyer_AssetTransfer[this])) && ((msgsender_MSG) != (InstanceOwner_AssetTransfer[this]))) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 116} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 117} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 322} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 324} (true);
 assume (false);
 }
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 120} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 324} (true);
 if ((((msgsender_MSG) == (InstanceOwner_AssetTransfer[this])) && ((State_AssetTransfer[this]) != (5))) && ((State_AssetTransfer[this]) != (6))) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 123} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 124} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 329} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 331} (true);
 assume (false);
 }
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 127} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 331} (true);
 if ((((msgsender_MSG) == (InstanceBuyer_AssetTransfer[this])) && ((State_AssetTransfer[this]) != (5))) && ((State_AssetTransfer[this]) != (7))) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 130} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 131} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 336} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 338} (true);
 assume (false);
 }
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 134} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 338} (true);
 if ((msgsender_MSG) == (InstanceBuyer_AssetTransfer[this])) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 135} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 136} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 340} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 340} (true);
 if ((State_AssetTransfer[this]) == (5)) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 137} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 138} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 342} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 342} (true);
 State_AssetTransfer[this] := 6;
 } else {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 140} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 344} (true);
 if ((State_AssetTransfer[this]) == (7)) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 141} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 142} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 346} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 347} (true);
 State_AssetTransfer[this] := 8;
 }
 }
 } else {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 146} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 147} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 351} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 351} (true);
 if ((State_AssetTransfer[this]) == (5)) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 148} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 149} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 353} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 353} (true);
 State_AssetTransfer[this] := 7;
 } else {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 151} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 355} (true);
 if ((State_AssetTransfer[this]) == (6)) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 152} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 153} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 357} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 358} (true);
 State_AssetTransfer[this] := 8;
 }
 }
 }
 }
 
-procedure {:public} {:inline 1} ModifyOffer_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s542: int);
-implementation ModifyOffer_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s542: int)
+procedure {:public} {:inline 1} ModifyOffer_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s8462: int);
+implementation ModifyOffer_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s8462: int)
 {
 call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
 call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-call  {:cexpr "offerPrice"} boogie_si_record_sol2Bpl_int(offerPrice_s542);
+call  {:cexpr "offerPrice"} boogie_si_record_sol2Bpl_int(offerPrice_s8462);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 160} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 161} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 365} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 365} (true);
 if ((State_AssetTransfer[this]) != (1)) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 162} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 163} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 368} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 369} (true);
 assume (false);
 }
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 165} (true);
-assume ((offerPrice_s542) >= (0));
-if (((InstanceBuyer_AssetTransfer[this]) != (msgsender_MSG)) || ((offerPrice_s542) == (0))) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 166} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 167} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 369} (true);
+assume ((offerPrice_s8462) >= (0));
+if (((InstanceBuyer_AssetTransfer[this]) != (msgsender_MSG)) || ((offerPrice_s8462) == (0))) {
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 372} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 374} (true);
 assume (false);
 }
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 170} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 375} (true);
 assume ((OfferPrice_AssetTransfer[this]) >= (0));
-assume ((offerPrice_s542) >= (0));
-OfferPrice_AssetTransfer[this] := offerPrice_s542;
+assume ((offerPrice_s8462) >= (0));
+OfferPrice_AssetTransfer[this] := offerPrice_s8462;
 call  {:cexpr "OfferPrice"} boogie_si_record_sol2Bpl_int(OfferPrice_AssetTransfer[this]);
 }
 
@@ -392,28 +425,28 @@ call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 175} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 176} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 380} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 380} (true);
 if (((((((State_AssetTransfer[this]) != (1)) && ((State_AssetTransfer[this]) != (2))) && ((State_AssetTransfer[this]) != (3))) && ((State_AssetTransfer[this]) != (4))) && ((State_AssetTransfer[this]) != (5))) && ((State_AssetTransfer[this]) != (7))) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 177} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 178} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 383} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 384} (true);
 assume (false);
 }
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 180} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 384} (true);
 if ((InstanceBuyer_AssetTransfer[this]) != (msgsender_MSG)) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 181} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 182} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 387} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 389} (true);
 assume (false);
 }
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 185} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 390} (true);
 __var_4 := null;
 InstanceBuyer_AssetTransfer[this] := __var_4;
 call  {:cexpr "InstanceBuyer"} boogie_si_record_sol2Bpl_ref(InstanceBuyer_AssetTransfer[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 186} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 391} (true);
 assume ((OfferPrice_AssetTransfer[this]) >= (0));
 OfferPrice_AssetTransfer[this] := 0;
 call  {:cexpr "OfferPrice"} boogie_si_record_sol2Bpl_int(OfferPrice_AssetTransfer[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 187} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 392} (true);
 State_AssetTransfer[this] := 0;
 }
 
@@ -425,27 +458,27 @@ call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 192} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 193} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 397} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 397} (true);
 if ((InstanceAppraiser_AssetTransfer[this]) != (msgsender_MSG)) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 194} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 195} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 400} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 402} (true);
 assume (false);
 }
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 198} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 402} (true);
 if ((State_AssetTransfer[this]) == (2)) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 199} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 200} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 404} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 405} (true);
 State_AssetTransfer[this] := 4;
 } else {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 202} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 406} (true);
 if ((State_AssetTransfer[this]) == (3)) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 203} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 204} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 408} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 408} (true);
 State_AssetTransfer[this] := 5;
 } else {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 207} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 208} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 413} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 414} (true);
 assume (false);
 }
 }
@@ -459,27 +492,27 @@ call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 214} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 215} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 419} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 419} (true);
 if ((InstanceInspector_AssetTransfer[this]) != (msgsender_MSG)) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 216} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 217} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 422} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 424} (true);
 assume (false);
 }
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 220} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 424} (true);
 if ((State_AssetTransfer[this]) == (2)) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 221} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 222} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 426} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 427} (true);
 State_AssetTransfer[this] := 3;
 } else {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 224} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 428} (true);
 if ((State_AssetTransfer[this]) == (4)) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 225} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 226} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 430} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 430} (true);
 State_AssetTransfer[this] := 5;
 } else {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 229} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 230} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 435} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol"} {:sourceLine 436} (true);
 assume (false);
 }
 }
@@ -543,23 +576,168 @@ var this: Ref;
 var msgsender_MSG: Ref;
 var msgvalue_MSG: int;
 var choice: int;
-var offerPrice_s143: int;
-var inspector_s143: Ref;
-var appraiser_s143: Ref;
-var description_s143: int;
-var price_s143: int;
-var description_s196: int;
-var price_s196: int;
-var description_s248: int;
-var price_s248: int;
-var inspector_s318: Ref;
-var appraiser_s318: Ref;
-var offerPrice_s318: int;
-var offerPrice_s542: int;
+var offerPrice_s267: int;
+var inspector_s267: Ref;
+var appraiser_s267: Ref;
+var description_s267: int;
+var price_s267: int;
+var offerPrice_s533: int;
+var inspector_s533: Ref;
+var appraiser_s533: Ref;
+var description_s533: int;
+var price_s533: int;
+var offerPrice_s837: int;
+var inspector_s837: Ref;
+var appraiser_s837: Ref;
+var description_s837: int;
+var price_s837: int;
+var offerPrice_s1103: int;
+var inspector_s1103: Ref;
+var appraiser_s1103: Ref;
+var description_s1103: int;
+var price_s1103: int;
+var offerPrice_s1369: int;
+var inspector_s1369: Ref;
+var appraiser_s1369: Ref;
+var description_s1369: int;
+var price_s1369: int;
+var offerPrice_s1635: int;
+var inspector_s1635: Ref;
+var appraiser_s1635: Ref;
+var description_s1635: int;
+var price_s1635: int;
+var offerPrice_s1899: int;
+var inspector_s1899: Ref;
+var appraiser_s1899: Ref;
+var description_s1899: int;
+var price_s1899: int;
+var offerPrice_s2163: int;
+var inspector_s2163: Ref;
+var appraiser_s2163: Ref;
+var description_s2163: int;
+var price_s2163: int;
+var offerPrice_s2465: int;
+var inspector_s2465: Ref;
+var appraiser_s2465: Ref;
+var description_s2465: int;
+var price_s2465: int;
+var offerPrice_s2729: int;
+var inspector_s2729: Ref;
+var appraiser_s2729: Ref;
+var description_s2729: int;
+var price_s2729: int;
+var offerPrice_s2993: int;
+var inspector_s2993: Ref;
+var appraiser_s2993: Ref;
+var description_s2993: int;
+var price_s2993: int;
+var offerPrice_s3257: int;
+var inspector_s3257: Ref;
+var appraiser_s3257: Ref;
+var description_s3257: int;
+var price_s3257: int;
+var offerPrice_s3519: int;
+var inspector_s3519: Ref;
+var appraiser_s3519: Ref;
+var description_s3519: int;
+var price_s3519: int;
+var offerPrice_s3781: int;
+var inspector_s3781: Ref;
+var appraiser_s3781: Ref;
+var description_s3781: int;
+var price_s3781: int;
+var offerPrice_s4081: int;
+var inspector_s4081: Ref;
+var appraiser_s4081: Ref;
+var description_s4081: int;
+var price_s4081: int;
+var offerPrice_s4343: int;
+var inspector_s4343: Ref;
+var appraiser_s4343: Ref;
+var description_s4343: int;
+var price_s4343: int;
+var offerPrice_s4605: int;
+var inspector_s4605: Ref;
+var appraiser_s4605: Ref;
+var description_s4605: int;
+var price_s4605: int;
+var offerPrice_s4867: int;
+var inspector_s4867: Ref;
+var appraiser_s4867: Ref;
+var description_s4867: int;
+var price_s4867: int;
+var offerPrice_s5129: int;
+var inspector_s5129: Ref;
+var appraiser_s5129: Ref;
+var description_s5129: int;
+var price_s5129: int;
+var offerPrice_s5391: int;
+var inspector_s5391: Ref;
+var appraiser_s5391: Ref;
+var description_s5391: int;
+var price_s5391: int;
+var offerPrice_s5691: int;
+var inspector_s5691: Ref;
+var appraiser_s5691: Ref;
+var description_s5691: int;
+var price_s5691: int;
+var offerPrice_s5953: int;
+var inspector_s5953: Ref;
+var appraiser_s5953: Ref;
+var description_s5953: int;
+var price_s5953: int;
+var offerPrice_s6215: int;
+var inspector_s6215: Ref;
+var appraiser_s6215: Ref;
+var description_s6215: int;
+var price_s6215: int;
+var offerPrice_s6477: int;
+var inspector_s6477: Ref;
+var appraiser_s6477: Ref;
+var description_s6477: int;
+var price_s6477: int;
+var offerPrice_s6735: int;
+var inspector_s6735: Ref;
+var appraiser_s6735: Ref;
+var description_s6735: int;
+var price_s6735: int;
+var offerPrice_s6993: int;
+var inspector_s6993: Ref;
+var appraiser_s6993: Ref;
+var description_s6993: int;
+var price_s6993: int;
+var offerPrice_s7289: int;
+var inspector_s7289: Ref;
+var appraiser_s7289: Ref;
+var description_s7289: int;
+var price_s7289: int;
+var offerPrice_s7547: int;
+var inspector_s7547: Ref;
+var appraiser_s7547: Ref;
+var description_s7547: int;
+var price_s7547: int;
+var offerPrice_s7805: int;
+var inspector_s7805: Ref;
+var appraiser_s7805: Ref;
+var description_s7805: int;
+var price_s7805: int;
+var offerPrice_s8063: int;
+var inspector_s8063: Ref;
+var appraiser_s8063: Ref;
+var description_s8063: int;
+var price_s8063: int;
+var description_s8116: int;
+var price_s8116: int;
+var description_s8168: int;
+var price_s8168: int;
+var inspector_s8238: Ref;
+var appraiser_s8238: Ref;
+var offerPrice_s8238: int;
+var offerPrice_s8462: int;
 var tmpNow: int;
 assume ((now) >= (0));
 assume ((DType[this]) == (AssetTransfer));
-call AssetTransfer_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, description_s196, price_s196);
+call AssetTransfer_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, description_s8116, price_s8116);
 while (true)
   invariant (HoudiniB1_AssetTransfer) ==> ((InstanceOwner_AssetTransfer[this]) == (null));
   invariant (HoudiniB2_AssetTransfer) ==> ((InstanceOwner_AssetTransfer[this]) != (null));
@@ -585,19 +763,164 @@ while (true)
 havoc msgsender_MSG;
 havoc msgvalue_MSG;
 havoc choice;
-havoc offerPrice_s143;
-havoc inspector_s143;
-havoc appraiser_s143;
-havoc description_s143;
-havoc price_s143;
-havoc description_s196;
-havoc price_s196;
-havoc description_s248;
-havoc price_s248;
-havoc inspector_s318;
-havoc appraiser_s318;
-havoc offerPrice_s318;
-havoc offerPrice_s542;
+havoc offerPrice_s267;
+havoc inspector_s267;
+havoc appraiser_s267;
+havoc description_s267;
+havoc price_s267;
+havoc offerPrice_s533;
+havoc inspector_s533;
+havoc appraiser_s533;
+havoc description_s533;
+havoc price_s533;
+havoc offerPrice_s837;
+havoc inspector_s837;
+havoc appraiser_s837;
+havoc description_s837;
+havoc price_s837;
+havoc offerPrice_s1103;
+havoc inspector_s1103;
+havoc appraiser_s1103;
+havoc description_s1103;
+havoc price_s1103;
+havoc offerPrice_s1369;
+havoc inspector_s1369;
+havoc appraiser_s1369;
+havoc description_s1369;
+havoc price_s1369;
+havoc offerPrice_s1635;
+havoc inspector_s1635;
+havoc appraiser_s1635;
+havoc description_s1635;
+havoc price_s1635;
+havoc offerPrice_s1899;
+havoc inspector_s1899;
+havoc appraiser_s1899;
+havoc description_s1899;
+havoc price_s1899;
+havoc offerPrice_s2163;
+havoc inspector_s2163;
+havoc appraiser_s2163;
+havoc description_s2163;
+havoc price_s2163;
+havoc offerPrice_s2465;
+havoc inspector_s2465;
+havoc appraiser_s2465;
+havoc description_s2465;
+havoc price_s2465;
+havoc offerPrice_s2729;
+havoc inspector_s2729;
+havoc appraiser_s2729;
+havoc description_s2729;
+havoc price_s2729;
+havoc offerPrice_s2993;
+havoc inspector_s2993;
+havoc appraiser_s2993;
+havoc description_s2993;
+havoc price_s2993;
+havoc offerPrice_s3257;
+havoc inspector_s3257;
+havoc appraiser_s3257;
+havoc description_s3257;
+havoc price_s3257;
+havoc offerPrice_s3519;
+havoc inspector_s3519;
+havoc appraiser_s3519;
+havoc description_s3519;
+havoc price_s3519;
+havoc offerPrice_s3781;
+havoc inspector_s3781;
+havoc appraiser_s3781;
+havoc description_s3781;
+havoc price_s3781;
+havoc offerPrice_s4081;
+havoc inspector_s4081;
+havoc appraiser_s4081;
+havoc description_s4081;
+havoc price_s4081;
+havoc offerPrice_s4343;
+havoc inspector_s4343;
+havoc appraiser_s4343;
+havoc description_s4343;
+havoc price_s4343;
+havoc offerPrice_s4605;
+havoc inspector_s4605;
+havoc appraiser_s4605;
+havoc description_s4605;
+havoc price_s4605;
+havoc offerPrice_s4867;
+havoc inspector_s4867;
+havoc appraiser_s4867;
+havoc description_s4867;
+havoc price_s4867;
+havoc offerPrice_s5129;
+havoc inspector_s5129;
+havoc appraiser_s5129;
+havoc description_s5129;
+havoc price_s5129;
+havoc offerPrice_s5391;
+havoc inspector_s5391;
+havoc appraiser_s5391;
+havoc description_s5391;
+havoc price_s5391;
+havoc offerPrice_s5691;
+havoc inspector_s5691;
+havoc appraiser_s5691;
+havoc description_s5691;
+havoc price_s5691;
+havoc offerPrice_s5953;
+havoc inspector_s5953;
+havoc appraiser_s5953;
+havoc description_s5953;
+havoc price_s5953;
+havoc offerPrice_s6215;
+havoc inspector_s6215;
+havoc appraiser_s6215;
+havoc description_s6215;
+havoc price_s6215;
+havoc offerPrice_s6477;
+havoc inspector_s6477;
+havoc appraiser_s6477;
+havoc description_s6477;
+havoc price_s6477;
+havoc offerPrice_s6735;
+havoc inspector_s6735;
+havoc appraiser_s6735;
+havoc description_s6735;
+havoc price_s6735;
+havoc offerPrice_s6993;
+havoc inspector_s6993;
+havoc appraiser_s6993;
+havoc description_s6993;
+havoc price_s6993;
+havoc offerPrice_s7289;
+havoc inspector_s7289;
+havoc appraiser_s7289;
+havoc description_s7289;
+havoc price_s7289;
+havoc offerPrice_s7547;
+havoc inspector_s7547;
+havoc appraiser_s7547;
+havoc description_s7547;
+havoc price_s7547;
+havoc offerPrice_s7805;
+havoc inspector_s7805;
+havoc appraiser_s7805;
+havoc description_s7805;
+havoc price_s7805;
+havoc offerPrice_s8063;
+havoc inspector_s8063;
+havoc appraiser_s8063;
+havoc description_s8063;
+havoc price_s8063;
+havoc description_s8116;
+havoc price_s8116;
+havoc description_s8168;
+havoc price_s8168;
+havoc inspector_s8238;
+havoc appraiser_s8238;
+havoc offerPrice_s8238;
+havoc offerPrice_s8462;
 havoc tmpNow;
 tmpNow := now;
 havoc now;
@@ -605,14 +928,72 @@ assume ((now) > (tmpNow));
 assume ((msgsender_MSG) != (null));
 assume ((DType[msgsender_MSG]) != (AssetTransfer));
 Alloc[msgsender_MSG] := true;
-if ((choice) == (11)) {
-call prueba_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s143, inspector_s143, appraiser_s143, description_s143, price_s143);
+if ((choice) == (40)) {
+call validCombination0x0x0_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s267, inspector_s267, appraiser_s267, description_s267, price_s267);
+} else if ((choice) == (39)) {
+call validCombination0x0x4_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s533, inspector_s533, appraiser_s533, description_s533, price_s533);
+} else if ((choice) == (38)) {
+call validCombination0x0x5_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s837, inspector_s837, appraiser_s837, description_s837, price_s837);
+} else if ((choice) == (37)) {
+call validCombination0x0x7_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s1103, inspector_s1103, appraiser_s1103, description_s1103, price_s1103);
+} else if ((choice) == (36)) {
+call validCombination0x0x8_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s1369, inspector_s1369, appraiser_s1369, description_s1369, price_s1369);
+} else if ((choice) == (35)) {
+call validCombination0x0x9_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s1635, inspector_s1635, appraiser_s1635, description_s1635, price_s1635);
+} else if ((choice) == (34)) {
+call validCombination0x1x0_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s1899, inspector_s1899, appraiser_s1899, description_s1899, price_s1899);
+} else if ((choice) == (33)) {
+call validCombination0x1x4_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s2163, inspector_s2163, appraiser_s2163, description_s2163, price_s2163);
+} else if ((choice) == (32)) {
+call validCombination0x1x5_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s2465, inspector_s2465, appraiser_s2465, description_s2465, price_s2465);
+} else if ((choice) == (31)) {
+call validCombination0x1x7_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s2729, inspector_s2729, appraiser_s2729, description_s2729, price_s2729);
+} else if ((choice) == (30)) {
+call validCombination0x1x8_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s2993, inspector_s2993, appraiser_s2993, description_s2993, price_s2993);
+} else if ((choice) == (29)) {
+call validCombination0x1x9_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s3257, inspector_s3257, appraiser_s3257, description_s3257, price_s3257);
+} else if ((choice) == (28)) {
+call validCombination0x2x0_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s3519, inspector_s3519, appraiser_s3519, description_s3519, price_s3519);
+} else if ((choice) == (27)) {
+call validCombination0x2x4_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s3781, inspector_s3781, appraiser_s3781, description_s3781, price_s3781);
+} else if ((choice) == (26)) {
+call validCombination0x2x5_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s4081, inspector_s4081, appraiser_s4081, description_s4081, price_s4081);
+} else if ((choice) == (25)) {
+call validCombination0x2x7_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s4343, inspector_s4343, appraiser_s4343, description_s4343, price_s4343);
+} else if ((choice) == (24)) {
+call validCombination0x2x8_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s4605, inspector_s4605, appraiser_s4605, description_s4605, price_s4605);
+} else if ((choice) == (23)) {
+call validCombination0x2x9_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s4867, inspector_s4867, appraiser_s4867, description_s4867, price_s4867);
+} else if ((choice) == (22)) {
+call validCombination0x3x0_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s5129, inspector_s5129, appraiser_s5129, description_s5129, price_s5129);
+} else if ((choice) == (21)) {
+call validCombination0x3x4_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s5391, inspector_s5391, appraiser_s5391, description_s5391, price_s5391);
+} else if ((choice) == (20)) {
+call validCombination0x3x5_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s5691, inspector_s5691, appraiser_s5691, description_s5691, price_s5691);
+} else if ((choice) == (19)) {
+call validCombination0x3x7_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s5953, inspector_s5953, appraiser_s5953, description_s5953, price_s5953);
+} else if ((choice) == (18)) {
+call validCombination0x3x8_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s6215, inspector_s6215, appraiser_s6215, description_s6215, price_s6215);
+} else if ((choice) == (17)) {
+call validCombination0x3x9_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s6477, inspector_s6477, appraiser_s6477, description_s6477, price_s6477);
+} else if ((choice) == (16)) {
+call validCombination0x4x0_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s6735, inspector_s6735, appraiser_s6735, description_s6735, price_s6735);
+} else if ((choice) == (15)) {
+call validCombination0x4x4_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s6993, inspector_s6993, appraiser_s6993, description_s6993, price_s6993);
+} else if ((choice) == (14)) {
+call validCombination0x4x5_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s7289, inspector_s7289, appraiser_s7289, description_s7289, price_s7289);
+} else if ((choice) == (13)) {
+call validCombination0x4x7_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s7547, inspector_s7547, appraiser_s7547, description_s7547, price_s7547);
+} else if ((choice) == (12)) {
+call validCombination0x4x8_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s7805, inspector_s7805, appraiser_s7805, description_s7805, price_s7805);
+} else if ((choice) == (11)) {
+call validCombination0x4x9_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s8063, inspector_s8063, appraiser_s8063, description_s8063, price_s8063);
 } else if ((choice) == (10)) {
 call Terminate_AssetTransfer(this, msgsender_MSG, msgvalue_MSG);
 } else if ((choice) == (9)) {
-call Modify_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, description_s248, price_s248);
+call Modify_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, description_s8168, price_s8168);
 } else if ((choice) == (8)) {
-call MakeOffer_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, inspector_s318, appraiser_s318, offerPrice_s318);
+call MakeOffer_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, inspector_s8238, appraiser_s8238, offerPrice_s8238);
 } else if ((choice) == (7)) {
 call AcceptOffer_AssetTransfer(this, msgsender_MSG, msgvalue_MSG);
 } else if ((choice) == (6)) {
@@ -620,7 +1001,7 @@ call Reject_AssetTransfer(this, msgsender_MSG, msgvalue_MSG);
 } else if ((choice) == (5)) {
 call Accept_AssetTransfer(this, msgsender_MSG, msgvalue_MSG);
 } else if ((choice) == (4)) {
-call ModifyOffer_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s542);
+call ModifyOffer_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s8462);
 } else if ((choice) == (3)) {
 call RescindOffer_AssetTransfer(this, msgsender_MSG, msgvalue_MSG);
 } else if ((choice) == (2)) {
@@ -637,36 +1018,326 @@ implementation CorralChoice_AssetTransfer(this: Ref)
 var msgsender_MSG: Ref;
 var msgvalue_MSG: int;
 var choice: int;
-var offerPrice_s143: int;
-var inspector_s143: Ref;
-var appraiser_s143: Ref;
-var description_s143: int;
-var price_s143: int;
-var description_s196: int;
-var price_s196: int;
-var description_s248: int;
-var price_s248: int;
-var inspector_s318: Ref;
-var appraiser_s318: Ref;
-var offerPrice_s318: int;
-var offerPrice_s542: int;
+var offerPrice_s267: int;
+var inspector_s267: Ref;
+var appraiser_s267: Ref;
+var description_s267: int;
+var price_s267: int;
+var offerPrice_s533: int;
+var inspector_s533: Ref;
+var appraiser_s533: Ref;
+var description_s533: int;
+var price_s533: int;
+var offerPrice_s837: int;
+var inspector_s837: Ref;
+var appraiser_s837: Ref;
+var description_s837: int;
+var price_s837: int;
+var offerPrice_s1103: int;
+var inspector_s1103: Ref;
+var appraiser_s1103: Ref;
+var description_s1103: int;
+var price_s1103: int;
+var offerPrice_s1369: int;
+var inspector_s1369: Ref;
+var appraiser_s1369: Ref;
+var description_s1369: int;
+var price_s1369: int;
+var offerPrice_s1635: int;
+var inspector_s1635: Ref;
+var appraiser_s1635: Ref;
+var description_s1635: int;
+var price_s1635: int;
+var offerPrice_s1899: int;
+var inspector_s1899: Ref;
+var appraiser_s1899: Ref;
+var description_s1899: int;
+var price_s1899: int;
+var offerPrice_s2163: int;
+var inspector_s2163: Ref;
+var appraiser_s2163: Ref;
+var description_s2163: int;
+var price_s2163: int;
+var offerPrice_s2465: int;
+var inspector_s2465: Ref;
+var appraiser_s2465: Ref;
+var description_s2465: int;
+var price_s2465: int;
+var offerPrice_s2729: int;
+var inspector_s2729: Ref;
+var appraiser_s2729: Ref;
+var description_s2729: int;
+var price_s2729: int;
+var offerPrice_s2993: int;
+var inspector_s2993: Ref;
+var appraiser_s2993: Ref;
+var description_s2993: int;
+var price_s2993: int;
+var offerPrice_s3257: int;
+var inspector_s3257: Ref;
+var appraiser_s3257: Ref;
+var description_s3257: int;
+var price_s3257: int;
+var offerPrice_s3519: int;
+var inspector_s3519: Ref;
+var appraiser_s3519: Ref;
+var description_s3519: int;
+var price_s3519: int;
+var offerPrice_s3781: int;
+var inspector_s3781: Ref;
+var appraiser_s3781: Ref;
+var description_s3781: int;
+var price_s3781: int;
+var offerPrice_s4081: int;
+var inspector_s4081: Ref;
+var appraiser_s4081: Ref;
+var description_s4081: int;
+var price_s4081: int;
+var offerPrice_s4343: int;
+var inspector_s4343: Ref;
+var appraiser_s4343: Ref;
+var description_s4343: int;
+var price_s4343: int;
+var offerPrice_s4605: int;
+var inspector_s4605: Ref;
+var appraiser_s4605: Ref;
+var description_s4605: int;
+var price_s4605: int;
+var offerPrice_s4867: int;
+var inspector_s4867: Ref;
+var appraiser_s4867: Ref;
+var description_s4867: int;
+var price_s4867: int;
+var offerPrice_s5129: int;
+var inspector_s5129: Ref;
+var appraiser_s5129: Ref;
+var description_s5129: int;
+var price_s5129: int;
+var offerPrice_s5391: int;
+var inspector_s5391: Ref;
+var appraiser_s5391: Ref;
+var description_s5391: int;
+var price_s5391: int;
+var offerPrice_s5691: int;
+var inspector_s5691: Ref;
+var appraiser_s5691: Ref;
+var description_s5691: int;
+var price_s5691: int;
+var offerPrice_s5953: int;
+var inspector_s5953: Ref;
+var appraiser_s5953: Ref;
+var description_s5953: int;
+var price_s5953: int;
+var offerPrice_s6215: int;
+var inspector_s6215: Ref;
+var appraiser_s6215: Ref;
+var description_s6215: int;
+var price_s6215: int;
+var offerPrice_s6477: int;
+var inspector_s6477: Ref;
+var appraiser_s6477: Ref;
+var description_s6477: int;
+var price_s6477: int;
+var offerPrice_s6735: int;
+var inspector_s6735: Ref;
+var appraiser_s6735: Ref;
+var description_s6735: int;
+var price_s6735: int;
+var offerPrice_s6993: int;
+var inspector_s6993: Ref;
+var appraiser_s6993: Ref;
+var description_s6993: int;
+var price_s6993: int;
+var offerPrice_s7289: int;
+var inspector_s7289: Ref;
+var appraiser_s7289: Ref;
+var description_s7289: int;
+var price_s7289: int;
+var offerPrice_s7547: int;
+var inspector_s7547: Ref;
+var appraiser_s7547: Ref;
+var description_s7547: int;
+var price_s7547: int;
+var offerPrice_s7805: int;
+var inspector_s7805: Ref;
+var appraiser_s7805: Ref;
+var description_s7805: int;
+var price_s7805: int;
+var offerPrice_s8063: int;
+var inspector_s8063: Ref;
+var appraiser_s8063: Ref;
+var description_s8063: int;
+var price_s8063: int;
+var description_s8116: int;
+var price_s8116: int;
+var description_s8168: int;
+var price_s8168: int;
+var inspector_s8238: Ref;
+var appraiser_s8238: Ref;
+var offerPrice_s8238: int;
+var offerPrice_s8462: int;
 var tmpNow: int;
 havoc msgsender_MSG;
 havoc msgvalue_MSG;
 havoc choice;
-havoc offerPrice_s143;
-havoc inspector_s143;
-havoc appraiser_s143;
-havoc description_s143;
-havoc price_s143;
-havoc description_s196;
-havoc price_s196;
-havoc description_s248;
-havoc price_s248;
-havoc inspector_s318;
-havoc appraiser_s318;
-havoc offerPrice_s318;
-havoc offerPrice_s542;
+havoc offerPrice_s267;
+havoc inspector_s267;
+havoc appraiser_s267;
+havoc description_s267;
+havoc price_s267;
+havoc offerPrice_s533;
+havoc inspector_s533;
+havoc appraiser_s533;
+havoc description_s533;
+havoc price_s533;
+havoc offerPrice_s837;
+havoc inspector_s837;
+havoc appraiser_s837;
+havoc description_s837;
+havoc price_s837;
+havoc offerPrice_s1103;
+havoc inspector_s1103;
+havoc appraiser_s1103;
+havoc description_s1103;
+havoc price_s1103;
+havoc offerPrice_s1369;
+havoc inspector_s1369;
+havoc appraiser_s1369;
+havoc description_s1369;
+havoc price_s1369;
+havoc offerPrice_s1635;
+havoc inspector_s1635;
+havoc appraiser_s1635;
+havoc description_s1635;
+havoc price_s1635;
+havoc offerPrice_s1899;
+havoc inspector_s1899;
+havoc appraiser_s1899;
+havoc description_s1899;
+havoc price_s1899;
+havoc offerPrice_s2163;
+havoc inspector_s2163;
+havoc appraiser_s2163;
+havoc description_s2163;
+havoc price_s2163;
+havoc offerPrice_s2465;
+havoc inspector_s2465;
+havoc appraiser_s2465;
+havoc description_s2465;
+havoc price_s2465;
+havoc offerPrice_s2729;
+havoc inspector_s2729;
+havoc appraiser_s2729;
+havoc description_s2729;
+havoc price_s2729;
+havoc offerPrice_s2993;
+havoc inspector_s2993;
+havoc appraiser_s2993;
+havoc description_s2993;
+havoc price_s2993;
+havoc offerPrice_s3257;
+havoc inspector_s3257;
+havoc appraiser_s3257;
+havoc description_s3257;
+havoc price_s3257;
+havoc offerPrice_s3519;
+havoc inspector_s3519;
+havoc appraiser_s3519;
+havoc description_s3519;
+havoc price_s3519;
+havoc offerPrice_s3781;
+havoc inspector_s3781;
+havoc appraiser_s3781;
+havoc description_s3781;
+havoc price_s3781;
+havoc offerPrice_s4081;
+havoc inspector_s4081;
+havoc appraiser_s4081;
+havoc description_s4081;
+havoc price_s4081;
+havoc offerPrice_s4343;
+havoc inspector_s4343;
+havoc appraiser_s4343;
+havoc description_s4343;
+havoc price_s4343;
+havoc offerPrice_s4605;
+havoc inspector_s4605;
+havoc appraiser_s4605;
+havoc description_s4605;
+havoc price_s4605;
+havoc offerPrice_s4867;
+havoc inspector_s4867;
+havoc appraiser_s4867;
+havoc description_s4867;
+havoc price_s4867;
+havoc offerPrice_s5129;
+havoc inspector_s5129;
+havoc appraiser_s5129;
+havoc description_s5129;
+havoc price_s5129;
+havoc offerPrice_s5391;
+havoc inspector_s5391;
+havoc appraiser_s5391;
+havoc description_s5391;
+havoc price_s5391;
+havoc offerPrice_s5691;
+havoc inspector_s5691;
+havoc appraiser_s5691;
+havoc description_s5691;
+havoc price_s5691;
+havoc offerPrice_s5953;
+havoc inspector_s5953;
+havoc appraiser_s5953;
+havoc description_s5953;
+havoc price_s5953;
+havoc offerPrice_s6215;
+havoc inspector_s6215;
+havoc appraiser_s6215;
+havoc description_s6215;
+havoc price_s6215;
+havoc offerPrice_s6477;
+havoc inspector_s6477;
+havoc appraiser_s6477;
+havoc description_s6477;
+havoc price_s6477;
+havoc offerPrice_s6735;
+havoc inspector_s6735;
+havoc appraiser_s6735;
+havoc description_s6735;
+havoc price_s6735;
+havoc offerPrice_s6993;
+havoc inspector_s6993;
+havoc appraiser_s6993;
+havoc description_s6993;
+havoc price_s6993;
+havoc offerPrice_s7289;
+havoc inspector_s7289;
+havoc appraiser_s7289;
+havoc description_s7289;
+havoc price_s7289;
+havoc offerPrice_s7547;
+havoc inspector_s7547;
+havoc appraiser_s7547;
+havoc description_s7547;
+havoc price_s7547;
+havoc offerPrice_s7805;
+havoc inspector_s7805;
+havoc appraiser_s7805;
+havoc description_s7805;
+havoc price_s7805;
+havoc offerPrice_s8063;
+havoc inspector_s8063;
+havoc appraiser_s8063;
+havoc description_s8063;
+havoc price_s8063;
+havoc description_s8116;
+havoc price_s8116;
+havoc description_s8168;
+havoc price_s8168;
+havoc inspector_s8238;
+havoc appraiser_s8238;
+havoc offerPrice_s8238;
+havoc offerPrice_s8462;
 havoc tmpNow;
 tmpNow := now;
 havoc now;
@@ -674,14 +1345,72 @@ assume ((now) > (tmpNow));
 assume ((msgsender_MSG) != (null));
 assume ((DType[msgsender_MSG]) != (AssetTransfer));
 Alloc[msgsender_MSG] := true;
-if ((choice) == (11)) {
-call prueba_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s143, inspector_s143, appraiser_s143, description_s143, price_s143);
+if ((choice) == (40)) {
+call validCombination0x0x0_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s267, inspector_s267, appraiser_s267, description_s267, price_s267);
+} else if ((choice) == (39)) {
+call validCombination0x0x4_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s533, inspector_s533, appraiser_s533, description_s533, price_s533);
+} else if ((choice) == (38)) {
+call validCombination0x0x5_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s837, inspector_s837, appraiser_s837, description_s837, price_s837);
+} else if ((choice) == (37)) {
+call validCombination0x0x7_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s1103, inspector_s1103, appraiser_s1103, description_s1103, price_s1103);
+} else if ((choice) == (36)) {
+call validCombination0x0x8_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s1369, inspector_s1369, appraiser_s1369, description_s1369, price_s1369);
+} else if ((choice) == (35)) {
+call validCombination0x0x9_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s1635, inspector_s1635, appraiser_s1635, description_s1635, price_s1635);
+} else if ((choice) == (34)) {
+call validCombination0x1x0_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s1899, inspector_s1899, appraiser_s1899, description_s1899, price_s1899);
+} else if ((choice) == (33)) {
+call validCombination0x1x4_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s2163, inspector_s2163, appraiser_s2163, description_s2163, price_s2163);
+} else if ((choice) == (32)) {
+call validCombination0x1x5_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s2465, inspector_s2465, appraiser_s2465, description_s2465, price_s2465);
+} else if ((choice) == (31)) {
+call validCombination0x1x7_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s2729, inspector_s2729, appraiser_s2729, description_s2729, price_s2729);
+} else if ((choice) == (30)) {
+call validCombination0x1x8_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s2993, inspector_s2993, appraiser_s2993, description_s2993, price_s2993);
+} else if ((choice) == (29)) {
+call validCombination0x1x9_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s3257, inspector_s3257, appraiser_s3257, description_s3257, price_s3257);
+} else if ((choice) == (28)) {
+call validCombination0x2x0_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s3519, inspector_s3519, appraiser_s3519, description_s3519, price_s3519);
+} else if ((choice) == (27)) {
+call validCombination0x2x4_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s3781, inspector_s3781, appraiser_s3781, description_s3781, price_s3781);
+} else if ((choice) == (26)) {
+call validCombination0x2x5_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s4081, inspector_s4081, appraiser_s4081, description_s4081, price_s4081);
+} else if ((choice) == (25)) {
+call validCombination0x2x7_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s4343, inspector_s4343, appraiser_s4343, description_s4343, price_s4343);
+} else if ((choice) == (24)) {
+call validCombination0x2x8_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s4605, inspector_s4605, appraiser_s4605, description_s4605, price_s4605);
+} else if ((choice) == (23)) {
+call validCombination0x2x9_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s4867, inspector_s4867, appraiser_s4867, description_s4867, price_s4867);
+} else if ((choice) == (22)) {
+call validCombination0x3x0_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s5129, inspector_s5129, appraiser_s5129, description_s5129, price_s5129);
+} else if ((choice) == (21)) {
+call validCombination0x3x4_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s5391, inspector_s5391, appraiser_s5391, description_s5391, price_s5391);
+} else if ((choice) == (20)) {
+call validCombination0x3x5_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s5691, inspector_s5691, appraiser_s5691, description_s5691, price_s5691);
+} else if ((choice) == (19)) {
+call validCombination0x3x7_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s5953, inspector_s5953, appraiser_s5953, description_s5953, price_s5953);
+} else if ((choice) == (18)) {
+call validCombination0x3x8_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s6215, inspector_s6215, appraiser_s6215, description_s6215, price_s6215);
+} else if ((choice) == (17)) {
+call validCombination0x3x9_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s6477, inspector_s6477, appraiser_s6477, description_s6477, price_s6477);
+} else if ((choice) == (16)) {
+call validCombination0x4x0_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s6735, inspector_s6735, appraiser_s6735, description_s6735, price_s6735);
+} else if ((choice) == (15)) {
+call validCombination0x4x4_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s6993, inspector_s6993, appraiser_s6993, description_s6993, price_s6993);
+} else if ((choice) == (14)) {
+call validCombination0x4x5_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s7289, inspector_s7289, appraiser_s7289, description_s7289, price_s7289);
+} else if ((choice) == (13)) {
+call validCombination0x4x7_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s7547, inspector_s7547, appraiser_s7547, description_s7547, price_s7547);
+} else if ((choice) == (12)) {
+call validCombination0x4x8_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s7805, inspector_s7805, appraiser_s7805, description_s7805, price_s7805);
+} else if ((choice) == (11)) {
+call validCombination0x4x9_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s8063, inspector_s8063, appraiser_s8063, description_s8063, price_s8063);
 } else if ((choice) == (10)) {
 call Terminate_AssetTransfer(this, msgsender_MSG, msgvalue_MSG);
 } else if ((choice) == (9)) {
-call Modify_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, description_s248, price_s248);
+call Modify_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, description_s8168, price_s8168);
 } else if ((choice) == (8)) {
-call MakeOffer_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, inspector_s318, appraiser_s318, offerPrice_s318);
+call MakeOffer_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, inspector_s8238, appraiser_s8238, offerPrice_s8238);
 } else if ((choice) == (7)) {
 call AcceptOffer_AssetTransfer(this, msgsender_MSG, msgvalue_MSG);
 } else if ((choice) == (6)) {
@@ -689,7 +1418,7 @@ call Reject_AssetTransfer(this, msgsender_MSG, msgvalue_MSG);
 } else if ((choice) == (5)) {
 call Accept_AssetTransfer(this, msgsender_MSG, msgvalue_MSG);
 } else if ((choice) == (4)) {
-call ModifyOffer_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s542);
+call ModifyOffer_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, offerPrice_s8462);
 } else if ((choice) == (3)) {
 call RescindOffer_AssetTransfer(this, msgsender_MSG, msgvalue_MSG);
 } else if ((choice) == (2)) {
@@ -705,12 +1434,12 @@ implementation CorralEntry_AssetTransfer()
 var this: Ref;
 var msgsender_MSG: Ref;
 var msgvalue_MSG: int;
-var description_s196: int;
-var price_s196: int;
+var description_s8116: int;
+var price_s8116: int;
 call this := FreshRefGenerator();
 assume ((now) >= (0));
 assume ((DType[this]) == (AssetTransfer));
-call AssetTransfer_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, description_s196, price_s196);
+call AssetTransfer_AssetTransfer(this, msgsender_MSG, msgvalue_MSG, description_s8116, price_s8116);
 while (true)
 {
 call CorralChoice_AssetTransfer(this);
