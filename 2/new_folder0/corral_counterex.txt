@@ -1,4 +1,4 @@
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(158,1): : AssetTransfer::Constructor (this = address!0, msg.sender = address!2, msg.value = 34, description = -334979010, price = 1391)
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(167,1): : AssetTransfer::Terminate (this = address!0, msg.sender = address!2, msg.value = 37)
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(4,1): : AssetTransfer::validCombination0x0x0 (this = address!0, msg.sender = address!2, msg.value = 38, offerPrice = 39, inspector = address!3, appraiser = address!4, description = 40, price = 41)
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(9,1): : ASSERTION FAILS!
+/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(35,1): : RefrigeratedTransportation::Constructor (this = address!0, msg.sender = address!4, msg.value = 13, device = address!2, supplyChainOwner = address!5, supplyChainObserver = address!6, minHumidity = 887, maxHumidity = -720, minTemperature = 24, maxTemperature = 725)
+/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(54,1): : RefrigeratedTransportation::IngestTelemetry (this = address!0, msg.sender = address!2, msg.value = 16, humidity = -719, temperature = 17, timestamp = 983)
+/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(4,1): : RefrigeratedTransportation::validCombination0 (this = address!0, msg.sender = address!3, msg.value = 20, humidity = 21, temperature = 22, timestamp = 23, newCounterparty = address!7)
+/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(7,1): : ASSERTION FAILS!

@@ -1,18 +1,16 @@
 Single threaded program detected
 Verifying program while tracking: {assertsPassed}
 Program has a potential bug: False bug
-Verifying program while tracking: {assertsPassed, InstanceInspector_AssetTransfer}
-Program has a potential bug: False bug
-Verifying program while tracking: {assertsPassed, InstanceInspector_AssetTransfer, State_AssetTransfer}
+Verifying program while tracking: {assertsPassed, State_RefrigeratedTransportation}
 Program has no bugs
 
-Boogie verification time: 0.74 s
-Time spent reading-writing programs: 0.47 s
+Boogie verification time: 1.33 s
+Time spent reading-writing programs: 0.75 s
 
-Time spent checking a program (3): 0.80 s
-Time spent checking a path (6): 0.74 s
+Time spent checking a program (2): 2.30 s
+Time spent checking a path (3): 1.24 s
 
-Number of procedures inlined: 32
-Number of variables tracked: 3
-Total Time: 2.093856 s
-Total User CPU time: 4.836761 s
+Number of procedures inlined: 10
+Number of variables tracked: 2
+Total Time: 5.320735 s
+Total User CPU time: 9.4412094 s

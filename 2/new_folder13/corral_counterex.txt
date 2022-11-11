@@ -1,0 +1,3 @@
+/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol(38,1): : RefrigeratedTransportation::Constructor (this = address!0, msg.sender = address!3, msg.value = 14, device = address!4, supplyChainOwner = address!5, supplyChainObserver = address!6, minHumidity = 374, maxHumidity = -161, minTemperature = -543, maxTemperature = 236)
+/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol(8,1): : RefrigeratedTransportation::validCombinationinitx1 (this = address!0, msg.sender = address!2, msg.value = 16, humidity = 17, temperature = 18, timestamp = 19, newCounterparty = address!7)
+/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol(10,1): : ASSERTION FAILS!

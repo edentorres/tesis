@@ -1,38 +1,38 @@
 Boogie program verifier version 2.4.1.10503, Copyright (c) 2003-2014, Microsoft.
-__SolToBoogieTest_out.bpl(273,3): Error BP5004: This loop invariant might not hold on entry.
-Execution trace:
-    __SolToBoogieTest_out.bpl(269,1): anon0
-    __SolToBoogieTest_out.bpl(77,1): inline$SimpleMarketplace_SimpleMarketplace_NoBaseCtor$0$anon0
-    __SolToBoogieTest_out.bpl(25,1): inline$FreshRefGenerator$0$anon0
-    __SolToBoogieTest_out.bpl(77,1): inline$SimpleMarketplace_SimpleMarketplace_NoBaseCtor$0$anon0$1
-    __SolToBoogieTest_out.bpl(269,1): anon0$1
-__SolToBoogieTest_out.bpl(274,3): Error BP5004: This loop invariant might not hold on entry.
-Execution trace:
-    __SolToBoogieTest_out.bpl(269,1): anon0
-    __SolToBoogieTest_out.bpl(77,1): inline$SimpleMarketplace_SimpleMarketplace_NoBaseCtor$0$anon0
-    __SolToBoogieTest_out.bpl(25,1): inline$FreshRefGenerator$0$anon0
-    __SolToBoogieTest_out.bpl(77,1): inline$SimpleMarketplace_SimpleMarketplace_NoBaseCtor$0$anon0$1
-    __SolToBoogieTest_out.bpl(269,1): anon0$1
 __SolToBoogieTest_out.bpl(276,3): Error BP5004: This loop invariant might not hold on entry.
 Execution trace:
-    __SolToBoogieTest_out.bpl(269,1): anon0
-    __SolToBoogieTest_out.bpl(77,1): inline$SimpleMarketplace_SimpleMarketplace_NoBaseCtor$0$anon0
+    __SolToBoogieTest_out.bpl(272,1): anon0
+    __SolToBoogieTest_out.bpl(85,1): inline$SimpleMarketplace_SimpleMarketplace_NoBaseCtor$0$anon0
     __SolToBoogieTest_out.bpl(25,1): inline$FreshRefGenerator$0$anon0
-    __SolToBoogieTest_out.bpl(77,1): inline$SimpleMarketplace_SimpleMarketplace_NoBaseCtor$0$anon0$1
-    __SolToBoogieTest_out.bpl(269,1): anon0$1
+    __SolToBoogieTest_out.bpl(85,1): inline$SimpleMarketplace_SimpleMarketplace_NoBaseCtor$0$anon0$1
+    __SolToBoogieTest_out.bpl(272,1): anon0$1
 __SolToBoogieTest_out.bpl(277,3): Error BP5004: This loop invariant might not hold on entry.
 Execution trace:
-    __SolToBoogieTest_out.bpl(269,1): anon0
-    __SolToBoogieTest_out.bpl(77,1): inline$SimpleMarketplace_SimpleMarketplace_NoBaseCtor$0$anon0
+    __SolToBoogieTest_out.bpl(272,1): anon0
+    __SolToBoogieTest_out.bpl(85,1): inline$SimpleMarketplace_SimpleMarketplace_NoBaseCtor$0$anon0
     __SolToBoogieTest_out.bpl(25,1): inline$FreshRefGenerator$0$anon0
-    __SolToBoogieTest_out.bpl(77,1): inline$SimpleMarketplace_SimpleMarketplace_NoBaseCtor$0$anon0$1
-    __SolToBoogieTest_out.bpl(269,1): anon0$1
-__SolToBoogieTest_out.bpl(278,3): Error BP5004: This loop invariant might not hold on entry.
+    __SolToBoogieTest_out.bpl(85,1): inline$SimpleMarketplace_SimpleMarketplace_NoBaseCtor$0$anon0$1
+    __SolToBoogieTest_out.bpl(272,1): anon0$1
+__SolToBoogieTest_out.bpl(279,3): Error BP5004: This loop invariant might not hold on entry.
 Execution trace:
-    __SolToBoogieTest_out.bpl(269,1): anon0
-    __SolToBoogieTest_out.bpl(77,1): inline$SimpleMarketplace_SimpleMarketplace_NoBaseCtor$0$anon0
+    __SolToBoogieTest_out.bpl(272,1): anon0
+    __SolToBoogieTest_out.bpl(85,1): inline$SimpleMarketplace_SimpleMarketplace_NoBaseCtor$0$anon0
     __SolToBoogieTest_out.bpl(25,1): inline$FreshRefGenerator$0$anon0
-    __SolToBoogieTest_out.bpl(77,1): inline$SimpleMarketplace_SimpleMarketplace_NoBaseCtor$0$anon0$1
-    __SolToBoogieTest_out.bpl(269,1): anon0$1
+    __SolToBoogieTest_out.bpl(85,1): inline$SimpleMarketplace_SimpleMarketplace_NoBaseCtor$0$anon0$1
+    __SolToBoogieTest_out.bpl(272,1): anon0$1
+__SolToBoogieTest_out.bpl(280,3): Error BP5004: This loop invariant might not hold on entry.
+Execution trace:
+    __SolToBoogieTest_out.bpl(272,1): anon0
+    __SolToBoogieTest_out.bpl(85,1): inline$SimpleMarketplace_SimpleMarketplace_NoBaseCtor$0$anon0
+    __SolToBoogieTest_out.bpl(25,1): inline$FreshRefGenerator$0$anon0
+    __SolToBoogieTest_out.bpl(85,1): inline$SimpleMarketplace_SimpleMarketplace_NoBaseCtor$0$anon0$1
+    __SolToBoogieTest_out.bpl(272,1): anon0$1
+__SolToBoogieTest_out.bpl(281,3): Error BP5004: This loop invariant might not hold on entry.
+Execution trace:
+    __SolToBoogieTest_out.bpl(272,1): anon0
+    __SolToBoogieTest_out.bpl(85,1): inline$SimpleMarketplace_SimpleMarketplace_NoBaseCtor$0$anon0
+    __SolToBoogieTest_out.bpl(25,1): inline$FreshRefGenerator$0$anon0
+    __SolToBoogieTest_out.bpl(85,1): inline$SimpleMarketplace_SimpleMarketplace_NoBaseCtor$0$anon0$1
+    __SolToBoogieTest_out.bpl(272,1): anon0$1
 
 Boogie program verifier finished with 0 verified, 5 errors

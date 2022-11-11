@@ -1,3 +1,4 @@
-/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol(228,1): : AssetTransfer::Constructor (this = address!0, msg.sender = address!2, msg.value = 12, description = 578, price = 3960)
-/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol(188,1): : AssetTransfer::validCombination0x4x2 (this = address!0, msg.sender = address!3, msg.value = 41, offerPrice = 625, inspector = address!4, appraiser = address!5, description = 42, price = 43)
-/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol(191,1): : ASSERTION FAILS!
+/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol(65,1): : SimpleMarketplace::Constructor (this = address!0, msg.sender = address!2, msg.value = 13, description = 655, price = 724, sender = address!3)
+/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol(73,1): : SimpleMarketplace::MakeOffer (this = address!0, msg.sender = address!4, msg.value = 17, offerPrice = 1819)
+/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol(27,1): : SimpleMarketplace::validCombination0x1x2 (this = address!0, msg.sender = address!3, msg.value = 18, offerPrice = 19)
+/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol(31,1): : ASSERTION FAILS!

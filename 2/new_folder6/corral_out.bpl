@@ -147,7 +147,7 @@ implementation {:ForceInline} SimpleMarketplace_SimpleMarketplace_NoBaseCtor(thi
     assume msgsender_MSG != null;
     Balance[this] := 0;
     InstanceOwner_SimpleMarketplace[this] := null;
-    Description_SimpleMarketplace[this] := 1914806792;
+    Description_SimpleMarketplace[this] := 1935727786;
     AskingPrice_SimpleMarketplace[this] := 0;
     call {:si_unique_call 6} __var_1 := FreshRefGenerator();
     result_SimpleMarketplace[this] := __var_1;

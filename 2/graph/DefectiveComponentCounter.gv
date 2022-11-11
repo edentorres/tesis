@@ -1,0 +1,17 @@
+// Prueba
+digraph {
+	"1-2-" [label="ComputeTotal();
+GetDefectiveComponentsCount();
+"]
+	"1-2-" [label="ComputeTotal();
+GetDefectiveComponentsCount();
+"]
+	"1-2-" -> "1-2-" [label="ComputeTotal();"]
+	"1-2-" [label="ComputeTotal();
+GetDefectiveComponentsCount();
+"]
+	"1-2-" [label="ComputeTotal();
+GetDefectiveComponentsCount();
+"]
+	"1-2-" -> "1-2-" [label="GetDefectiveComponentsCount();"]
+}

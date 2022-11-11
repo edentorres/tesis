@@ -1,76 +1,92 @@
 s
 #
-1 38 3 1 c
-1 38 6 117 AssetTransfer_AssetTransfer_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|210|
-1 39 3 1 c
-1 39 6 117 AssetTransfer_AssetTransfer_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|211|
-1 41 3 1 c
-1 41 6 117 AssetTransfer_AssetTransfer_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|211|
-1 41 4 27 InstanceOwner = T@Ref!val!3
-1 42 3 1 c
-1 42 6 117 AssetTransfer_AssetTransfer_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|212|
-1 46 3 1 c
-1 46 6 117 AssetTransfer_AssetTransfer_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|212|
-1 46 4 18 AskingPrice = 4321
-1 47 3 1 c
-1 47 6 117 AssetTransfer_AssetTransfer_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|213|
-1 49 3 1 c
-1 49 6 117 AssetTransfer_AssetTransfer_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|213|
-1 49 4 18 Description = -886
-1 50 3 1 c
-1 50 6 117 AssetTransfer_AssetTransfer_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|214|
-1 54 3 1 c
-1 54 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|214|
+1 56 3 1 c
+1 56 6 142 RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|35|
 1 57 3 1 c
-1 57 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|214|
-1 57 4 31 CALL CorralChoice_AssetTransfer
-1 317 3 1 c
-1 317 6 206 MakeOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|246|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|214|
-1 324 3 1 c
-1 324 6 206 MakeOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|251|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|214|
-1 327 3 1 c
-1 327 6 206 MakeOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|255|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|214|
-1 330 3 1 c
-1 330 6 206 MakeOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|261|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|214|
-1 332 3 1 c
-1 332 6 206 MakeOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|261|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|214|
-1 332 4 27 InstanceBuyer = T@Ref!val!4
-1 333 3 1 c
-1 333 6 206 MakeOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|262|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|214|
-1 335 3 1 c
-1 335 6 206 MakeOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|262|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|214|
-1 335 4 31 InstanceInspector = T@Ref!val!5
-1 336 3 1 c
-1 336 6 206 MakeOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|263|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|214|
-1 338 3 1 c
-1 338 6 206 MakeOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|263|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|214|
-1 338 4 31 InstanceAppraiser = T@Ref!val!6
-1 339 3 1 c
-1 339 6 206 MakeOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|264|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|214|
-1 343 3 1 c
-1 343 6 206 MakeOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|264|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|214|
-1 343 4 17 OfferPrice = 4922
-1 344 3 1 c
-1 344 6 206 MakeOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|265|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|214|
-1 347 3 1 c
-1 347 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|214|
-1 347 4 39 RETURN from CorralChoice_AssetTransfer 
-1 348 3 1 c
-1 348 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|214|
-1 351 3 1 c
-1 351 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|214|
-1 351 4 31 CALL CorralChoice_AssetTransfer
-1 589 3 1 c
-1 589 6 215 validCombination22_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|138|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|214|
-1 592 3 1 c
-1 592 6 215 validCombination22_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|142|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|214|
-1 593 3 1 c
-1 593 6 215 validCombination22_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|142|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|214|
-1 593 4 31 ASSERTION FAILS assert false;
+1 57 6 142 RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|36|
+1 59 3 1 c
+1 59 6 142 RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|36|
+1 59 4 23 ComplianceStatus = true
+1 60 3 1 c
+1 60 6 142 RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|37|
+1 62 3 1 c
+1 62 6 142 RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|37|
+1 62 4 28 ComplianceSensorReading = -1
+1 63 3 1 c
+1 63 6 142 RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|38|
+1 65 3 1 c
+1 65 6 142 RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|38|
+1 65 4 36 InitiatingCounterparty = T@Ref!val!3
+1 66 3 1 c
+1 66 6 142 RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|39|
+1 68 3 1 c
+1 68 6 142 RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|39|
+1 68 4 19 Owner = T@Ref!val!3
+1 69 3 1 c
+1 69 6 142 RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|40|
+1 71 3 1 c
+1 71 6 142 RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|40|
+1 71 4 26 Counterparty = T@Ref!val!3
+1 72 3 1 c
+1 72 6 142 RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|41|
+1 74 3 1 c
+1 74 6 142 RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|41|
+1 74 4 20 Device = T@Ref!val!4
+1 75 3 1 c
+1 75 6 142 RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|42|
+1 77 3 1 c
+1 77 6 142 RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|42|
+1 77 4 30 SupplyChainOwner = T@Ref!val!5
+1 78 3 1 c
+1 78 6 142 RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|43|
+1 80 3 1 c
+1 80 6 142 RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|43|
+1 80 4 33 SupplyChainObserver = T@Ref!val!6
+1 81 3 1 c
+1 81 6 142 RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|44|
+1 83 3 1 c
+1 83 6 142 RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|44|
+1 83 4 18 MinHumidity = -413
+1 84 3 1 c
+1 84 6 142 RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|45|
+1 86 3 1 c
+1 86 6 142 RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|45|
+1 86 4 18 MaxHumidity = -512
+1 87 3 1 c
+1 87 6 142 RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|46|
+1 89 3 1 c
+1 89 6 142 RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|46|
+1 89 4 20 MinTemperature = 322
+1 90 3 1 c
+1 90 6 142 RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|47|
+1 92 3 1 c
+1 92 6 142 RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|47|
+1 92 4 19 MaxTemperature = -3
+1 93 3 1 c
+1 93 6 142 RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|48|
+1 95 3 1 c
+1 95 6 142 RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|49|
+1 97 3 1 c
+1 97 6 142 RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|49|
+1 97 4 28 ComplianceDetail = 337465102
+1 100 3 1 c
+1 100 6 116 CorralEntry_RefrigeratedTransportation|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|49|
+1 103 3 1 c
+1 103 6 116 CorralEntry_RefrigeratedTransportation|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|49|
+1 103 4 44 CALL CorralChoice_RefrigeratedTransportation
+1 143 3 1 c
+1 143 6 237 validCombination0_RefrigeratedTransportation|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|4|CorralEntry_RefrigeratedTransportation|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|49|
+1 144 3 1 c
+1 144 6 237 validCombination0_RefrigeratedTransportation|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|6|CorralEntry_RefrigeratedTransportation|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|49|
+1 146 3 1 c
+1 146 6 237 validCombination0_RefrigeratedTransportation|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|7|CorralEntry_RefrigeratedTransportation|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|49|
+1 147 3 1 c
+1 147 6 237 validCombination0_RefrigeratedTransportation|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|7|CorralEntry_RefrigeratedTransportation|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|49|
+1 147 4 31 ASSERTION FAILS assert false;
  
-1 595 3 1 c
-1 595 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|214|
-1 595 4 39 RETURN from CorralChoice_AssetTransfer 
-1 596 3 1 c
-1 596 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|214|
-1 596 4 4 Done
+1 149 3 1 c
+1 149 6 116 CorralEntry_RefrigeratedTransportation|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|49|
+1 149 4 52 RETURN from CorralChoice_RefrigeratedTransportation 
+1 150 3 1 c
+1 150 6 116 CorralEntry_RefrigeratedTransportation|/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol|49|
+1 150 4 4 Done

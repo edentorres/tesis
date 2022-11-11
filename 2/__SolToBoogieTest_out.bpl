@@ -56,12 +56,20 @@ axiom(forall  __i__0_0:int, __i__0_1:int, __i__1_0:int, __i__1_1:int :: {abiEnco
 axiom(forall  __i__0_0:Ref, __i__0_1:Ref :: {abiEncodePacked1R(__i__0_0), abiEncodePacked1R(__i__0_1)} (((__i__0_0) == (__i__0_1)) || ((abiEncodePacked1R(__i__0_0)) != (abiEncodePacked1R(__i__0_1)))));
 
 axiom(forall  __i__0_0:Ref, __i__0_1:Ref, __i__1_0:int, __i__1_1:int :: {abiEncodePacked2R(__i__0_0, __i__1_0), abiEncodePacked2R(__i__0_1, __i__1_1)} ((((__i__0_0) == (__i__0_1)) && ((__i__1_0) == (__i__1_1))) || ((abiEncodePacked2R(__i__0_0, __i__1_0)) != (abiEncodePacked2R(__i__0_1, __i__1_1)))));
-procedure {:public} {:inline 1} validCombination0x0x1_SimpleMarketplace(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s62: int);
-procedure {:public} {:inline 1} validCombination0x0x2_SimpleMarketplace(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s122: int);
-procedure {:public} {:inline 1} validCombination0x1x1_SimpleMarketplace(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s180: int);
-procedure {:public} {:inline 1} validCombination0x1x2_SimpleMarketplace(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s238: int);
-procedure {:public} {:inline 1} validCombination0x2x1_SimpleMarketplace(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s294: int);
-procedure {:public} {:inline 1} validCombination0x2x2_SimpleMarketplace(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s350: int);
+procedure {:public} {:inline 1} validCombinationinitx0_SimpleMarketplace(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s17: int);
+implementation validCombinationinitx0_SimpleMarketplace(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s17: int)
+{
+call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
+call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
+call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
+call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
+call  {:cexpr "offerPrice"} boogie_si_record_sol2Bpl_int(offerPrice_s17);
+call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol"} {:sourceLine 5} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol"} {:sourceLine 7} (true);
+assert (!(((StateEnum_SimpleMarketplace[this]) == (0))));
+}
+
 var InstanceOwner_SimpleMarketplace: [Ref]Ref;
 var Description_SimpleMarketplace: [Ref]int;
 var AskingPrice_SimpleMarketplace: [Ref]int;
@@ -69,15 +77,15 @@ var StateEnum_SimpleMarketplace: [Ref]int;
 var result_SimpleMarketplace: [Ref]Ref;
 var InstanceBuyer_SimpleMarketplace: [Ref]Ref;
 var OfferPrice_SimpleMarketplace: [Ref]int;
-procedure {:inline 1} SimpleMarketplace_SimpleMarketplace_NoBaseCtor(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s397: int, price_s397: int, sender_s397: Ref);
-implementation SimpleMarketplace_SimpleMarketplace_NoBaseCtor(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s397: int, price_s397: int, sender_s397: Ref)
+procedure {:inline 1} SimpleMarketplace_SimpleMarketplace_NoBaseCtor(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s64: int, price_s64: int, sender_s64: Ref);
+implementation SimpleMarketplace_SimpleMarketplace_NoBaseCtor(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s64: int, price_s64: int, sender_s64: Ref)
 {
 var __var_1: Ref;
 // start of initialization
 assume ((msgsender_MSG) != (null));
 Balance[this] := 0;
 InstanceOwner_SimpleMarketplace[this] := null;
-Description_SimpleMarketplace[this] := -1650438105;
+Description_SimpleMarketplace[this] := 683524379;
 AskingPrice_SimpleMarketplace[this] := 0;
 // Make array/mapping vars distinct for result
 call __var_1 := FreshRefGenerator();
@@ -90,74 +98,74 @@ call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
 call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-call  {:cexpr "description"} boogie_si_record_sol2Bpl_int(description_s397);
-call  {:cexpr "price"} boogie_si_record_sol2Bpl_int(price_s397);
-call  {:cexpr "sender"} boogie_si_record_sol2Bpl_ref(sender_s397);
+call  {:cexpr "description"} boogie_si_record_sol2Bpl_int(description_s64);
+call  {:cexpr "price"} boogie_si_record_sol2Bpl_int(price_s64);
+call  {:cexpr "sender"} boogie_si_record_sol2Bpl_ref(sender_s64);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol"} {:sourceLine 65} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol"} {:sourceLine 65} (true);
-InstanceOwner_SimpleMarketplace[this] := sender_s397;
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol"} {:sourceLine 35} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol"} {:sourceLine 35} (true);
+InstanceOwner_SimpleMarketplace[this] := sender_s64;
 call  {:cexpr "InstanceOwner"} boogie_si_record_sol2Bpl_ref(InstanceOwner_SimpleMarketplace[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol"} {:sourceLine 66} (true);
-AskingPrice_SimpleMarketplace[this] := price_s397;
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol"} {:sourceLine 36} (true);
+AskingPrice_SimpleMarketplace[this] := price_s64;
 call  {:cexpr "AskingPrice"} boogie_si_record_sol2Bpl_int(AskingPrice_SimpleMarketplace[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol"} {:sourceLine 67} (true);
-Description_SimpleMarketplace[this] := description_s397;
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol"} {:sourceLine 37} (true);
+Description_SimpleMarketplace[this] := description_s64;
 call  {:cexpr "Description"} boogie_si_record_sol2Bpl_int(Description_SimpleMarketplace[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol"} {:sourceLine 68} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol"} {:sourceLine 38} (true);
 StateEnum_SimpleMarketplace[this] := 0;
 }
 
-procedure {:constructor} {:public} {:inline 1} SimpleMarketplace_SimpleMarketplace(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s397: int, price_s397: int, sender_s397: Ref);
-implementation SimpleMarketplace_SimpleMarketplace(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s397: int, price_s397: int, sender_s397: Ref)
+procedure {:constructor} {:public} {:inline 1} SimpleMarketplace_SimpleMarketplace(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s64: int, price_s64: int, sender_s64: Ref);
+implementation SimpleMarketplace_SimpleMarketplace(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, description_s64: int, price_s64: int, sender_s64: Ref)
 {
 var __var_1: Ref;
 call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
 call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-call  {:cexpr "description"} boogie_si_record_sol2Bpl_int(description_s397);
-call  {:cexpr "price"} boogie_si_record_sol2Bpl_int(price_s397);
-call  {:cexpr "sender"} boogie_si_record_sol2Bpl_ref(sender_s397);
+call  {:cexpr "description"} boogie_si_record_sol2Bpl_int(description_s64);
+call  {:cexpr "price"} boogie_si_record_sol2Bpl_int(price_s64);
+call  {:cexpr "sender"} boogie_si_record_sol2Bpl_ref(sender_s64);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-call SimpleMarketplace_SimpleMarketplace_NoBaseCtor(this, msgsender_MSG, msgvalue_MSG, description_s397, price_s397, sender_s397);
+call SimpleMarketplace_SimpleMarketplace_NoBaseCtor(this, msgsender_MSG, msgvalue_MSG, description_s64, price_s64, sender_s64);
 }
 
-procedure {:public} {:inline 1} MakeOffer_SimpleMarketplace(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s443: int);
-implementation MakeOffer_SimpleMarketplace(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s443: int)
+procedure {:public} {:inline 1} MakeOffer_SimpleMarketplace(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s110: int);
+implementation MakeOffer_SimpleMarketplace(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s110: int)
 {
 call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
 call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-call  {:cexpr "offerPrice"} boogie_si_record_sol2Bpl_int(offerPrice_s443);
+call  {:cexpr "offerPrice"} boogie_si_record_sol2Bpl_int(offerPrice_s110);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol"} {:sourceLine 73} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol"} {:sourceLine 73} (true);
-if ((offerPrice_s443) == (0)) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol"} {:sourceLine 75} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol"} {:sourceLine 75} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol"} {:sourceLine 43} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol"} {:sourceLine 43} (true);
+if ((offerPrice_s110) == (0)) {
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol"} {:sourceLine 45} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol"} {:sourceLine 45} (true);
 assume (false);
 }
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol"} {:sourceLine 78} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol"} {:sourceLine 48} (true);
 if ((StateEnum_SimpleMarketplace[this]) != (0)) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol"} {:sourceLine 80} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol"} {:sourceLine 80} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol"} {:sourceLine 50} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol"} {:sourceLine 50} (true);
 assume (false);
 }
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol"} {:sourceLine 83} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol"} {:sourceLine 53} (true);
 if ((InstanceOwner_SimpleMarketplace[this]) == (msgsender_MSG)) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol"} {:sourceLine 85} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol"} {:sourceLine 85} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol"} {:sourceLine 55} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol"} {:sourceLine 55} (true);
 assume (false);
 }
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol"} {:sourceLine 88} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol"} {:sourceLine 58} (true);
 InstanceBuyer_SimpleMarketplace[this] := msgsender_MSG;
 call  {:cexpr "InstanceBuyer"} boogie_si_record_sol2Bpl_ref(InstanceBuyer_SimpleMarketplace[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol"} {:sourceLine 89} (true);
-OfferPrice_SimpleMarketplace[this] := offerPrice_s443;
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol"} {:sourceLine 59} (true);
+OfferPrice_SimpleMarketplace[this] := offerPrice_s110;
 call  {:cexpr "OfferPrice"} boogie_si_record_sol2Bpl_int(OfferPrice_SimpleMarketplace[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol"} {:sourceLine 90} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol"} {:sourceLine 60} (true);
 StateEnum_SimpleMarketplace[this] := 1;
 }
 
@@ -169,20 +177,20 @@ call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol"} {:sourceLine 95} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol"} {:sourceLine 95} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol"} {:sourceLine 65} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol"} {:sourceLine 65} (true);
 if ((StateEnum_SimpleMarketplace[this]) != (1)) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol"} {:sourceLine 97} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol"} {:sourceLine 97} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol"} {:sourceLine 67} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol"} {:sourceLine 67} (true);
 assume (false);
 }
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol"} {:sourceLine 100} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol"} {:sourceLine 70} (true);
 if ((InstanceOwner_SimpleMarketplace[this]) != (msgsender_MSG)) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol"} {:sourceLine 102} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol"} {:sourceLine 102} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol"} {:sourceLine 72} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol"} {:sourceLine 72} (true);
 assume (false);
 }
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol"} {:sourceLine 106} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol"} {:sourceLine 76} (true);
 StateEnum_SimpleMarketplace[this] := 0;
 }
 
@@ -194,20 +202,20 @@ call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol"} {:sourceLine 111} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol"} {:sourceLine 111} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol"} {:sourceLine 81} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol"} {:sourceLine 81} (true);
 if ((StateEnum_SimpleMarketplace[this]) != (1)) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol"} {:sourceLine 113} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol"} {:sourceLine 113} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol"} {:sourceLine 83} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol"} {:sourceLine 83} (true);
 assume (false);
 }
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol"} {:sourceLine 116} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol"} {:sourceLine 86} (true);
 if ((msgsender_MSG) != (InstanceOwner_SimpleMarketplace[this])) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol"} {:sourceLine 118} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol"} {:sourceLine 118} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol"} {:sourceLine 88} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol"} {:sourceLine 88} (true);
 assume (false);
 }
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol"} {:sourceLine 121} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol"} {:sourceLine 91} (true);
 StateEnum_SimpleMarketplace[this] := 2;
 }
 
@@ -255,20 +263,15 @@ var this: Ref;
 var msgsender_MSG: Ref;
 var msgvalue_MSG: int;
 var choice: int;
-var offerPrice_s62: int;
-var offerPrice_s122: int;
-var offerPrice_s180: int;
-var offerPrice_s238: int;
-var offerPrice_s294: int;
-var offerPrice_s350: int;
-var description_s397: int;
-var price_s397: int;
-var sender_s397: Ref;
-var offerPrice_s443: int;
+var offerPrice_s17: int;
+var description_s64: int;
+var price_s64: int;
+var sender_s64: Ref;
+var offerPrice_s110: int;
 var tmpNow: int;
 assume ((now) >= (0));
 assume ((DType[this]) == (SimpleMarketplace));
-call SimpleMarketplace_SimpleMarketplace(this, msgsender_MSG, msgvalue_MSG, description_s397, price_s397, sender_s397);
+call SimpleMarketplace_SimpleMarketplace(this, msgsender_MSG, msgvalue_MSG, description_s64, price_s64, sender_s64);
 while (true)
   invariant (HoudiniB1_SimpleMarketplace) ==> ((InstanceOwner_SimpleMarketplace[this]) == (null));
   invariant (HoudiniB2_SimpleMarketplace) ==> ((InstanceOwner_SimpleMarketplace[this]) != (null));
@@ -280,16 +283,11 @@ while (true)
 havoc msgsender_MSG;
 havoc msgvalue_MSG;
 havoc choice;
-havoc offerPrice_s62;
-havoc offerPrice_s122;
-havoc offerPrice_s180;
-havoc offerPrice_s238;
-havoc offerPrice_s294;
-havoc offerPrice_s350;
-havoc description_s397;
-havoc price_s397;
-havoc sender_s397;
-havoc offerPrice_s443;
+havoc offerPrice_s17;
+havoc description_s64;
+havoc price_s64;
+havoc sender_s64;
+havoc offerPrice_s110;
 havoc tmpNow;
 tmpNow := now;
 havoc now;
@@ -297,20 +295,10 @@ assume ((now) > (tmpNow));
 assume ((msgsender_MSG) != (null));
 assume ((DType[msgsender_MSG]) != (SimpleMarketplace));
 Alloc[msgsender_MSG] := true;
-if ((choice) == (9)) {
-call validCombination0x0x1_SimpleMarketplace(this, msgsender_MSG, msgvalue_MSG, offerPrice_s62);
-} else if ((choice) == (8)) {
-call validCombination0x0x2_SimpleMarketplace(this, msgsender_MSG, msgvalue_MSG, offerPrice_s122);
-} else if ((choice) == (7)) {
-call validCombination0x1x1_SimpleMarketplace(this, msgsender_MSG, msgvalue_MSG, offerPrice_s180);
-} else if ((choice) == (6)) {
-call validCombination0x1x2_SimpleMarketplace(this, msgsender_MSG, msgvalue_MSG, offerPrice_s238);
-} else if ((choice) == (5)) {
-call validCombination0x2x1_SimpleMarketplace(this, msgsender_MSG, msgvalue_MSG, offerPrice_s294);
-} else if ((choice) == (4)) {
-call validCombination0x2x2_SimpleMarketplace(this, msgsender_MSG, msgvalue_MSG, offerPrice_s350);
+if ((choice) == (4)) {
+call validCombinationinitx0_SimpleMarketplace(this, msgsender_MSG, msgvalue_MSG, offerPrice_s17);
 } else if ((choice) == (3)) {
-call MakeOffer_SimpleMarketplace(this, msgsender_MSG, msgvalue_MSG, offerPrice_s443);
+call MakeOffer_SimpleMarketplace(this, msgsender_MSG, msgvalue_MSG, offerPrice_s110);
 } else if ((choice) == (2)) {
 call Reject_SimpleMarketplace(this, msgsender_MSG, msgvalue_MSG);
 } else if ((choice) == (1)) {
@@ -325,30 +313,20 @@ implementation CorralChoice_SimpleMarketplace(this: Ref)
 var msgsender_MSG: Ref;
 var msgvalue_MSG: int;
 var choice: int;
-var offerPrice_s62: int;
-var offerPrice_s122: int;
-var offerPrice_s180: int;
-var offerPrice_s238: int;
-var offerPrice_s294: int;
-var offerPrice_s350: int;
-var description_s397: int;
-var price_s397: int;
-var sender_s397: Ref;
-var offerPrice_s443: int;
+var offerPrice_s17: int;
+var description_s64: int;
+var price_s64: int;
+var sender_s64: Ref;
+var offerPrice_s110: int;
 var tmpNow: int;
 havoc msgsender_MSG;
 havoc msgvalue_MSG;
 havoc choice;
-havoc offerPrice_s62;
-havoc offerPrice_s122;
-havoc offerPrice_s180;
-havoc offerPrice_s238;
-havoc offerPrice_s294;
-havoc offerPrice_s350;
-havoc description_s397;
-havoc price_s397;
-havoc sender_s397;
-havoc offerPrice_s443;
+havoc offerPrice_s17;
+havoc description_s64;
+havoc price_s64;
+havoc sender_s64;
+havoc offerPrice_s110;
 havoc tmpNow;
 tmpNow := now;
 havoc now;
@@ -356,20 +334,10 @@ assume ((now) > (tmpNow));
 assume ((msgsender_MSG) != (null));
 assume ((DType[msgsender_MSG]) != (SimpleMarketplace));
 Alloc[msgsender_MSG] := true;
-if ((choice) == (9)) {
-call validCombination0x0x1_SimpleMarketplace(this, msgsender_MSG, msgvalue_MSG, offerPrice_s62);
-} else if ((choice) == (8)) {
-call validCombination0x0x2_SimpleMarketplace(this, msgsender_MSG, msgvalue_MSG, offerPrice_s122);
-} else if ((choice) == (7)) {
-call validCombination0x1x1_SimpleMarketplace(this, msgsender_MSG, msgvalue_MSG, offerPrice_s180);
-} else if ((choice) == (6)) {
-call validCombination0x1x2_SimpleMarketplace(this, msgsender_MSG, msgvalue_MSG, offerPrice_s238);
-} else if ((choice) == (5)) {
-call validCombination0x2x1_SimpleMarketplace(this, msgsender_MSG, msgvalue_MSG, offerPrice_s294);
-} else if ((choice) == (4)) {
-call validCombination0x2x2_SimpleMarketplace(this, msgsender_MSG, msgvalue_MSG, offerPrice_s350);
+if ((choice) == (4)) {
+call validCombinationinitx0_SimpleMarketplace(this, msgsender_MSG, msgvalue_MSG, offerPrice_s17);
 } else if ((choice) == (3)) {
-call MakeOffer_SimpleMarketplace(this, msgsender_MSG, msgvalue_MSG, offerPrice_s443);
+call MakeOffer_SimpleMarketplace(this, msgsender_MSG, msgvalue_MSG, offerPrice_s110);
 } else if ((choice) == (2)) {
 call Reject_SimpleMarketplace(this, msgsender_MSG, msgvalue_MSG);
 } else if ((choice) == (1)) {
@@ -383,13 +351,13 @@ implementation CorralEntry_SimpleMarketplace()
 var this: Ref;
 var msgsender_MSG: Ref;
 var msgvalue_MSG: int;
-var description_s397: int;
-var price_s397: int;
-var sender_s397: Ref;
+var description_s64: int;
+var price_s64: int;
+var sender_s64: Ref;
 call this := FreshRefGenerator();
 assume ((now) >= (0));
 assume ((DType[this]) == (SimpleMarketplace));
-call SimpleMarketplace_SimpleMarketplace(this, msgsender_MSG, msgvalue_MSG, description_s397, price_s397, sender_s397);
+call SimpleMarketplace_SimpleMarketplace(this, msgsender_MSG, msgvalue_MSG, description_s64, price_s64, sender_s64);
 while (true)
 {
 call CorralChoice_SimpleMarketplace(this);

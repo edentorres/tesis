@@ -1,438 +1,156 @@
-pragma solidity >=0.4.25 <0.9.0;
+pragma solidity ^0.5.0;
 
-contract AssetTransfer {
-function validCombination0x0x0(uint256 offerPrice, address inspector, address appraiser, string memory description, uint256 price) public {
+contract RefrigeratedTransportation {
+function validCombination0(int humidity, int temperature, int timestamp, address newCounterparty) public {
 //Remplazar acá 
-require(true && State == StateType.Active && State == StateType.Active && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised));
-require(InstanceOwner == msg.sender);
-Terminate();
-assert(!(true && !(State == StateType.Active) && !(State == StateType.Active) && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised)));
-}
-function validCombination0x0x1(uint256 offerPrice, address inspector, address appraiser, string memory description, uint256 price) public {
-//Remplazar acá 
-require(true && State == StateType.Active && State == StateType.Active && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised));
-require(InstanceOwner == msg.sender);
-Modify(description, price);
-assert(!(true && !(State == StateType.Active) && !(State == StateType.Active) && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised)));
-}
-function validCombination0x0x2(uint256 offerPrice, address inspector, address appraiser, string memory description, uint256 price) public {
-//Remplazar acá 
-require(true && State == StateType.Active && State == StateType.Active && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised));
-require(InstanceOwner != msg.sender && inspector != address(0x0) && appraiser != address(0x0) && offerPrice != 0);
-MakeOffer(inspector, appraiser, offerPrice);
-assert(!(true && !(State == StateType.Active) && !(State == StateType.Active) && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised)));
-}
-function validCombination0x0x5(uint256 offerPrice, address inspector, address appraiser, string memory description, uint256 price) public {
-//Remplazar acá 
-require(true && State == StateType.Active && State == StateType.Active && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised));
-require((msg.sender == InstanceBuyer || msg.sender == InstanceOwner) && (msg.sender != InstanceOwner || State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted) && (msg.sender != InstanceBuyer || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted));
-Accept();
-assert(!(true && !(State == StateType.Active) && !(State == StateType.Active) && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised)));
-}
-function validCombination0x0x8(uint256 offerPrice, address inspector, address appraiser, string memory description, uint256 price) public {
-//Remplazar acá 
-require(true && State == StateType.Active && State == StateType.Active && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised));
-require(InstanceAppraiser == msg.sender);
-MarkAppraised();
-assert(!(true && !(State == StateType.Active) && !(State == StateType.Active) && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised)));
-}
-function validCombination0x0x9(uint256 offerPrice, address inspector, address appraiser, string memory description, uint256 price) public {
-//Remplazar acá 
-require(true && State == StateType.Active && State == StateType.Active && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised));
-require(InstanceInspector == msg.sender);
-MarkInspected();
-assert(!(true && !(State == StateType.Active) && !(State == StateType.Active) && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised)));
-}
-function validCombination0x1x0(uint256 offerPrice, address inspector, address appraiser, string memory description, uint256 price) public {
-//Remplazar acá 
-require(true && State == StateType.Active && State == StateType.Active && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised));
-require(InstanceOwner == msg.sender);
-Terminate();
-assert(!(true && !(State == StateType.Active) && !(State == StateType.Active) && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && (State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised)));
-}
-function validCombination0x1x1(uint256 offerPrice, address inspector, address appraiser, string memory description, uint256 price) public {
-//Remplazar acá 
-require(true && State == StateType.Active && State == StateType.Active && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised));
-require(InstanceOwner == msg.sender);
-Modify(description, price);
-assert(!(true && !(State == StateType.Active) && !(State == StateType.Active) && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && (State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised)));
-}
-function validCombination0x1x2(uint256 offerPrice, address inspector, address appraiser, string memory description, uint256 price) public {
-//Remplazar acá 
-require(true && State == StateType.Active && State == StateType.Active && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised));
-require(InstanceOwner != msg.sender && inspector != address(0x0) && appraiser != address(0x0) && offerPrice != 0);
-MakeOffer(inspector, appraiser, offerPrice);
-assert(!(true && !(State == StateType.Active) && !(State == StateType.Active) && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && (State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised)));
-}
-function validCombination0x1x5(uint256 offerPrice, address inspector, address appraiser, string memory description, uint256 price) public {
-//Remplazar acá 
-require(true && State == StateType.Active && State == StateType.Active && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised));
-require((msg.sender == InstanceBuyer || msg.sender == InstanceOwner) && (msg.sender != InstanceOwner || State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted) && (msg.sender != InstanceBuyer || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted));
-Accept();
-assert(!(true && !(State == StateType.Active) && !(State == StateType.Active) && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && (State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised)));
-}
-function validCombination0x1x8(uint256 offerPrice, address inspector, address appraiser, string memory description, uint256 price) public {
-//Remplazar acá 
-require(true && State == StateType.Active && State == StateType.Active && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised));
-require(InstanceAppraiser == msg.sender);
-MarkAppraised();
-assert(!(true && !(State == StateType.Active) && !(State == StateType.Active) && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && (State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised)));
-}
-function validCombination0x1x9(uint256 offerPrice, address inspector, address appraiser, string memory description, uint256 price) public {
-//Remplazar acá 
-require(true && State == StateType.Active && State == StateType.Active && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised));
-require(InstanceInspector == msg.sender);
-MarkInspected();
-assert(!(true && !(State == StateType.Active) && !(State == StateType.Active) && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && (State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised)));
-}
-function validCombination0x2x0(uint256 offerPrice, address inspector, address appraiser, string memory description, uint256 price) public {
-//Remplazar acá 
-require(true && State == StateType.Active && State == StateType.Active && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised));
-require(InstanceOwner == msg.sender);
-Terminate();
-assert(!(true && State == StateType.Active && State == StateType.Active && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised)));
-}
-function validCombination0x2x1(uint256 offerPrice, address inspector, address appraiser, string memory description, uint256 price) public {
-//Remplazar acá 
-require(true && State == StateType.Active && State == StateType.Active && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised));
-require(InstanceOwner == msg.sender);
-Modify(description, price);
-assert(!(true && State == StateType.Active && State == StateType.Active && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised)));
-}
-function validCombination0x2x2(uint256 offerPrice, address inspector, address appraiser, string memory description, uint256 price) public {
-//Remplazar acá 
-require(true && State == StateType.Active && State == StateType.Active && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised));
-require(InstanceOwner != msg.sender && inspector != address(0x0) && appraiser != address(0x0) && offerPrice != 0);
-MakeOffer(inspector, appraiser, offerPrice);
-assert(!(true && State == StateType.Active && State == StateType.Active && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised)));
-}
-function validCombination0x2x5(uint256 offerPrice, address inspector, address appraiser, string memory description, uint256 price) public {
-//Remplazar acá 
-require(true && State == StateType.Active && State == StateType.Active && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised));
-require((msg.sender == InstanceBuyer || msg.sender == InstanceOwner) && (msg.sender != InstanceOwner || State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted) && (msg.sender != InstanceBuyer || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted));
-Accept();
-assert(!(true && State == StateType.Active && State == StateType.Active && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised)));
-}
-function validCombination0x2x8(uint256 offerPrice, address inspector, address appraiser, string memory description, uint256 price) public {
-//Remplazar acá 
-require(true && State == StateType.Active && State == StateType.Active && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised));
-require(InstanceAppraiser == msg.sender);
-MarkAppraised();
-assert(!(true && State == StateType.Active && State == StateType.Active && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised)));
-}
-function validCombination0x2x9(uint256 offerPrice, address inspector, address appraiser, string memory description, uint256 price) public {
-//Remplazar acá 
-require(true && State == StateType.Active && State == StateType.Active && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised));
-require(InstanceInspector == msg.sender);
-MarkInspected();
-assert(!(true && State == StateType.Active && State == StateType.Active && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised)));
-}
-function validCombination0x3x0(uint256 offerPrice, address inspector, address appraiser, string memory description, uint256 price) public {
-//Remplazar acá 
-require(true && State == StateType.Active && State == StateType.Active && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised));
-require(InstanceOwner == msg.sender);
-Terminate();
-assert(!(true && !(State == StateType.Active) && !(State == StateType.Active) && !(State == StateType.OfferPlaced) && (State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted) && true && !(State == StateType.OfferPlaced) && (State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised)));
-}
-function validCombination0x3x1(uint256 offerPrice, address inspector, address appraiser, string memory description, uint256 price) public {
-//Remplazar acá 
-require(true && State == StateType.Active && State == StateType.Active && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised));
-require(InstanceOwner == msg.sender);
-Modify(description, price);
-assert(!(true && !(State == StateType.Active) && !(State == StateType.Active) && !(State == StateType.OfferPlaced) && (State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted) && true && !(State == StateType.OfferPlaced) && (State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised)));
-}
-function validCombination0x3x2(uint256 offerPrice, address inspector, address appraiser, string memory description, uint256 price) public {
-//Remplazar acá 
-require(true && State == StateType.Active && State == StateType.Active && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised));
-require(InstanceOwner != msg.sender && inspector != address(0x0) && appraiser != address(0x0) && offerPrice != 0);
-MakeOffer(inspector, appraiser, offerPrice);
-assert(!(true && !(State == StateType.Active) && !(State == StateType.Active) && !(State == StateType.OfferPlaced) && (State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted) && true && !(State == StateType.OfferPlaced) && (State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised)));
-}
-function validCombination0x3x5(uint256 offerPrice, address inspector, address appraiser, string memory description, uint256 price) public {
-//Remplazar acá 
-require(true && State == StateType.Active && State == StateType.Active && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised));
-require((msg.sender == InstanceBuyer || msg.sender == InstanceOwner) && (msg.sender != InstanceOwner || State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted) && (msg.sender != InstanceBuyer || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted));
-Accept();
-assert(!(true && !(State == StateType.Active) && !(State == StateType.Active) && !(State == StateType.OfferPlaced) && (State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted) && true && !(State == StateType.OfferPlaced) && (State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised)));
-}
-function validCombination0x3x8(uint256 offerPrice, address inspector, address appraiser, string memory description, uint256 price) public {
-//Remplazar acá 
-require(true && State == StateType.Active && State == StateType.Active && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised));
-require(InstanceAppraiser == msg.sender);
-MarkAppraised();
-assert(!(true && !(State == StateType.Active) && !(State == StateType.Active) && !(State == StateType.OfferPlaced) && (State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted) && true && !(State == StateType.OfferPlaced) && (State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised)));
-}
-function validCombination0x3x9(uint256 offerPrice, address inspector, address appraiser, string memory description, uint256 price) public {
-//Remplazar acá 
-require(true && State == StateType.Active && State == StateType.Active && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised));
-require(InstanceInspector == msg.sender);
-MarkInspected();
-assert(!(true && !(State == StateType.Active) && !(State == StateType.Active) && !(State == StateType.OfferPlaced) && (State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted) && true && !(State == StateType.OfferPlaced) && (State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised)));
-}
-function validCombination0x4x0(uint256 offerPrice, address inspector, address appraiser, string memory description, uint256 price) public {
-//Remplazar acá 
-require(true && State == StateType.Active && State == StateType.Active && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised));
-require(InstanceOwner == msg.sender);
-Terminate();
-assert(!(true && !(State == StateType.Active) && !(State == StateType.Active) && State == StateType.OfferPlaced && (State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted) && true && State == StateType.OfferPlaced && (State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised)));
-}
-function validCombination0x4x1(uint256 offerPrice, address inspector, address appraiser, string memory description, uint256 price) public {
-//Remplazar acá 
-require(true && State == StateType.Active && State == StateType.Active && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised));
-require(InstanceOwner == msg.sender);
-Modify(description, price);
-assert(!(true && !(State == StateType.Active) && !(State == StateType.Active) && State == StateType.OfferPlaced && (State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted) && true && State == StateType.OfferPlaced && (State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised)));
-}
-function validCombination0x4x2(uint256 offerPrice, address inspector, address appraiser, string memory description, uint256 price) public {
-//Remplazar acá 
-require(true && State == StateType.Active && State == StateType.Active && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised));
-require(InstanceOwner != msg.sender && inspector != address(0x0) && appraiser != address(0x0) && offerPrice != 0);
-MakeOffer(inspector, appraiser, offerPrice);
-assert(!(true && !(State == StateType.Active) && !(State == StateType.Active) && State == StateType.OfferPlaced && (State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted) && true && State == StateType.OfferPlaced && (State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised)));
-}
-function validCombination0x4x5(uint256 offerPrice, address inspector, address appraiser, string memory description, uint256 price) public {
-//Remplazar acá 
-require(true && State == StateType.Active && State == StateType.Active && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised));
-require((msg.sender == InstanceBuyer || msg.sender == InstanceOwner) && (msg.sender != InstanceOwner || State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted) && (msg.sender != InstanceBuyer || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted));
-Accept();
-assert(!(true && !(State == StateType.Active) && !(State == StateType.Active) && State == StateType.OfferPlaced && (State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted) && true && State == StateType.OfferPlaced && (State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised)));
-}
-function validCombination0x4x8(uint256 offerPrice, address inspector, address appraiser, string memory description, uint256 price) public {
-//Remplazar acá 
-require(true && State == StateType.Active && State == StateType.Active && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised));
-require(InstanceAppraiser == msg.sender);
-MarkAppraised();
-assert(!(true && !(State == StateType.Active) && !(State == StateType.Active) && State == StateType.OfferPlaced && (State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted) && true && State == StateType.OfferPlaced && (State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised)));
-}
-function validCombination0x4x9(uint256 offerPrice, address inspector, address appraiser, string memory description, uint256 price) public {
-//Remplazar acá 
-require(true && State == StateType.Active && State == StateType.Active && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)) && true && !(State == StateType.OfferPlaced) && !((State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised));
-require(InstanceInspector == msg.sender);
-MarkInspected();
-assert(!(true && !(State == StateType.Active) && !(State == StateType.Active) && State == StateType.OfferPlaced && (State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted) && true && State == StateType.OfferPlaced && (State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted) && (State != StateType.PendingInspection || State != StateType.Inspected) && (State != StateType.PendingInspection || State != StateType.Appraised)));
+require(!(State != StateType.Completed && State != StateType.OutOfCompliance ) && State != StateType.Completed && State != StateType.OutOfCompliance && !(State != StateType.Completed && State != StateType.OutOfCompliance));
+assert(false);
+
 }
 
-    enum StateType { Active, OfferPlaced, PendingInspection, Inspected, Appraised, NotionalAcceptance, BuyerAccepted, SellerAccepted, Accepted, Terminated }
-    address public InstanceOwner;
-    string public Description;
-    uint public AskingPrice;
-    StateType public State;
+    //Set of States
+    enum StateType { Created, InTransit, Completed, OutOfCompliance}
+    enum SensorType { None, Humidity, Temperature }
 
-    address public InstanceBuyer;
-    uint public OfferPrice;
-    address public InstanceInspector;
-    address public InstanceAppraiser;
+    //List of properties
+    StateType public  State;
+    address public  Owner;
+    address public  InitiatingCounterparty;
+    address public  Counterparty;
+    address public  PreviousCounterparty;
+    address public  Device;
+    address public  SupplyChainOwner;
+    address public  SupplyChainObserver;
+    int public  MinHumidity;
+    int public  MaxHumidity;
+    int public  MinTemperature;
+    int public  MaxTemperature;
+    SensorType public  ComplianceSensorType;
+    int public  ComplianceSensorReading;
+    bool public  ComplianceStatus;
+    string public  ComplianceDetail;
+    int public  LastSensorUpdateTimestamp;
 
-    constructor(string memory description, uint256 price) public
+    constructor(address device, address supplyChainOwner, address supplyChainObserver, int minHumidity, int maxHumidity, int minTemperature, int maxTemperature) public
     {
-        InstanceOwner = msg.sender;
-        AskingPrice = price;
-        Description = description;
-        State = StateType.Active;
+        ComplianceStatus = true;
+        ComplianceSensorReading = -1;
+        InitiatingCounterparty = msg.sender;
+        Owner = InitiatingCounterparty;
+        Counterparty = InitiatingCounterparty;
+        Device = device;
+        SupplyChainOwner = supplyChainOwner;
+        SupplyChainObserver = supplyChainObserver;
+        MinHumidity = minHumidity;
+        MaxHumidity = maxHumidity;
+        MinTemperature = minTemperature;
+        MaxTemperature = maxTemperature;
+        State = StateType.Created;
+        ComplianceDetail = 'N/A';
         // ContractCreated();
     }
 
-    function Terminate() public
+    function IngestTelemetry(int humidity, int temperature, int timestamp) public
     {
-        if (InstanceOwner != msg.sender)
+        // Separately check for states and sender 
+        // to avoid not checking for state when the sender is the device
+        // because of the logical OR
+        if ( State == StateType.Completed )
         {
             revert();
         }
 
-        State = StateType.Terminated;
-        // ContractUpdated('Terminate');
+        if ( State == StateType.OutOfCompliance )
+        {
+            revert();
+        }
+
+        if (Device != msg.sender)
+        {
+            revert();
+        }
+
+        LastSensorUpdateTimestamp = timestamp;
+
+        if (humidity > MaxHumidity || humidity < MinHumidity)
+        {
+            ComplianceSensorType = SensorType.Humidity;
+            ComplianceSensorReading = humidity;
+            ComplianceDetail = 'Humidity value out of range.';
+            ComplianceStatus = false;
+        }
+        else if (temperature > MaxTemperature || temperature < MinTemperature)
+        {
+            ComplianceSensorType = SensorType.Temperature;
+            ComplianceSensorReading = temperature;
+            ComplianceDetail = 'Temperature value out of range.';
+            ComplianceStatus = false;
+        }
+
+        if (ComplianceStatus == false)
+        {
+            State = StateType.OutOfCompliance;
+        }
+
+        // ContractUpdated('IngestTelemetry');
     }
 
-    function Modify(string memory description, uint256 price) public
+    function TransferResponsibility(address newCounterparty) public
     {
-        if (State != StateType.Active)
-        {
-            revert();
-        }
-        if (InstanceOwner != msg.sender)
+        // keep the state checking, message sender, and device checks separate
+        // to not get cloberred by the order of evaluation for logical OR
+        if ( State == StateType.Completed )
         {
             revert();
         }
 
-        Description = description;
-        AskingPrice = price;
-        // ContractUpdated('Modify');
+        if ( State == StateType.OutOfCompliance )
+        {
+            revert();
+        }
+
+        if ( InitiatingCounterparty != msg.sender && Counterparty != msg.sender )
+        {
+            revert();
+        }
+
+        if ( newCounterparty == Device )
+        {
+            revert();
+        }
+
+        if (State == StateType.Created)
+        {
+            State = StateType.InTransit;
+        }
+
+        PreviousCounterparty = Counterparty;
+        Counterparty = newCounterparty;
+        // ContractUpdated('TransferResponsibility');
     }
 
-    function MakeOffer(address inspector, address appraiser, uint256 offerPrice) public
+    function Complete() public
     {
-        if (inspector == address(0x0) || appraiser == address(0x0) || offerPrice == 0)
-        {
-            revert();
-        }
-        if (State != StateType.Active)
-        {
-            revert();
-        }
-        // Cannot enforce "AllowedRoles":["Buyer"] because Role information is unavailable
-        if (InstanceOwner == msg.sender) // not expressible in the current specification language
+        // keep the state checking, message sender, and device checks separate
+        // to not get cloberred by the order of evaluation for logical OR
+        if ( State == StateType.Completed )
         {
             revert();
         }
 
-        InstanceBuyer = msg.sender;
-        InstanceInspector = inspector;
-        InstanceAppraiser = appraiser;
-        OfferPrice = offerPrice;
-        State = StateType.OfferPlaced;
-        // ContractUpdated('MakeOffer');
-    }
-
-    function AcceptOffer() public
-    {
-        if (State != StateType.OfferPlaced)
-        {
-            revert();
-        }
-        if (InstanceOwner != msg.sender)
+        if ( State == StateType.OutOfCompliance )
         {
             revert();
         }
 
-        State = StateType.PendingInspection;
-        // ContractUpdated('AcceptOffer');
-    }
-
-    function Reject() public
-    {
-        if (State != StateType.OfferPlaced && State != StateType.PendingInspection && State != StateType.Inspected && State != StateType.Appraised && State != StateType.NotionalAcceptance && State != StateType.BuyerAccepted)
-        {
-            revert();
-        }
-        if (InstanceOwner != msg.sender)
+        if (Owner != msg.sender && SupplyChainOwner != msg.sender)
         {
             revert();
         }
 
-        InstanceBuyer = address(0x0);
-        State = StateType.Active;
-        // ContractUpdated('Reject');
-    }
-
-    function Accept() public
-    {
-        if (msg.sender != InstanceBuyer && msg.sender != InstanceOwner)
-        {
-            revert();
-        }
-
-        if (msg.sender == InstanceOwner &&
-            State != StateType.NotionalAcceptance &&
-            State != StateType.BuyerAccepted)
-        {
-            revert();
-        }
-
-        if (msg.sender == InstanceBuyer &&
-            State != StateType.NotionalAcceptance &&
-            State != StateType.SellerAccepted)
-        {
-            revert();
-        }
-
-        if (msg.sender == InstanceBuyer)
-        {
-            if (State == StateType.NotionalAcceptance)
-            {
-                State = StateType.BuyerAccepted;
-            }
-            else if (State == StateType.SellerAccepted)
-            {
-                State = StateType.Accepted;
-            }
-        }
-        else
-        {
-            if (State == StateType.NotionalAcceptance)
-            {
-                State = StateType.SellerAccepted;
-            }
-            else if (State == StateType.BuyerAccepted)
-            {
-                State = StateType.Accepted;
-            }
-        }
-        // ContractUpdated('Accept');
-    }
-
-    function ModifyOffer(uint256 offerPrice) public
-    {
-        if (State != StateType.OfferPlaced)
-        {
-            revert();
-        }
-        if (InstanceBuyer != msg.sender || offerPrice == 0)
-        {
-            revert();
-        }
-
-        OfferPrice = offerPrice;
-        // ContractUpdated('ModifyOffer');
-    }
-
-    function RescindOffer() public
-    {
-        if (State != StateType.OfferPlaced && State != StateType.PendingInspection && State != StateType.Inspected && State != StateType.Appraised && State != StateType.NotionalAcceptance && State != StateType.SellerAccepted)
-        {
-            revert();
-        }
-        if (InstanceBuyer != msg.sender)
-        {
-            revert();
-        }
-
-        InstanceBuyer = address(0x0);
-        OfferPrice = 0;
-        State = StateType.Active;
-        // ContractUpdated('RescindOffer');
-    }
-
-    function MarkAppraised() public
-    {
-        if (InstanceAppraiser != msg.sender)
-        {
-            revert();
-        }
-
-        if (State == StateType.PendingInspection)
-        {
-            State = StateType.Appraised;
-        }
-        else if (State == StateType.Inspected)
-        {
-            State = StateType.NotionalAcceptance;
-        }
-        else
-        {
-            revert();
-        }
-        // ContractUpdated('MarkAppraised');
-    }
-
-    function MarkInspected() public
-    {
-        if (InstanceInspector != msg.sender)
-        {
-            revert();
-        }
-
-        if (State == StateType.PendingInspection)
-        {
-            State = StateType.Inspected;
-        }
-        else if (State == StateType.Appraised)
-        {
-            State = StateType.NotionalAcceptance;
-        }
-        else
-        {
-            revert();
-        }
-        // ContractUpdated('MarkInspected');
+        State = StateType.Completed;
+        PreviousCounterparty = Counterparty;
+        Counterparty = address(0x0);
+        // ContractUpdated('Complete');
     }
 }

@@ -1,16 +1,55 @@
 Single threaded program detected
 Verifying program while tracking: {assertsPassed}
-Program has a potential bug: False bug
-Verifying program while tracking: {assertsPassed, State_AssetTransfer}
-Program has no bugs
+Program has a potential bug: True bug
+/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol(7,1): error PF5001: This assertion can fail
 
-Boogie verification time: 0.78 s
-Time spent reading-writing programs: 0.50 s
+Execution trace:
+/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol(35,1): Trace: Thread=1  (CALL FreshRefGenerator, RETURN from FreshRefGenerator , CALL RefrigeratedTransportation_RefrigeratedTransportation, _verisolFirstArg = false, this = T@Ref!val!0, msg.sender = T@Ref!val!3, msg.value = 13, device = T@Ref!val!4, supplyChainOwner = T@Ref!val!5, supplyChainObserver = T@Ref!val!6, minHumidity = -413, maxHumidity = -512, minTemperature = 322, maxTemperature = -3, _verisolLastArg = true, CALL RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor, _verisolFirstArg = false, this = T@Ref!val!0, msg.sender = T@Ref!val!3, msg.value = 13, device = T@Ref!val!4, supplyChainOwner = T@Ref!val!5, supplyChainObserver = T@Ref!val!6, minHumidity = -413, maxHumidity = -512, minTemperature = 322, maxTemperature = -3, _verisolLastArg = true)
+/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol(36,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol(36,1): Trace: Thread=1  (ComplianceStatus = true)
+/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol(37,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol(37,1): Trace: Thread=1  (ComplianceSensorReading = -1)
+/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol(38,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol(38,1): Trace: Thread=1  (InitiatingCounterparty = T@Ref!val!3)
+/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol(39,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol(39,1): Trace: Thread=1  (Owner = T@Ref!val!3)
+/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol(40,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol(40,1): Trace: Thread=1  (Counterparty = T@Ref!val!3)
+/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol(41,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol(41,1): Trace: Thread=1  (Device = T@Ref!val!4)
+/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol(42,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol(42,1): Trace: Thread=1  (SupplyChainOwner = T@Ref!val!5)
+/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol(43,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol(43,1): Trace: Thread=1  (SupplyChainObserver = T@Ref!val!6)
+/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol(44,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol(44,1): Trace: Thread=1  (MinHumidity = -413)
+/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol(45,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol(45,1): Trace: Thread=1  (MaxHumidity = -512)
+/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol(46,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol(46,1): Trace: Thread=1  (MinTemperature = 322)
+/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol(47,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol(47,1): Trace: Thread=1  (MaxTemperature = -3)
+/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol(48,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol(49,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol(49,1): Trace: Thread=1  (ComplianceDetail = 337465102)
+/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol(49,1): Trace: Thread=1  (RETURN from RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor , RETURN from RefrigeratedTransportation_RefrigeratedTransportation )
+/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol(49,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol(49,1): Trace: Thread=1  (CALL CorralChoice_RefrigeratedTransportation)
+/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol(4,1): Trace: Thread=1  (CALL validCombination0_RefrigeratedTransportation, _verisolFirstArg = false, this = T@Ref!val!0, msg.sender = T@Ref!val!2, msg.value = 15, humidity = 16, temperature = 17, timestamp = 18, newCounterparty = T@Ref!val!7, _verisolLastArg = true)
+/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol(6,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol(7,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol(7,1): Trace: Thread=1  (ASSERTION FAILS assert false;
+ )
+/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol(49,1): Trace: Thread=1  (RETURN from validCombination0_RefrigeratedTransportation , RETURN from CorralChoice_RefrigeratedTransportation )
+/Users/etorres/Proyectos/verisol-test/2/new_folder7/CombinationsTemp7.sol(49,1): Trace: Thread=1  (Done)
 
-Time spent checking a program (2): 1.26 s
-Time spent checking a path (3): 0.52 s
+Boogie verification time: 1.34 s
+Time spent reading-writing programs: 0.45 s
 
-Number of procedures inlined: 17
-Number of variables tracked: 2
-Total Time: 2.958356 s
-Total User CPU time: 6.0332747 s
+Time spent checking a program (1): 1.92 s
+Time spent checking a path (1): 0.86 s
+
+Number of procedures inlined: 10
+Number of variables tracked: 1
+Total Time: 4.609435 s
+Total User CPU time: 8.4691942 s

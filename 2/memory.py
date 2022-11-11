@@ -3,13 +3,13 @@ import subprocess
 import os
 import shutil
 import numpy  as np
+import graphviz
 from threading import Thread
 from time import sleep
-import graphviz
 
 
 def reduceCombinations(arg):
-    global tool_output, fileName, threadCount, preconditionsThreads, finalResultsThreads, lastOutputs
+    global tool_output, fileName, threadCount, preconditionsThreads, finalResultsThreads, lastOutputs, txBound
     
     preconditionsTemp = preconditionsThreads[arg]
     finalResultsTemp = finalResultsThreads[arg]
@@ -45,7 +45,7 @@ def reduceCombinations(arg):
     preconditionsTemp2 = []
     finalResultsTemp2 = []
     for indexPreconditionRequire, preconditionRequire in enumerate(preconditionsTemp):
-        command = getToolCommand(str(indexPreconditionRequire), tool, fuctionCombinations)
+        command = getToolCommand(str(indexPreconditionRequire), tool, fuctionCombinations, txBound)
         result = subprocess.run([command, ""], shell = True, cwd=final_directory, stdout=subprocess.PIPE)
         if tool_output in str(result.stdout.decode('utf-8')):
                 print_combination(indexPreconditionRequire, finalResultsTemp)
@@ -58,7 +58,7 @@ def reduceCombinations(arg):
 
 def validCombinations(arg):
 
-    global tool_output, fileName, threadCount, preconditionsThreads, finalResultsThreads, lastOutputs, preconditions, finalResults
+    global tool_output, fileName, threadCount, preconditionsThreads, finalResultsThreads, lastOutputs, preconditions, finalResults, dot, txBound
 
     preconditionsTemp = preconditionsThreads[arg]
     finalResultsTemp = finalResultsThreads[arg]
@@ -91,7 +91,6 @@ def validCombinations(arg):
                             functionName = str(indexPreconditionRequire) + "x" + str(indexPreconditionAssert) + "x" + str(indexFunction)
                             fuctionCombinations.append(functionName)
                             write_file.write(functionOutput(functionName) + "\n")
-                            # print(functionOutput(functionName) + "\n")
                             newValue = replace_functionOutput(preconditionRequire, function, preconditionAssert, indexFunction)
                             write_file.write(newValue + "\n")
                             write_file.write("}" + "\n") 
@@ -102,93 +101,102 @@ def validCombinations(arg):
             for indexFunction, function in enumerate(functions):
                 if (indexFunction + 1) in finalResultsTemp[indexPreconditionRequire]:
                     functionName = str(indexPreconditionRequire) + "x" + str(indexPreconditionAssert) + "x" + str(indexFunction)
-                    command = getToolCommand(functionName, tool, fuctionCombinations)
-                    # print(command)
+                    command = getToolCommand(functionName, tool, fuctionCombinations, txBound)
                     result = subprocess.run([command, ""], shell = True, cwd=final_directory, stdout=subprocess.PIPE)
                     if tool_output in str(result.stdout.decode('utf-8')):
+                        dot.node(combinationToString(finalResultsTemp[indexPreconditionRequire]), output_combination(indexPreconditionRequire, finalResultsTemp))
+                        dot.node(combinationToString(finalResults[indexPreconditionAssert]), output_combination(indexPreconditionAssert, finalResults))
+                        dot.edge(combinationToString(finalResultsTemp[indexPreconditionRequire]),combinationToString(finalResults[indexPreconditionAssert]) , label=functions[indexFunction])
                         print_output(indexPreconditionRequire, indexFunction, indexPreconditionAssert, finalResultsTemp, finalResults)
+    # os.remove(fileNameTemp) 
+
+def validInit(arg):
+
+    global tool_output, fileName, threadCount, preconditionsThreads, finalResultsThreads, lastOutputs, preconditions, finalResults, dot
+
+    # preconditionsTemp = preconditionsThreads[arg]
+    # finalResultsTemp = finalResultsThreads[arg]
+    # lastOutput = lastOutputs[arg]
+
+    current_directory = os.getcwd()
+    final_directory = os.path.join(current_directory, r'new_folder'+str(arg))
+    if not os.path.exists(final_directory):
+        os.makedirs(final_directory)
+
+    fileNameTemp = "CombinationsTemp"+str(arg)+".sol"
+    fileNameTemp = final_directory +"/"+ fileNameTemp
+    tool = "Verisol " + fileNameTemp + " " + contractName
+
+    if os.path.isfile(fileNameTemp):
+        os.remove(fileNameTemp)
+
+    shutil.copyfile(fileName, fileNameTemp)
+
+    inputfile = open(fileNameTemp, 'r').readlines()
+    write_file = open(fileNameTemp,'w')
+    fuctionCombinations = []
+    for line in inputfile:
+        write_file.write(line)
+        if 'contract ' + contractName + ' {' in line:
+            # for indexPreconditionRequire, preconditionRequire in enumerate(preconditionsTemp):
+            for indexPreconditionAssert, preconditionAssert in enumerate(preconditions):
+                    # for indexFunction, function in enumerate(functions):
+                        # if (indexFunction + 1) in finalResultsTemp[indexPreconditionRequire]:
+                functionName =  "initx" + str(indexPreconditionAssert)
+                fuctionCombinations.append(functionName)
+                write_file.write(functionOutput(functionName) + "\n")
+                newValue = replace_functionOutputInit( preconditionAssert)
+                write_file.write(newValue + "\n")
+                write_file.write("}" + "\n") 
+    write_file.close()
+
+    # for indexPreconditionRequire, preconditionRequire in enumerate(preconditionsTemp):
+    for indexPreconditionAssert, preconditionAssert in enumerate(preconditions):
+        # for indexFunction, function in enumerate(functions):
+            # if (indexFunction + 1) in finalResultsTemp[indexPreconditionRequire]:
+        functionName = "initx" + str(indexPreconditionAssert)
+        command = getToolCommand(functionName, tool, fuctionCombinations, 1)
+        result = subprocess.run([command, ""], shell = True, cwd=final_directory, stdout=subprocess.PIPE)
+        if tool_output in str(result.stdout.decode('utf-8')):
+            dot.node("init", "init")
+            dot.node(combinationToString(finalResults[indexPreconditionAssert]), output_combination(indexPreconditionAssert, finalResults))
+            dot.edge("init",combinationToString(finalResults[indexPreconditionAssert]) , "constructor")
+        # print_output(indexPreconditionRequire, indexFunction, indexPreconditionAssert, finalResultsTemp, finalResults)
     # os.remove(fileNameTemp) 
 
 results=[]
 finalResults = []
 
-fileName = "SimpleMarketplace.sol"
-contractName = "SimpleMarketplace"
-functions = ["MakeOffer(offerPrice);", "AcceptOffer();", "Reject();"]
-statePreconditions = ["StateEnum == StateType.ItemAvailable", "StateEnum == StateType.OfferPlaced", "StateEnum == StateType.OfferPlaced"]
-functionPreconditions = ["offerPrice != 0 && msg.sender != InstanceOwner", "msg.sender == InstanceOwner", "msg.sender == InstanceOwner"]
-functionVariables = "int offerPrice"
+fileName = "RefrigeratedTransportation.sol"
+contractName = "RefrigeratedTransportation"
+functions = ["IngestTelemetry(humidity, temperature, timestamp);", "TransferResponsibility(newCounterparty);", "Complete();"]
+statePreconditions = ["State != StateType.Completed && State != StateType.OutOfCompliance ", "State != StateType.Completed && State != StateType.OutOfCompliance", "State != StateType.Completed && State != StateType.OutOfCompliance"]
+functionPreconditions = ["Device == msg.sender", "InitiatingCounterparty == msg.sender && Counterparty == msg.sender && newCounterparty != Device", "Owner == msg.sender && SupplyChainOwner == msg.sender"]
+functionVariables = "int humidity, int temperature, int timestamp, address newCounterparty"
 tool_output = "Found a counterexample"
 
-# fileName = "RoomThermostat.sol"
-# contractName = "RoomThermostat"
-# functions = ["StartThermostat();", "SetTargetTemperature(targetTemperature);", "SetMode(mode);"]
-# statePreconditions = ["State == StateType.Created", "State == StateType.InUse", "State == StateType.InUse"]
-# functionPreconditions = ["Installer == msg.sender", "User == msg.sender", "User == msg.sender"]
-# functionVariables = "int targetTemperature, ModeEnum mode"
-# tool_output = "Found a counterexample"
+txBound = len(functions)
 
-# fileName = "RefrigeratedTransportation.sol"
-# contractName = "RefrigeratedTransportation"
-# functions = ["IngestTelemetry(humidity, temperature, timestamp);", "TransferResponsibility(newCounterparty);", "Complete();"]
-# statePreconditions = ["State != StateType.Completed && State != StateType.OutOfCompliance ", "State != StateType.Completed && State != StateType.OutOfCompliance", "State != StateType.Completed && State != StateType.OutOfCompliance"]
-# functionPreconditions = ["Device == msg.sender", "InitiatingCounterparty == msg.sender && Counterparty == msg.sender && newCounterparty != Device", "Owner == msg.sender && SupplyChainOwner == msg.sender"]
-# functionVariables = "int humidity, int temperature, int timestamp, address newCounterparty"
-# tool_output = "Found a counterexample"
-
-# fileName = "AssetTransfer.sol"
-# contractName = "AssetTransfer"
-# functions = [
-# "Terminate();", 
-# "Modify(description, price);", 
-# "MakeOffer(inspector, appraiser, offerPrice);", 
-# "AcceptOffer();", 
-# "Reject();", 
-# "Accept();", 
-# "ModifyOffer(offerPrice);", 
-# "RescindOffer();", 
-# "MarkAppraised();", 
-# "MarkInspected();"
-# ]
-# statePreconditions = [
-# "true", 
-# "State == StateType.Active", 
-# "State == StateType.Active",
-# "State == StateType.OfferPlaced",
-# "(State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)",
-# "true",
-# "State == StateType.OfferPlaced",
-# "(State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)",
-# "(State != StateType.PendingInspection || State != StateType.Inspected)",
-# "(State != StateType.PendingInspection || State != StateType.Appraised)"
-# ]
-# functionPreconditions = [
-# "InstanceOwner == msg.sender", 
-# "InstanceOwner == msg.sender", 
-# "InstanceOwner != msg.sender && inspector != address(0x0) && appraiser != address(0x0) && offerPrice != 0",
-# "InstanceOwner == msg.sender",
-# "InstanceOwner == msg.sender",
-# "(msg.sender == InstanceBuyer || msg.sender == InstanceOwner) && (msg.sender != InstanceOwner || State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted) && (msg.sender != InstanceBuyer || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)",
-# "InstanceBuyer == msg.sender && offerPrice != 0",
-# "InstanceBuyer == msg.sender",
-# "InstanceAppraiser == msg.sender",
-# "InstanceInspector == msg.sender"
-# ]
-# functionVariables = "uint256 offerPrice, address inspector, address appraiser, string memory description, uint256 price"
-# tool_output = "Found a counterexample"
-
+fileName = "Contracts/" + fileName
 count = len(functions)
 funcionesNumeros = list(range(1, count + 1))
 
-threadCount = 8
+threadCount = 12
 threads = []
+
+def combinationToString(combination):
+    output = ""
+    for i in combination:
+        output += str(i) + "-"
+    return output
 
 def functionOutput(number):
     return "function validCombination" + number + "(" + functionVariables + ") public {"
 
-def getToolCommand(includeNumber, toolCommand, combinations):
+def getToolCommand(includeNumber, toolCommand, combinations, txBound):
     global contractName
     command = toolCommand + " " 
+    command = command + "/txBound:" + str(txBound) + " "
     for indexCombination, combi in enumerate(combinations):
         if combi != includeNumber:
             command += "/ignoreMethod:validCombination"+ combi +"@" + contractName + " "
@@ -206,6 +214,10 @@ def replace_values(newValue, oldValue, filename):
 def replace_functionOutput(preconditionRequire, function, preconditionAssert, functionIndex):
     precondictionFunction = functionPreconditions[functionIndex]
     verisolFucntionOutput = "//Remplazar acá \nrequire("+preconditionRequire+");\nrequire("+precondictionFunction+");\n"+function+"\nassert(!(" + preconditionAssert + "));"
+    return verisolFucntionOutput
+
+def replace_functionOutputInit(preconditionAssert):
+    verisolFucntionOutput = "//Remplazar acá\nassert(!(" + preconditionAssert + "));"
     return verisolFucntionOutput
 
 def replace_checkPredOutput(preconditionRequire):
@@ -298,12 +310,20 @@ divideCount = threadCount if len(preconditionsThreads) > threadCount else len(pr
 preconditionsThreads = np.array_split(preconditionsThreads, divideCount)
 finalResultsThreads = np.array_split(finalResultsThreads, divideCount)
 
+dot = graphviz.Digraph(comment='Prueba')
+
 for i in range(divideCount):
     thread = Thread(target = validCombinations, args = [i])
     thread.start()
     threads.append(thread)
+
+thread = Thread(target = validInit, args = [threadCount + 1])
+thread.start()
+threads.append(thread)
 print("threads started")
 
 for thread in threads:
     thread.join()
 print("threads finished")
+
+dot.render("graph/" + contractName +'.gv')

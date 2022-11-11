@@ -1,0 +1,23 @@
+// Prueba
+digraph {
+	"1-0-0-" [label="StartThermostat();
+"]
+	"0-2-3-" [label="SetTargetTemperature(targetTemperature);
+SetMode(mode);
+"]
+	"1-0-0-" -> "0-2-3-" [label="StartThermostat();"]
+	"0-2-3-" [label="SetTargetTemperature(targetTemperature);
+SetMode(mode);
+"]
+	"0-2-3-" [label="SetTargetTemperature(targetTemperature);
+SetMode(mode);
+"]
+	"0-2-3-" -> "0-2-3-" [label="SetTargetTemperature(targetTemperature);"]
+	"0-2-3-" [label="SetTargetTemperature(targetTemperature);
+SetMode(mode);
+"]
+	"0-2-3-" [label="SetTargetTemperature(targetTemperature);
+SetMode(mode);
+"]
+	"0-2-3-" -> "0-2-3-" [label="SetMode(mode);"]
+}

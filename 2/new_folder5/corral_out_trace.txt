@@ -1,92 +1,128 @@
 s
 #
 1 38 3 1 c
-1 38 6 117 AssetTransfer_AssetTransfer_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|210|
-1 39 3 1 c
-1 39 6 117 AssetTransfer_AssetTransfer_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|211|
+1 38 6 117 AssetTransfer_AssetTransfer_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|277|
 1 41 3 1 c
-1 41 6 117 AssetTransfer_AssetTransfer_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|211|
+1 41 6 117 AssetTransfer_AssetTransfer_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|277|
 1 41 4 27 InstanceOwner = T@Ref!val!2
 1 42 3 1 c
-1 42 6 117 AssetTransfer_AssetTransfer_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|212|
+1 42 6 117 AssetTransfer_AssetTransfer_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|278|
 1 46 3 1 c
-1 46 6 117 AssetTransfer_AssetTransfer_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|212|
-1 46 4 16 AskingPrice = 66
+1 46 6 117 AssetTransfer_AssetTransfer_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|278|
+1 46 4 17 AskingPrice = 746
 1 47 3 1 c
-1 47 6 117 AssetTransfer_AssetTransfer_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|213|
+1 47 6 117 AssetTransfer_AssetTransfer_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|279|
 1 49 3 1 c
-1 49 6 117 AssetTransfer_AssetTransfer_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|213|
-1 49 4 23 Description = 316240103
+1 49 6 117 AssetTransfer_AssetTransfer_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|279|
+1 49 4 25 Description = -1382733006
 1 50 3 1 c
-1 50 6 117 AssetTransfer_AssetTransfer_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|214|
+1 50 6 117 AssetTransfer_AssetTransfer_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
 1 54 3 1 c
-1 54 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|214|
+1 54 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
 1 57 3 1 c
-1 57 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|214|
+1 57 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
 1 57 4 31 CALL CorralChoice_AssetTransfer
-1 317 3 1 c
-1 317 6 206 MakeOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|246|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|214|
-1 324 3 1 c
-1 324 6 206 MakeOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|251|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|214|
-1 327 3 1 c
-1 327 6 206 MakeOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|255|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|214|
-1 330 3 1 c
-1 330 6 206 MakeOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|261|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|214|
-1 332 3 1 c
-1 332 6 206 MakeOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|261|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|214|
-1 332 4 27 InstanceBuyer = T@Ref!val!4
-1 333 3 1 c
-1 333 6 206 MakeOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|262|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|214|
-1 335 3 1 c
-1 335 6 206 MakeOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|262|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|214|
-1 335 4 31 InstanceInspector = T@Ref!val!5
-1 336 3 1 c
-1 336 6 206 MakeOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|263|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|214|
-1 338 3 1 c
-1 338 6 206 MakeOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|263|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|214|
-1 338 4 31 InstanceAppraiser = T@Ref!val!6
-1 339 3 1 c
-1 339 6 206 MakeOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|264|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|214|
-1 343 3 1 c
-1 343 6 206 MakeOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|264|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|214|
-1 343 4 16 OfferPrice = 629
-1 344 3 1 c
-1 344 6 206 MakeOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|265|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|214|
-1 347 3 1 c
-1 347 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|214|
-1 347 4 39 RETURN from CorralChoice_AssetTransfer 
-1 348 3 1 c
-1 348 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|214|
-1 351 3 1 c
-1 351 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|214|
-1 351 4 31 CALL CorralChoice_AssetTransfer
-1 610 3 1 c
-1 610 6 208 AcceptOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|270|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|214|
-1 614 3 1 c
-1 614 6 208 AcceptOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|274|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|214|
-1 617 3 1 c
-1 617 6 208 AcceptOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|279|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|214|
-1 620 3 1 c
-1 620 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|214|
-1 620 4 39 RETURN from CorralChoice_AssetTransfer 
-1 621 3 1 c
-1 621 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|214|
-1 624 3 1 c
-1 624 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|214|
-1 624 4 31 CALL CorralChoice_AssetTransfer
-1 820 3 1 c
-1 820 6 213 validCombination1_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|10|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|214|
-1 821 3 1 c
-1 821 6 213 validCombination1_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|12|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|214|
-1 823 3 1 c
-1 823 6 213 validCombination1_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|13|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|214|
-1 824 3 1 c
-1 824 6 213 validCombination1_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|13|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|214|
-1 824 4 31 ASSERTION FAILS assert false;
+1 394 3 1 c
+1 394 6 206 MakeOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|312|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 401 3 1 c
+1 401 6 206 MakeOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|318|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 404 3 1 c
+1 404 6 206 MakeOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|321|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 407 3 1 c
+1 407 6 206 MakeOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|327|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 409 3 1 c
+1 409 6 206 MakeOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|327|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 409 4 27 InstanceBuyer = T@Ref!val!6
+1 410 3 1 c
+1 410 6 206 MakeOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|328|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 412 3 1 c
+1 412 6 206 MakeOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|328|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 412 4 31 InstanceInspector = T@Ref!val!4
+1 413 3 1 c
+1 413 6 206 MakeOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|329|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 415 3 1 c
+1 415 6 206 MakeOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|329|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 415 4 31 InstanceAppraiser = T@Ref!val!3
+1 416 3 1 c
+1 416 6 206 MakeOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|330|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 420 3 1 c
+1 420 6 206 MakeOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|330|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 420 4 17 OfferPrice = 5328
+1 421 3 1 c
+1 421 6 206 MakeOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|331|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 424 3 1 c
+1 424 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 424 4 39 RETURN from CorralChoice_AssetTransfer 
+1 425 3 1 c
+1 425 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 428 3 1 c
+1 428 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 428 4 31 CALL CorralChoice_AssetTransfer
+1 764 3 1 c
+1 764 6 208 AcceptOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|336|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 765 3 1 c
+1 765 6 208 AcceptOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|337|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 768 3 1 c
+1 768 6 208 AcceptOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|342|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 771 3 1 c
+1 771 6 208 AcceptOffer_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|346|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 774 3 1 c
+1 774 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 774 4 39 RETURN from CorralChoice_AssetTransfer 
+1 775 3 1 c
+1 775 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 778 3 1 c
+1 778 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 778 4 31 CALL CorralChoice_AssetTransfer
+1 1124 3 1 c
+1 1124 6 210 MarkAppraised_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|445|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 1125 3 1 c
+1 1125 6 210 MarkAppraised_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|446|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 1128 3 1 c
+1 1128 6 210 MarkAppraised_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|451|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 1131 3 1 c
+1 1131 6 210 MarkAppraised_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|453|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 1132 3 1 c
+1 1132 6 210 MarkAppraised_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|454|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 1135 3 1 c
+1 1135 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 1135 4 39 RETURN from CorralChoice_AssetTransfer 
+1 1136 3 1 c
+1 1136 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 1139 3 1 c
+1 1139 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 1139 4 31 CALL CorralChoice_AssetTransfer
+1 1487 3 1 c
+1 1487 6 210 MarkInspected_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|467|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 1488 3 1 c
+1 1488 6 210 MarkInspected_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|468|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 1491 3 1 c
+1 1491 6 210 MarkInspected_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|473|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 1494 3 1 c
+1 1494 6 210 MarkInspected_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|477|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 1497 3 1 c
+1 1497 6 210 MarkInspected_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|478|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 1498 3 1 c
+1 1498 6 210 MarkInspected_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|479|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 1501 3 1 c
+1 1501 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 1501 4 39 RETURN from CorralChoice_AssetTransfer 
+1 1502 3 1 c
+1 1502 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 1505 3 1 c
+1 1505 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 1505 4 31 CALL CorralChoice_AssetTransfer
+1 1836 3 1 c
+1 1836 6 215 validCombination41_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|252|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 1839 3 1 c
+1 1839 6 215 validCombination41_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|256|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 1840 3 1 c
+1 1840 6 215 validCombination41_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|256|CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 1840 4 31 ASSERTION FAILS assert false;
  
-1 826 3 1 c
-1 826 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|214|
-1 826 4 39 RETURN from CorralChoice_AssetTransfer 
-1 827 3 1 c
-1 827 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|214|
-1 827 4 4 Done
+1 1842 3 1 c
+1 1842 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 1842 4 39 RETURN from CorralChoice_AssetTransfer 
+1 1843 3 1 c
+1 1843 6 104 CorralEntry_AssetTransfer|/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol|280|
+1 1843 4 4 Done

@@ -1,28 +1,28 @@
 Boogie program verifier version 2.4.1.10503, Copyright (c) 2003-2014, Microsoft.
-__SolToBoogieTest_out.bpl(742,3): Error BP5004: This loop invariant might not hold on entry.
+__SolToBoogieTest_out.bpl(462,3): Error BP5004: This loop invariant might not hold on entry.
 Execution trace:
-    __SolToBoogieTest_out.bpl(738,1): anon0
-    __SolToBoogieTest_out.bpl(122,1): inline$AssetTransfer_AssetTransfer_NoBaseCtor$0$anon0
-    __SolToBoogieTest_out.bpl(738,1): anon0$1
-__SolToBoogieTest_out.bpl(745,3): Error BP5004: This loop invariant might not hold on entry.
+    __SolToBoogieTest_out.bpl(458,1): anon0
+    __SolToBoogieTest_out.bpl(97,1): inline$RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor$0$anon0
+    __SolToBoogieTest_out.bpl(458,1): anon0$1
+__SolToBoogieTest_out.bpl(464,3): Error BP5004: This loop invariant might not hold on entry.
 Execution trace:
-    __SolToBoogieTest_out.bpl(738,1): anon0
-    __SolToBoogieTest_out.bpl(122,1): inline$AssetTransfer_AssetTransfer_NoBaseCtor$0$anon0
-    __SolToBoogieTest_out.bpl(738,1): anon0$1
-__SolToBoogieTest_out.bpl(747,3): Error BP5004: This loop invariant might not hold on entry.
+    __SolToBoogieTest_out.bpl(458,1): anon0
+    __SolToBoogieTest_out.bpl(97,1): inline$RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor$0$anon0
+    __SolToBoogieTest_out.bpl(458,1): anon0$1
+__SolToBoogieTest_out.bpl(466,3): Error BP5004: This loop invariant might not hold on entry.
 Execution trace:
-    __SolToBoogieTest_out.bpl(738,1): anon0
-    __SolToBoogieTest_out.bpl(122,1): inline$AssetTransfer_AssetTransfer_NoBaseCtor$0$anon0
-    __SolToBoogieTest_out.bpl(738,1): anon0$1
-__SolToBoogieTest_out.bpl(749,3): Error BP5004: This loop invariant might not hold on entry.
+    __SolToBoogieTest_out.bpl(458,1): anon0
+    __SolToBoogieTest_out.bpl(97,1): inline$RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor$0$anon0
+    __SolToBoogieTest_out.bpl(458,1): anon0$1
+__SolToBoogieTest_out.bpl(469,3): Error BP5004: This loop invariant might not hold on entry.
 Execution trace:
-    __SolToBoogieTest_out.bpl(738,1): anon0
-    __SolToBoogieTest_out.bpl(122,1): inline$AssetTransfer_AssetTransfer_NoBaseCtor$0$anon0
-    __SolToBoogieTest_out.bpl(738,1): anon0$1
-__SolToBoogieTest_out.bpl(750,3): Error BP5004: This loop invariant might not hold on entry.
+    __SolToBoogieTest_out.bpl(458,1): anon0
+    __SolToBoogieTest_out.bpl(97,1): inline$RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor$0$anon0
+    __SolToBoogieTest_out.bpl(458,1): anon0$1
+__SolToBoogieTest_out.bpl(470,3): Error BP5004: This loop invariant might not hold on entry.
 Execution trace:
-    __SolToBoogieTest_out.bpl(738,1): anon0
-    __SolToBoogieTest_out.bpl(122,1): inline$AssetTransfer_AssetTransfer_NoBaseCtor$0$anon0
-    __SolToBoogieTest_out.bpl(738,1): anon0$1
+    __SolToBoogieTest_out.bpl(458,1): anon0
+    __SolToBoogieTest_out.bpl(97,1): inline$RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor$0$anon0
+    __SolToBoogieTest_out.bpl(458,1): anon0$1
 
 Boogie program verifier finished with 0 verified, 5 errors
