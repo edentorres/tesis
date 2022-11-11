@@ -1,16 +1,16 @@
 Single threaded program detected
 Verifying program while tracking: {assertsPassed}
 Program has a potential bug: False bug
-Verifying program while tracking: {assertsPassed, State_RefrigeratedTransportation}
+Verifying program while tracking: {assertsPassed, State_BasicProvenance}
 Program has no bugs
 
-Boogie verification time: 1.47 s
-Time spent reading-writing programs: 0.63 s
+Boogie verification time: 2.28 s
+Time spent reading-writing programs: 0.81 s
 
-Time spent checking a program (2): 2.25 s
-Time spent checking a path (3): 1.35 s
+Time spent checking a program (2): 2.77 s
+Time spent checking a path (3): 1.55 s
 
-Number of procedures inlined: 10
+Number of procedures inlined: 9
 Number of variables tracked: 2
-Total Time: 5.282971 s
-Total User CPU time: 9.5138632 s
+Total Time: 6.632745 s
+Total User CPU time: 8.1843792 s

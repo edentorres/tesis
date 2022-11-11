@@ -1,4 +1,7 @@
-/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol(65,1): : SimpleMarketplace::Constructor (this = address!0, msg.sender = address!2, msg.value = 13, description = 655, price = 724, sender = address!3)
-/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol(73,1): : SimpleMarketplace::MakeOffer (this = address!0, msg.sender = address!4, msg.value = 17, offerPrice = 1819)
-/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol(27,1): : SimpleMarketplace::validCombination0x1x2 (this = address!0, msg.sender = address!3, msg.value = 18, offerPrice = 19)
-/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol(31,1): : ASSERTION FAILS!
+/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol(277,1): : AssetTransfer::Constructor (this = address!0, msg.sender = address!2, msg.value = 58, description = 886327, price = 112)
+/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol(312,1): : AssetTransfer::MakeOffer (this = address!0, msg.sender = address!6, msg.value = 64, inspector = address!3, appraiser = address!4, offerPrice = 1184)
+/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol(336,1): : AssetTransfer::AcceptOffer (this = address!0, msg.sender = address!2, msg.value = 65)
+/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol(467,1): : AssetTransfer::MarkInspected (this = address!0, msg.sender = address!3, msg.value = 66)
+/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol(445,1): : AssetTransfer::MarkAppraised (this = address!0, msg.sender = address!4, msg.value = 67)
+/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol(95,1): : AssetTransfer::validCombination15 (this = address!0, msg.sender = address!5, msg.value = 68, offerPrice = 69, inspector = address!7, appraiser = address!8, description = 70, price = 71)
+/Users/etorres/Proyectos/verisol-test/2/new_folder2/CombinationsTemp2.sol(99,1): : ASSERTION FAILS!

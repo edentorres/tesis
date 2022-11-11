@@ -154,6 +154,36 @@ procedure {:public} validCombination16_AssetTransfer(this: Ref, msgsender_MSG: R
 
 
 
+implementation {:ForceInline} validCombination16_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s2500: int, inspector_s2500: Ref, appraiser_s2500: Ref, description_s2500: int, price_s2500: int)
+{
+
+  anon0:
+    call {:si_unique_call 0} {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
+    call {:si_unique_call 1} {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
+    call {:si_unique_call 2} {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
+    call {:si_unique_call 3} {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
+    call {:si_unique_call 4} {:cexpr "offerPrice"} boogie_si_record_sol2Bpl_int(offerPrice_s2500);
+    call {:si_unique_call 5} {:cexpr "inspector"} boogie_si_record_sol2Bpl_ref(inspector_s2500);
+    call {:si_unique_call 6} {:cexpr "appraiser"} boogie_si_record_sol2Bpl_ref(appraiser_s2500);
+    call {:si_unique_call 7} {:cexpr "description"} boogie_si_record_sol2Bpl_int(description_s2500);
+    call {:si_unique_call 8} {:cexpr "price"} boogie_si_record_sol2Bpl_int(price_s2500);
+    call {:si_unique_call 9} {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
+    goto corral_source_split_1;
+
+  corral_source_split_1:
+    goto corral_source_split_2;
+
+  corral_source_split_2:
+    assume (true && State_AssetTransfer[this] == 0 && State_AssetTransfer[this] == 0 && !(State_AssetTransfer[this] == 1) && (State_AssetTransfer[this] == 1 || State_AssetTransfer[this] == 2 || State_AssetTransfer[this] == 3 || (State_AssetTransfer[this] == 4 && State_AssetTransfer[this] == 5) || State_AssetTransfer[this] == 6) && State_AssetTransfer[this] == 7) || State_AssetTransfer[this] == 5 || (State_AssetTransfer[this] == 6 && State_AssetTransfer[this] == 1 && (State_AssetTransfer[this] == 1 || State_AssetTransfer[this] == 2 || State_AssetTransfer[this] == 3 || State_AssetTransfer[this] == 4 || State_AssetTransfer[this] == 5 || State_AssetTransfer[this] == 7) && !(State_AssetTransfer[this] != 2 || State_AssetTransfer[this] != 3) && !(State_AssetTransfer[this] != 2 || State_AssetTransfer[this] != 4));
+    goto corral_source_split_3;
+
+  corral_source_split_3:
+    assert false;
+    return;
+}
+
+
+
 procedure {:public} validCombination17_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s2647: int, inspector_s2647: Ref, appraiser_s2647: Ref, description_s2647: int, price_s2647: int);
 
 
@@ -254,36 +284,6 @@ procedure {:public} validCombination41_AssetTransfer(this: Ref, msgsender_MSG: R
 
 
 
-implementation {:ForceInline} validCombination41_AssetTransfer(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, offerPrice_s6175: int, inspector_s6175: Ref, appraiser_s6175: Ref, description_s6175: int, price_s6175: int)
-{
-
-  anon0:
-    call {:si_unique_call 0} {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
-    call {:si_unique_call 1} {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
-    call {:si_unique_call 2} {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
-    call {:si_unique_call 3} {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-    call {:si_unique_call 4} {:cexpr "offerPrice"} boogie_si_record_sol2Bpl_int(offerPrice_s6175);
-    call {:si_unique_call 5} {:cexpr "inspector"} boogie_si_record_sol2Bpl_ref(inspector_s6175);
-    call {:si_unique_call 6} {:cexpr "appraiser"} boogie_si_record_sol2Bpl_ref(appraiser_s6175);
-    call {:si_unique_call 7} {:cexpr "description"} boogie_si_record_sol2Bpl_int(description_s6175);
-    call {:si_unique_call 8} {:cexpr "price"} boogie_si_record_sol2Bpl_int(price_s6175);
-    call {:si_unique_call 9} {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-    goto corral_source_split_1;
-
-  corral_source_split_1:
-    goto corral_source_split_2;
-
-  corral_source_split_2:
-    assume (true && State_AssetTransfer[this] == 0 && !(State_AssetTransfer[this] == 0) && State_AssetTransfer[this] == 1 && !(State_AssetTransfer[this] == 1 || State_AssetTransfer[this] == 2 || State_AssetTransfer[this] == 3 || (State_AssetTransfer[this] == 4 && State_AssetTransfer[this] == 5) || State_AssetTransfer[this] == 6) && State_AssetTransfer[this] == 7) || State_AssetTransfer[this] == 5 || (State_AssetTransfer[this] == 6 && State_AssetTransfer[this] == 1 && (State_AssetTransfer[this] == 1 || State_AssetTransfer[this] == 2 || State_AssetTransfer[this] == 3 || State_AssetTransfer[this] == 4 || State_AssetTransfer[this] == 5 || State_AssetTransfer[this] == 7) && (State_AssetTransfer[this] != 2 || State_AssetTransfer[this] != 3) && !(State_AssetTransfer[this] != 2 || State_AssetTransfer[this] != 4));
-    goto corral_source_split_3;
-
-  corral_source_split_3:
-    assert false;
-    return;
-}
-
-
-
 var InstanceOwner_AssetTransfer: [Ref]Ref;
 
 var Description_AssetTransfer: [Ref]int;
@@ -312,7 +312,7 @@ implementation {:ForceInline} AssetTransfer_AssetTransfer_NoBaseCtor(this: Ref, 
     assume msgsender_MSG != null;
     Balance[this] := 0;
     InstanceOwner_AssetTransfer[this] := null;
-    Description_AssetTransfer[this] := -761211028;
+    Description_AssetTransfer[this] := -928194099;
     AskingPrice_AssetTransfer[this] := 0;
     InstanceBuyer_AssetTransfer[this] := null;
     OfferPrice_AssetTransfer[this] := 0;

@@ -1,5 +1,11 @@
 // Prueba
 digraph {
+	init [label=init]
+	"1-2-3-" [label="AddMiles(miles);
+ComputeTotalRewards();
+GetMiles();
+"]
+	init -> "1-2-3-" [label=constructor]
 	"1-2-3-" [label="AddMiles(miles);
 ComputeTotalRewards();
 GetMiles();

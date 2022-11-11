@@ -102,7 +102,10 @@ def validCombinations(arg):
                 if (indexFunction + 1) in finalResultsTemp[indexPreconditionRequire]:
                     functionName = str(indexPreconditionRequire) + "x" + str(indexPreconditionAssert) + "x" + str(indexFunction)
                     command = getToolCommand(functionName, tool, fuctionCombinations, txBound)
-                    result = subprocess.run([command, ""], shell = True, cwd=final_directory, stdout=subprocess.PIPE)
+                    try:
+                        result = subprocess.run([command, ""], shell = True, cwd=final_directory, stdout=subprocess.PIPE)
+                    except:
+                        print("Error command " + command)
                     if tool_output in str(result.stdout.decode('utf-8')):
                         dot.node(combinationToString(finalResultsTemp[indexPreconditionRequire]), output_combination(indexPreconditionRequire, finalResultsTemp))
                         dot.node(combinationToString(finalResults[indexPreconditionAssert]), output_combination(indexPreconditionAssert, finalResults))
@@ -113,11 +116,6 @@ def validCombinations(arg):
 def validInit(arg):
 
     global tool_output, fileName, threadCount, preconditionsThreads, finalResultsThreads, lastOutputs, preconditions, finalResults, dot
-
-    # preconditionsTemp = preconditionsThreads[arg]
-    # finalResultsTemp = finalResultsThreads[arg]
-    # lastOutput = lastOutputs[arg]
-
     current_directory = os.getcwd()
     final_directory = os.path.join(current_directory, r'new_folder'+str(arg))
     if not os.path.exists(final_directory):
@@ -138,10 +136,7 @@ def validInit(arg):
     for line in inputfile:
         write_file.write(line)
         if 'contract ' + contractName + ' {' in line:
-            # for indexPreconditionRequire, preconditionRequire in enumerate(preconditionsTemp):
             for indexPreconditionAssert, preconditionAssert in enumerate(preconditions):
-                    # for indexFunction, function in enumerate(functions):
-                        # if (indexFunction + 1) in finalResultsTemp[indexPreconditionRequire]:
                 functionName =  "initx" + str(indexPreconditionAssert)
                 fuctionCombinations.append(functionName)
                 write_file.write(functionOutput(functionName) + "\n")
@@ -150,10 +145,7 @@ def validInit(arg):
                 write_file.write("}" + "\n") 
     write_file.close()
 
-    # for indexPreconditionRequire, preconditionRequire in enumerate(preconditionsTemp):
     for indexPreconditionAssert, preconditionAssert in enumerate(preconditions):
-        # for indexFunction, function in enumerate(functions):
-            # if (indexFunction + 1) in finalResultsTemp[indexPreconditionRequire]:
         functionName = "initx" + str(indexPreconditionAssert)
         command = getToolCommand(functionName, tool, fuctionCombinations, 1)
         result = subprocess.run([command, ""], shell = True, cwd=final_directory, stdout=subprocess.PIPE)
@@ -161,28 +153,6 @@ def validInit(arg):
             dot.node("init", "init")
             dot.node(combinationToString(finalResults[indexPreconditionAssert]), output_combination(indexPreconditionAssert, finalResults))
             dot.edge("init",combinationToString(finalResults[indexPreconditionAssert]) , "constructor")
-        # print_output(indexPreconditionRequire, indexFunction, indexPreconditionAssert, finalResultsTemp, finalResults)
-    # os.remove(fileNameTemp) 
-
-results=[]
-finalResults = []
-
-fileName = "RefrigeratedTransportation.sol"
-contractName = "RefrigeratedTransportation"
-functions = ["IngestTelemetry(humidity, temperature, timestamp);", "TransferResponsibility(newCounterparty);", "Complete();"]
-statePreconditions = ["State != StateType.Completed && State != StateType.OutOfCompliance ", "State != StateType.Completed && State != StateType.OutOfCompliance", "State != StateType.Completed && State != StateType.OutOfCompliance"]
-functionPreconditions = ["Device == msg.sender", "InitiatingCounterparty == msg.sender && Counterparty == msg.sender && newCounterparty != Device", "Owner == msg.sender && SupplyChainOwner == msg.sender"]
-functionVariables = "int humidity, int temperature, int timestamp, address newCounterparty"
-tool_output = "Found a counterexample"
-
-txBound = len(functions)
-
-fileName = "Contracts/" + fileName
-count = len(functions)
-funcionesNumeros = list(range(1, count + 1))
-
-threadCount = 12
-threads = []
 
 def combinationToString(combination):
     output = ""
@@ -191,15 +161,15 @@ def combinationToString(combination):
     return output
 
 def functionOutput(number):
-    return "function validCombination" + number + "(" + functionVariables + ") public {"
+    return "function vc" + number + "(" + functionVariables + ") public {"
 
 def getToolCommand(includeNumber, toolCommand, combinations, txBound):
     global contractName
     command = toolCommand + " " 
-    command = command + "/txBound:" + str(txBound) + " "
+    # command = command + "/txBound:" + str(txBound) + " "
     for indexCombination, combi in enumerate(combinations):
-        if combi != includeNumber:
-            command += "/ignoreMethod:validCombination"+ combi +"@" + contractName + " "
+        if combi != includeNumber: 
+            command += "/ignoreMethod:vc"+ combi +"@" + contractName + " "
     return command
 
 def replace_values(newValue, oldValue, filename):
@@ -241,42 +211,77 @@ def print_output(indexPreconditionRequire, indexFunction, indexPreconditionAsser
     output ="Desde este estado:\n"+ output_combination(indexPreconditionRequire, combinations) + "\nHaciendo " + functions[indexFunction] + "\n\nLlegas al estado:\n" + output_combination(indexPreconditionAssert, fullCombination) + "\n---------"
     print(output)
 
-truePreconditions = []
-for index, statePrecondition in enumerate(statePreconditions):
-    if statePrecondition == "true":
-        truePreconditions.append(index + 1)
+def getCombinations():
+    global statePreconditions, funcionesNumeros
+    truePreconditions = []
+    for index, statePrecondition in enumerate(statePreconditions):
+        if statePrecondition == "true":
+            truePreconditions.append(index + 1)
 
-# Combinations
-for L in range(len(funcionesNumeros) + 1):
-    for subset in itertools.combinations(funcionesNumeros, L):
-        isTrue = True
-        for truePre in truePreconditions:
-            if truePre not in subset:
-                isTrue = False
-        if isTrue == True:
-            results.append(subset)
+    # Combinations
+    for L in range(len(funcionesNumeros) + 1):
+        for subset in itertools.combinations(funcionesNumeros, L):
+            isTrue = True
+            for truePre in truePreconditions:
+                if truePre not in subset:
+                    isTrue = False
+            if isTrue == True:
+                results.append(subset)
 
-for partialResult in results:
-    paddingResult = []
-    paddingResult = [0 for i in range(count)] 
-    for i in range(count):
-        if len(partialResult) > i and partialResult[i] >=0:
-            indice = partialResult[i]
-            paddingResult[indice-1] = indice
-    finalResults.append(paddingResult)
+    for partialResult in results:
+        paddingResult = []
+        paddingResult = [0 for i in range(count)] 
+        for i in range(count):
+            if len(partialResult) > i and partialResult[i] >=0:
+                indice = partialResult[i]
+                paddingResult[indice-1] = indice
+        finalResults.append(paddingResult)
+    return finalResults
 
-preconditions = []
-for result in finalResults:
-    precondition = ""
-    for number in funcionesNumeros:
-        if precondition != "":
-            precondition += " && "
-        if number in result:
-            precondition += statePreconditions[number-1]
-        else:
-            precondition += "!(" + statePreconditions[number-1] + ")"
-    preconditions.append(precondition)
+def getPreconditions():
+    global finalResults, statePreconditions
+    preconditions = []
+    for result in finalResults:
+        precondition = ""
+        for number in funcionesNumeros:
+            if precondition != "":
+                precondition += " && "
+            if number in result:
+                precondition += statePreconditions[number-1]
+            else:
+                precondition += "!(" + statePreconditions[number-1] + ")"
+        preconditions.append(precondition)
+    return preconditions
 
+results=[]
+finalResults = []
+
+fileName = "BasicProvenance.sol"
+contractName = "BasicProvenance"
+functions = ["TransferResponsibility(newCounterparty);", "Complete();"]
+
+statePreconditions = ["State != StateType.Completed", 
+"State != StateType.Completed"]
+functionPreconditions = ["Counterparty == msg.sender",
+"SupplyChainOwner == msg.sender"]
+
+functionVariables = "address newCounterparty"
+tool_output = "Found a counterexample"
+
+states = ["Created", "InTransit", "Completed"]
+statePreconditions = ["State == StateType.Created", "State == StateType.InTransit", "State == StateType.Completed"]
+
+txBound = 6
+
+fileName = "Contracts/" + fileName
+count = len(functions)
+funcionesNumeros = list(range(1, count + 1))
+
+threadCount = 12
+threads = []
+
+finalResults = getCombinations()
+preconditions = getPreconditions()
 
 preconditionsThreads = preconditions
 preconditionsThreads = np.array_split(preconditionsThreads, threadCount)
@@ -307,17 +312,36 @@ preconditions = preconditionsThreads
 
 divideCount = threadCount if len(preconditionsThreads) > threadCount else len(preconditionsThreads)
 
+if len(preconditionsThreads) > 500:
+    print("MAYOR A 500")
+    divideCount = divideCount * 2
+
 preconditionsThreads = np.array_split(preconditionsThreads, divideCount)
 finalResultsThreads = np.array_split(finalResultsThreads, divideCount)
 
 dot = graphviz.Digraph(comment='Prueba')
 
-for i in range(divideCount):
-    thread = Thread(target = validCombinations, args = [i])
-    thread.start()
-    threads.append(thread)
+if  len(preconditionsThreads) > 500:
+    for i in range(int(divideCount/2)):
+        thread = Thread(target = validCombinations, args = [i])
+        thread.start()
+        threads.append(thread)
 
-thread = Thread(target = validInit, args = [threadCount + 1])
+    for thread in threads:
+        thread.join()
+        print("threads finished")
+
+    for i in range(int(divideCount/2), divideCount):
+        thread = Thread(target = validCombinations, args = [i])
+        thread.start()
+        threads.append(thread)
+else:
+    for i in range(int(divideCount)):
+        thread = Thread(target = validCombinations, args = [i])
+        thread.start()
+        threads.append(thread)
+
+thread = Thread(target = validInit, args = [divideCount + 1])
 thread.start()
 threads.append(thread)
 print("threads started")

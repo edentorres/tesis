@@ -1,16 +1,36 @@
 Single threaded program detected
 Verifying program while tracking: {assertsPassed}
-Program has a potential bug: False bug
-Verifying program while tracking: {assertsPassed, State_RefrigeratedTransportation}
-Program has no bugs
+Program has a potential bug: True bug
+/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol(10,1): error PF5001: This assertion can fail
 
-Boogie verification time: 1.54 s
-Time spent reading-writing programs: 0.69 s
+Execution trace:
+/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol(26,1): Trace: Thread=1  (CALL FreshRefGenerator, RETURN from FreshRefGenerator , CALL BasicProvenance_BasicProvenance, _verisolFirstArg = false, this = T@Ref!val!0, msg.sender = T@Ref!val!3, msg.value = 5, supplyChainOwner = T@Ref!val!4, supplyChainObserver = T@Ref!val!5, _verisolLastArg = true, CALL BasicProvenance_BasicProvenance_NoBaseCtor, _verisolFirstArg = false, this = T@Ref!val!0, msg.sender = T@Ref!val!3, msg.value = 5, supplyChainOwner = T@Ref!val!4, supplyChainObserver = T@Ref!val!5, _verisolLastArg = true)
+/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol(26,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol(26,1): Trace: Thread=1  (InitiatingCounterparty = T@Ref!val!3)
+/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol(27,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol(27,1): Trace: Thread=1  (Counterparty = T@Ref!val!3)
+/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol(28,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol(28,1): Trace: Thread=1  (SupplyChainOwner = T@Ref!val!4)
+/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol(29,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol(29,1): Trace: Thread=1  (SupplyChainObserver = T@Ref!val!5)
+/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol(30,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol(30,1): Trace: Thread=1  (RETURN from BasicProvenance_BasicProvenance_NoBaseCtor , RETURN from BasicProvenance_BasicProvenance )
+/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol(30,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol(30,1): Trace: Thread=1  (CALL CorralChoice_BasicProvenance)
+/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol(8,1): Trace: Thread=1  (CALL vcinitx1_BasicProvenance, _verisolFirstArg = false, this = T@Ref!val!0, msg.sender = T@Ref!val!2, msg.value = 7, newCounterparty = T@Ref!val!6, _verisolLastArg = true)
+/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol(10,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol(10,1): Trace: Thread=1  (ASSERTION FAILS assert !(State_BasicProvenance[this] != 2 && State_BasicProvenance[this] != 2);
+ )
+/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol(30,1): Trace: Thread=1  (RETURN from vcinitx1_BasicProvenance , RETURN from CorralChoice_BasicProvenance )
+/Users/etorres/Proyectos/verisol-test/2/new_folder3/CombinationsTemp3.sol(30,1): Trace: Thread=1  (Done)
 
-Time spent checking a program (2): 2.29 s
-Time spent checking a path (3): 1.23 s
+Boogie verification time: 0.58 s
+Time spent reading-writing programs: 0.24 s
 
-Number of procedures inlined: 10
-Number of variables tracked: 2
-Total Time: 5.215093 s
-Total User CPU time: 9.5186554 s
+Time spent checking a program (1): 1.02 s
+Time spent checking a path (1): 0.30 s
+
+Number of procedures inlined: 9
+Number of variables tracked: 1
+Total Time: 2.387148 s
+Total User CPU time: 6.2386114 s

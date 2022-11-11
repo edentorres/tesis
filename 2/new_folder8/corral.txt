@@ -1,77 +1,49 @@
 Single threaded program detected
 Verifying program while tracking: {assertsPassed}
 Program has a potential bug: False bug
-Verifying program while tracking: {assertsPassed, State_AssetTransfer}
+Verifying program while tracking: {assertsPassed, State_BasicProvenance}
 Program has a potential bug: True bug
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(257,1): error PF5001: This assertion can fail
+/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(7,1): error PF5001: This assertion can fail
 
 Execution trace:
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(271,1): Trace: Thread=1  (CALL FreshRefGenerator, RETURN from FreshRefGenerator , CALL AssetTransfer_AssetTransfer, _verisolFirstArg = false, this = T@Ref!val!0, msg.sender = T@Ref!val!2, msg.value = 57, description = -265028417, price = 213, _verisolLastArg = true, CALL AssetTransfer_AssetTransfer_NoBaseCtor, _verisolFirstArg = false, this = T@Ref!val!0, msg.sender = T@Ref!val!2, msg.value = 57, description = -265028417, price = 213, _verisolLastArg = true)
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(271,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(271,1): Trace: Thread=1  (InstanceOwner = T@Ref!val!2)
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(272,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(272,1): Trace: Thread=1  (AskingPrice = 213)
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(273,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(273,1): Trace: Thread=1  (Description = -265028417)
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(274,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(274,1): Trace: Thread=1  (RETURN from AssetTransfer_AssetTransfer_NoBaseCtor , RETURN from AssetTransfer_AssetTransfer )
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(274,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(274,1): Trace: Thread=1  (CALL CorralChoice_AssetTransfer)
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(306,1): Trace: Thread=1  (CALL MakeOffer_AssetTransfer, _verisolFirstArg = false, this = T@Ref!val!0, msg.sender = T@Ref!val!6, msg.value = 63, inspector = T@Ref!val!4, appraiser = T@Ref!val!3, offerPrice = 747, _verisolLastArg = true)
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(306,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(312,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(315,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(321,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(321,1): Trace: Thread=1  (InstanceBuyer = T@Ref!val!6)
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(322,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(322,1): Trace: Thread=1  (InstanceInspector = T@Ref!val!4)
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(323,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(323,1): Trace: Thread=1  (InstanceAppraiser = T@Ref!val!3)
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(324,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(324,1): Trace: Thread=1  (OfferPrice = 747)
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(325,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(274,1): Trace: Thread=1  (RETURN from MakeOffer_AssetTransfer , RETURN from CorralChoice_AssetTransfer )
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(274,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(274,1): Trace: Thread=1  (CALL CorralChoice_AssetTransfer)
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(330,1): Trace: Thread=1  (CALL AcceptOffer_AssetTransfer, _verisolFirstArg = false, this = T@Ref!val!0, msg.sender = T@Ref!val!2, msg.value = 64, _verisolLastArg = true)
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(331,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(335,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(340,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(274,1): Trace: Thread=1  (RETURN from AcceptOffer_AssetTransfer , RETURN from CorralChoice_AssetTransfer )
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(274,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(274,1): Trace: Thread=1  (CALL CorralChoice_AssetTransfer)
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(439,1): Trace: Thread=1  (CALL MarkAppraised_AssetTransfer, _verisolFirstArg = false, this = T@Ref!val!0, msg.sender = T@Ref!val!3, msg.value = 66, _verisolLastArg = true)
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(440,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(445,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(446,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(448,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(274,1): Trace: Thread=1  (RETURN from MarkAppraised_AssetTransfer , RETURN from CorralChoice_AssetTransfer )
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(274,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(274,1): Trace: Thread=1  (CALL CorralChoice_AssetTransfer)
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(461,1): Trace: Thread=1  (CALL MarkInspected_AssetTransfer, _verisolFirstArg = false, this = T@Ref!val!0, msg.sender = T@Ref!val!4, msg.value = 67, _verisolLastArg = true)
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(462,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(467,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(471,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(472,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(473,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(274,1): Trace: Thread=1  (RETURN from MarkInspected_AssetTransfer , RETURN from CorralChoice_AssetTransfer )
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(274,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(274,1): Trace: Thread=1  (CALL CorralChoice_AssetTransfer)
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(252,1): Trace: Thread=1  (CALL validCombination41_AssetTransfer, _verisolFirstArg = false, this = T@Ref!val!0, msg.sender = T@Ref!val!5, msg.value = 68, offerPrice = 69, inspector = T@Ref!val!7, appraiser = T@Ref!val!8, description = 70, price = 71, _verisolLastArg = true)
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(252,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(257,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(257,1): Trace: Thread=1  (ASSERTION FAILS assert false;
+/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(23,1): Trace: Thread=1  (CALL FreshRefGenerator, RETURN from FreshRefGenerator , CALL BasicProvenance_BasicProvenance, _verisolFirstArg = false, this = T@Ref!val!0, msg.sender = T@Ref!val!4, msg.value = 5, supplyChainOwner = T@Ref!val!2, supplyChainObserver = T@Ref!val!5, _verisolLastArg = true, CALL BasicProvenance_BasicProvenance_NoBaseCtor, _verisolFirstArg = false, this = T@Ref!val!0, msg.sender = T@Ref!val!4, msg.value = 5, supplyChainOwner = T@Ref!val!2, supplyChainObserver = T@Ref!val!5, _verisolLastArg = true)
+/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(24,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(24,1): Trace: Thread=1  (InitiatingCounterparty = T@Ref!val!4)
+/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(25,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(25,1): Trace: Thread=1  (Counterparty = T@Ref!val!4)
+/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(26,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(26,1): Trace: Thread=1  (SupplyChainOwner = T@Ref!val!2)
+/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(27,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(27,1): Trace: Thread=1  (SupplyChainObserver = T@Ref!val!5)
+/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(28,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(28,1): Trace: Thread=1  (RETURN from BasicProvenance_BasicProvenance_NoBaseCtor , RETURN from BasicProvenance_BasicProvenance )
+/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(28,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(28,1): Trace: Thread=1  (CALL CorralChoice_BasicProvenance)
+/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(48,1): Trace: Thread=1  (CALL Complete_BasicProvenance, _verisolFirstArg = false, this = T@Ref!val!0, msg.sender = T@Ref!val!2, msg.value = 8, _verisolLastArg = true)
+/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(49,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(54,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(55,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(55,1): Trace: Thread=1  (PreviousCounterparty = T@Ref!val!4)
+/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(56,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(56,1): Trace: Thread=1  (Counterparty = T@Ref!val!1)
+/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(28,1): Trace: Thread=1  (RETURN from Complete_BasicProvenance , RETURN from CorralChoice_BasicProvenance )
+/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(28,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(28,1): Trace: Thread=1  (CALL CorralChoice_BasicProvenance)
+/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(4,1): Trace: Thread=1  (CALL vc0_BasicProvenance, _verisolFirstArg = false, this = T@Ref!val!0, msg.sender = T@Ref!val!3, msg.value = 9, newCounterparty = T@Ref!val!6, _verisolLastArg = true)
+/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(6,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(7,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(7,1): Trace: Thread=1  (ASSERTION FAILS assert false;
  )
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(274,1): Trace: Thread=1  (RETURN from validCombination41_AssetTransfer , RETURN from CorralChoice_AssetTransfer )
-/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(274,1): Trace: Thread=1  (Done)
+/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(28,1): Trace: Thread=1  (RETURN from vc0_BasicProvenance , RETURN from CorralChoice_BasicProvenance )
+/Users/etorres/Proyectos/verisol-test/2/new_folder8/CombinationsTemp8.sol(28,1): Trace: Thread=1  (Done)
 
-Boogie verification time: 5.09 s
-Time spent reading-writing programs: 2.42 s
+Boogie verification time: 2.53 s
+Time spent reading-writing programs: 0.68 s
 
-Time spent checking a program (2): 6.32 s
-Time spent checking a path (4): 3.16 s
+Time spent checking a program (2): 2.60 s
+Time spent checking a path (4): 1.85 s
 
-Number of procedures inlined: 69
+Number of procedures inlined: 14
 Number of variables tracked: 2
-Total Time: 12.872281 s
-Total User CPU time: 18.4299046 s
+Total Time: 6.688352 s
+Total User CPU time: 9.1285913 s

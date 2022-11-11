@@ -1,78 +1,49 @@
 Single threaded program detected
 Verifying program while tracking: {assertsPassed}
 Program has a potential bug: False bug
-Verifying program while tracking: {assertsPassed, State_RefrigeratedTransportation}
+Verifying program while tracking: {assertsPassed, State_BasicProvenance}
 Program has a potential bug: True bug
 /Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(7,1): error PF5001: This assertion can fail
 
 Execution trace:
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(35,1): Trace: Thread=1  (CALL FreshRefGenerator, RETURN from FreshRefGenerator , CALL RefrigeratedTransportation_RefrigeratedTransportation, _verisolFirstArg = false, this = T@Ref!val!0, msg.sender = T@Ref!val!4, msg.value = 13, device = T@Ref!val!2, supplyChainOwner = T@Ref!val!5, supplyChainObserver = T@Ref!val!6, minHumidity = 887, maxHumidity = -720, minTemperature = 24, maxTemperature = 725, _verisolLastArg = true, CALL RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor, _verisolFirstArg = false, this = T@Ref!val!0, msg.sender = T@Ref!val!4, msg.value = 13, device = T@Ref!val!2, supplyChainOwner = T@Ref!val!5, supplyChainObserver = T@Ref!val!6, minHumidity = 887, maxHumidity = -720, minTemperature = 24, maxTemperature = 725, _verisolLastArg = true)
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(36,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(36,1): Trace: Thread=1  (ComplianceStatus = true)
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(37,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(37,1): Trace: Thread=1  (ComplianceSensorReading = -1)
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(38,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(38,1): Trace: Thread=1  (InitiatingCounterparty = T@Ref!val!4)
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(39,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(39,1): Trace: Thread=1  (Owner = T@Ref!val!4)
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(40,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(40,1): Trace: Thread=1  (Counterparty = T@Ref!val!4)
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(41,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(41,1): Trace: Thread=1  (Device = T@Ref!val!2)
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(42,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(42,1): Trace: Thread=1  (SupplyChainOwner = T@Ref!val!5)
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(43,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(43,1): Trace: Thread=1  (SupplyChainObserver = T@Ref!val!6)
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(44,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(44,1): Trace: Thread=1  (MinHumidity = 887)
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(45,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(45,1): Trace: Thread=1  (MaxHumidity = -720)
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(46,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(46,1): Trace: Thread=1  (MinTemperature = 24)
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(47,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(47,1): Trace: Thread=1  (MaxTemperature = 725)
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(48,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(23,1): Trace: Thread=1  (CALL FreshRefGenerator, RETURN from FreshRefGenerator , CALL BasicProvenance_BasicProvenance, _verisolFirstArg = false, this = T@Ref!val!0, msg.sender = T@Ref!val!4, msg.value = 5, supplyChainOwner = T@Ref!val!2, supplyChainObserver = T@Ref!val!5, _verisolLastArg = true, CALL BasicProvenance_BasicProvenance_NoBaseCtor, _verisolFirstArg = false, this = T@Ref!val!0, msg.sender = T@Ref!val!4, msg.value = 5, supplyChainOwner = T@Ref!val!2, supplyChainObserver = T@Ref!val!5, _verisolLastArg = true)
+/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(24,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(24,1): Trace: Thread=1  (InitiatingCounterparty = T@Ref!val!4)
+/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(25,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(25,1): Trace: Thread=1  (Counterparty = T@Ref!val!4)
+/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(26,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(26,1): Trace: Thread=1  (SupplyChainOwner = T@Ref!val!2)
+/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(27,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(27,1): Trace: Thread=1  (SupplyChainObserver = T@Ref!val!5)
+/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(28,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(28,1): Trace: Thread=1  (RETURN from BasicProvenance_BasicProvenance_NoBaseCtor , RETURN from BasicProvenance_BasicProvenance )
+/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(28,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(28,1): Trace: Thread=1  (CALL CorralChoice_BasicProvenance)
+/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(48,1): Trace: Thread=1  (CALL Complete_BasicProvenance, _verisolFirstArg = false, this = T@Ref!val!0, msg.sender = T@Ref!val!2, msg.value = 8, _verisolLastArg = true)
 /Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(49,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(49,1): Trace: Thread=1  (ComplianceDetail = -483816492)
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(49,1): Trace: Thread=1  (RETURN from RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor , RETURN from RefrigeratedTransportation_RefrigeratedTransportation )
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(49,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(49,1): Trace: Thread=1  (CALL CorralChoice_RefrigeratedTransportation)
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(54,1): Trace: Thread=1  (CALL IngestTelemetry_RefrigeratedTransportation, _verisolFirstArg = false, this = T@Ref!val!0, msg.sender = T@Ref!val!2, msg.value = 16, humidity = -719, temperature = 17, timestamp = 983, _verisolLastArg = true)
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(58,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(63,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(68,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(73,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(73,1): Trace: Thread=1  (LastSensorUpdateTimestamp = 983)
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(75,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(76,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(77,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(78,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(78,1): Trace: Thread=1  (ComplianceSensorReading = -719)
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(79,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(79,1): Trace: Thread=1  (ComplianceDetail = 1717938572)
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(80,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(80,1): Trace: Thread=1  (ComplianceStatus = false)
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(90,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(91,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(92,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(49,1): Trace: Thread=1  (RETURN from IngestTelemetry_RefrigeratedTransportation , RETURN from CorralChoice_RefrigeratedTransportation )
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(49,1): Trace: Thread=1  ()
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(49,1): Trace: Thread=1  (CALL CorralChoice_RefrigeratedTransportation)
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(4,1): Trace: Thread=1  (CALL validCombination0_RefrigeratedTransportation, _verisolFirstArg = false, this = T@Ref!val!0, msg.sender = T@Ref!val!3, msg.value = 20, humidity = 21, temperature = 22, timestamp = 23, newCounterparty = T@Ref!val!7, _verisolLastArg = true)
+/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(54,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(55,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(55,1): Trace: Thread=1  (PreviousCounterparty = T@Ref!val!4)
+/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(56,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(56,1): Trace: Thread=1  (Counterparty = T@Ref!val!1)
+/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(28,1): Trace: Thread=1  (RETURN from Complete_BasicProvenance , RETURN from CorralChoice_BasicProvenance )
+/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(28,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(28,1): Trace: Thread=1  (CALL CorralChoice_BasicProvenance)
+/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(4,1): Trace: Thread=1  (CALL vc0_BasicProvenance, _verisolFirstArg = false, this = T@Ref!val!0, msg.sender = T@Ref!val!3, msg.value = 9, newCounterparty = T@Ref!val!6, _verisolLastArg = true)
 /Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(6,1): Trace: Thread=1  ()
 /Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(7,1): Trace: Thread=1  ()
 /Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(7,1): Trace: Thread=1  (ASSERTION FAILS assert false;
  )
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(49,1): Trace: Thread=1  (RETURN from validCombination0_RefrigeratedTransportation , RETURN from CorralChoice_RefrigeratedTransportation )
-/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(49,1): Trace: Thread=1  (Done)
+/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(28,1): Trace: Thread=1  (RETURN from vc0_BasicProvenance , RETURN from CorralChoice_BasicProvenance )
+/Users/etorres/Proyectos/verisol-test/2/new_folder0/CombinationsTemp0.sol(28,1): Trace: Thread=1  (Done)
 
-Boogie verification time: 1.78 s
-Time spent reading-writing programs: 0.88 s
+Boogie verification time: 1.22 s
+Time spent reading-writing programs: 0.49 s
 
-Time spent checking a program (2): 2.38 s
-Time spent checking a path (4): 1.57 s
+Time spent checking a program (2): 1.67 s
+Time spent checking a path (4): 1.00 s
 
-Number of procedures inlined: 16
+Number of procedures inlined: 14
 Number of variables tracked: 2
-Total Time: 5.844319 s
-Total User CPU time: 10.5404811 s
+Total Time: 4.11083 s
+Total User CPU time: 9.1358284 s

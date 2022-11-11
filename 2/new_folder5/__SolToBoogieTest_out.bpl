@@ -1,7 +1,7 @@
 type Ref;
 type ContractName;
 const unique null: Ref;
-const unique RefrigeratedTransportation: ContractName;
+const unique BasicProvenance: ContractName;
 function ConstantToRef(x: int) returns (ret: Ref);
 function BoogieRefToInt(x: Ref) returns (ret: int);
 function {:bvbuiltin "mod"} modBpl(x: int, y: int) returns (ret: int);
@@ -54,260 +54,124 @@ axiom(forall  __i__0_0:int, __i__0_1:int, __i__1_0:int, __i__1_1:int :: {abiEnco
 axiom(forall  __i__0_0:Ref, __i__0_1:Ref :: {abiEncodePacked1R(__i__0_0), abiEncodePacked1R(__i__0_1)} (((__i__0_0) == (__i__0_1)) || ((abiEncodePacked1R(__i__0_0)) != (abiEncodePacked1R(__i__0_1)))));
 
 axiom(forall  __i__0_0:Ref, __i__0_1:Ref, __i__1_0:int, __i__1_1:int :: {abiEncodePacked2R(__i__0_0, __i__1_0), abiEncodePacked2R(__i__0_1, __i__1_1)} ((((__i__0_0) == (__i__0_1)) && ((__i__1_0) == (__i__1_1))) || ((abiEncodePacked2R(__i__0_0, __i__1_0)) != (abiEncodePacked2R(__i__0_1, __i__1_1)))));
-procedure {:public} {:inline 1} validCombination0_RefrigeratedTransportation(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, humidity_s51: int, temperature_s51: int, timestamp_s51: int, newCounterparty_s51: Ref);
-implementation validCombination0_RefrigeratedTransportation(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, humidity_s51: int, temperature_s51: int, timestamp_s51: int, newCounterparty_s51: Ref)
+procedure {:public} {:inline 1} vc0x0x0_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s48: Ref);
+procedure {:public} {:inline 1} vc0x0x1_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s94: Ref);
+procedure {:public} {:inline 1} vc0x1x0_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s137: Ref);
+procedure {:public} {:inline 1} vc0x1x1_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s179: Ref);
+procedure {:public} {:inline 1} vc0x2x0_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s226: Ref);
+procedure {:public} {:inline 1} vc0x2x1_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s272: Ref);
+implementation vc0x2x1_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s272: Ref)
 {
 call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
 call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-call  {:cexpr "humidity"} boogie_si_record_sol2Bpl_int(humidity_s51);
-call  {:cexpr "temperature"} boogie_si_record_sol2Bpl_int(temperature_s51);
-call  {:cexpr "timestamp"} boogie_si_record_sol2Bpl_int(timestamp_s51);
-call  {:cexpr "newCounterparty"} boogie_si_record_sol2Bpl_ref(newCounterparty_s51);
+call  {:cexpr "newCounterparty"} boogie_si_record_sol2Bpl_ref(newCounterparty_s272);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 4} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 6} (true);
-assume ((((((State_RefrigeratedTransportation[this]) != (2)) && ((State_RefrigeratedTransportation[this]) != (3))) && (!((((State_RefrigeratedTransportation[this]) != (2)) && ((State_RefrigeratedTransportation[this]) != (3)))))) && ((State_RefrigeratedTransportation[this]) != (2))) && ((State_RefrigeratedTransportation[this]) != (3)));
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 7} (true);
-assert (false);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 40} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 41} (true);
+assume (((State_BasicProvenance[this]) != (2)) && ((State_BasicProvenance[this]) != (2)));
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 42} (true);
+assume ((SupplyChainOwner_BasicProvenance[this]) == (msgsender_MSG));
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 43} (true);
+call Complete_BasicProvenance(this, msgsender_MSG, msgvalue_MSG);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 44} (true);
+assert (!(((!(((State_BasicProvenance[this]) != (2)))) && (!(((State_BasicProvenance[this]) != (2)))))));
 }
 
-var State_RefrigeratedTransportation: [Ref]int;
-var Owner_RefrigeratedTransportation: [Ref]Ref;
-var InitiatingCounterparty_RefrigeratedTransportation: [Ref]Ref;
-var Counterparty_RefrigeratedTransportation: [Ref]Ref;
-var PreviousCounterparty_RefrigeratedTransportation: [Ref]Ref;
-var Device_RefrigeratedTransportation: [Ref]Ref;
-var SupplyChainOwner_RefrigeratedTransportation: [Ref]Ref;
-var SupplyChainObserver_RefrigeratedTransportation: [Ref]Ref;
-var MinHumidity_RefrigeratedTransportation: [Ref]int;
-var MaxHumidity_RefrigeratedTransportation: [Ref]int;
-var MinTemperature_RefrigeratedTransportation: [Ref]int;
-var MaxTemperature_RefrigeratedTransportation: [Ref]int;
-var ComplianceSensorType_RefrigeratedTransportation: [Ref]int;
-var ComplianceSensorReading_RefrigeratedTransportation: [Ref]int;
-var ComplianceStatus_RefrigeratedTransportation: [Ref]bool;
-var ComplianceDetail_RefrigeratedTransportation: [Ref]int;
-var LastSensorUpdateTimestamp_RefrigeratedTransportation: [Ref]int;
-procedure {:inline 1} RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, device_s171: Ref, supplyChainOwner_s171: Ref, supplyChainObserver_s171: Ref, minHumidity_s171: int, maxHumidity_s171: int, minTemperature_s171: int, maxTemperature_s171: int);
-implementation RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, device_s171: Ref, supplyChainOwner_s171: Ref, supplyChainObserver_s171: Ref, minHumidity_s171: int, maxHumidity_s171: int, minTemperature_s171: int, maxTemperature_s171: int)
+procedure {:public} {:inline 1} vc0x3x0_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s315: Ref);
+procedure {:public} {:inline 1} vc0x3x1_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s357: Ref);
+procedure {:public} {:inline 1} vc0x4x0_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s404: Ref);
+procedure {:public} {:inline 1} vc0x4x1_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s450: Ref);
+procedure {:public} {:inline 1} vc0x5x0_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s493: Ref);
+procedure {:public} {:inline 1} vc0x5x1_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s535: Ref);
+var State_BasicProvenance: [Ref]int;
+var InitiatingCounterparty_BasicProvenance: [Ref]Ref;
+var Counterparty_BasicProvenance: [Ref]Ref;
+var PreviousCounterparty_BasicProvenance: [Ref]Ref;
+var SupplyChainOwner_BasicProvenance: [Ref]Ref;
+var SupplyChainObserver_BasicProvenance: [Ref]Ref;
+procedure {:inline 1} BasicProvenance_BasicProvenance_NoBaseCtor(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, supplyChainOwner_s581: Ref, supplyChainObserver_s581: Ref);
+implementation BasicProvenance_BasicProvenance_NoBaseCtor(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, supplyChainOwner_s581: Ref, supplyChainObserver_s581: Ref)
 {
 // start of initialization
 assume ((msgsender_MSG) != (null));
 Balance[this] := 0;
-Owner_RefrigeratedTransportation[this] := null;
-InitiatingCounterparty_RefrigeratedTransportation[this] := null;
-Counterparty_RefrigeratedTransportation[this] := null;
-PreviousCounterparty_RefrigeratedTransportation[this] := null;
-Device_RefrigeratedTransportation[this] := null;
-SupplyChainOwner_RefrigeratedTransportation[this] := null;
-SupplyChainObserver_RefrigeratedTransportation[this] := null;
-MinHumidity_RefrigeratedTransportation[this] := 0;
-MaxHumidity_RefrigeratedTransportation[this] := 0;
-MinTemperature_RefrigeratedTransportation[this] := 0;
-MaxTemperature_RefrigeratedTransportation[this] := 0;
-ComplianceSensorReading_RefrigeratedTransportation[this] := 0;
-ComplianceStatus_RefrigeratedTransportation[this] := false;
-ComplianceDetail_RefrigeratedTransportation[this] := 619911101;
-LastSensorUpdateTimestamp_RefrigeratedTransportation[this] := 0;
+InitiatingCounterparty_BasicProvenance[this] := null;
+Counterparty_BasicProvenance[this] := null;
+PreviousCounterparty_BasicProvenance[this] := null;
+SupplyChainOwner_BasicProvenance[this] := null;
+SupplyChainObserver_BasicProvenance[this] := null;
 // end of initialization
 call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
 call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-call  {:cexpr "device"} boogie_si_record_sol2Bpl_ref(device_s171);
-call  {:cexpr "supplyChainOwner"} boogie_si_record_sol2Bpl_ref(supplyChainOwner_s171);
-call  {:cexpr "supplyChainObserver"} boogie_si_record_sol2Bpl_ref(supplyChainObserver_s171);
-call  {:cexpr "minHumidity"} boogie_si_record_sol2Bpl_int(minHumidity_s171);
-call  {:cexpr "maxHumidity"} boogie_si_record_sol2Bpl_int(maxHumidity_s171);
-call  {:cexpr "minTemperature"} boogie_si_record_sol2Bpl_int(minTemperature_s171);
-call  {:cexpr "maxTemperature"} boogie_si_record_sol2Bpl_int(maxTemperature_s171);
+call  {:cexpr "supplyChainOwner"} boogie_si_record_sol2Bpl_ref(supplyChainOwner_s581);
+call  {:cexpr "supplyChainObserver"} boogie_si_record_sol2Bpl_ref(supplyChainObserver_s581);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 35} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 36} (true);
-ComplianceStatus_RefrigeratedTransportation[this] := true;
-call  {:cexpr "ComplianceStatus"} boogie_si_record_sol2Bpl_bool(ComplianceStatus_RefrigeratedTransportation[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 37} (true);
-ComplianceSensorReading_RefrigeratedTransportation[this] := -(1);
-call  {:cexpr "ComplianceSensorReading"} boogie_si_record_sol2Bpl_int(ComplianceSensorReading_RefrigeratedTransportation[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 38} (true);
-InitiatingCounterparty_RefrigeratedTransportation[this] := msgsender_MSG;
-call  {:cexpr "InitiatingCounterparty"} boogie_si_record_sol2Bpl_ref(InitiatingCounterparty_RefrigeratedTransportation[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 39} (true);
-Owner_RefrigeratedTransportation[this] := InitiatingCounterparty_RefrigeratedTransportation[this];
-call  {:cexpr "Owner"} boogie_si_record_sol2Bpl_ref(Owner_RefrigeratedTransportation[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 40} (true);
-Counterparty_RefrigeratedTransportation[this] := InitiatingCounterparty_RefrigeratedTransportation[this];
-call  {:cexpr "Counterparty"} boogie_si_record_sol2Bpl_ref(Counterparty_RefrigeratedTransportation[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 41} (true);
-Device_RefrigeratedTransportation[this] := device_s171;
-call  {:cexpr "Device"} boogie_si_record_sol2Bpl_ref(Device_RefrigeratedTransportation[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 42} (true);
-SupplyChainOwner_RefrigeratedTransportation[this] := supplyChainOwner_s171;
-call  {:cexpr "SupplyChainOwner"} boogie_si_record_sol2Bpl_ref(SupplyChainOwner_RefrigeratedTransportation[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 43} (true);
-SupplyChainObserver_RefrigeratedTransportation[this] := supplyChainObserver_s171;
-call  {:cexpr "SupplyChainObserver"} boogie_si_record_sol2Bpl_ref(SupplyChainObserver_RefrigeratedTransportation[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 44} (true);
-MinHumidity_RefrigeratedTransportation[this] := minHumidity_s171;
-call  {:cexpr "MinHumidity"} boogie_si_record_sol2Bpl_int(MinHumidity_RefrigeratedTransportation[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 45} (true);
-MaxHumidity_RefrigeratedTransportation[this] := maxHumidity_s171;
-call  {:cexpr "MaxHumidity"} boogie_si_record_sol2Bpl_int(MaxHumidity_RefrigeratedTransportation[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 46} (true);
-MinTemperature_RefrigeratedTransportation[this] := minTemperature_s171;
-call  {:cexpr "MinTemperature"} boogie_si_record_sol2Bpl_int(MinTemperature_RefrigeratedTransportation[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 47} (true);
-MaxTemperature_RefrigeratedTransportation[this] := maxTemperature_s171;
-call  {:cexpr "MaxTemperature"} boogie_si_record_sol2Bpl_int(MaxTemperature_RefrigeratedTransportation[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 48} (true);
-State_RefrigeratedTransportation[this] := 0;
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 49} (true);
-ComplianceDetail_RefrigeratedTransportation[this] := -820536223;
-call  {:cexpr "ComplianceDetail"} boogie_si_record_sol2Bpl_int(ComplianceDetail_RefrigeratedTransportation[this]);
-}
-
-procedure {:constructor} {:public} {:inline 1} RefrigeratedTransportation_RefrigeratedTransportation(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, device_s171: Ref, supplyChainOwner_s171: Ref, supplyChainObserver_s171: Ref, minHumidity_s171: int, maxHumidity_s171: int, minTemperature_s171: int, maxTemperature_s171: int);
-implementation RefrigeratedTransportation_RefrigeratedTransportation(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, device_s171: Ref, supplyChainOwner_s171: Ref, supplyChainObserver_s171: Ref, minHumidity_s171: int, maxHumidity_s171: int, minTemperature_s171: int, maxTemperature_s171: int)
-{
-call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
-call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
-call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
-call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-call  {:cexpr "device"} boogie_si_record_sol2Bpl_ref(device_s171);
-call  {:cexpr "supplyChainOwner"} boogie_si_record_sol2Bpl_ref(supplyChainOwner_s171);
-call  {:cexpr "supplyChainObserver"} boogie_si_record_sol2Bpl_ref(supplyChainObserver_s171);
-call  {:cexpr "minHumidity"} boogie_si_record_sol2Bpl_int(minHumidity_s171);
-call  {:cexpr "maxHumidity"} boogie_si_record_sol2Bpl_int(maxHumidity_s171);
-call  {:cexpr "minTemperature"} boogie_si_record_sol2Bpl_int(minTemperature_s171);
-call  {:cexpr "maxTemperature"} boogie_si_record_sol2Bpl_int(maxTemperature_s171);
-call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-call RefrigeratedTransportation_RefrigeratedTransportation_NoBaseCtor(this, msgsender_MSG, msgvalue_MSG, device_s171, supplyChainOwner_s171, supplyChainObserver_s171, minHumidity_s171, maxHumidity_s171, minTemperature_s171, maxTemperature_s171);
-}
-
-procedure {:public} {:inline 1} IngestTelemetry_RefrigeratedTransportation(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, humidity_s274: int, temperature_s274: int, timestamp_s274: int);
-implementation IngestTelemetry_RefrigeratedTransportation(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, humidity_s274: int, temperature_s274: int, timestamp_s274: int)
-{
-call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
-call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
-call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
-call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-call  {:cexpr "humidity"} boogie_si_record_sol2Bpl_int(humidity_s274);
-call  {:cexpr "temperature"} boogie_si_record_sol2Bpl_int(temperature_s274);
-call  {:cexpr "timestamp"} boogie_si_record_sol2Bpl_int(timestamp_s274);
-call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 54} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 58} (true);
-if ((State_RefrigeratedTransportation[this]) == (2)) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 59} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 60} (true);
-assume (false);
-}
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 63} (true);
-if ((State_RefrigeratedTransportation[this]) == (3)) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 64} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 65} (true);
-assume (false);
-}
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 68} (true);
-if ((Device_RefrigeratedTransportation[this]) != (msgsender_MSG)) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 69} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 70} (true);
-assume (false);
-}
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 73} (true);
-LastSensorUpdateTimestamp_RefrigeratedTransportation[this] := timestamp_s274;
-call  {:cexpr "LastSensorUpdateTimestamp"} boogie_si_record_sol2Bpl_int(LastSensorUpdateTimestamp_RefrigeratedTransportation[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 75} (true);
-if (((humidity_s274) > (MaxHumidity_RefrigeratedTransportation[this])) || ((humidity_s274) < (MinHumidity_RefrigeratedTransportation[this]))) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 76} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 77} (true);
-ComplianceSensorType_RefrigeratedTransportation[this] := 1;
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 78} (true);
-ComplianceSensorReading_RefrigeratedTransportation[this] := humidity_s274;
-call  {:cexpr "ComplianceSensorReading"} boogie_si_record_sol2Bpl_int(ComplianceSensorReading_RefrigeratedTransportation[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 79} (true);
-ComplianceDetail_RefrigeratedTransportation[this] := -562195639;
-call  {:cexpr "ComplianceDetail"} boogie_si_record_sol2Bpl_int(ComplianceDetail_RefrigeratedTransportation[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 80} (true);
-ComplianceStatus_RefrigeratedTransportation[this] := false;
-call  {:cexpr "ComplianceStatus"} boogie_si_record_sol2Bpl_bool(ComplianceStatus_RefrigeratedTransportation[this]);
-} else {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 82} (true);
-if (((temperature_s274) > (MaxTemperature_RefrigeratedTransportation[this])) || ((temperature_s274) < (MinTemperature_RefrigeratedTransportation[this]))) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 83} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 84} (true);
-ComplianceSensorType_RefrigeratedTransportation[this] := 2;
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 85} (true);
-ComplianceSensorReading_RefrigeratedTransportation[this] := temperature_s274;
-call  {:cexpr "ComplianceSensorReading"} boogie_si_record_sol2Bpl_int(ComplianceSensorReading_RefrigeratedTransportation[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 86} (true);
-ComplianceDetail_RefrigeratedTransportation[this] := -922988613;
-call  {:cexpr "ComplianceDetail"} boogie_si_record_sol2Bpl_int(ComplianceDetail_RefrigeratedTransportation[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 87} (true);
-ComplianceStatus_RefrigeratedTransportation[this] := false;
-call  {:cexpr "ComplianceStatus"} boogie_si_record_sol2Bpl_bool(ComplianceStatus_RefrigeratedTransportation[this]);
-}
-}
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 90} (true);
-if ((ComplianceStatus_RefrigeratedTransportation[this]) == (false)) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 91} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 92} (true);
-State_RefrigeratedTransportation[this] := 3;
-}
-}
-
-procedure {:public} {:inline 1} TransferResponsibility_RefrigeratedTransportation(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s339: Ref);
-implementation TransferResponsibility_RefrigeratedTransportation(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s339: Ref)
-{
-call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
-call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
-call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
-call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-call  {:cexpr "newCounterparty"} boogie_si_record_sol2Bpl_ref(newCounterparty_s339);
-call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 99} (true);
 assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 102} (true);
-if ((State_RefrigeratedTransportation[this]) == (2)) {
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 102} (true);
+InitiatingCounterparty_BasicProvenance[this] := msgsender_MSG;
+call  {:cexpr "InitiatingCounterparty"} boogie_si_record_sol2Bpl_ref(InitiatingCounterparty_BasicProvenance[this]);
 assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 103} (true);
+Counterparty_BasicProvenance[this] := InitiatingCounterparty_BasicProvenance[this];
+call  {:cexpr "Counterparty"} boogie_si_record_sol2Bpl_ref(Counterparty_BasicProvenance[this]);
 assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 104} (true);
-assume (false);
+SupplyChainOwner_BasicProvenance[this] := supplyChainOwner_s581;
+call  {:cexpr "SupplyChainOwner"} boogie_si_record_sol2Bpl_ref(SupplyChainOwner_BasicProvenance[this]);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 105} (true);
+SupplyChainObserver_BasicProvenance[this] := supplyChainObserver_s581;
+call  {:cexpr "SupplyChainObserver"} boogie_si_record_sol2Bpl_ref(SupplyChainObserver_BasicProvenance[this]);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 106} (true);
+State_BasicProvenance[this] := 0;
 }
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 107} (true);
-if ((State_RefrigeratedTransportation[this]) == (3)) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 108} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 109} (true);
-assume (false);
+
+procedure {:constructor} {:public} {:inline 1} BasicProvenance_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, supplyChainOwner_s581: Ref, supplyChainObserver_s581: Ref);
+implementation BasicProvenance_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, supplyChainOwner_s581: Ref, supplyChainObserver_s581: Ref)
+{
+call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
+call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
+call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
+call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
+call  {:cexpr "supplyChainOwner"} boogie_si_record_sol2Bpl_ref(supplyChainOwner_s581);
+call  {:cexpr "supplyChainObserver"} boogie_si_record_sol2Bpl_ref(supplyChainObserver_s581);
+call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
+call BasicProvenance_BasicProvenance_NoBaseCtor(this, msgsender_MSG, msgvalue_MSG, supplyChainOwner_s581, supplyChainObserver_s581);
 }
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 112} (true);
-if (((InitiatingCounterparty_RefrigeratedTransportation[this]) != (msgsender_MSG)) && ((Counterparty_RefrigeratedTransportation[this]) != (msgsender_MSG))) {
+
+procedure {:public} {:inline 1} TransferResponsibility_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s620: Ref);
+implementation TransferResponsibility_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s620: Ref)
+{
+call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
+call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
+call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
+call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
+call  {:cexpr "newCounterparty"} boogie_si_record_sol2Bpl_ref(newCounterparty_s620);
+call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 111} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 111} (true);
+if (((Counterparty_BasicProvenance[this]) != (msgsender_MSG)) || ((State_BasicProvenance[this]) == (2))) {
 assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 113} (true);
 assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 114} (true);
 assume (false);
 }
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 117} (true);
-if ((newCounterparty_s339) == (Device_RefrigeratedTransportation[this])) {
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 116} (true);
+if ((State_BasicProvenance[this]) == (0)) {
 assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 118} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 119} (true);
-assume (false);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 118} (true);
+State_BasicProvenance[this] := 1;
 }
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 121} (true);
+PreviousCounterparty_BasicProvenance[this] := Counterparty_BasicProvenance[this];
+call  {:cexpr "PreviousCounterparty"} boogie_si_record_sol2Bpl_ref(PreviousCounterparty_BasicProvenance[this]);
 assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 122} (true);
-if ((State_RefrigeratedTransportation[this]) == (0)) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 123} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 124} (true);
-State_RefrigeratedTransportation[this] := 1;
-}
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 127} (true);
-PreviousCounterparty_RefrigeratedTransportation[this] := Counterparty_RefrigeratedTransportation[this];
-call  {:cexpr "PreviousCounterparty"} boogie_si_record_sol2Bpl_ref(PreviousCounterparty_RefrigeratedTransportation[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 128} (true);
-Counterparty_RefrigeratedTransportation[this] := newCounterparty_s339;
-call  {:cexpr "Counterparty"} boogie_si_record_sol2Bpl_ref(Counterparty_RefrigeratedTransportation[this]);
+Counterparty_BasicProvenance[this] := newCounterparty_s620;
+call  {:cexpr "Counterparty"} boogie_si_record_sol2Bpl_ref(Counterparty_BasicProvenance[this]);
 }
 
-procedure {:public} {:inline 1} Complete_RefrigeratedTransportation(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int);
-implementation Complete_RefrigeratedTransportation(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int)
+procedure {:public} {:inline 1} Complete_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int);
+implementation Complete_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int)
 {
 var __var_1: Ref;
 call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
@@ -315,40 +179,28 @@ call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 127} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 127} (true);
+if (((SupplyChainOwner_BasicProvenance[this]) != (msgsender_MSG)) || ((State_BasicProvenance[this]) == (2))) {
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 129} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 130} (true);
+assume (false);
+}
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 132} (true);
+State_BasicProvenance[this] := 2;
 assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 133} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 136} (true);
-if ((State_RefrigeratedTransportation[this]) == (2)) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 137} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 138} (true);
-assume (false);
-}
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 141} (true);
-if ((State_RefrigeratedTransportation[this]) == (3)) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 142} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 143} (true);
-assume (false);
-}
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 146} (true);
-if (((Owner_RefrigeratedTransportation[this]) != (msgsender_MSG)) && ((SupplyChainOwner_RefrigeratedTransportation[this]) != (msgsender_MSG))) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 147} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 148} (true);
-assume (false);
-}
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 151} (true);
-State_RefrigeratedTransportation[this] := 2;
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 152} (true);
-PreviousCounterparty_RefrigeratedTransportation[this] := Counterparty_RefrigeratedTransportation[this];
-call  {:cexpr "PreviousCounterparty"} boogie_si_record_sol2Bpl_ref(PreviousCounterparty_RefrigeratedTransportation[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 153} (true);
+PreviousCounterparty_BasicProvenance[this] := Counterparty_BasicProvenance[this];
+call  {:cexpr "PreviousCounterparty"} boogie_si_record_sol2Bpl_ref(PreviousCounterparty_BasicProvenance[this]);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/new_folder5/CombinationsTemp5.sol"} {:sourceLine 134} (true);
 __var_1 := null;
-Counterparty_RefrigeratedTransportation[this] := __var_1;
-call  {:cexpr "Counterparty"} boogie_si_record_sol2Bpl_ref(Counterparty_RefrigeratedTransportation[this]);
+Counterparty_BasicProvenance[this] := __var_1;
+call  {:cexpr "Counterparty"} boogie_si_record_sol2Bpl_ref(Counterparty_BasicProvenance[this]);
 }
 
 procedure {:inline 1} FallbackDispatch(from: Ref, to: Ref, amount: int);
 implementation FallbackDispatch(from: Ref, to: Ref, amount: int)
 {
-if ((DType[to]) == (RefrigeratedTransportation)) {
+if ((DType[to]) == (BasicProvenance)) {
 assume ((amount) == (0));
 } else {
 call Fallback_UnknownType(from, to, amount);
@@ -376,261 +228,244 @@ success := false;
 }
 }
 
-const {:existential true} HoudiniB1_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB2_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB3_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB4_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB5_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB6_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB7_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB8_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB9_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB10_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB11_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB12_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB13_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB14_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB15_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB16_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB17_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB18_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB19_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB20_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB21_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB22_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB23_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB24_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB25_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB26_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB27_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB28_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB29_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB30_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB31_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB32_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB33_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB34_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB35_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB36_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB37_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB38_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB39_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB40_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB41_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB42_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB43_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB44_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB45_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB46_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB47_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB48_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB49_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB50_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB51_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB52_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB53_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB54_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB55_RefrigeratedTransportation: bool;
-const {:existential true} HoudiniB56_RefrigeratedTransportation: bool;
-procedure BoogieEntry_RefrigeratedTransportation();
-implementation BoogieEntry_RefrigeratedTransportation()
+const {:existential true} HoudiniB1_BasicProvenance: bool;
+const {:existential true} HoudiniB2_BasicProvenance: bool;
+const {:existential true} HoudiniB3_BasicProvenance: bool;
+const {:existential true} HoudiniB4_BasicProvenance: bool;
+const {:existential true} HoudiniB5_BasicProvenance: bool;
+const {:existential true} HoudiniB6_BasicProvenance: bool;
+const {:existential true} HoudiniB7_BasicProvenance: bool;
+const {:existential true} HoudiniB8_BasicProvenance: bool;
+const {:existential true} HoudiniB9_BasicProvenance: bool;
+const {:existential true} HoudiniB10_BasicProvenance: bool;
+const {:existential true} HoudiniB11_BasicProvenance: bool;
+const {:existential true} HoudiniB12_BasicProvenance: bool;
+const {:existential true} HoudiniB13_BasicProvenance: bool;
+const {:existential true} HoudiniB14_BasicProvenance: bool;
+const {:existential true} HoudiniB15_BasicProvenance: bool;
+const {:existential true} HoudiniB16_BasicProvenance: bool;
+const {:existential true} HoudiniB17_BasicProvenance: bool;
+const {:existential true} HoudiniB18_BasicProvenance: bool;
+const {:existential true} HoudiniB19_BasicProvenance: bool;
+const {:existential true} HoudiniB20_BasicProvenance: bool;
+const {:existential true} HoudiniB21_BasicProvenance: bool;
+const {:existential true} HoudiniB22_BasicProvenance: bool;
+const {:existential true} HoudiniB23_BasicProvenance: bool;
+const {:existential true} HoudiniB24_BasicProvenance: bool;
+const {:existential true} HoudiniB25_BasicProvenance: bool;
+const {:existential true} HoudiniB26_BasicProvenance: bool;
+const {:existential true} HoudiniB27_BasicProvenance: bool;
+const {:existential true} HoudiniB28_BasicProvenance: bool;
+const {:existential true} HoudiniB29_BasicProvenance: bool;
+const {:existential true} HoudiniB30_BasicProvenance: bool;
+procedure BoogieEntry_BasicProvenance();
+implementation BoogieEntry_BasicProvenance()
 {
 var this: Ref;
 var msgsender_MSG: Ref;
 var msgvalue_MSG: int;
 var choice: int;
-var humidity_s51: int;
-var temperature_s51: int;
-var timestamp_s51: int;
-var newCounterparty_s51: Ref;
-var device_s171: Ref;
-var supplyChainOwner_s171: Ref;
-var supplyChainObserver_s171: Ref;
-var minHumidity_s171: int;
-var maxHumidity_s171: int;
-var minTemperature_s171: int;
-var maxTemperature_s171: int;
-var humidity_s274: int;
-var temperature_s274: int;
-var timestamp_s274: int;
-var newCounterparty_s339: Ref;
+var newCounterparty_s48: Ref;
+var newCounterparty_s94: Ref;
+var newCounterparty_s137: Ref;
+var newCounterparty_s179: Ref;
+var newCounterparty_s226: Ref;
+var newCounterparty_s272: Ref;
+var newCounterparty_s315: Ref;
+var newCounterparty_s357: Ref;
+var newCounterparty_s404: Ref;
+var newCounterparty_s450: Ref;
+var newCounterparty_s493: Ref;
+var newCounterparty_s535: Ref;
+var supplyChainOwner_s581: Ref;
+var supplyChainObserver_s581: Ref;
+var newCounterparty_s620: Ref;
 var tmpNow: int;
 assume ((now) >= (0));
-assume ((DType[this]) == (RefrigeratedTransportation));
-call RefrigeratedTransportation_RefrigeratedTransportation(this, msgsender_MSG, msgvalue_MSG, device_s171, supplyChainOwner_s171, supplyChainObserver_s171, minHumidity_s171, maxHumidity_s171, minTemperature_s171, maxTemperature_s171);
+assume ((DType[this]) == (BasicProvenance));
+call BasicProvenance_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, supplyChainOwner_s581, supplyChainObserver_s581);
 while (true)
-  invariant (HoudiniB1_RefrigeratedTransportation) ==> ((Owner_RefrigeratedTransportation[this]) == (null));
-  invariant (HoudiniB2_RefrigeratedTransportation) ==> ((Owner_RefrigeratedTransportation[this]) != (null));
-  invariant (HoudiniB3_RefrigeratedTransportation) ==> ((InitiatingCounterparty_RefrigeratedTransportation[this]) == (null));
-  invariant (HoudiniB4_RefrigeratedTransportation) ==> ((InitiatingCounterparty_RefrigeratedTransportation[this]) != (null));
-  invariant (HoudiniB5_RefrigeratedTransportation) ==> ((Counterparty_RefrigeratedTransportation[this]) == (null));
-  invariant (HoudiniB6_RefrigeratedTransportation) ==> ((Counterparty_RefrigeratedTransportation[this]) != (null));
-  invariant (HoudiniB7_RefrigeratedTransportation) ==> ((PreviousCounterparty_RefrigeratedTransportation[this]) == (null));
-  invariant (HoudiniB8_RefrigeratedTransportation) ==> ((PreviousCounterparty_RefrigeratedTransportation[this]) != (null));
-  invariant (HoudiniB9_RefrigeratedTransportation) ==> ((Device_RefrigeratedTransportation[this]) == (null));
-  invariant (HoudiniB10_RefrigeratedTransportation) ==> ((Device_RefrigeratedTransportation[this]) != (null));
-  invariant (HoudiniB11_RefrigeratedTransportation) ==> ((SupplyChainOwner_RefrigeratedTransportation[this]) == (null));
-  invariant (HoudiniB12_RefrigeratedTransportation) ==> ((SupplyChainOwner_RefrigeratedTransportation[this]) != (null));
-  invariant (HoudiniB13_RefrigeratedTransportation) ==> ((SupplyChainObserver_RefrigeratedTransportation[this]) == (null));
-  invariant (HoudiniB14_RefrigeratedTransportation) ==> ((SupplyChainObserver_RefrigeratedTransportation[this]) != (null));
-  invariant (HoudiniB15_RefrigeratedTransportation) ==> ((Owner_RefrigeratedTransportation[this]) == (InitiatingCounterparty_RefrigeratedTransportation[this]));
-  invariant (HoudiniB16_RefrigeratedTransportation) ==> ((Owner_RefrigeratedTransportation[this]) != (InitiatingCounterparty_RefrigeratedTransportation[this]));
-  invariant (HoudiniB17_RefrigeratedTransportation) ==> ((Owner_RefrigeratedTransportation[this]) == (Counterparty_RefrigeratedTransportation[this]));
-  invariant (HoudiniB18_RefrigeratedTransportation) ==> ((Owner_RefrigeratedTransportation[this]) != (Counterparty_RefrigeratedTransportation[this]));
-  invariant (HoudiniB19_RefrigeratedTransportation) ==> ((Owner_RefrigeratedTransportation[this]) == (PreviousCounterparty_RefrigeratedTransportation[this]));
-  invariant (HoudiniB20_RefrigeratedTransportation) ==> ((Owner_RefrigeratedTransportation[this]) != (PreviousCounterparty_RefrigeratedTransportation[this]));
-  invariant (HoudiniB21_RefrigeratedTransportation) ==> ((Owner_RefrigeratedTransportation[this]) == (Device_RefrigeratedTransportation[this]));
-  invariant (HoudiniB22_RefrigeratedTransportation) ==> ((Owner_RefrigeratedTransportation[this]) != (Device_RefrigeratedTransportation[this]));
-  invariant (HoudiniB23_RefrigeratedTransportation) ==> ((Owner_RefrigeratedTransportation[this]) == (SupplyChainOwner_RefrigeratedTransportation[this]));
-  invariant (HoudiniB24_RefrigeratedTransportation) ==> ((Owner_RefrigeratedTransportation[this]) != (SupplyChainOwner_RefrigeratedTransportation[this]));
-  invariant (HoudiniB25_RefrigeratedTransportation) ==> ((Owner_RefrigeratedTransportation[this]) == (SupplyChainObserver_RefrigeratedTransportation[this]));
-  invariant (HoudiniB26_RefrigeratedTransportation) ==> ((Owner_RefrigeratedTransportation[this]) != (SupplyChainObserver_RefrigeratedTransportation[this]));
-  invariant (HoudiniB27_RefrigeratedTransportation) ==> ((InitiatingCounterparty_RefrigeratedTransportation[this]) == (Counterparty_RefrigeratedTransportation[this]));
-  invariant (HoudiniB28_RefrigeratedTransportation) ==> ((InitiatingCounterparty_RefrigeratedTransportation[this]) != (Counterparty_RefrigeratedTransportation[this]));
-  invariant (HoudiniB29_RefrigeratedTransportation) ==> ((InitiatingCounterparty_RefrigeratedTransportation[this]) == (PreviousCounterparty_RefrigeratedTransportation[this]));
-  invariant (HoudiniB30_RefrigeratedTransportation) ==> ((InitiatingCounterparty_RefrigeratedTransportation[this]) != (PreviousCounterparty_RefrigeratedTransportation[this]));
-  invariant (HoudiniB31_RefrigeratedTransportation) ==> ((InitiatingCounterparty_RefrigeratedTransportation[this]) == (Device_RefrigeratedTransportation[this]));
-  invariant (HoudiniB32_RefrigeratedTransportation) ==> ((InitiatingCounterparty_RefrigeratedTransportation[this]) != (Device_RefrigeratedTransportation[this]));
-  invariant (HoudiniB33_RefrigeratedTransportation) ==> ((InitiatingCounterparty_RefrigeratedTransportation[this]) == (SupplyChainOwner_RefrigeratedTransportation[this]));
-  invariant (HoudiniB34_RefrigeratedTransportation) ==> ((InitiatingCounterparty_RefrigeratedTransportation[this]) != (SupplyChainOwner_RefrigeratedTransportation[this]));
-  invariant (HoudiniB35_RefrigeratedTransportation) ==> ((InitiatingCounterparty_RefrigeratedTransportation[this]) == (SupplyChainObserver_RefrigeratedTransportation[this]));
-  invariant (HoudiniB36_RefrigeratedTransportation) ==> ((InitiatingCounterparty_RefrigeratedTransportation[this]) != (SupplyChainObserver_RefrigeratedTransportation[this]));
-  invariant (HoudiniB37_RefrigeratedTransportation) ==> ((Counterparty_RefrigeratedTransportation[this]) == (PreviousCounterparty_RefrigeratedTransportation[this]));
-  invariant (HoudiniB38_RefrigeratedTransportation) ==> ((Counterparty_RefrigeratedTransportation[this]) != (PreviousCounterparty_RefrigeratedTransportation[this]));
-  invariant (HoudiniB39_RefrigeratedTransportation) ==> ((Counterparty_RefrigeratedTransportation[this]) == (Device_RefrigeratedTransportation[this]));
-  invariant (HoudiniB40_RefrigeratedTransportation) ==> ((Counterparty_RefrigeratedTransportation[this]) != (Device_RefrigeratedTransportation[this]));
-  invariant (HoudiniB41_RefrigeratedTransportation) ==> ((Counterparty_RefrigeratedTransportation[this]) == (SupplyChainOwner_RefrigeratedTransportation[this]));
-  invariant (HoudiniB42_RefrigeratedTransportation) ==> ((Counterparty_RefrigeratedTransportation[this]) != (SupplyChainOwner_RefrigeratedTransportation[this]));
-  invariant (HoudiniB43_RefrigeratedTransportation) ==> ((Counterparty_RefrigeratedTransportation[this]) == (SupplyChainObserver_RefrigeratedTransportation[this]));
-  invariant (HoudiniB44_RefrigeratedTransportation) ==> ((Counterparty_RefrigeratedTransportation[this]) != (SupplyChainObserver_RefrigeratedTransportation[this]));
-  invariant (HoudiniB45_RefrigeratedTransportation) ==> ((PreviousCounterparty_RefrigeratedTransportation[this]) == (Device_RefrigeratedTransportation[this]));
-  invariant (HoudiniB46_RefrigeratedTransportation) ==> ((PreviousCounterparty_RefrigeratedTransportation[this]) != (Device_RefrigeratedTransportation[this]));
-  invariant (HoudiniB47_RefrigeratedTransportation) ==> ((PreviousCounterparty_RefrigeratedTransportation[this]) == (SupplyChainOwner_RefrigeratedTransportation[this]));
-  invariant (HoudiniB48_RefrigeratedTransportation) ==> ((PreviousCounterparty_RefrigeratedTransportation[this]) != (SupplyChainOwner_RefrigeratedTransportation[this]));
-  invariant (HoudiniB49_RefrigeratedTransportation) ==> ((PreviousCounterparty_RefrigeratedTransportation[this]) == (SupplyChainObserver_RefrigeratedTransportation[this]));
-  invariant (HoudiniB50_RefrigeratedTransportation) ==> ((PreviousCounterparty_RefrigeratedTransportation[this]) != (SupplyChainObserver_RefrigeratedTransportation[this]));
-  invariant (HoudiniB51_RefrigeratedTransportation) ==> ((Device_RefrigeratedTransportation[this]) == (SupplyChainOwner_RefrigeratedTransportation[this]));
-  invariant (HoudiniB52_RefrigeratedTransportation) ==> ((Device_RefrigeratedTransportation[this]) != (SupplyChainOwner_RefrigeratedTransportation[this]));
-  invariant (HoudiniB53_RefrigeratedTransportation) ==> ((Device_RefrigeratedTransportation[this]) == (SupplyChainObserver_RefrigeratedTransportation[this]));
-  invariant (HoudiniB54_RefrigeratedTransportation) ==> ((Device_RefrigeratedTransportation[this]) != (SupplyChainObserver_RefrigeratedTransportation[this]));
-  invariant (HoudiniB55_RefrigeratedTransportation) ==> ((SupplyChainOwner_RefrigeratedTransportation[this]) == (SupplyChainObserver_RefrigeratedTransportation[this]));
-  invariant (HoudiniB56_RefrigeratedTransportation) ==> ((SupplyChainOwner_RefrigeratedTransportation[this]) != (SupplyChainObserver_RefrigeratedTransportation[this]));
+  invariant (HoudiniB1_BasicProvenance) ==> ((InitiatingCounterparty_BasicProvenance[this]) == (null));
+  invariant (HoudiniB2_BasicProvenance) ==> ((InitiatingCounterparty_BasicProvenance[this]) != (null));
+  invariant (HoudiniB3_BasicProvenance) ==> ((Counterparty_BasicProvenance[this]) == (null));
+  invariant (HoudiniB4_BasicProvenance) ==> ((Counterparty_BasicProvenance[this]) != (null));
+  invariant (HoudiniB5_BasicProvenance) ==> ((PreviousCounterparty_BasicProvenance[this]) == (null));
+  invariant (HoudiniB6_BasicProvenance) ==> ((PreviousCounterparty_BasicProvenance[this]) != (null));
+  invariant (HoudiniB7_BasicProvenance) ==> ((SupplyChainOwner_BasicProvenance[this]) == (null));
+  invariant (HoudiniB8_BasicProvenance) ==> ((SupplyChainOwner_BasicProvenance[this]) != (null));
+  invariant (HoudiniB9_BasicProvenance) ==> ((SupplyChainObserver_BasicProvenance[this]) == (null));
+  invariant (HoudiniB10_BasicProvenance) ==> ((SupplyChainObserver_BasicProvenance[this]) != (null));
+  invariant (HoudiniB11_BasicProvenance) ==> ((InitiatingCounterparty_BasicProvenance[this]) == (Counterparty_BasicProvenance[this]));
+  invariant (HoudiniB12_BasicProvenance) ==> ((InitiatingCounterparty_BasicProvenance[this]) != (Counterparty_BasicProvenance[this]));
+  invariant (HoudiniB13_BasicProvenance) ==> ((InitiatingCounterparty_BasicProvenance[this]) == (PreviousCounterparty_BasicProvenance[this]));
+  invariant (HoudiniB14_BasicProvenance) ==> ((InitiatingCounterparty_BasicProvenance[this]) != (PreviousCounterparty_BasicProvenance[this]));
+  invariant (HoudiniB15_BasicProvenance) ==> ((InitiatingCounterparty_BasicProvenance[this]) == (SupplyChainOwner_BasicProvenance[this]));
+  invariant (HoudiniB16_BasicProvenance) ==> ((InitiatingCounterparty_BasicProvenance[this]) != (SupplyChainOwner_BasicProvenance[this]));
+  invariant (HoudiniB17_BasicProvenance) ==> ((InitiatingCounterparty_BasicProvenance[this]) == (SupplyChainObserver_BasicProvenance[this]));
+  invariant (HoudiniB18_BasicProvenance) ==> ((InitiatingCounterparty_BasicProvenance[this]) != (SupplyChainObserver_BasicProvenance[this]));
+  invariant (HoudiniB19_BasicProvenance) ==> ((Counterparty_BasicProvenance[this]) == (PreviousCounterparty_BasicProvenance[this]));
+  invariant (HoudiniB20_BasicProvenance) ==> ((Counterparty_BasicProvenance[this]) != (PreviousCounterparty_BasicProvenance[this]));
+  invariant (HoudiniB21_BasicProvenance) ==> ((Counterparty_BasicProvenance[this]) == (SupplyChainOwner_BasicProvenance[this]));
+  invariant (HoudiniB22_BasicProvenance) ==> ((Counterparty_BasicProvenance[this]) != (SupplyChainOwner_BasicProvenance[this]));
+  invariant (HoudiniB23_BasicProvenance) ==> ((Counterparty_BasicProvenance[this]) == (SupplyChainObserver_BasicProvenance[this]));
+  invariant (HoudiniB24_BasicProvenance) ==> ((Counterparty_BasicProvenance[this]) != (SupplyChainObserver_BasicProvenance[this]));
+  invariant (HoudiniB25_BasicProvenance) ==> ((PreviousCounterparty_BasicProvenance[this]) == (SupplyChainOwner_BasicProvenance[this]));
+  invariant (HoudiniB26_BasicProvenance) ==> ((PreviousCounterparty_BasicProvenance[this]) != (SupplyChainOwner_BasicProvenance[this]));
+  invariant (HoudiniB27_BasicProvenance) ==> ((PreviousCounterparty_BasicProvenance[this]) == (SupplyChainObserver_BasicProvenance[this]));
+  invariant (HoudiniB28_BasicProvenance) ==> ((PreviousCounterparty_BasicProvenance[this]) != (SupplyChainObserver_BasicProvenance[this]));
+  invariant (HoudiniB29_BasicProvenance) ==> ((SupplyChainOwner_BasicProvenance[this]) == (SupplyChainObserver_BasicProvenance[this]));
+  invariant (HoudiniB30_BasicProvenance) ==> ((SupplyChainOwner_BasicProvenance[this]) != (SupplyChainObserver_BasicProvenance[this]));
 {
 havoc msgsender_MSG;
 havoc msgvalue_MSG;
 havoc choice;
-havoc humidity_s51;
-havoc temperature_s51;
-havoc timestamp_s51;
-havoc newCounterparty_s51;
-havoc device_s171;
-havoc supplyChainOwner_s171;
-havoc supplyChainObserver_s171;
-havoc minHumidity_s171;
-havoc maxHumidity_s171;
-havoc minTemperature_s171;
-havoc maxTemperature_s171;
-havoc humidity_s274;
-havoc temperature_s274;
-havoc timestamp_s274;
-havoc newCounterparty_s339;
+havoc newCounterparty_s48;
+havoc newCounterparty_s94;
+havoc newCounterparty_s137;
+havoc newCounterparty_s179;
+havoc newCounterparty_s226;
+havoc newCounterparty_s272;
+havoc newCounterparty_s315;
+havoc newCounterparty_s357;
+havoc newCounterparty_s404;
+havoc newCounterparty_s450;
+havoc newCounterparty_s493;
+havoc newCounterparty_s535;
+havoc supplyChainOwner_s581;
+havoc supplyChainObserver_s581;
+havoc newCounterparty_s620;
 havoc tmpNow;
 tmpNow := now;
 havoc now;
 assume ((now) > (tmpNow));
 assume ((msgsender_MSG) != (null));
-assume ((DType[msgsender_MSG]) != (RefrigeratedTransportation));
+assume ((DType[msgsender_MSG]) != (BasicProvenance));
 Alloc[msgsender_MSG] := true;
-if ((choice) == (4)) {
-call validCombination0_RefrigeratedTransportation(this, msgsender_MSG, msgvalue_MSG, humidity_s51, temperature_s51, timestamp_s51, newCounterparty_s51);
+if ((choice) == (14)) {
+call vc0x0x0_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s48);
+} else if ((choice) == (13)) {
+call vc0x0x1_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s94);
+} else if ((choice) == (12)) {
+call vc0x1x0_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s137);
+} else if ((choice) == (11)) {
+call vc0x1x1_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s179);
+} else if ((choice) == (10)) {
+call vc0x2x0_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s226);
+} else if ((choice) == (9)) {
+call vc0x2x1_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s272);
+} else if ((choice) == (8)) {
+call vc0x3x0_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s315);
+} else if ((choice) == (7)) {
+call vc0x3x1_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s357);
+} else if ((choice) == (6)) {
+call vc0x4x0_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s404);
+} else if ((choice) == (5)) {
+call vc0x4x1_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s450);
+} else if ((choice) == (4)) {
+call vc0x5x0_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s493);
 } else if ((choice) == (3)) {
-call IngestTelemetry_RefrigeratedTransportation(this, msgsender_MSG, msgvalue_MSG, humidity_s274, temperature_s274, timestamp_s274);
+call vc0x5x1_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s535);
 } else if ((choice) == (2)) {
-call TransferResponsibility_RefrigeratedTransportation(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s339);
+call TransferResponsibility_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s620);
 } else if ((choice) == (1)) {
-call Complete_RefrigeratedTransportation(this, msgsender_MSG, msgvalue_MSG);
+call Complete_BasicProvenance(this, msgsender_MSG, msgvalue_MSG);
 }
 }
 }
 
-procedure CorralChoice_RefrigeratedTransportation(this: Ref);
-implementation CorralChoice_RefrigeratedTransportation(this: Ref)
+procedure CorralChoice_BasicProvenance(this: Ref);
+implementation CorralChoice_BasicProvenance(this: Ref)
 {
 var msgsender_MSG: Ref;
 var msgvalue_MSG: int;
 var choice: int;
-var humidity_s51: int;
-var temperature_s51: int;
-var timestamp_s51: int;
-var newCounterparty_s51: Ref;
-var device_s171: Ref;
-var supplyChainOwner_s171: Ref;
-var supplyChainObserver_s171: Ref;
-var minHumidity_s171: int;
-var maxHumidity_s171: int;
-var minTemperature_s171: int;
-var maxTemperature_s171: int;
-var humidity_s274: int;
-var temperature_s274: int;
-var timestamp_s274: int;
-var newCounterparty_s339: Ref;
+var newCounterparty_s48: Ref;
+var newCounterparty_s94: Ref;
+var newCounterparty_s137: Ref;
+var newCounterparty_s179: Ref;
+var newCounterparty_s226: Ref;
+var newCounterparty_s272: Ref;
+var newCounterparty_s315: Ref;
+var newCounterparty_s357: Ref;
+var newCounterparty_s404: Ref;
+var newCounterparty_s450: Ref;
+var newCounterparty_s493: Ref;
+var newCounterparty_s535: Ref;
+var supplyChainOwner_s581: Ref;
+var supplyChainObserver_s581: Ref;
+var newCounterparty_s620: Ref;
 var tmpNow: int;
 havoc msgsender_MSG;
 havoc msgvalue_MSG;
 havoc choice;
-havoc humidity_s51;
-havoc temperature_s51;
-havoc timestamp_s51;
-havoc newCounterparty_s51;
-havoc device_s171;
-havoc supplyChainOwner_s171;
-havoc supplyChainObserver_s171;
-havoc minHumidity_s171;
-havoc maxHumidity_s171;
-havoc minTemperature_s171;
-havoc maxTemperature_s171;
-havoc humidity_s274;
-havoc temperature_s274;
-havoc timestamp_s274;
-havoc newCounterparty_s339;
+havoc newCounterparty_s48;
+havoc newCounterparty_s94;
+havoc newCounterparty_s137;
+havoc newCounterparty_s179;
+havoc newCounterparty_s226;
+havoc newCounterparty_s272;
+havoc newCounterparty_s315;
+havoc newCounterparty_s357;
+havoc newCounterparty_s404;
+havoc newCounterparty_s450;
+havoc newCounterparty_s493;
+havoc newCounterparty_s535;
+havoc supplyChainOwner_s581;
+havoc supplyChainObserver_s581;
+havoc newCounterparty_s620;
 havoc tmpNow;
 tmpNow := now;
 havoc now;
 assume ((now) > (tmpNow));
 assume ((msgsender_MSG) != (null));
-assume ((DType[msgsender_MSG]) != (RefrigeratedTransportation));
+assume ((DType[msgsender_MSG]) != (BasicProvenance));
 Alloc[msgsender_MSG] := true;
-if ((choice) == (4)) {
-call validCombination0_RefrigeratedTransportation(this, msgsender_MSG, msgvalue_MSG, humidity_s51, temperature_s51, timestamp_s51, newCounterparty_s51);
+if ((choice) == (14)) {
+call vc0x0x0_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s48);
+} else if ((choice) == (13)) {
+call vc0x0x1_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s94);
+} else if ((choice) == (12)) {
+call vc0x1x0_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s137);
+} else if ((choice) == (11)) {
+call vc0x1x1_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s179);
+} else if ((choice) == (10)) {
+call vc0x2x0_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s226);
+} else if ((choice) == (9)) {
+call vc0x2x1_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s272);
+} else if ((choice) == (8)) {
+call vc0x3x0_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s315);
+} else if ((choice) == (7)) {
+call vc0x3x1_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s357);
+} else if ((choice) == (6)) {
+call vc0x4x0_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s404);
+} else if ((choice) == (5)) {
+call vc0x4x1_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s450);
+} else if ((choice) == (4)) {
+call vc0x5x0_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s493);
 } else if ((choice) == (3)) {
-call IngestTelemetry_RefrigeratedTransportation(this, msgsender_MSG, msgvalue_MSG, humidity_s274, temperature_s274, timestamp_s274);
+call vc0x5x1_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s535);
 } else if ((choice) == (2)) {
-call TransferResponsibility_RefrigeratedTransportation(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s339);
+call TransferResponsibility_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s620);
 } else if ((choice) == (1)) {
-call Complete_RefrigeratedTransportation(this, msgsender_MSG, msgvalue_MSG);
+call Complete_BasicProvenance(this, msgsender_MSG, msgvalue_MSG);
 }
 }
 
-procedure CorralEntry_RefrigeratedTransportation();
-implementation CorralEntry_RefrigeratedTransportation()
+procedure CorralEntry_BasicProvenance();
+implementation CorralEntry_BasicProvenance()
 {
 var this: Ref;
 var msgsender_MSG: Ref;
 var msgvalue_MSG: int;
-var device_s171: Ref;
-var supplyChainOwner_s171: Ref;
-var supplyChainObserver_s171: Ref;
-var minHumidity_s171: int;
-var maxHumidity_s171: int;
-var minTemperature_s171: int;
-var maxTemperature_s171: int;
+var supplyChainOwner_s581: Ref;
+var supplyChainObserver_s581: Ref;
 call this := FreshRefGenerator();
 assume ((now) >= (0));
-assume ((DType[this]) == (RefrigeratedTransportation));
-call RefrigeratedTransportation_RefrigeratedTransportation(this, msgsender_MSG, msgvalue_MSG, device_s171, supplyChainOwner_s171, supplyChainObserver_s171, minHumidity_s171, maxHumidity_s171, minTemperature_s171, maxTemperature_s171);
+assume ((DType[this]) == (BasicProvenance));
+call BasicProvenance_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, supplyChainOwner_s581, supplyChainObserver_s581);
 while (true)
 {
-call CorralChoice_RefrigeratedTransportation(this);
+call CorralChoice_BasicProvenance(this);
 }
 }
 

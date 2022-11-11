@@ -1,7 +1,4 @@
-/Users/etorres/Proyectos/verisol-test/2/new_folder4/CombinationsTemp4.sol(277,1): : AssetTransfer::Constructor (this = address!0, msg.sender = address!2, msg.value = 58, description = -540216980, price = 5079)
-/Users/etorres/Proyectos/verisol-test/2/new_folder4/CombinationsTemp4.sol(312,1): : AssetTransfer::MakeOffer (this = address!0, msg.sender = address!6, msg.value = 64, inspector = address!4, appraiser = address!3, offerPrice = 747)
-/Users/etorres/Proyectos/verisol-test/2/new_folder4/CombinationsTemp4.sol(336,1): : AssetTransfer::AcceptOffer (this = address!0, msg.sender = address!2, msg.value = 66)
-/Users/etorres/Proyectos/verisol-test/2/new_folder4/CombinationsTemp4.sol(445,1): : AssetTransfer::MarkAppraised (this = address!0, msg.sender = address!3, msg.value = 67)
-/Users/etorres/Proyectos/verisol-test/2/new_folder4/CombinationsTemp4.sol(467,1): : AssetTransfer::MarkInspected (this = address!0, msg.sender = address!4, msg.value = 68)
-/Users/etorres/Proyectos/verisol-test/2/new_folder4/CombinationsTemp4.sol(258,1): : AssetTransfer::validCombination42 (this = address!0, msg.sender = address!5, msg.value = 69, offerPrice = 70, inspector = address!7, appraiser = address!8, description = 71, price = 72)
-/Users/etorres/Proyectos/verisol-test/2/new_folder4/CombinationsTemp4.sol(263,1): : ASSERTION FAILS!
+/Users/etorres/Proyectos/verisol-test/2/new_folder4/CombinationsTemp4.sol(23,1): : BasicProvenance::Constructor (this = address!0, msg.sender = address!4, msg.value = 5, supplyChainOwner = address!2, supplyChainObserver = address!5)
+/Users/etorres/Proyectos/verisol-test/2/new_folder4/CombinationsTemp4.sol(48,1): : BasicProvenance::Complete (this = address!0, msg.sender = address!2, msg.value = 8)
+/Users/etorres/Proyectos/verisol-test/2/new_folder4/CombinationsTemp4.sol(4,1): : BasicProvenance::vc0 (this = address!0, msg.sender = address!3, msg.value = 9, newCounterparty = address!6)
+/Users/etorres/Proyectos/verisol-test/2/new_folder4/CombinationsTemp4.sol(7,1): : ASSERTION FAILS!
