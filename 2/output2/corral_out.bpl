@@ -86,11 +86,15 @@ axiom (forall __i__0_0: Ref, __i__0_1: Ref :: { abiEncodePacked1R(__i__0_0), abi
 
 axiom (forall __i__0_0: Ref, __i__0_1: Ref, __i__1_0: int, __i__1_1: int :: { abiEncodePacked2R(__i__0_0, __i__1_0), abiEncodePacked2R(__i__0_1, __i__1_1) } (__i__0_0 == __i__0_1 && __i__1_0 == __i__1_1) || abiEncodePacked2R(__i__0_0, __i__1_0) != abiEncodePacked2R(__i__0_1, __i__1_1));
 
-procedure {:public} vc0x0x0_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s27: Ref);
+procedure {:public} vc0x0x0_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s25: Ref);
 
 
 
-implementation {:ForceInline} vc0x0x0_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s27: Ref)
+procedure {:public} vc1x0x0_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s45: Ref);
+
+
+
+implementation {:ForceInline} vc1x0x0_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s45: Ref)
 {
 
   anon0:
@@ -98,7 +102,7 @@ implementation {:ForceInline} vc0x0x0_BasicProvenance(this: Ref, msgsender_MSG: 
     call {:si_unique_call 1} {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
     call {:si_unique_call 2} {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
     call {:si_unique_call 3} {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-    call {:si_unique_call 4} {:cexpr "newCounterparty"} boogie_si_record_sol2Bpl_ref(newCounterparty_s27);
+    call {:si_unique_call 4} {:cexpr "newCounterparty"} boogie_si_record_sol2Bpl_ref(newCounterparty_s45);
     call {:si_unique_call 5} {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
     goto corral_source_split_1;
 
@@ -106,25 +110,9 @@ implementation {:ForceInline} vc0x0x0_BasicProvenance(this: Ref, msgsender_MSG: 
     goto corral_source_split_2;
 
   corral_source_split_2:
-    assume !(State_BasicProvenance[this] == 0) && !(State_BasicProvenance[this] == 1);
-    goto corral_source_split_3;
-
-  corral_source_split_3:
-    assert false;
+    assert !(State_BasicProvenance[this] != 2 && State_BasicProvenance[this] != 2);
     return;
 }
-
-
-
-procedure {:public} vc1x0x0_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s51: Ref);
-
-
-
-procedure {:public} vc2x0x0_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s75: Ref);
-
-
-
-procedure {:public} vc3x0x0_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s97: Ref);
 
 
 
@@ -140,12 +128,12 @@ var SupplyChainOwner_BasicProvenance: [Ref]Ref;
 
 var SupplyChainObserver_BasicProvenance: [Ref]Ref;
 
-procedure BasicProvenance_BasicProvenance_NoBaseCtor(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, supplyChainOwner_s143: Ref, supplyChainObserver_s143: Ref);
+procedure BasicProvenance_BasicProvenance_NoBaseCtor(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, supplyChainOwner_s91: Ref, supplyChainObserver_s91: Ref);
   modifies Balance, InitiatingCounterparty_BasicProvenance, Counterparty_BasicProvenance, PreviousCounterparty_BasicProvenance, SupplyChainOwner_BasicProvenance, SupplyChainObserver_BasicProvenance, State_BasicProvenance;
 
 
 
-implementation {:ForceInline} BasicProvenance_BasicProvenance_NoBaseCtor(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, supplyChainOwner_s143: Ref, supplyChainObserver_s143: Ref)
+implementation {:ForceInline} BasicProvenance_BasicProvenance_NoBaseCtor(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, supplyChainOwner_s91: Ref, supplyChainObserver_s91: Ref)
 {
 
   anon0:
@@ -160,47 +148,47 @@ implementation {:ForceInline} BasicProvenance_BasicProvenance_NoBaseCtor(this: R
     call {:si_unique_call 7} {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
     call {:si_unique_call 8} {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
     call {:si_unique_call 9} {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-    call {:si_unique_call 10} {:cexpr "supplyChainOwner"} boogie_si_record_sol2Bpl_ref(supplyChainOwner_s143);
-    call {:si_unique_call 11} {:cexpr "supplyChainObserver"} boogie_si_record_sol2Bpl_ref(supplyChainObserver_s143);
+    call {:si_unique_call 10} {:cexpr "supplyChainOwner"} boogie_si_record_sol2Bpl_ref(supplyChainOwner_s91);
+    call {:si_unique_call 11} {:cexpr "supplyChainObserver"} boogie_si_record_sol2Bpl_ref(supplyChainObserver_s91);
     call {:si_unique_call 12} {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
+    goto corral_source_split_4;
+
+  corral_source_split_4:
     goto corral_source_split_5;
 
   corral_source_split_5:
+    InitiatingCounterparty_BasicProvenance[this] := msgsender_MSG;
+    call {:si_unique_call 13} {:cexpr "InitiatingCounterparty"} boogie_si_record_sol2Bpl_ref(InitiatingCounterparty_BasicProvenance[this]);
     goto corral_source_split_6;
 
   corral_source_split_6:
-    InitiatingCounterparty_BasicProvenance[this] := msgsender_MSG;
-    call {:si_unique_call 13} {:cexpr "InitiatingCounterparty"} boogie_si_record_sol2Bpl_ref(InitiatingCounterparty_BasicProvenance[this]);
+    Counterparty_BasicProvenance[this] := InitiatingCounterparty_BasicProvenance[this];
+    call {:si_unique_call 14} {:cexpr "Counterparty"} boogie_si_record_sol2Bpl_ref(Counterparty_BasicProvenance[this]);
     goto corral_source_split_7;
 
   corral_source_split_7:
-    Counterparty_BasicProvenance[this] := InitiatingCounterparty_BasicProvenance[this];
-    call {:si_unique_call 14} {:cexpr "Counterparty"} boogie_si_record_sol2Bpl_ref(Counterparty_BasicProvenance[this]);
+    SupplyChainOwner_BasicProvenance[this] := supplyChainOwner_s91;
+    call {:si_unique_call 15} {:cexpr "SupplyChainOwner"} boogie_si_record_sol2Bpl_ref(SupplyChainOwner_BasicProvenance[this]);
     goto corral_source_split_8;
 
   corral_source_split_8:
-    SupplyChainOwner_BasicProvenance[this] := supplyChainOwner_s143;
-    call {:si_unique_call 15} {:cexpr "SupplyChainOwner"} boogie_si_record_sol2Bpl_ref(SupplyChainOwner_BasicProvenance[this]);
+    SupplyChainObserver_BasicProvenance[this] := supplyChainObserver_s91;
+    call {:si_unique_call 16} {:cexpr "SupplyChainObserver"} boogie_si_record_sol2Bpl_ref(SupplyChainObserver_BasicProvenance[this]);
     goto corral_source_split_9;
 
   corral_source_split_9:
-    SupplyChainObserver_BasicProvenance[this] := supplyChainObserver_s143;
-    call {:si_unique_call 16} {:cexpr "SupplyChainObserver"} boogie_si_record_sol2Bpl_ref(SupplyChainObserver_BasicProvenance[this]);
-    goto corral_source_split_10;
-
-  corral_source_split_10:
     State_BasicProvenance[this] := 0;
     return;
 }
 
 
 
-procedure {:constructor} {:public} BasicProvenance_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, supplyChainOwner_s143: Ref, supplyChainObserver_s143: Ref);
+procedure {:constructor} {:public} BasicProvenance_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, supplyChainOwner_s91: Ref, supplyChainObserver_s91: Ref);
   modifies Balance, InitiatingCounterparty_BasicProvenance, Counterparty_BasicProvenance, PreviousCounterparty_BasicProvenance, SupplyChainOwner_BasicProvenance, SupplyChainObserver_BasicProvenance, State_BasicProvenance;
 
 
 
-implementation {:ForceInline} BasicProvenance_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, supplyChainOwner_s143: Ref, supplyChainObserver_s143: Ref)
+implementation {:ForceInline} BasicProvenance_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, supplyChainOwner_s91: Ref, supplyChainObserver_s91: Ref)
 {
 
   anon0:
@@ -208,21 +196,21 @@ implementation {:ForceInline} BasicProvenance_BasicProvenance(this: Ref, msgsend
     call {:si_unique_call 18} {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
     call {:si_unique_call 19} {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
     call {:si_unique_call 20} {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-    call {:si_unique_call 21} {:cexpr "supplyChainOwner"} boogie_si_record_sol2Bpl_ref(supplyChainOwner_s143);
-    call {:si_unique_call 22} {:cexpr "supplyChainObserver"} boogie_si_record_sol2Bpl_ref(supplyChainObserver_s143);
+    call {:si_unique_call 21} {:cexpr "supplyChainOwner"} boogie_si_record_sol2Bpl_ref(supplyChainOwner_s91);
+    call {:si_unique_call 22} {:cexpr "supplyChainObserver"} boogie_si_record_sol2Bpl_ref(supplyChainObserver_s91);
     call {:si_unique_call 23} {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-    call {:si_unique_call 24} BasicProvenance_BasicProvenance_NoBaseCtor(this, msgsender_MSG, msgvalue_MSG, supplyChainOwner_s143, supplyChainObserver_s143);
+    call {:si_unique_call 24} BasicProvenance_BasicProvenance_NoBaseCtor(this, msgsender_MSG, msgvalue_MSG, supplyChainOwner_s91, supplyChainObserver_s91);
     return;
 }
 
 
 
-procedure {:public} TransferResponsibility_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s182: Ref);
+procedure {:public} TransferResponsibility_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s130: Ref);
   modifies State_BasicProvenance, PreviousCounterparty_BasicProvenance, Counterparty_BasicProvenance;
 
 
 
-implementation {:ForceInline} TransferResponsibility_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s182: Ref)
+implementation {:ForceInline} TransferResponsibility_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s130: Ref)
 {
 
   anon0:
@@ -230,24 +218,24 @@ implementation {:ForceInline} TransferResponsibility_BasicProvenance(this: Ref, 
     call {:si_unique_call 26} {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
     call {:si_unique_call 27} {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
     call {:si_unique_call 28} {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-    call {:si_unique_call 29} {:cexpr "newCounterparty"} boogie_si_record_sol2Bpl_ref(newCounterparty_s182);
+    call {:si_unique_call 29} {:cexpr "newCounterparty"} boogie_si_record_sol2Bpl_ref(newCounterparty_s130);
     call {:si_unique_call 30} {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
+    goto corral_source_split_11;
+
+  corral_source_split_11:
     goto corral_source_split_12;
 
   corral_source_split_12:
-    goto corral_source_split_13;
-
-  corral_source_split_13:
     goto anon5_Then, anon5_Else;
 
   anon5_Then:
     assume {:partition} Counterparty_BasicProvenance[this] != msgsender_MSG || State_BasicProvenance[this] == 2;
+    goto corral_source_split_14;
+
+  corral_source_split_14:
     goto corral_source_split_15;
 
   corral_source_split_15:
-    goto corral_source_split_16;
-
-  corral_source_split_16:
     assume false;
     goto anon2;
 
@@ -260,12 +248,12 @@ implementation {:ForceInline} TransferResponsibility_BasicProvenance(this: Ref, 
 
   anon6_Then:
     assume {:partition} State_BasicProvenance[this] == 0;
+    goto corral_source_split_17;
+
+  corral_source_split_17:
     goto corral_source_split_18;
 
   corral_source_split_18:
-    goto corral_source_split_19;
-
-  corral_source_split_19:
     State_BasicProvenance[this] := 1;
     goto anon4;
 
@@ -276,10 +264,10 @@ implementation {:ForceInline} TransferResponsibility_BasicProvenance(this: Ref, 
   anon4:
     PreviousCounterparty_BasicProvenance[this] := Counterparty_BasicProvenance[this];
     call {:si_unique_call 31} {:cexpr "PreviousCounterparty"} boogie_si_record_sol2Bpl_ref(PreviousCounterparty_BasicProvenance[this]);
-    goto corral_source_split_21;
+    goto corral_source_split_20;
 
-  corral_source_split_21:
-    Counterparty_BasicProvenance[this] := newCounterparty_s182;
+  corral_source_split_20:
+    Counterparty_BasicProvenance[this] := newCounterparty_s130;
     call {:si_unique_call 32} {:cexpr "Counterparty"} boogie_si_record_sol2Bpl_ref(Counterparty_BasicProvenance[this]);
     return;
 }
@@ -301,22 +289,22 @@ implementation {:ForceInline} Complete_BasicProvenance(this: Ref, msgsender_MSG:
     call {:si_unique_call 35} {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
     call {:si_unique_call 36} {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
     call {:si_unique_call 37} {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
+    goto corral_source_split_22;
+
+  corral_source_split_22:
     goto corral_source_split_23;
 
   corral_source_split_23:
-    goto corral_source_split_24;
-
-  corral_source_split_24:
     goto anon3_Then, anon3_Else;
 
   anon3_Then:
     assume {:partition} SupplyChainOwner_BasicProvenance[this] != msgsender_MSG || State_BasicProvenance[this] == 2;
+    goto corral_source_split_25;
+
+  corral_source_split_25:
     goto corral_source_split_26;
 
   corral_source_split_26:
-    goto corral_source_split_27;
-
-  corral_source_split_27:
     assume false;
     goto anon2;
 
@@ -326,14 +314,14 @@ implementation {:ForceInline} Complete_BasicProvenance(this: Ref, msgsender_MSG:
 
   anon2:
     State_BasicProvenance[this] := 2;
+    goto corral_source_split_28;
+
+  corral_source_split_28:
+    PreviousCounterparty_BasicProvenance[this] := Counterparty_BasicProvenance[this];
+    call {:si_unique_call 38} {:cexpr "PreviousCounterparty"} boogie_si_record_sol2Bpl_ref(PreviousCounterparty_BasicProvenance[this]);
     goto corral_source_split_29;
 
   corral_source_split_29:
-    PreviousCounterparty_BasicProvenance[this] := Counterparty_BasicProvenance[this];
-    call {:si_unique_call 38} {:cexpr "PreviousCounterparty"} boogie_si_record_sol2Bpl_ref(PreviousCounterparty_BasicProvenance[this]);
-    goto corral_source_split_30;
-
-  corral_source_split_30:
     __var_1 := null;
     Counterparty_BasicProvenance[this] := __var_1;
     call {:si_unique_call 39} {:cexpr "Counterparty"} boogie_si_record_sol2Bpl_ref(Counterparty_BasicProvenance[this]);
@@ -428,26 +416,22 @@ implementation CorralChoice_BasicProvenance(this: Ref)
   var msgsender_MSG: Ref;
   var msgvalue_MSG: int;
   var choice: int;
-  var newCounterparty_s27: Ref;
-  var newCounterparty_s51: Ref;
-  var newCounterparty_s75: Ref;
-  var newCounterparty_s97: Ref;
-  var supplyChainOwner_s143: Ref;
-  var supplyChainObserver_s143: Ref;
-  var newCounterparty_s182: Ref;
+  var newCounterparty_s25: Ref;
+  var newCounterparty_s45: Ref;
+  var supplyChainOwner_s91: Ref;
+  var supplyChainObserver_s91: Ref;
+  var newCounterparty_s130: Ref;
   var tmpNow: int;
 
   anon0:
     havoc msgsender_MSG;
     havoc msgvalue_MSG;
     havoc choice;
-    havoc newCounterparty_s27;
-    havoc newCounterparty_s51;
-    havoc newCounterparty_s75;
-    havoc newCounterparty_s97;
-    havoc supplyChainOwner_s143;
-    havoc supplyChainObserver_s143;
-    havoc newCounterparty_s182;
+    havoc newCounterparty_s25;
+    havoc newCounterparty_s45;
+    havoc supplyChainOwner_s91;
+    havoc supplyChainObserver_s91;
+    havoc newCounterparty_s130;
     havoc tmpNow;
     tmpNow := now;
     havoc now;
@@ -455,59 +439,41 @@ implementation CorralChoice_BasicProvenance(this: Ref)
     assume msgsender_MSG != null;
     assume DType[msgsender_MSG] != BasicProvenance;
     Alloc[msgsender_MSG] := true;
+    goto anon5_Then, anon5_Else;
+
+  anon5_Then:
+    assume {:partition} choice == 4;
+    call {:si_unique_call 40} vc0x0x0_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s25);
+    return;
+
+  anon5_Else:
+    assume {:partition} choice != 4;
+    goto anon6_Then, anon6_Else;
+
+  anon6_Then:
+    assume {:partition} choice == 3;
+    call {:si_unique_call 41} vc1x0x0_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s45);
+    return;
+
+  anon6_Else:
+    assume {:partition} choice != 3;
     goto anon7_Then, anon7_Else;
 
   anon7_Then:
-    assume {:partition} choice == 6;
-    call {:si_unique_call 40} vc0x0x0_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s27);
+    assume {:partition} choice == 2;
+    call {:si_unique_call 42} TransferResponsibility_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s130);
     return;
 
   anon7_Else:
-    assume {:partition} choice != 6;
+    assume {:partition} choice != 2;
     goto anon8_Then, anon8_Else;
 
   anon8_Then:
-    assume {:partition} choice == 5;
-    call {:si_unique_call 41} vc1x0x0_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s51);
+    assume {:partition} choice == 1;
+    call {:si_unique_call 43} Complete_BasicProvenance(this, msgsender_MSG, msgvalue_MSG);
     return;
 
   anon8_Else:
-    assume {:partition} choice != 5;
-    goto anon9_Then, anon9_Else;
-
-  anon9_Then:
-    assume {:partition} choice == 4;
-    call {:si_unique_call 42} vc2x0x0_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s75);
-    return;
-
-  anon9_Else:
-    assume {:partition} choice != 4;
-    goto anon10_Then, anon10_Else;
-
-  anon10_Then:
-    assume {:partition} choice == 3;
-    call {:si_unique_call 43} vc3x0x0_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s97);
-    return;
-
-  anon10_Else:
-    assume {:partition} choice != 3;
-    goto anon11_Then, anon11_Else;
-
-  anon11_Then:
-    assume {:partition} choice == 2;
-    call {:si_unique_call 44} TransferResponsibility_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s182);
-    return;
-
-  anon11_Else:
-    assume {:partition} choice != 2;
-    goto anon12_Then, anon12_Else;
-
-  anon12_Then:
-    assume {:partition} choice == 1;
-    call {:si_unique_call 45} Complete_BasicProvenance(this, msgsender_MSG, msgvalue_MSG);
-    return;
-
-  anon12_Else:
     assume {:partition} choice != 1;
     return;
 }
@@ -524,14 +490,14 @@ implementation CorralEntry_BasicProvenance()
   var this: Ref;
   var msgsender_MSG: Ref;
   var msgvalue_MSG: int;
-  var supplyChainOwner_s143: Ref;
-  var supplyChainObserver_s143: Ref;
+  var supplyChainOwner_s91: Ref;
+  var supplyChainObserver_s91: Ref;
 
   anon0:
-    call {:si_unique_call 46} this := FreshRefGenerator();
+    call {:si_unique_call 44} this := FreshRefGenerator();
     assume now >= 0;
     assume DType[this] == BasicProvenance;
-    call {:si_unique_call 47} BasicProvenance_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, supplyChainOwner_s143, supplyChainObserver_s143);
+    call {:si_unique_call 45} BasicProvenance_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, supplyChainOwner_s91, supplyChainObserver_s91);
     goto anon2_LoopHead;
 
   anon2_LoopHead:
@@ -539,7 +505,7 @@ implementation CorralEntry_BasicProvenance()
 
   anon2_LoopBody:
     assume {:partition} true;
-    call {:si_unique_call 48} CorralChoice_BasicProvenance(this);
+    call {:si_unique_call 46} CorralChoice_BasicProvenance(this);
     goto anon2_LoopHead;
 
   anon2_LoopDone:

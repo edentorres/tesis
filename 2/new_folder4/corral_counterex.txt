@@ -1,4 +1,0 @@
-/Users/etorres/Proyectos/verisol-test/2/new_folder4/CombinationsTemp4.sol(23,1): : BasicProvenance::Constructor (this = address!0, msg.sender = address!4, msg.value = 5, supplyChainOwner = address!2, supplyChainObserver = address!5)
-/Users/etorres/Proyectos/verisol-test/2/new_folder4/CombinationsTemp4.sol(48,1): : BasicProvenance::Complete (this = address!0, msg.sender = address!2, msg.value = 8)
-/Users/etorres/Proyectos/verisol-test/2/new_folder4/CombinationsTemp4.sol(4,1): : BasicProvenance::vc0 (this = address!0, msg.sender = address!3, msg.value = 9, newCounterparty = address!6)
-/Users/etorres/Proyectos/verisol-test/2/new_folder4/CombinationsTemp4.sol(7,1): : ASSERTION FAILS!

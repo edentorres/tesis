@@ -4,13 +4,13 @@ Program has a potential bug: False bug
 Verifying program while tracking: {assertsPassed, State_BasicProvenance}
 Program has no bugs
 
-Boogie verification time: 0.55 s
-Time spent reading-writing programs: 0.21 s
+Boogie verification time: 0.84 s
+Time spent reading-writing programs: 0.34 s
 
-Time spent checking a program (2): 0.78 s
-Time spent checking a path (3): 0.39 s
+Time spent checking a program (2): 1.38 s
+Time spent checking a path (3): 0.60 s
 
 Number of procedures inlined: 9
 Number of variables tracked: 2
-Total Time: 1.860618 s
-Total User CPU time: 4.4270524 s
+Total Time: 3.139582 s
+Total User CPU time: 7.3514434 s

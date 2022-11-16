@@ -268,8 +268,8 @@ functionPreconditions = ["Counterparty == msg.sender",
 functionVariables = "address newCounterparty"
 tool_output = "Found a counterexample"
 
-states = ["Created", "InTransit", "Completed"]
-statePreconditions = ["State == StateType.Created", "State == StateType.InTransit", "State == StateType.Completed"]
+# states = ["Created", "InTransit", "Completed"]
+# statePreconditions = ["State == StateType.Created", "State == StateType.InTransit", "State == StateType.Completed"]
 
 txBound = 6
 

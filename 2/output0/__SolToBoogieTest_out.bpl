@@ -54,23 +54,27 @@ axiom(forall  __i__0_0:int, __i__0_1:int, __i__1_0:int, __i__1_1:int :: {abiEnco
 axiom(forall  __i__0_0:Ref, __i__0_1:Ref :: {abiEncodePacked1R(__i__0_0), abiEncodePacked1R(__i__0_1)} (((__i__0_0) == (__i__0_1)) || ((abiEncodePacked1R(__i__0_0)) != (abiEncodePacked1R(__i__0_1)))));
 
 axiom(forall  __i__0_0:Ref, __i__0_1:Ref, __i__1_0:int, __i__1_1:int :: {abiEncodePacked2R(__i__0_0, __i__1_0), abiEncodePacked2R(__i__0_1, __i__1_1)} ((((__i__0_0) == (__i__0_1)) && ((__i__1_0) == (__i__1_1))) || ((abiEncodePacked2R(__i__0_0, __i__1_0)) != (abiEncodePacked2R(__i__0_1, __i__1_1)))));
-procedure {:public} {:inline 1} vc0x0x0_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s27: Ref);
-procedure {:public} {:inline 1} vc1x0x0_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s51: Ref);
-procedure {:public} {:inline 1} vc2x0x0_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s75: Ref);
-procedure {:public} {:inline 1} vc3x0x0_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s97: Ref);
-implementation vc3x0x0_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s97: Ref)
+procedure {:public} {:inline 1} vc1x0x0_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s48: Ref);
+procedure {:public} {:inline 1} vc1x0x1_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s94: Ref);
+procedure {:public} {:inline 1} vc1x1x0_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s137: Ref);
+procedure {:public} {:inline 1} vc1x1x1_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s179: Ref);
+implementation vc1x1x1_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s179: Ref)
 {
 call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
 call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-call  {:cexpr "newCounterparty"} boogie_si_record_sol2Bpl_ref(newCounterparty_s97);
+call  {:cexpr "newCounterparty"} boogie_si_record_sol2Bpl_ref(newCounterparty_s179);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 16} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 17} (true);
-assume (((State_BasicProvenance[this]) == (0)) && ((State_BasicProvenance[this]) == (1)));
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 18} (true);
-assert (false);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 19} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 20} (true);
+assume (((State_BasicProvenance[this]) != (2)) && ((State_BasicProvenance[this]) != (2)));
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 21} (true);
+assume ((SupplyChainOwner_BasicProvenance[this]) == (msgsender_MSG));
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 22} (true);
+call Complete_BasicProvenance(this, msgsender_MSG, msgvalue_MSG);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 23} (true);
+assert (!((((State_BasicProvenance[this]) != (2)) && ((State_BasicProvenance[this]) != (2)))));
 }
 
 var State_BasicProvenance: [Ref]int;
@@ -79,8 +83,8 @@ var Counterparty_BasicProvenance: [Ref]Ref;
 var PreviousCounterparty_BasicProvenance: [Ref]Ref;
 var SupplyChainOwner_BasicProvenance: [Ref]Ref;
 var SupplyChainObserver_BasicProvenance: [Ref]Ref;
-procedure {:inline 1} BasicProvenance_BasicProvenance_NoBaseCtor(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, supplyChainOwner_s143: Ref, supplyChainObserver_s143: Ref);
-implementation BasicProvenance_BasicProvenance_NoBaseCtor(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, supplyChainOwner_s143: Ref, supplyChainObserver_s143: Ref)
+procedure {:inline 1} BasicProvenance_BasicProvenance_NoBaseCtor(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, supplyChainOwner_s225: Ref, supplyChainObserver_s225: Ref);
+implementation BasicProvenance_BasicProvenance_NoBaseCtor(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, supplyChainOwner_s225: Ref, supplyChainObserver_s225: Ref)
 {
 // start of initialization
 assume ((msgsender_MSG) != (null));
@@ -95,66 +99,66 @@ call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
 call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-call  {:cexpr "supplyChainOwner"} boogie_si_record_sol2Bpl_ref(supplyChainOwner_s143);
-call  {:cexpr "supplyChainObserver"} boogie_si_record_sol2Bpl_ref(supplyChainObserver_s143);
+call  {:cexpr "supplyChainOwner"} boogie_si_record_sol2Bpl_ref(supplyChainOwner_s225);
+call  {:cexpr "supplyChainObserver"} boogie_si_record_sol2Bpl_ref(supplyChainObserver_s225);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 33} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 34} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 37} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 38} (true);
 InitiatingCounterparty_BasicProvenance[this] := msgsender_MSG;
 call  {:cexpr "InitiatingCounterparty"} boogie_si_record_sol2Bpl_ref(InitiatingCounterparty_BasicProvenance[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 35} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 39} (true);
 Counterparty_BasicProvenance[this] := InitiatingCounterparty_BasicProvenance[this];
 call  {:cexpr "Counterparty"} boogie_si_record_sol2Bpl_ref(Counterparty_BasicProvenance[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 36} (true);
-SupplyChainOwner_BasicProvenance[this] := supplyChainOwner_s143;
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 40} (true);
+SupplyChainOwner_BasicProvenance[this] := supplyChainOwner_s225;
 call  {:cexpr "SupplyChainOwner"} boogie_si_record_sol2Bpl_ref(SupplyChainOwner_BasicProvenance[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 37} (true);
-SupplyChainObserver_BasicProvenance[this] := supplyChainObserver_s143;
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 41} (true);
+SupplyChainObserver_BasicProvenance[this] := supplyChainObserver_s225;
 call  {:cexpr "SupplyChainObserver"} boogie_si_record_sol2Bpl_ref(SupplyChainObserver_BasicProvenance[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 38} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 42} (true);
 State_BasicProvenance[this] := 0;
 }
 
-procedure {:constructor} {:public} {:inline 1} BasicProvenance_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, supplyChainOwner_s143: Ref, supplyChainObserver_s143: Ref);
-implementation BasicProvenance_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, supplyChainOwner_s143: Ref, supplyChainObserver_s143: Ref)
+procedure {:constructor} {:public} {:inline 1} BasicProvenance_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, supplyChainOwner_s225: Ref, supplyChainObserver_s225: Ref);
+implementation BasicProvenance_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, supplyChainOwner_s225: Ref, supplyChainObserver_s225: Ref)
 {
 call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
 call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-call  {:cexpr "supplyChainOwner"} boogie_si_record_sol2Bpl_ref(supplyChainOwner_s143);
-call  {:cexpr "supplyChainObserver"} boogie_si_record_sol2Bpl_ref(supplyChainObserver_s143);
+call  {:cexpr "supplyChainOwner"} boogie_si_record_sol2Bpl_ref(supplyChainOwner_s225);
+call  {:cexpr "supplyChainObserver"} boogie_si_record_sol2Bpl_ref(supplyChainObserver_s225);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-call BasicProvenance_BasicProvenance_NoBaseCtor(this, msgsender_MSG, msgvalue_MSG, supplyChainOwner_s143, supplyChainObserver_s143);
+call BasicProvenance_BasicProvenance_NoBaseCtor(this, msgsender_MSG, msgvalue_MSG, supplyChainOwner_s225, supplyChainObserver_s225);
 }
 
-procedure {:public} {:inline 1} TransferResponsibility_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s182: Ref);
-implementation TransferResponsibility_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s182: Ref)
+procedure {:public} {:inline 1} TransferResponsibility_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s264: Ref);
+implementation TransferResponsibility_BasicProvenance(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, newCounterparty_s264: Ref)
 {
 call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
 call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-call  {:cexpr "newCounterparty"} boogie_si_record_sol2Bpl_ref(newCounterparty_s182);
+call  {:cexpr "newCounterparty"} boogie_si_record_sol2Bpl_ref(newCounterparty_s264);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 42} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 43} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 46} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 47} (true);
 if (((Counterparty_BasicProvenance[this]) != (msgsender_MSG)) || ((State_BasicProvenance[this]) == (2))) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 44} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 45} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 48} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 49} (true);
 assume (false);
 }
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 48} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 52} (true);
 if ((State_BasicProvenance[this]) == (0)) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 49} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 50} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 53} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 54} (true);
 State_BasicProvenance[this] := 1;
 }
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 53} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 57} (true);
 PreviousCounterparty_BasicProvenance[this] := Counterparty_BasicProvenance[this];
 call  {:cexpr "PreviousCounterparty"} boogie_si_record_sol2Bpl_ref(PreviousCounterparty_BasicProvenance[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 54} (true);
-Counterparty_BasicProvenance[this] := newCounterparty_s182;
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 58} (true);
+Counterparty_BasicProvenance[this] := newCounterparty_s264;
 call  {:cexpr "Counterparty"} boogie_si_record_sol2Bpl_ref(Counterparty_BasicProvenance[this]);
 }
 
@@ -167,19 +171,19 @@ call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 58} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 59} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 62} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 63} (true);
 if (((SupplyChainOwner_BasicProvenance[this]) != (msgsender_MSG)) || ((State_BasicProvenance[this]) == (2))) {
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 60} (true);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 61} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 64} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 65} (true);
 assume (false);
 }
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 64} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 68} (true);
 State_BasicProvenance[this] := 2;
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 65} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 69} (true);
 PreviousCounterparty_BasicProvenance[this] := Counterparty_BasicProvenance[this];
 call  {:cexpr "PreviousCounterparty"} boogie_si_record_sol2Bpl_ref(PreviousCounterparty_BasicProvenance[this]);
-assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 66} (true);
+assert {:first} {:sourceFile "/Users/etorres/Proyectos/verisol-test/2/output0/OutputTemp0.sol"} {:sourceLine 70} (true);
 __var_1 := null;
 Counterparty_BasicProvenance[this] := __var_1;
 call  {:cexpr "Counterparty"} boogie_si_record_sol2Bpl_ref(Counterparty_BasicProvenance[this]);
@@ -253,17 +257,17 @@ var this: Ref;
 var msgsender_MSG: Ref;
 var msgvalue_MSG: int;
 var choice: int;
-var newCounterparty_s27: Ref;
-var newCounterparty_s51: Ref;
-var newCounterparty_s75: Ref;
-var newCounterparty_s97: Ref;
-var supplyChainOwner_s143: Ref;
-var supplyChainObserver_s143: Ref;
-var newCounterparty_s182: Ref;
+var newCounterparty_s48: Ref;
+var newCounterparty_s94: Ref;
+var newCounterparty_s137: Ref;
+var newCounterparty_s179: Ref;
+var supplyChainOwner_s225: Ref;
+var supplyChainObserver_s225: Ref;
+var newCounterparty_s264: Ref;
 var tmpNow: int;
 assume ((now) >= (0));
 assume ((DType[this]) == (BasicProvenance));
-call BasicProvenance_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, supplyChainOwner_s143, supplyChainObserver_s143);
+call BasicProvenance_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, supplyChainOwner_s225, supplyChainObserver_s225);
 while (true)
   invariant (HoudiniB1_BasicProvenance) ==> ((InitiatingCounterparty_BasicProvenance[this]) == (null));
   invariant (HoudiniB2_BasicProvenance) ==> ((InitiatingCounterparty_BasicProvenance[this]) != (null));
@@ -299,13 +303,13 @@ while (true)
 havoc msgsender_MSG;
 havoc msgvalue_MSG;
 havoc choice;
-havoc newCounterparty_s27;
-havoc newCounterparty_s51;
-havoc newCounterparty_s75;
-havoc newCounterparty_s97;
-havoc supplyChainOwner_s143;
-havoc supplyChainObserver_s143;
-havoc newCounterparty_s182;
+havoc newCounterparty_s48;
+havoc newCounterparty_s94;
+havoc newCounterparty_s137;
+havoc newCounterparty_s179;
+havoc supplyChainOwner_s225;
+havoc supplyChainObserver_s225;
+havoc newCounterparty_s264;
 havoc tmpNow;
 tmpNow := now;
 havoc now;
@@ -314,15 +318,15 @@ assume ((msgsender_MSG) != (null));
 assume ((DType[msgsender_MSG]) != (BasicProvenance));
 Alloc[msgsender_MSG] := true;
 if ((choice) == (6)) {
-call vc0x0x0_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s27);
+call vc1x0x0_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s48);
 } else if ((choice) == (5)) {
-call vc1x0x0_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s51);
+call vc1x0x1_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s94);
 } else if ((choice) == (4)) {
-call vc2x0x0_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s75);
+call vc1x1x0_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s137);
 } else if ((choice) == (3)) {
-call vc3x0x0_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s97);
+call vc1x1x1_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s179);
 } else if ((choice) == (2)) {
-call TransferResponsibility_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s182);
+call TransferResponsibility_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s264);
 } else if ((choice) == (1)) {
 call Complete_BasicProvenance(this, msgsender_MSG, msgvalue_MSG);
 }
@@ -335,24 +339,24 @@ implementation CorralChoice_BasicProvenance(this: Ref)
 var msgsender_MSG: Ref;
 var msgvalue_MSG: int;
 var choice: int;
-var newCounterparty_s27: Ref;
-var newCounterparty_s51: Ref;
-var newCounterparty_s75: Ref;
-var newCounterparty_s97: Ref;
-var supplyChainOwner_s143: Ref;
-var supplyChainObserver_s143: Ref;
-var newCounterparty_s182: Ref;
+var newCounterparty_s48: Ref;
+var newCounterparty_s94: Ref;
+var newCounterparty_s137: Ref;
+var newCounterparty_s179: Ref;
+var supplyChainOwner_s225: Ref;
+var supplyChainObserver_s225: Ref;
+var newCounterparty_s264: Ref;
 var tmpNow: int;
 havoc msgsender_MSG;
 havoc msgvalue_MSG;
 havoc choice;
-havoc newCounterparty_s27;
-havoc newCounterparty_s51;
-havoc newCounterparty_s75;
-havoc newCounterparty_s97;
-havoc supplyChainOwner_s143;
-havoc supplyChainObserver_s143;
-havoc newCounterparty_s182;
+havoc newCounterparty_s48;
+havoc newCounterparty_s94;
+havoc newCounterparty_s137;
+havoc newCounterparty_s179;
+havoc supplyChainOwner_s225;
+havoc supplyChainObserver_s225;
+havoc newCounterparty_s264;
 havoc tmpNow;
 tmpNow := now;
 havoc now;
@@ -361,15 +365,15 @@ assume ((msgsender_MSG) != (null));
 assume ((DType[msgsender_MSG]) != (BasicProvenance));
 Alloc[msgsender_MSG] := true;
 if ((choice) == (6)) {
-call vc0x0x0_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s27);
+call vc1x0x0_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s48);
 } else if ((choice) == (5)) {
-call vc1x0x0_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s51);
+call vc1x0x1_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s94);
 } else if ((choice) == (4)) {
-call vc2x0x0_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s75);
+call vc1x1x0_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s137);
 } else if ((choice) == (3)) {
-call vc3x0x0_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s97);
+call vc1x1x1_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s179);
 } else if ((choice) == (2)) {
-call TransferResponsibility_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s182);
+call TransferResponsibility_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, newCounterparty_s264);
 } else if ((choice) == (1)) {
 call Complete_BasicProvenance(this, msgsender_MSG, msgvalue_MSG);
 }
@@ -381,12 +385,12 @@ implementation CorralEntry_BasicProvenance()
 var this: Ref;
 var msgsender_MSG: Ref;
 var msgvalue_MSG: int;
-var supplyChainOwner_s143: Ref;
-var supplyChainObserver_s143: Ref;
+var supplyChainOwner_s225: Ref;
+var supplyChainObserver_s225: Ref;
 call this := FreshRefGenerator();
 assume ((now) >= (0));
 assume ((DType[this]) == (BasicProvenance));
-call BasicProvenance_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, supplyChainOwner_s143, supplyChainObserver_s143);
+call BasicProvenance_BasicProvenance(this, msgsender_MSG, msgvalue_MSG, supplyChainOwner_s225, supplyChainObserver_s225);
 while (true)
 {
 call CorralChoice_BasicProvenance(this);
