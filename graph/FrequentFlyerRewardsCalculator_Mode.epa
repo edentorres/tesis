@@ -1,0 +1,36 @@
+// Prueba
+digraph {
+	init [label=init]
+	"1-2-3-" [label="AddMiles(miles);
+ComputeTotalRewards();
+GetMiles();
+"]
+	init -> "1-2-3-" [label=constructor]
+	"1-2-3-" [label="AddMiles(miles);
+ComputeTotalRewards();
+GetMiles();
+"]
+	"1-2-3-" [label="AddMiles(miles);
+ComputeTotalRewards();
+GetMiles();
+"]
+	"1-2-3-" -> "1-2-3-" [label="AddMiles(miles);"]
+	"1-2-3-" [label="AddMiles(miles);
+ComputeTotalRewards();
+GetMiles();
+"]
+	"1-2-3-" [label="AddMiles(miles);
+ComputeTotalRewards();
+GetMiles();
+"]
+	"1-2-3-" -> "1-2-3-" [label="ComputeTotalRewards();"]
+	"1-2-3-" [label="AddMiles(miles);
+ComputeTotalRewards();
+GetMiles();
+"]
+	"1-2-3-" [label="AddMiles(miles);
+ComputeTotalRewards();
+GetMiles();
+"]
+	"1-2-3-" -> "1-2-3-" [label="GetMiles();"]
+}

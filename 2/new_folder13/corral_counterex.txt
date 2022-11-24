@@ -1,7 +1,0 @@
-/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol(156,1): : AssetTransfer::Constructor (this = address!0, msg.sender = address!2, msg.value = 38, description = 652, price = 1666)
-/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol(192,1): : AssetTransfer::MakeOffer (this = address!0, msg.sender = address!6, msg.value = 44, inspector = address!3, appraiser = address!4, offerPrice = 505)
-/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol(216,1): : AssetTransfer::AcceptOffer (this = address!0, msg.sender = address!2, msg.value = 45)
-/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol(347,1): : AssetTransfer::MarkInspected (this = address!0, msg.sender = address!3, msg.value = 46)
-/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol(325,1): : AssetTransfer::MarkAppraised (this = address!0, msg.sender = address!4, msg.value = 47)
-/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol(138,1): : AssetTransfer::validCombination22 (this = address!0, msg.sender = address!5, msg.value = 48, offerPrice = 49, inspector = address!7, appraiser = address!8, description = 50, price = 51)
-/Users/etorres/Proyectos/verisol-test/2/new_folder13/CombinationsTemp13.sol(143,1): : ASSERTION FAILS!
