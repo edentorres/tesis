@@ -289,9 +289,6 @@ def validInit(arg):
     try_init(tool, fuctionCombinations, final_directory, states)
     delete_directory(final_directory)
 
-def getExtraConditions():
-    return
-
 class Mode(Enum):
     epa = "epa"
     states = "states"
@@ -327,7 +324,7 @@ def main():
     if mode == Mode.epa :
         states = getCombinations(funcionesNumeros)
         preconditions = getPreconditions(funcionesNumeros)
-        extraConditions = ["" for i in range(len(states))]
+        extraConditions = [config.epaExtraConditions for i in range(len(states))]
     else :
         preconditions = statePreconditionsModeState
         states = statesModeState
@@ -421,8 +418,8 @@ if __name__ == "__main__":
     print("Mode EPA")
     mode = Mode.epa
     main()
-    print("Mode States")
-    config = __import__(configFile)
-    mode = Mode.states
-    main()
+    # print("Mode States")
+    # config = __import__(configFile)
+    # mode = Mode.states
+    # main()
 

@@ -15,5 +15,5 @@ statesNamesModeState = ["Request", "Respond"]
 statePreconditionsModeState = ["State == StateType.Request", "State == StateType.Respond"]
 txBound = 4
 
-# epaExtraConditions = {"1-0": "false"}
-statesExtraConditions = ["true", "true"]
+epaExtraConditions = "true"
+statesExtraConditions = ["true", "false"]
