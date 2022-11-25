@@ -1,8 +1,5 @@
 // Prueba
 digraph {
-	init [label=init]
-	"1-0-" [label=Request]
-	init -> "1-0-" [label=constructor]
 	"1-0-" [label=Request]
 	"1-0-" [label=Request]
 	"1-0-" -> "1-0-" [label="SendRequest(requestMessage);"]
@@ -15,4 +12,7 @@ digraph {
 	"0-2-" [label=Respond]
 	"0-2-" [label=Respond]
 	"0-2-" -> "0-2-" [label="SendResponse(responseMessage);"]
+	init [label=init]
+	"1-0-" [label=Request]
+	init -> "1-0-" [label=constructor]
 }

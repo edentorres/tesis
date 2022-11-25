@@ -72,20 +72,30 @@ def getToolCommand(includeNumber, toolCommand, combinations, txBound):
             command += "/ignoreMethod:vc"+ combi +"@" + contractName + " "
     return command
 
-def output_transitions_function(preconditionRequire, function, preconditionAssert, functionIndex):
+def get_extra_condition_output(condition):
+    extraConditionOutput = ""
+    if condition != "" and condition != None:
+        extraConditionOutput = "require("+condition+");\n"
+    return extraConditionOutput 
+
+def output_transitions_function(preconditionRequire, function, preconditionAssert, functionIndex, extraConditionPre, extraConditionPost):
     if mode == Mode.epa:
         precondictionFunction = functionPreconditions[functionIndex]
     else:
         precondictionFunction = "true"
-    verisolFucntionOutput = "require("+preconditionRequire+");\nrequire("+precondictionFunction+");\n"+function+"\nassert(!(" + preconditionAssert + "));"
+    extraConditionOutputPre = get_extra_condition_output(extraConditionPre)
+    extraConditionOutputPost = get_extra_condition_output(extraConditionPost)
+    verisolFucntionOutput = "require("+preconditionRequire+");\nrequire("+precondictionFunction+");\n" + extraConditionOutputPre + function + "\n" + extraConditionOutputPost  + "assert(!(" + preconditionAssert + "));"
     return verisolFucntionOutput
 
-def output_init_function(preconditionAssert):
-    verisolFucntionOutput = "assert(!(" + preconditionAssert + "));"
+def output_init_function(preconditionAssert, extraCondition):
+    extraConditionOutput = get_extra_condition_output(extraCondition)
+    verisolFucntionOutput =  extraConditionOutput + "assert(!(" + preconditionAssert + "));"
     return verisolFucntionOutput
 
-def output_valid_state(preconditionRequire):
-    return "require("+preconditionRequire+");\nassert(false);\n"
+def output_valid_state(preconditionRequire, extraCondition):
+    extraConditionOutput = get_extra_condition_output(extraCondition)
+    return "require("+preconditionRequire+");\n" + extraConditionOutput + "assert(false);\n"
 
 def output_combination(indexCombination, tempCombinations):
     combination = tempCombinations[indexCombination]
@@ -139,53 +149,56 @@ def write_file(fileNameTemp, body):
                 write_file.write(body)
     write_file.close()
 
-def get_valid_preconditions_output(preconditions):
+def get_valid_preconditions_output(preconditions, extraConditions):
     temp_output = ""
     tempFunctionNames = []
     for indexPreconditionRequire, preconditionRequire in enumerate(preconditions):
         functionName = get_temp_function_name(indexPreconditionRequire, "0", "0")
         tempFunctionNames.append(functionName)
         temp_function = functionOutput(functionName) + "\n"
-        temp_function += output_valid_state(preconditionRequire)
+        temp_function += output_valid_state(preconditionRequire, extraConditions[indexPreconditionRequire])
         temp_output += temp_function + "}\n"
     return temp_output, tempFunctionNames
 
-def get_valid_transitions_output(preconditionsThread, preconditions, functions, statesThread): 
+def get_valid_transitions_output(preconditionsThread, preconditions, extraConditionsTemp, extraConditions, functions, statesThread): 
     global mode
     temp_output = ""
     tempFunctionNames = []
     for indexPreconditionRequire, preconditionRequire in enumerate(preconditionsThread):
         for indexPreconditionAssert, preconditionAssert in enumerate(preconditions):
             for indexFunction, function in enumerate(functions):
+                extraConditionPre = extraConditionsTemp[indexPreconditionRequire]
+                extraConditionPost = extraConditions[indexPreconditionAssert]
                 if (indexFunction + 1) in statesThread[indexPreconditionRequire] and mode == Mode.epa:
                     functionName = get_temp_function_name(indexPreconditionRequire, indexPreconditionAssert, indexFunction)
                     tempFunctionNames.append(functionName)
                     temp_function = functionOutput(functionName) + "\n"
-                    temp_function += output_transitions_function(preconditionRequire, function, preconditionAssert, indexFunction)
+                    temp_function += output_transitions_function(preconditionRequire, function, preconditionAssert, indexFunction, extraConditionPre, extraConditionPost)
                     temp_output += temp_function + "}\n"
                 elif mode == Mode.states:
                     functionName = get_temp_function_name(indexPreconditionRequire, indexPreconditionAssert, indexFunction)
                     tempFunctionNames.append(functionName)
                     temp_function = functionOutput(functionName) + "\n"
-                    temp_function += output_transitions_function(preconditionRequire, function, preconditionAssert, indexFunction)
+                    temp_function += output_transitions_function(preconditionRequire, function, preconditionAssert, indexFunction, extraConditionPre, extraConditionPost)
                     temp_output += temp_function + "}\n"
     return temp_output, tempFunctionNames
 
-def get_init_output(preconditions): 
+def get_init_output(preconditions, extraConditions): 
     temp_output = ""
     tempFunctionNames = []
     for indexPreconditionAssert, preconditionAssert in enumerate(preconditions):
         functionName = get_temp_function_name(indexPreconditionAssert, "0" , "0")
         tempFunctionNames.append(functionName)
         temp_function = functionOutput(functionName) + "\n"
-        temp_function += output_init_function(preconditionAssert)
+        temp_function += output_init_function(preconditionAssert, extraConditions[indexPreconditionAssert])
         temp_output += temp_function + "}\n"
     return temp_output, tempFunctionNames
 
-def try_preconditions(tool, tempFunctionNames, final_directory, statesTemp, preconditionsTemp, arg): 
+def try_preconditions(tool, tempFunctionNames, final_directory, statesTemp, preconditionsTemp, extraConditionsTemp, arg): 
     global txBound
     preconditionsTemp2 = []
     statesTemp2 = []
+    extraConditionsTemp2 = []
     
     for functionName in tempFunctionNames:
         print(functionName + "---" + str(arg))
@@ -194,7 +207,8 @@ def try_preconditions(tool, tempFunctionNames, final_directory, statesTemp, prec
             print_combination(indexPreconditionRequire, statesTemp)
             preconditionsTemp2.append(preconditionsTemp[indexPreconditionRequire])
             statesTemp2.append(statesTemp[indexPreconditionRequire])
-    return preconditionsTemp2, statesTemp2
+            extraConditionsTemp2.append(extraConditionsTemp[indexPreconditionRequire])
+    return preconditionsTemp2, statesTemp2, extraConditionsTemp2
 
 def try_transaction(tool, tempFunctionNames, final_directory, statesTemp, states, arg):
     global txBound 
@@ -235,42 +249,48 @@ def add_node_to_graph(indexPreconditionRequire, indexPreconditionAssert, indexFu
     dot.edge(combinationToString(statesTemp[indexPreconditionRequire]),combinationToString(states[indexPreconditionAssert]) , label=functions[indexFunction])
 
 def reduceCombinations(arg):
-    global fileName, preconditionsThreads, statesThreads, contractName
+    global fileName, preconditionsThreads, statesThreads, extraConditionsThreads, contractName
     preconditionsTemp = preconditionsThreads[arg]
     statesTemp = statesThreads[arg]
+    extraConditionsTemp = extraConditionsThreads[arg]
     final_directory = create_directory(arg)
     fileNameTemp = create_file(arg, final_directory)
-    body,fuctionCombinations = get_valid_preconditions_output(preconditionsTemp)
+    body,fuctionCombinations = get_valid_preconditions_output(preconditionsTemp, extraConditionsTemp)
     write_file(fileNameTemp, body)
     tool = "Verisol " + fileNameTemp + " " + contractName
-    preconditionsTemp2, statesTemp2 = try_preconditions(tool, fuctionCombinations, final_directory, statesTemp, preconditionsTemp, arg)
+    preconditionsTemp2, statesTemp2, extraConditionsTemp2 = try_preconditions(tool, fuctionCombinations, final_directory, statesTemp, preconditionsTemp, extraConditionsTemp , arg)
     preconditionsThreads[arg] = preconditionsTemp2
     statesThreads[arg] = statesTemp2
+    extraConditionsThreads[arg] = extraConditionsTemp
     delete_directory(final_directory)
 
 def validCombinations(arg):
-    global preconditionsThreads, statesThreads, preconditions, states, contractName, fileName, dot
+    global preconditionsThreads, statesThreads, extraConditionsThreads, extraConditions, preconditions, states, contractName, fileName, dot
     preconditionsTemp = preconditionsThreads[arg]
     statesTemp = statesThreads[arg]
+    extraConditionsTemp = extraConditionsThreads[arg]
     final_directory = create_directory(arg)
     fileNameTemp = create_file(arg, final_directory)
-    body, fuctionCombinations = get_valid_transitions_output(preconditionsTemp, preconditions, functions, statesTemp)
+    body, fuctionCombinations = get_valid_transitions_output(preconditionsTemp, preconditions, extraConditionsTemp, extraConditions, functions, statesTemp)
     write_file(fileNameTemp, body)
     tool = "Verisol " + fileNameTemp + " " + contractName
     try_transaction(tool, fuctionCombinations, final_directory, statesTemp, states, arg)
     delete_directory(final_directory)
 
 def validInit(arg):
-    global preconditionsThreads, statesThreads, preconditions, states, contractName, fileName, dot
+    global preconditionsThreads, extraConditions, preconditions, states, contractName, fileName, dot
     final_directory = create_directory(arg)
     fileNameTemp = create_file(arg, final_directory)
 
-    body, fuctionCombinations = get_init_output(preconditions)
+    body, fuctionCombinations = get_init_output(preconditions, extraConditions)
     write_file(fileNameTemp, body)
     
     tool = "Verisol " + fileNameTemp + " " + contractName
     try_init(tool, fuctionCombinations, final_directory, states)
     delete_directory(final_directory)
+
+def getExtraConditions():
+    return
 
 class Mode(Enum):
     epa = "epa"
@@ -291,7 +311,7 @@ def make_global_variables(config):
     statesModeState = config.statesModeState
 
 def main():
-    global config, dot, preconditionsThreads, statesThreads, states, preconditions
+    global config, dot, preconditionsThreads, statesThreads, states, preconditions, extraConditionsThreads, extraConditions
     make_global_variables(config)
 
     count = len(functions)
@@ -302,19 +322,24 @@ def main():
 
     dot = graphviz.Digraph(comment='Prueba')
 
+    extraConditions = []
+
     if mode == Mode.epa :
         states = getCombinations(funcionesNumeros)
         preconditions = getPreconditions(funcionesNumeros)
+        extraConditions = ["" for i in range(len(states))]
     else :
         preconditions = statePreconditionsModeState
         states = statesModeState
+        extraConditions = config.statesExtraConditions
 
     preconditionsThreads = preconditions
     preconditionsThreads = np.array_split(preconditionsThreads, threadCount)
-    print(preconditionsThreads)
-
     statesThreads = states
     statesThreads = np.array_split(statesThreads, threadCount)
+    extraConditionsThreads = extraConditions
+    if len(extraConditionsThreads) != 0:
+        extraConditionsThreads = np.array_split(extraConditions, threadCount)
 
     print("Length")
     print(len(preconditions))
@@ -332,15 +357,16 @@ def main():
 
     preconditionsThreads = [x for x in preconditionsThreads if x != []]
     statesThreads = [x for x in statesThreads if x != []]
+    extraConditionsThreads = [x for x in extraConditionsThreads if x != []]
 
     preconditionsThreads = np.concatenate(preconditionsThreads)
     statesThreads = np.concatenate(statesThreads)
+    if len(extraConditionsThreads) != 0:
+        extraConditionsThreads = np.concatenate(extraConditionsThreads)
     states = statesThreads
     preconditions = preconditionsThreads
+    extraConditions = extraConditionsThreads
     realThreadCount = threadCount if len(preconditionsThreads) > threadCount else len(preconditionsThreads)
-
-    print("Length")
-    print(len(preconditionsThreads))
 
     threads = []
     divideThreads = 1
@@ -354,6 +380,7 @@ def main():
 
     preconditionsThreads = np.array_split(preconditionsThreads, divideCount)
     statesThreads = np.array_split(statesThreads, divideCount)
+    extraConditionsThreads = np.array_split(extraConditionsThreads, 2)
 
     for y in range(divideThreads):
         threads = []
