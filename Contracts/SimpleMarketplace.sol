@@ -66,11 +66,6 @@ contract SimpleMarketplace {
 
     function AcceptOffer() public
     {
-        if ( StateEnum != StateType.OfferPlaced )
-        {
-            revert();
-        }
-
         if ( msg.sender != InstanceOwner )
         {
             revert();

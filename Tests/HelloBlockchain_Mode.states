@@ -1,0 +1,9 @@
+// Prueba
+digraph {
+	"1-0-" [label=Request]
+	"1-0-" [label=Request]
+	"1-0-" -> "1-0-" [label="SendRequest(requestMessage);"]
+	init [label=init]
+	"1-0-" [label=Request]
+	init -> "1-0-" [label=constructor]
+}

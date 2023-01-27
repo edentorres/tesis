@@ -2,7 +2,7 @@ fileName = "AssetTransfer.sol"
 contractName = "AssetTransfer"
 functions = [
 "Terminate();",
-"Modify(description, price);",
+"Modify(price);",
 "MakeOffer(inspector, appraiser, offerPrice);",
 "AcceptOffer();",
 "Reject();",
@@ -17,12 +17,12 @@ statePreconditions = [
 "State == StateType.Active",
 "State == StateType.Active",
 "State == StateType.OfferPlaced",
-"(State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised && State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)",
-"true", # "State == StateType.SellerAccepted || State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted", #true
+"(State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted)",
+"(State == StateType.NotionalAcceptance || State == StateType.BuyerAccepted || State == StateType.SellerAccepted)",
 "State == StateType.OfferPlaced",
 "(State == StateType.OfferPlaced || State == StateType.PendingInspection || State == StateType.Inspected || State == StateType.Appraised || State == StateType.NotionalAcceptance || State == StateType.SellerAccepted)",
-"(State != StateType.PendingInspection || State != StateType.Inspected)",
-"(State != StateType.PendingInspection || State != StateType.Appraised)"
+"(State == StateType.PendingInspection || State == StateType.Inspected)",
+"(State == StateType.PendingInspection || State == StateType.Appraised)"
 ]
 functionPreconditions = [
 "InstanceOwner == msg.sender",

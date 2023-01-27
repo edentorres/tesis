@@ -1,340 +1,325 @@
 // Prueba
 digraph {
-	"1-0-0-0-0-6-0-0-9-10-" [label="Terminate();
-Accept();
-MarkAppraised();
-MarkInspected();
+	"1-0-0-0-0-0-0-0-0-0-" [label="Terminate();
 "]
-	"1-0-0-0-0-6-0-0-9-10-" [label="Terminate();
-Accept();
-MarkAppraised();
-MarkInspected();
+	"1-0-0-0-0-0-0-0-0-0-" [label="Terminate();
 "]
-	"1-0-0-0-0-6-0-0-9-10-" -> "1-0-0-0-0-6-0-0-9-10-" [label="Terminate();"]
-	"1-0-0-0-0-6-0-8-9-10-" [label="Terminate();
-Accept();
-RescindOffer();
-MarkAppraised();
-MarkInspected();
-"]
-	"1-0-0-0-0-6-0-0-9-10-" [label="Terminate();
-Accept();
-MarkAppraised();
-MarkInspected();
-"]
-	"1-0-0-0-0-6-0-8-9-10-" -> "1-0-0-0-0-6-0-0-9-10-" [label="Terminate();"]
-	"1-2-3-0-0-6-0-0-9-10-" [label="Terminate();
-Modify(description, price);
+	"1-0-0-0-0-0-0-0-0-0-" -> "1-0-0-0-0-0-0-0-0-0-" [label="Terminate();"]
+	"1-2-3-0-0-0-0-0-0-0-" [label="Terminate();
+Modify(price);
 MakeOffer(inspector, appraiser, offerPrice);
+"]
+	"1-0-0-0-0-0-0-0-0-0-" [label="Terminate();
+"]
+	"1-2-3-0-0-0-0-0-0-0-" -> "1-0-0-0-0-0-0-0-0-0-" [label="Terminate();"]
+	"1-0-0-0-5-6-0-0-0-0-" [label="Terminate();
+Reject();
 Accept();
+"]
+	"1-0-0-0-0-0-0-0-0-0-" [label="Terminate();
+"]
+	"1-0-0-0-5-6-0-0-0-0-" -> "1-0-0-0-0-0-0-0-0-0-" [label="Terminate();"]
+	"1-0-0-0-5-0-0-8-9-0-" [label="Terminate();
+Reject();
+RescindOffer();
 MarkAppraised();
+"]
+	"1-0-0-0-0-0-0-0-0-0-" [label="Terminate();
+"]
+	"1-0-0-0-5-0-0-8-9-0-" -> "1-0-0-0-0-0-0-0-0-0-" [label="Terminate();"]
+	"1-0-0-0-0-6-0-8-0-0-" [label="Terminate();
+Accept();
+RescindOffer();
+"]
+	"1-0-0-0-0-0-0-0-0-0-" [label="Terminate();
+"]
+	"1-0-0-0-0-6-0-8-0-0-" -> "1-0-0-0-0-0-0-0-0-0-" [label="Terminate();"]
+	"1-0-0-0-5-0-0-8-0-10-" [label="Terminate();
+Reject();
+RescindOffer();
 MarkInspected();
 "]
-	"1-0-0-0-0-6-0-0-9-10-" [label="Terminate();
-Accept();
-MarkAppraised();
-MarkInspected();
+	"1-0-0-0-0-0-0-0-0-0-" [label="Terminate();
 "]
-	"1-2-3-0-0-6-0-0-9-10-" -> "1-0-0-0-0-6-0-0-9-10-" [label="Terminate();"]
-	"1-0-0-0-5-6-0-8-9-10-" [label="Terminate();
+	"1-0-0-0-5-0-0-8-0-10-" -> "1-0-0-0-0-0-0-0-0-0-" [label="Terminate();"]
+	"1-0-0-0-5-6-0-8-0-0-" [label="Terminate();
 Reject();
 Accept();
 RescindOffer();
-MarkAppraised();
-MarkInspected();
 "]
-	"1-0-0-0-0-6-0-0-9-10-" [label="Terminate();
-Accept();
-MarkAppraised();
-MarkInspected();
+	"1-0-0-0-0-0-0-0-0-0-" [label="Terminate();
 "]
-	"1-0-0-0-5-6-0-8-9-10-" -> "1-0-0-0-0-6-0-0-9-10-" [label="Terminate();"]
-	"1-0-0-0-5-6-0-0-9-10-" [label="Terminate();
-Reject();
-Accept();
-MarkAppraised();
-MarkInspected();
-"]
-	"1-0-0-0-0-6-0-0-9-10-" [label="Terminate();
-Accept();
-MarkAppraised();
-MarkInspected();
-"]
-	"1-0-0-0-5-6-0-0-9-10-" -> "1-0-0-0-0-6-0-0-9-10-" [label="Terminate();"]
-	"1-0-0-4-5-6-7-8-9-10-" [label="Terminate();
+	"1-0-0-0-5-6-0-8-0-0-" -> "1-0-0-0-0-0-0-0-0-0-" [label="Terminate();"]
+	"1-0-0-4-5-0-7-8-0-0-" [label="Terminate();
 AcceptOffer();
 Reject();
-Accept();
 ModifyOffer(offerPrice);
 RescindOffer();
-MarkAppraised();
-MarkInspected();
 "]
-	"1-0-0-0-0-6-0-0-9-10-" [label="Terminate();
-Accept();
-MarkAppraised();
-MarkInspected();
+	"1-0-0-0-0-0-0-0-0-0-" [label="Terminate();
 "]
-	"1-0-0-4-5-6-7-8-9-10-" -> "1-0-0-0-0-6-0-0-9-10-" [label="Terminate();"]
-	"1-0-0-0-0-6-0-8-9-10-" [label="Terminate();
-Accept();
+	"1-0-0-4-5-0-7-8-0-0-" -> "1-0-0-0-0-0-0-0-0-0-" [label="Terminate();"]
+	"1-0-0-0-5-0-0-8-9-10-" [label="Terminate();
+Reject();
 RescindOffer();
 MarkAppraised();
 MarkInspected();
 "]
-	"1-0-0-0-0-6-0-0-9-10-" [label="Terminate();
-Accept();
-MarkAppraised();
-MarkInspected();
+	"1-0-0-0-0-0-0-0-0-0-" [label="Terminate();
 "]
-	"1-0-0-0-0-6-0-8-9-10-" -> "1-0-0-0-0-6-0-0-9-10-" [label="Accept();"]
-	"1-0-0-0-5-6-0-0-9-10-" [label="Terminate();
+	"1-0-0-0-5-0-0-8-9-10-" -> "1-0-0-0-0-0-0-0-0-0-" [label="Terminate();"]
+	"1-0-0-0-0-6-0-8-0-0-" [label="Terminate();
+Accept();
+RescindOffer();
+"]
+	"1-0-0-0-0-0-0-0-0-0-" [label="Terminate();
+"]
+	"1-0-0-0-0-6-0-8-0-0-" -> "1-0-0-0-0-0-0-0-0-0-" [label="Accept();"]
+	"1-0-0-0-5-6-0-0-0-0-" [label="Terminate();
 Reject();
 Accept();
-MarkAppraised();
-MarkInspected();
 "]
-	"1-0-0-0-0-6-0-0-9-10-" [label="Terminate();
-Accept();
-MarkAppraised();
-MarkInspected();
+	"1-0-0-0-0-0-0-0-0-0-" [label="Terminate();
 "]
-	"1-0-0-0-5-6-0-0-9-10-" -> "1-0-0-0-0-6-0-0-9-10-" [label="Accept();"]
-	"1-0-0-0-0-6-0-8-9-10-" [label="Terminate();
-Accept();
-RescindOffer();
-MarkAppraised();
-MarkInspected();
-"]
-	"1-0-0-0-5-6-0-0-9-10-" [label="Terminate();
-Reject();
-Accept();
-MarkAppraised();
-MarkInspected();
-"]
-	"1-0-0-0-0-6-0-8-9-10-" -> "1-0-0-0-5-6-0-0-9-10-" [label="Accept();"]
-	"1-0-0-0-0-6-0-8-9-10-" [label="Terminate();
-Accept();
-RescindOffer();
-MarkAppraised();
-MarkInspected();
-"]
-	"1-0-0-0-0-6-0-8-9-10-" [label="Terminate();
-Accept();
-RescindOffer();
-MarkAppraised();
-MarkInspected();
-"]
-	"1-0-0-0-0-6-0-8-9-10-" -> "1-0-0-0-0-6-0-8-9-10-" [label="Accept();"]
-	"1-0-0-0-0-6-0-8-9-10-" [label="Terminate();
-Accept();
-RescindOffer();
-MarkAppraised();
-MarkInspected();
-"]
-	"1-0-0-0-0-6-0-8-9-10-" [label="Terminate();
-Accept();
-RescindOffer();
-MarkAppraised();
-MarkInspected();
-"]
-	"1-0-0-0-0-6-0-8-9-10-" -> "1-0-0-0-0-6-0-8-9-10-" [label="MarkInspected();"]
-	"1-0-0-0-5-6-0-0-9-10-" [label="Terminate();
-Reject();
-Accept();
-MarkAppraised();
-MarkInspected();
-"]
-	"1-2-3-0-0-6-0-0-9-10-" [label="Terminate();
-Modify(description, price);
+	"1-0-0-0-5-6-0-0-0-0-" -> "1-0-0-0-0-0-0-0-0-0-" [label="Accept();"]
+	"1-2-3-0-0-0-0-0-0-0-" [label="Terminate();
+Modify(price);
 MakeOffer(inspector, appraiser, offerPrice);
+"]
+	"1-2-3-0-0-0-0-0-0-0-" [label="Terminate();
+Modify(price);
+MakeOffer(inspector, appraiser, offerPrice);
+"]
+	"1-2-3-0-0-0-0-0-0-0-" -> "1-2-3-0-0-0-0-0-0-0-" [label="Modify(price);"]
+	"1-0-0-0-5-6-0-0-0-0-" [label="Terminate();
+Reject();
 Accept();
-MarkAppraised();
+"]
+	"1-2-3-0-0-0-0-0-0-0-" [label="Terminate();
+Modify(price);
+MakeOffer(inspector, appraiser, offerPrice);
+"]
+	"1-0-0-0-5-6-0-0-0-0-" -> "1-2-3-0-0-0-0-0-0-0-" [label="Reject();"]
+	"1-0-0-0-0-6-0-8-0-0-" [label="Terminate();
+Accept();
+RescindOffer();
+"]
+	"1-2-3-0-0-0-0-0-0-0-" [label="Terminate();
+Modify(price);
+MakeOffer(inspector, appraiser, offerPrice);
+"]
+	"1-0-0-0-0-6-0-8-0-0-" -> "1-2-3-0-0-0-0-0-0-0-" [label="RescindOffer();"]
+	"1-0-0-0-5-0-0-8-0-10-" [label="Terminate();
+Reject();
+RescindOffer();
 MarkInspected();
 "]
-	"1-0-0-0-5-6-0-0-9-10-" -> "1-2-3-0-0-6-0-0-9-10-" [label="Reject();"]
-	"1-0-0-0-5-6-0-8-9-10-" [label="Terminate();
+	"1-2-3-0-0-0-0-0-0-0-" [label="Terminate();
+Modify(price);
+MakeOffer(inspector, appraiser, offerPrice);
+"]
+	"1-0-0-0-5-0-0-8-0-10-" -> "1-2-3-0-0-0-0-0-0-0-" [label="Reject();"]
+	"1-0-0-0-5-0-0-8-9-0-" [label="Terminate();
+Reject();
+RescindOffer();
+MarkAppraised();
+"]
+	"1-2-3-0-0-0-0-0-0-0-" [label="Terminate();
+Modify(price);
+MakeOffer(inspector, appraiser, offerPrice);
+"]
+	"1-0-0-0-5-0-0-8-9-0-" -> "1-2-3-0-0-0-0-0-0-0-" [label="Reject();"]
+	"1-0-0-0-5-6-0-8-0-0-" [label="Terminate();
 Reject();
 Accept();
 RescindOffer();
-MarkAppraised();
+"]
+	"1-2-3-0-0-0-0-0-0-0-" [label="Terminate();
+Modify(price);
+MakeOffer(inspector, appraiser, offerPrice);
+"]
+	"1-0-0-0-5-6-0-8-0-0-" -> "1-2-3-0-0-0-0-0-0-0-" [label="Reject();"]
+	"1-0-0-0-5-0-0-8-0-10-" [label="Terminate();
+Reject();
+RescindOffer();
 MarkInspected();
 "]
-	"1-0-0-0-0-6-0-8-9-10-" [label="Terminate();
-Accept();
+	"1-2-3-0-0-0-0-0-0-0-" [label="Terminate();
+Modify(price);
+MakeOffer(inspector, appraiser, offerPrice);
+"]
+	"1-0-0-0-5-0-0-8-0-10-" -> "1-2-3-0-0-0-0-0-0-0-" [label="RescindOffer();"]
+	"1-0-0-0-5-0-0-8-9-0-" [label="Terminate();
+Reject();
+RescindOffer();
+MarkAppraised();
+"]
+	"1-2-3-0-0-0-0-0-0-0-" [label="Terminate();
+Modify(price);
+MakeOffer(inspector, appraiser, offerPrice);
+"]
+	"1-0-0-0-5-0-0-8-9-0-" -> "1-2-3-0-0-0-0-0-0-0-" [label="RescindOffer();"]
+	"1-0-0-0-5-0-0-8-9-10-" [label="Terminate();
+Reject();
 RescindOffer();
 MarkAppraised();
 MarkInspected();
 "]
-	"1-0-0-0-5-6-0-8-9-10-" -> "1-0-0-0-0-6-0-8-9-10-" [label="MarkAppraised();"]
-	"1-0-0-0-0-6-0-8-9-10-" [label="Terminate();
-Accept();
-RescindOffer();
-MarkAppraised();
-MarkInspected();
-"]
-	"1-2-3-0-0-6-0-0-9-10-" [label="Terminate();
-Modify(description, price);
+	"1-2-3-0-0-0-0-0-0-0-" [label="Terminate();
+Modify(price);
 MakeOffer(inspector, appraiser, offerPrice);
-Accept();
-MarkAppraised();
-MarkInspected();
 "]
-	"1-0-0-0-0-6-0-8-9-10-" -> "1-2-3-0-0-6-0-0-9-10-" [label="RescindOffer();"]
-	"1-2-3-0-0-6-0-0-9-10-" [label="Terminate();
-Modify(description, price);
-MakeOffer(inspector, appraiser, offerPrice);
-Accept();
-MarkAppraised();
-MarkInspected();
-"]
-	"1-2-3-0-0-6-0-0-9-10-" [label="Terminate();
-Modify(description, price);
-MakeOffer(inspector, appraiser, offerPrice);
-Accept();
-MarkAppraised();
-MarkInspected();
-"]
-	"1-2-3-0-0-6-0-0-9-10-" -> "1-2-3-0-0-6-0-0-9-10-" [label="Modify(description, price);"]
-	"1-0-0-0-5-6-0-8-9-10-" [label="Terminate();
+	"1-0-0-0-5-0-0-8-9-10-" -> "1-2-3-0-0-0-0-0-0-0-" [label="Reject();"]
+	"1-0-0-0-5-6-0-8-0-0-" [label="Terminate();
 Reject();
 Accept();
 RescindOffer();
-MarkAppraised();
-MarkInspected();
 "]
-	"1-2-3-0-0-6-0-0-9-10-" [label="Terminate();
-Modify(description, price);
+	"1-2-3-0-0-0-0-0-0-0-" [label="Terminate();
+Modify(price);
 MakeOffer(inspector, appraiser, offerPrice);
-Accept();
-MarkAppraised();
-MarkInspected();
 "]
-	"1-0-0-0-5-6-0-8-9-10-" -> "1-2-3-0-0-6-0-0-9-10-" [label="Reject();"]
-	"1-0-0-0-5-6-0-8-9-10-" [label="Terminate();
-Reject();
-Accept();
-RescindOffer();
-MarkAppraised();
-MarkInspected();
-"]
-	"1-2-3-0-0-6-0-0-9-10-" [label="Terminate();
-Modify(description, price);
-MakeOffer(inspector, appraiser, offerPrice);
-Accept();
-MarkAppraised();
-MarkInspected();
-"]
-	"1-0-0-0-5-6-0-8-9-10-" -> "1-2-3-0-0-6-0-0-9-10-" [label="RescindOffer();"]
-	"1-0-0-0-5-6-0-8-9-10-" [label="Terminate();
-Reject();
-Accept();
-RescindOffer();
-MarkAppraised();
-MarkInspected();
-"]
-	"1-0-0-0-5-6-0-8-9-10-" [label="Terminate();
-Reject();
-Accept();
-RescindOffer();
-MarkAppraised();
-MarkInspected();
-"]
-	"1-0-0-0-5-6-0-8-9-10-" -> "1-0-0-0-5-6-0-8-9-10-" [label="MarkInspected();"]
-	"1-0-0-4-5-6-7-8-9-10-" [label="Terminate();
+	"1-0-0-0-5-6-0-8-0-0-" -> "1-2-3-0-0-0-0-0-0-0-" [label="RescindOffer();"]
+	"1-0-0-4-5-0-7-8-0-0-" [label="Terminate();
 AcceptOffer();
 Reject();
-Accept();
 ModifyOffer(offerPrice);
 RescindOffer();
-MarkAppraised();
-MarkInspected();
 "]
-	"1-2-3-0-0-6-0-0-9-10-" [label="Terminate();
-Modify(description, price);
+	"1-2-3-0-0-0-0-0-0-0-" [label="Terminate();
+Modify(price);
 MakeOffer(inspector, appraiser, offerPrice);
-Accept();
+"]
+	"1-0-0-4-5-0-7-8-0-0-" -> "1-2-3-0-0-0-0-0-0-0-" [label="Reject();"]
+	"1-0-0-0-5-0-0-8-9-10-" [label="Terminate();
+Reject();
+RescindOffer();
 MarkAppraised();
 MarkInspected();
 "]
-	"1-0-0-4-5-6-7-8-9-10-" -> "1-2-3-0-0-6-0-0-9-10-" [label="Reject();"]
-	"1-2-3-0-0-6-0-0-9-10-" [label="Terminate();
-Modify(description, price);
+	"1-2-3-0-0-0-0-0-0-0-" [label="Terminate();
+Modify(price);
 MakeOffer(inspector, appraiser, offerPrice);
-Accept();
-MarkAppraised();
-MarkInspected();
 "]
-	"1-0-0-4-5-6-7-8-9-10-" [label="Terminate();
+	"1-0-0-0-5-0-0-8-9-10-" -> "1-2-3-0-0-0-0-0-0-0-" [label="RescindOffer();"]
+	"1-0-0-4-5-0-7-8-0-0-" [label="Terminate();
 AcceptOffer();
 Reject();
-Accept();
 ModifyOffer(offerPrice);
 RescindOffer();
-MarkAppraised();
-MarkInspected();
 "]
-	"1-2-3-0-0-6-0-0-9-10-" -> "1-0-0-4-5-6-7-8-9-10-" [label="MakeOffer(inspector, appraiser, offerPrice);"]
-	"1-0-0-4-5-6-7-8-9-10-" [label="Terminate();
-AcceptOffer();
-Reject();
-Accept();
-ModifyOffer(offerPrice);
-RescindOffer();
-MarkAppraised();
-MarkInspected();
-"]
-	"1-2-3-0-0-6-0-0-9-10-" [label="Terminate();
-Modify(description, price);
+	"1-2-3-0-0-0-0-0-0-0-" [label="Terminate();
+Modify(price);
 MakeOffer(inspector, appraiser, offerPrice);
+"]
+	"1-0-0-4-5-0-7-8-0-0-" -> "1-2-3-0-0-0-0-0-0-0-" [label="RescindOffer();"]
+	"1-0-0-0-5-6-0-8-0-0-" [label="Terminate();
+Reject();
 Accept();
-MarkAppraised();
+RescindOffer();
+"]
+	"1-0-0-0-5-6-0-0-0-0-" [label="Terminate();
+Reject();
+Accept();
+"]
+	"1-0-0-0-5-6-0-8-0-0-" -> "1-0-0-0-5-6-0-0-0-0-" [label="Accept();"]
+	"1-0-0-0-5-6-0-8-0-0-" [label="Terminate();
+Reject();
+Accept();
+RescindOffer();
+"]
+	"1-0-0-0-0-6-0-8-0-0-" [label="Terminate();
+Accept();
+RescindOffer();
+"]
+	"1-0-0-0-5-6-0-8-0-0-" -> "1-0-0-0-0-6-0-8-0-0-" [label="Accept();"]
+	"1-0-0-0-5-0-0-8-0-10-" [label="Terminate();
+Reject();
+RescindOffer();
 MarkInspected();
 "]
-	"1-0-0-4-5-6-7-8-9-10-" -> "1-2-3-0-0-6-0-0-9-10-" [label="RescindOffer();"]
-	"1-0-0-4-5-6-7-8-9-10-" [label="Terminate();
+	"1-0-0-0-5-6-0-8-0-0-" [label="Terminate();
+Reject();
+Accept();
+RescindOffer();
+"]
+	"1-0-0-0-5-0-0-8-0-10-" -> "1-0-0-0-5-6-0-8-0-0-" [label="MarkInspected();"]
+	"1-0-0-0-5-0-0-8-9-0-" [label="Terminate();
+Reject();
+RescindOffer();
+MarkAppraised();
+"]
+	"1-0-0-0-5-6-0-8-0-0-" [label="Terminate();
+Reject();
+Accept();
+RescindOffer();
+"]
+	"1-0-0-0-5-0-0-8-9-0-" -> "1-0-0-0-5-6-0-8-0-0-" [label="MarkAppraised();"]
+	"1-2-3-0-0-0-0-0-0-0-" [label="Terminate();
+Modify(price);
+MakeOffer(inspector, appraiser, offerPrice);
+"]
+	"1-0-0-4-5-0-7-8-0-0-" [label="Terminate();
 AcceptOffer();
 Reject();
-Accept();
 ModifyOffer(offerPrice);
 RescindOffer();
-MarkAppraised();
-MarkInspected();
 "]
-	"1-0-0-0-5-6-0-8-9-10-" [label="Terminate();
+	"1-2-3-0-0-0-0-0-0-0-" -> "1-0-0-4-5-0-7-8-0-0-" [label="MakeOffer(inspector, appraiser, offerPrice);"]
+	"1-0-0-0-5-0-0-8-9-10-" [label="Terminate();
 Reject();
-Accept();
 RescindOffer();
 MarkAppraised();
 MarkInspected();
 "]
-	"1-0-0-4-5-6-7-8-9-10-" -> "1-0-0-0-5-6-0-8-9-10-" [label="AcceptOffer();"]
-	"1-0-0-4-5-6-7-8-9-10-" [label="Terminate();
+	"1-0-0-0-5-0-0-8-9-0-" [label="Terminate();
+Reject();
+RescindOffer();
+MarkAppraised();
+"]
+	"1-0-0-0-5-0-0-8-9-10-" -> "1-0-0-0-5-0-0-8-9-0-" [label="MarkInspected();"]
+	"1-0-0-0-5-0-0-8-9-10-" [label="Terminate();
+Reject();
+RescindOffer();
+MarkAppraised();
+MarkInspected();
+"]
+	"1-0-0-0-5-0-0-8-0-10-" [label="Terminate();
+Reject();
+RescindOffer();
+MarkInspected();
+"]
+	"1-0-0-0-5-0-0-8-9-10-" -> "1-0-0-0-5-0-0-8-0-10-" [label="MarkAppraised();"]
+	"1-0-0-4-5-0-7-8-0-0-" [label="Terminate();
 AcceptOffer();
 Reject();
-Accept();
 ModifyOffer(offerPrice);
 RescindOffer();
-MarkAppraised();
-MarkInspected();
 "]
-	"1-0-0-4-5-6-7-8-9-10-" [label="Terminate();
+	"1-0-0-4-5-0-7-8-0-0-" [label="Terminate();
 AcceptOffer();
 Reject();
-Accept();
 ModifyOffer(offerPrice);
+RescindOffer();
+"]
+	"1-0-0-4-5-0-7-8-0-0-" -> "1-0-0-4-5-0-7-8-0-0-" [label="ModifyOffer(offerPrice);"]
+	"1-0-0-4-5-0-7-8-0-0-" [label="Terminate();
+AcceptOffer();
+Reject();
+ModifyOffer(offerPrice);
+RescindOffer();
+"]
+	"1-0-0-0-5-0-0-8-9-10-" [label="Terminate();
+Reject();
 RescindOffer();
 MarkAppraised();
 MarkInspected();
 "]
-	"1-0-0-4-5-6-7-8-9-10-" -> "1-0-0-4-5-6-7-8-9-10-" [label="ModifyOffer(offerPrice);"]
+	"1-0-0-4-5-0-7-8-0-0-" -> "1-0-0-0-5-0-0-8-9-10-" [label="AcceptOffer();"]
 	init [label=init]
-	"1-2-3-0-0-6-0-0-9-10-" [label="Terminate();
-Modify(description, price);
+	"1-2-3-0-0-0-0-0-0-0-" [label="Terminate();
+Modify(price);
 MakeOffer(inspector, appraiser, offerPrice);
-Accept();
-MarkAppraised();
-MarkInspected();
 "]
-	init -> "1-2-3-0-0-6-0-0-9-10-" [label=constructor]
+	init -> "1-2-3-0-0-0-0-0-0-0-" [label=constructor]
 }

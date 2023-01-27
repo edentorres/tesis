@@ -33,7 +33,7 @@ contract AssetTransfer {
         // ContractUpdated('Terminate');
     }
 
-    function Modify(string memory description, uint256 price) public
+    function Modify(uint256 price) public
     {
         if (State != StateType.Active)
         {
@@ -44,7 +44,7 @@ contract AssetTransfer {
             revert();
         }
 
-        Description = description;
+        // Description = description;
         AskingPrice = price;
         // ContractUpdated('Modify');
     }

@@ -37,7 +37,23 @@ def getCombinations(funcionesNumeros):
                 indice = partialResult[i]
                 paddingResult[indice-1] = indice
         statesTemp.append(paddingResult)
-    return statesTemp
+    statesTemp2 = []
+    
+    for combination in statesTemp:
+        isCorrect = True
+        for iNumber, number in enumerate(combination):
+            for idx, x in enumerate(statePreconditions):
+                if iNumber != idx:
+                    if number == 0:
+                        if statePreconditions[iNumber] == x and combination[idx] != 0:
+                            isCorrect = False
+                    elif statePreconditions[iNumber] == x and not((idx+1) in combination):
+                        isCorrect = False
+        
+        if isCorrect:
+            statesTemp2.append(combination)
+            
+    return statesTemp2
 
 def getPreconditions(funcionesNumeros):
     global states, statePreconditions
@@ -113,11 +129,13 @@ def output_combination(indexCombination, tempCombinations):
 
 def print_combination(indexCombination, tempCombinations):
     output = output_combination(indexCombination, tempCombinations)
-    print(output + "---------")
+    if time == False:
+        print(output + "---------")
 
 def print_output(indexPreconditionRequire, indexFunction, indexPreconditionAssert, combinations, fullCombination):
     output ="Desde este estado:\n"+ output_combination(indexPreconditionRequire, combinations) + "\nHaciendo " + functions[indexFunction] + "\n\nLlegas al estado:\n" + output_combination(indexPreconditionAssert, fullCombination) + "\n---------"
-    print(output)
+    if time == False:
+        print(output)
 
 def create_directory(index):
     current_directory = os.getcwd()
@@ -201,7 +219,8 @@ def try_preconditions(tool, tempFunctionNames, final_directory, statesTemp, prec
     extraConditionsTemp2 = []
     
     for functionName in tempFunctionNames:
-        print(functionName + "---" + str(arg))
+        if time == False:
+            print(functionName + "---" + str(arg))
         indexPreconditionRequire, _ , _ = get_params_from_function_name(functionName)
         if try_command(tool, functionName, tempFunctionNames, final_directory, txBound):
             print_combination(indexPreconditionRequire, statesTemp)
@@ -213,7 +232,8 @@ def try_preconditions(tool, tempFunctionNames, final_directory, statesTemp, prec
 def try_transaction(tool, tempFunctionNames, final_directory, statesTemp, states, arg):
     global txBound 
     for functionName in tempFunctionNames:
-        print(functionName + "---" + str(arg))
+        if time == False:
+            print(functionName + "---" + str(arg))
         indexPreconditionRequire, indexPreconditionAssert, indexFunction = get_params_from_function_name(functionName)
         if try_command(tool, functionName, tempFunctionNames, final_directory, txBound):
             add_node_to_graph(indexPreconditionRequire, indexPreconditionAssert, indexFunction, statesTemp, states)
@@ -229,10 +249,12 @@ def try_init(tool, tempFunctionNames, final_directory, states):
             dot.edge("init",combinationToString(states[indexPreconditionAssert]) , "constructor")
 
 def try_command(tool, temp_function_name, tempFunctionNames, final_directory, txBound):
-    global tool_output
+    global tool_output, verbose
     command = getToolCommand(temp_function_name, tool, tempFunctionNames, txBound)
+    # print(command)
     result = subprocess.run([command, ""], shell = True, cwd=final_directory, stdout=subprocess.PIPE)
-    # print(result.stdout.decode('utf-8'))
+    if verbose:
+        print(result.stdout.decode('utf-8'))
     return tool_output in str(result.stdout.decode('utf-8'))
 
 def get_temp_function_name(indexPrecondtion, indexAssert, indexFunction):
@@ -262,7 +284,8 @@ def reduceCombinations(arg):
     preconditionsThreads[arg] = preconditionsTemp2
     statesThreads[arg] = statesTemp2
     extraConditionsThreads[arg] = extraConditionsTemp
-    delete_directory(final_directory)
+    if not verbose:
+        delete_directory(final_directory)
 
 def validCombinations(arg):
     global preconditionsThreads, statesThreads, extraConditionsThreads, extraConditions, preconditions, states, contractName, fileName, dot
@@ -275,7 +298,8 @@ def validCombinations(arg):
     write_file(fileNameTemp, body)
     tool = "Verisol " + fileNameTemp + " " + contractName
     try_transaction(tool, fuctionCombinations, final_directory, statesTemp, states, arg)
-    delete_directory(final_directory)
+    if not verbose:
+        delete_directory(final_directory)
 
 def validInit(arg):
     global preconditionsThreads, extraConditions, preconditions, states, contractName, fileName, dot
@@ -324,11 +348,17 @@ def main():
     if mode == Mode.epa :
         states = getCombinations(funcionesNumeros)
         preconditions = getPreconditions(funcionesNumeros)
-        extraConditions = [config.epaExtraConditions for i in range(len(states))]
+        try:
+            extraConditions = [config.epaExtraConditions for i in range(len(states))]
+        except:
+            extraConditions = ["true" for i in range(len(states))]
     else :
         preconditions = statePreconditionsModeState
         states = statesModeState
-        extraConditions = config.statesExtraConditions
+        try:
+            extraConditions = config.statesExtraConditions
+        except:
+           extraConditions = ["true" for i in range(len(states))]
 
     preconditionsThreads = preconditions
     preconditionsThreads = np.array_split(preconditionsThreads, threadCount)
@@ -338,19 +368,18 @@ def main():
     if len(extraConditionsThreads) != 0:
         extraConditionsThreads = np.array_split(extraConditions, threadCount)
 
-    print("Length")
-    print(len(preconditions))
+    if time == False:
+        print("Length")
+        print(len(preconditions))
 
     if mode == Mode.epa :
         for i in range(threadCount):
             thread = Thread(target = reduceCombinations, args = [i])
             thread.start()
             threads.append(thread)
-        print("threads started")
 
         for thread in threads:
             thread.join()
-        print("threads finished")
 
     preconditionsThreads = [x for x in preconditionsThreads if x != []]
     statesThreads = [x for x in statesThreads if x != []]
@@ -369,15 +398,19 @@ def main():
     divideThreads = 1
     moduleThreadsConut = 0
     divideCount = realThreadCount
-    if len(preconditionsThreads) > 200:
-        print("MAYOR A 200")
+    if time == False:
+        print("Length")
+        print(len(preconditionsThreads))
+    if len(preconditionsThreads) > 30:
+        if time == False:
+            print("MAYOR A 200")
         divideCount = len(preconditionsThreads)
         divideThreads = int(divideCount/threadCount)
         moduleThreadsConut = divideCount % threadCount
 
     preconditionsThreads = np.array_split(preconditionsThreads, divideCount)
     statesThreads = np.array_split(statesThreads, divideCount)
-    extraConditionsThreads = np.array_split(extraConditionsThreads, 2)
+    extraConditionsThreads = np.array_split(extraConditionsThreads, divideCount)
 
     for y in range(divideThreads):
         threads = []
@@ -388,7 +421,6 @@ def main():
 
         for thread in threads:
             thread.join()
-        print("threads finished")
     threads = []
     
     for index in range(moduleThreadsConut):
@@ -401,9 +433,7 @@ def main():
     threads.append(thread)
     for thread in threads:
         thread.join()
-    print("threads finished")
-
-    dot.render("graph/" + contractName + "_" + str(mode))
+    dot.render("graph/" + config.fileName.split('.')[0] + "_" + str(mode))
 
 states = []
 preconditions = []
@@ -412,14 +442,31 @@ tool_output = "Found a counterexample"
 sys.path.append("/Users/etorres/Proyectos/verisol-test/Configs")
 
 if __name__ == "__main__":
-    global mode, config
+    global mode, config, verbose, time
+    epaMode = False
+    statesMode = False
     configFile = sys.argv[1] + "Config"
-    config = __import__(configFile)
-    print("Mode EPA")
-    mode = Mode.epa
-    main()
-    # print("Mode States")
-    # config = __import__(configFile)
-    # mode = Mode.states
-    # main()
+    verbose = False
+    time = False
+    if len(sys.argv) > 2 and sys.argv[2] == "-v":
+        verbose = True
+    if len(sys.argv) > 2 and sys.argv[2] == "-t":
+        time = True
+    if len(sys.argv) > 3 and sys.argv[3] == "-e":
+        epaMode = True
+    if len(sys.argv) > 3 and sys.argv[3] == "-s":
+        statesMode = True
+    if len(sys.argv) > 3 and sys.argv[3] == "-a":
+        statesMode = True
+        epaMode = True
+    
+    if epaMode:
+        mode = Mode.epa
+        config = __import__(configFile)
+        main()
+
+    if statesMode:
+        config = __import__(configFile)
+        mode = Mode.states
+        main()
 
