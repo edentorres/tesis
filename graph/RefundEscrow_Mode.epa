@@ -1,0 +1,37 @@
+// Prueba
+digraph {
+	"0-0-0-4-" [label="beneficiaryWithdraw();
+"]
+	"0-0-0-4-" [label="beneficiaryWithdraw();
+"]
+	"0-0-0-4-" -> "0-0-0-4-" [label="beneficiaryWithdraw();"]
+	"1-2-3-0-" [label="deposit(refundee);
+close();
+enableRefunds();
+"]
+	"0-0-0-0-" [label=Vacio
+]
+	"1-2-3-0-" -> "0-0-0-0-" [label="enableRefunds();"]
+	"1-2-3-0-" [label="deposit(refundee);
+close();
+enableRefunds();
+"]
+	"0-0-0-4-" [label="beneficiaryWithdraw();
+"]
+	"1-2-3-0-" -> "0-0-0-4-" [label="close();"]
+	"1-2-3-0-" [label="deposit(refundee);
+close();
+enableRefunds();
+"]
+	"1-2-3-0-" [label="deposit(refundee);
+close();
+enableRefunds();
+"]
+	"1-2-3-0-" -> "1-2-3-0-" [label="deposit(refundee);"]
+	init [label=init]
+	"1-2-3-0-" [label="deposit(refundee);
+close();
+enableRefunds();
+"]
+	init -> "1-2-3-0-" [label=constructor]
+}

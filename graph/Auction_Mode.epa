@@ -1,0 +1,39 @@
+// Prueba
+digraph {
+	"0-2-0-" [label="Withdraw();
+"]
+	"0-2-0-" [label="Withdraw();
+"]
+	"0-2-0-" -> "0-2-0-" [label="Withdraw();"]
+	"1-2-3-" [label="Bid();
+Withdraw();
+AuctionEnd();
+"]
+	"0-2-0-" [label="Withdraw();
+"]
+	"1-2-3-" -> "0-2-0-" [label="AuctionEnd();"]
+	"1-2-3-" [label="Bid();
+Withdraw();
+AuctionEnd();
+"]
+	"1-2-3-" [label="Bid();
+Withdraw();
+AuctionEnd();
+"]
+	"1-2-3-" -> "1-2-3-" [label="Bid();"]
+	"1-2-3-" [label="Bid();
+Withdraw();
+AuctionEnd();
+"]
+	"1-2-3-" [label="Bid();
+Withdraw();
+AuctionEnd();
+"]
+	"1-2-3-" -> "1-2-3-" [label="Withdraw();"]
+	init [label=init]
+	"1-2-3-" [label="Bid();
+Withdraw();
+AuctionEnd();
+"]
+	init -> "1-2-3-" [label=constructor]
+}

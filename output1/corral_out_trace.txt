@@ -1,0 +1,130 @@
+s
+#
+1 40 3 1 c
+1 40 6 92 Ownable_Ownable_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|12|
+1 41 3 1 c
+1 41 6 92 Ownable_Ownable_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|13|
+1 43 3 1 c
+1 43 6 92 Ownable_Ownable_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|13|
+1 43 4 19 owner = T@Ref!val!8
+1 94 3 1 c
+1 94 6 111 ValidatorAuction_ValidatorAuction_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|431|
+1 95 3 1 c
+1 95 6 111 ValidatorAuction_ValidatorAuction_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|432|
+1 98 3 1 c
+1 98 6 111 ValidatorAuction_ValidatorAuction_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|436|
+1 101 3 1 c
+1 101 6 111 ValidatorAuction_ValidatorAuction_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|440|
+1 104 3 1 c
+1 104 6 111 ValidatorAuction_ValidatorAuction_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|444|
+1 107 3 1 c
+1 107 6 111 ValidatorAuction_ValidatorAuction_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|448|
+1 111 3 1 c
+1 111 6 111 ValidatorAuction_ValidatorAuction_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|452|
+1 114 3 1 c
+1 114 6 111 ValidatorAuction_ValidatorAuction_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|458|
+1 118 3 1 c
+1 118 6 111 ValidatorAuction_ValidatorAuction_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|458|
+1 118 4 16 startPrice = 887
+1 119 3 1 c
+1 119 6 111 ValidatorAuction_ValidatorAuction_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|459|
+1 123 3 1 c
+1 123 6 111 ValidatorAuction_ValidatorAuction_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|459|
+1 123 4 28 auctionDurationInDays = 2561
+1 124 3 1 c
+1 124 6 111 ValidatorAuction_ValidatorAuction_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|460|
+1 128 3 1 c
+1 128 6 111 ValidatorAuction_ValidatorAuction_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|460|
+1 128 4 34 maximalNumberOfParticipants = 6951
+1 129 3 1 c
+1 129 6 111 ValidatorAuction_ValidatorAuction_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|461|
+1 133 3 1 c
+1 133 6 111 ValidatorAuction_ValidatorAuction_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|461|
+1 133 4 34 minimalNumberOfParticipants = 6951
+1 134 3 1 c
+1 134 6 111 ValidatorAuction_ValidatorAuction_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|462|
+1 136 3 1 c
+1 136 6 111 ValidatorAuction_ValidatorAuction_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|462|
+1 136 4 27 depositLocker = T@Ref!val!3
+1 137 3 1 c
+1 137 6 111 ValidatorAuction_ValidatorAuction_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|464|
+1 142 3 1 c
+1 142 6 111 ValidatorAuction_ValidatorAuction_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|464|
+1 142 4 96 lowestSlotPrice = 115792089237316195423570985008687907853269984665640564039457584007913129639935
+1 143 3 1 c
+1 143 6 111 ValidatorAuction_ValidatorAuction_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|466|
+1 145 3 1 c
+1 145 6 111 ValidatorAuction_ValidatorAuction_NoBaseCtor|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|472|
+1 149 3 1 c
+1 149 6 95 CorralEntry_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|472|
+1 152 3 1 c
+1 152 6 95 CorralEntry_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|472|
+1 152 4 34 CALL CorralChoice_ValidatorAuction
+1 274 3 1 c
+1 274 6 174 onlyOwner_pre|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|17|CorralEntry_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|472|
+1 278 3 1 c
+1 278 6 173 stateIs_pre|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|418|CorralEntry_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|472|
+1 281 3 1 c
+1 281 6 191 startAuction_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|512|CorralEntry_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|472|
+1 282 3 1 c
+1 282 6 191 startAuction_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|513|CorralEntry_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|472|
+1 286 3 1 c
+1 286 6 191 startAuction_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|518|CorralEntry_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|472|
+1 288 3 1 c
+1 288 6 191 startAuction_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|519|CorralEntry_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|472|
+1 292 3 1 c
+1 292 6 191 startAuction_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|519|CorralEntry_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|472|
+1 292 4 15 startTime = 719
+1 293 3 1 c
+1 293 6 191 startAuction_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|521|CorralEntry_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|472|
+1 296 3 1 c
+1 296 6 95 CorralEntry_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|472|
+1 296 4 42 RETURN from CorralChoice_ValidatorAuction 
+1 297 3 1 c
+1 297 6 95 CorralEntry_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|472|
+1 300 3 1 c
+1 300 6 95 CorralEntry_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|472|
+1 300 4 34 CALL CorralChoice_ValidatorAuction
+1 427 3 1 c
+1 427 6 186 vc0x2x9_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|361|CorralEntry_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|472|
+1 428 3 1 c
+1 428 6 186 vc0x2x9_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|362|CorralEntry_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|472|
+1 436 3 1 c
+1 436 6 186 vc0x2x9_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|363|CorralEntry_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|472|
+1 438 3 1 c
+1 438 6 186 vc0x2x9_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|364|CorralEntry_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|472|
+1 440 3 1 c
+1 440 6 186 vc0x2x9_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|365|CorralEntry_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|472|
+1 441 3 1 c
+1 441 6 186 vc0x2x9_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|365|CorralEntry_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|472|
+1 441 4 47 CALL transitionToAuctionFailed_ValidatorAuction
+1 449 3 1 c
+1 449 6 264 stateIs_pre|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|418|vc0x2x9_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|365|CorralEntry_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|472|
+1 452 3 1 c
+1 452 6 295 transitionToAuctionFailed_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|643|vc0x2x9_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|365|CorralEntry_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|472|
+1 453 3 1 c
+1 453 6 295 transitionToAuctionFailed_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|644|vc0x2x9_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|365|CorralEntry_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|472|
+1 455 3 1 c
+1 455 6 295 transitionToAuctionFailed_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|645|vc0x2x9_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|365|CorralEntry_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|472|
+1 459 3 1 c
+1 459 6 295 transitionToAuctionFailed_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|645|vc0x2x9_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|365|CorralEntry_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|472|
+1 459 4 15 closeTime = 720
+1 460 3 1 c
+1 460 6 295 transitionToAuctionFailed_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|646|vc0x2x9_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|365|CorralEntry_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|472|
+1 462 3 1 c
+1 462 6 186 vc0x2x9_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|365|CorralEntry_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|472|
+1 462 4 55 RETURN from transitionToAuctionFailed_ValidatorAuction 
+1 463 3 1 c
+1 463 6 186 vc0x2x9_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|366|CorralEntry_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|472|
+1 465 3 1 c
+1 465 6 186 vc0x2x9_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|367|CorralEntry_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|472|
+1 472 3 1 c
+1 472 6 186 vc0x2x9_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|367|CorralEntry_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|472|
+1 472 4 364 ASSERTION FAILS assert !(Length[bidders_ValidatorAuction[this]] < maximalNumberOfParticipants_ValidatorAuction[this] && __var_6 && true && Length[bidders_ValidatorAuction[this]] < maximalNumberOfParticipants_ValidatorAuction[this] && true && (auctionState_ValidatorAuction[this] == 3 || auctionState_ValidatorAuction[this] == 4) && true && true && true && true);
+ 
+1 474 3 1 c
+1 474 6 95 CorralEntry_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|472|
+1 474 4 42 RETURN from CorralChoice_ValidatorAuction 
+1 475 3 1 c
+1 475 6 95 CorralEntry_ValidatorAuction|/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol|472|
+1 475 4 4 Done

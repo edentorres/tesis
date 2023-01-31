@@ -77,7 +77,7 @@ def combinationToString(combination):
     return output
 
 def functionOutput(number):
-    return "function vc" + number + "(" + functionVariables + ") public {"
+    return "function vc" + number + "(" + functionVariables + ") payable public {"
 
 def getToolCommand(includeNumber, toolCommand, combinations, txBound):
     global contractName
@@ -163,7 +163,7 @@ def write_file(fileNameTemp, body):
     fuctionCombinations = []
     for line in inputfile:
         write_file.write(line)
-        if 'contract ' + contractName + ' {' in line:
+        if 'contract ' + contractName in line:
                 write_file.write(body)
     write_file.close()
 
@@ -433,6 +433,7 @@ def main():
     threads.append(thread)
     for thread in threads:
         thread.join()
+    print("ENDED")
     dot.render("graph/" + config.fileName.split('.')[0] + "_" + str(mode))
 
 states = []

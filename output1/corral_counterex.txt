@@ -1,0 +1,4 @@
+/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol(12,1): : ValidatorAuction::Constructor (this = address!0, msg.sender = address!8, msg.value = 46, _startPriceInWei = 887, _auctionDurationInDays = 2561, _minimalNumberOfParticipants = 6951, _maximalNumberOfParticipants = 6951, _depositLocker = address!3)
+/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol(17,1): : ValidatorAuction::startAuction (this = address!0, msg.sender = address!8, msg.value = 51)
+/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol(361,1): : ValidatorAuction::vc0x2x9 (this = address!0, msg.sender = address!2, msg.value = -721)
+/Users/etorres/Proyectos/verisol-test/output1/OutputTemp1.sol(367,1): : ASSERTION FAILS!

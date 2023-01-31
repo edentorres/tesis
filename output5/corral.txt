@@ -1,0 +1,52 @@
+Single threaded program detected
+Verifying program while tracking: {assertsPassed}
+Program has a potential bug: True bug
+/Users/etorres/Proyectos/verisol-test/output5/OutputTemp5.sol(182,1): error PF5001: This assertion can fail
+
+Execution trace:
+/Users/etorres/Proyectos/verisol-test/output5/OutputTemp5.sol(12,1): Trace: Thread=1  (CALL FreshRefGenerator, RETURN from FreshRefGenerator , CALL ValidatorAuction_ValidatorAuction, _verisolFirstArg = false, this = T@Ref!val!0, msg.sender = T@Ref!val!6, msg.value = 17, _startPriceInWei = 142, _auctionDurationInDays = 1, _minimalNumberOfParticipants = 63, _maximalNumberOfParticipants = 853, _depositLocker = T@Ref!val!3, _verisolLastArg = true, CALL Ownable_Ownable, _verisolFirstArg = false, this = T@Ref!val!0, msg.sender = T@Ref!val!6, msg.value = 17, _verisolLastArg = true, CALL Ownable_Ownable_NoBaseCtor, _verisolFirstArg = false, this = T@Ref!val!0, msg.sender = T@Ref!val!6, msg.value = 17, _verisolLastArg = true)
+/Users/etorres/Proyectos/verisol-test/output5/OutputTemp5.sol(13,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/output5/OutputTemp5.sol(13,1): Trace: Thread=1  (owner = T@Ref!val!6)
+/Users/etorres/Proyectos/verisol-test/output5/OutputTemp5.sol(247,1): Trace: Thread=1  (RETURN from Ownable_Ownable_NoBaseCtor , RETURN from Ownable_Ownable , CALL ValidatorAuction_ValidatorAuction_NoBaseCtor, CALL FreshRefGenerator, RETURN from FreshRefGenerator , CALL FreshRefGenerator, RETURN from FreshRefGenerator , CALL FreshRefGenerator, RETURN from FreshRefGenerator , _verisolFirstArg = false, this = T@Ref!val!0, msg.sender = T@Ref!val!6, msg.value = 17, _startPriceInWei = 142, _auctionDurationInDays = 1, _minimalNumberOfParticipants = 63, _maximalNumberOfParticipants = 853, _depositLocker = T@Ref!val!3, _verisolLastArg = true)
+/Users/etorres/Proyectos/verisol-test/output5/OutputTemp5.sol(248,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/output5/OutputTemp5.sol(252,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/output5/OutputTemp5.sol(256,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/output5/OutputTemp5.sol(260,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/output5/OutputTemp5.sol(264,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/output5/OutputTemp5.sol(268,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/output5/OutputTemp5.sol(274,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/output5/OutputTemp5.sol(274,1): Trace: Thread=1  (startPrice = 142)
+/Users/etorres/Proyectos/verisol-test/output5/OutputTemp5.sol(275,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/output5/OutputTemp5.sol(275,1): Trace: Thread=1  (auctionDurationInDays = 1)
+/Users/etorres/Proyectos/verisol-test/output5/OutputTemp5.sol(276,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/output5/OutputTemp5.sol(276,1): Trace: Thread=1  (maximalNumberOfParticipants = 853)
+/Users/etorres/Proyectos/verisol-test/output5/OutputTemp5.sol(277,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/output5/OutputTemp5.sol(277,1): Trace: Thread=1  (minimalNumberOfParticipants = 63)
+/Users/etorres/Proyectos/verisol-test/output5/OutputTemp5.sol(278,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/output5/OutputTemp5.sol(278,1): Trace: Thread=1  (depositLocker = T@Ref!val!3)
+/Users/etorres/Proyectos/verisol-test/output5/OutputTemp5.sol(280,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/output5/OutputTemp5.sol(280,1): Trace: Thread=1  (lowestSlotPrice = 115792089237316195423570985008687907853269984665640564039457584007913129639935)
+/Users/etorres/Proyectos/verisol-test/output5/OutputTemp5.sol(282,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/output5/OutputTemp5.sol(288,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/output5/OutputTemp5.sol(288,1): Trace: Thread=1  (RETURN from ValidatorAuction_ValidatorAuction_NoBaseCtor , RETURN from ValidatorAuction_ValidatorAuction )
+/Users/etorres/Proyectos/verisol-test/output5/OutputTemp5.sol(288,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/output5/OutputTemp5.sol(288,1): Trace: Thread=1  (CALL CorralChoice_ValidatorAuction)
+/Users/etorres/Proyectos/verisol-test/output5/OutputTemp5.sol(179,1): Trace: Thread=1  (CALL FreshRefGenerator, RETURN from FreshRefGenerator , CALL vc0x0x0_ValidatorAuction, _verisolFirstArg = false, this = T@Ref!val!0, msg.sender = T@Ref!val!2, msg.value = -320, _verisolLastArg = true)
+/Users/etorres/Proyectos/verisol-test/output5/OutputTemp5.sol(180,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/output5/OutputTemp5.sol(181,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/output5/OutputTemp5.sol(182,1): Trace: Thread=1  ()
+/Users/etorres/Proyectos/verisol-test/output5/OutputTemp5.sol(182,1): Trace: Thread=1  (ASSERTION FAILS assert false;
+ )
+/Users/etorres/Proyectos/verisol-test/output5/OutputTemp5.sol(288,1): Trace: Thread=1  (RETURN from vc0x0x0_ValidatorAuction , RETURN from CorralChoice_ValidatorAuction )
+/Users/etorres/Proyectos/verisol-test/output5/OutputTemp5.sol(288,1): Trace: Thread=1  (Done)
+
+Boogie verification time: 1.11 s
+Time spent reading-writing programs: 0.66 s
+
+Time spent checking a program (1): 1.84 s
+Time spent checking a path (1): 0.80 s
+
+Number of procedures inlined: 55
+Number of variables tracked: 1
+Total Time: 4.603227 s
+Total User CPU time: 9.4171758 s

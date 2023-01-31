@@ -1,0 +1,201 @@
+// Prueba
+digraph {
+	"0-0-0-4-0-" [label="checkGoalReached();
+"]
+	"0-0-0-4-0-" [label="checkGoalReached();
+"]
+	"0-0-0-4-0-" -> "0-0-0-4-0-" [label="checkGoalReached();"]
+	"1-0-0-0-0-" [label="SetupCrowdsale(_fundingStartBlock, _fundingEndBlock);
+"]
+	"0-2-0-4-0-" [label="buy();
+checkGoalReached();
+"]
+	"1-0-0-0-0-" -> "0-2-0-4-0-" [label="SetupCrowdsale(_fundingStartBlock, _fundingEndBlock);"]
+	"0-2-0-4-0-" [label="buy();
+checkGoalReached();
+"]
+	"0-0-0-4-0-" [label="checkGoalReached();
+"]
+	"0-2-0-4-0-" -> "0-0-0-4-0-" [label="buy();"]
+	"0-0-0-4-5-" [label="checkGoalReached();
+refund();
+"]
+	"0-0-0-4-0-" [label="checkGoalReached();
+"]
+	"0-0-0-4-5-" -> "0-0-0-4-0-" [label="checkGoalReached();"]
+	"0-0-0-4-0-" [label="checkGoalReached();
+"]
+	"0-0-3-4-0-" [label="beneficiaryMultiSigWithdraw(_amount);
+checkGoalReached();
+"]
+	"0-0-0-4-0-" -> "0-0-3-4-0-" [label="checkGoalReached();"]
+	"0-2-0-4-5-" [label="buy();
+checkGoalReached();
+refund();
+"]
+	"0-0-0-4-0-" [label="checkGoalReached();
+"]
+	"0-2-0-4-5-" -> "0-0-0-4-0-" [label="buy();"]
+	"0-2-0-4-0-" [label="buy();
+checkGoalReached();
+"]
+	"0-2-0-4-0-" [label="buy();
+checkGoalReached();
+"]
+	"0-2-0-4-0-" -> "0-2-0-4-0-" [label="buy();"]
+	"0-0-0-4-0-" [label="checkGoalReached();
+"]
+	"0-0-0-4-5-" [label="checkGoalReached();
+refund();
+"]
+	"0-0-0-4-0-" -> "0-0-0-4-5-" [label="checkGoalReached();"]
+	"0-2-0-4-0-" [label="buy();
+checkGoalReached();
+"]
+	"0-2-0-4-0-" [label="buy();
+checkGoalReached();
+"]
+	"0-2-0-4-0-" -> "0-2-0-4-0-" [label="checkGoalReached();"]
+	"0-0-3-4-0-" [label="beneficiaryMultiSigWithdraw(_amount);
+checkGoalReached();
+"]
+	"0-0-3-4-0-" [label="beneficiaryMultiSigWithdraw(_amount);
+checkGoalReached();
+"]
+	"0-0-3-4-0-" -> "0-0-3-4-0-" [label="beneficiaryMultiSigWithdraw(_amount);"]
+	"0-2-0-4-5-" [label="buy();
+checkGoalReached();
+refund();
+"]
+	"0-2-0-4-0-" [label="buy();
+checkGoalReached();
+"]
+	"0-2-0-4-5-" -> "0-2-0-4-0-" [label="buy();"]
+	"0-0-3-4-0-" [label="beneficiaryMultiSigWithdraw(_amount);
+checkGoalReached();
+"]
+	"0-0-3-4-0-" [label="beneficiaryMultiSigWithdraw(_amount);
+checkGoalReached();
+"]
+	"0-0-3-4-0-" -> "0-0-3-4-0-" [label="checkGoalReached();"]
+	"0-2-0-4-5-" [label="buy();
+checkGoalReached();
+refund();
+"]
+	"0-2-0-4-0-" [label="buy();
+checkGoalReached();
+"]
+	"0-2-0-4-5-" -> "0-2-0-4-0-" [label="checkGoalReached();"]
+	"0-0-0-4-5-" [label="checkGoalReached();
+refund();
+"]
+	"0-0-0-4-5-" [label="checkGoalReached();
+refund();
+"]
+	"0-0-0-4-5-" -> "0-0-0-4-5-" [label="checkGoalReached();"]
+	"0-2-3-4-0-" [label="buy();
+beneficiaryMultiSigWithdraw(_amount);
+checkGoalReached();
+"]
+	"0-0-3-4-0-" [label="beneficiaryMultiSigWithdraw(_amount);
+checkGoalReached();
+"]
+	"0-2-3-4-0-" -> "0-0-3-4-0-" [label="buy();"]
+	"0-0-0-4-5-" [label="checkGoalReached();
+refund();
+"]
+	"0-0-0-4-5-" [label="checkGoalReached();
+refund();
+"]
+	"0-0-0-4-5-" -> "0-0-0-4-5-" [label="refund();"]
+	"0-2-3-4-0-" [label="buy();
+beneficiaryMultiSigWithdraw(_amount);
+checkGoalReached();
+"]
+	"0-0-3-4-0-" [label="beneficiaryMultiSigWithdraw(_amount);
+checkGoalReached();
+"]
+	"0-2-3-4-0-" -> "0-0-3-4-0-" [label="beneficiaryMultiSigWithdraw(_amount);"]
+	"0-2-0-4-0-" [label="buy();
+checkGoalReached();
+"]
+	"0-2-3-4-0-" [label="buy();
+beneficiaryMultiSigWithdraw(_amount);
+checkGoalReached();
+"]
+	"0-2-0-4-0-" -> "0-2-3-4-0-" [label="checkGoalReached();"]
+	"0-2-0-4-0-" [label="buy();
+checkGoalReached();
+"]
+	"0-2-0-4-5-" [label="buy();
+checkGoalReached();
+refund();
+"]
+	"0-2-0-4-0-" -> "0-2-0-4-5-" [label="checkGoalReached();"]
+	"0-2-0-4-5-" [label="buy();
+checkGoalReached();
+refund();
+"]
+	"0-0-0-4-5-" [label="checkGoalReached();
+refund();
+"]
+	"0-2-0-4-5-" -> "0-0-0-4-5-" [label="buy();"]
+	"0-2-3-4-0-" [label="buy();
+beneficiaryMultiSigWithdraw(_amount);
+checkGoalReached();
+"]
+	"0-2-3-4-0-" [label="buy();
+beneficiaryMultiSigWithdraw(_amount);
+checkGoalReached();
+"]
+	"0-2-3-4-0-" -> "0-2-3-4-0-" [label="buy();"]
+	"0-2-3-4-0-" [label="buy();
+beneficiaryMultiSigWithdraw(_amount);
+checkGoalReached();
+"]
+	"0-2-3-4-0-" [label="buy();
+beneficiaryMultiSigWithdraw(_amount);
+checkGoalReached();
+"]
+	"0-2-3-4-0-" -> "0-2-3-4-0-" [label="beneficiaryMultiSigWithdraw(_amount);"]
+	"0-2-3-4-0-" [label="buy();
+beneficiaryMultiSigWithdraw(_amount);
+checkGoalReached();
+"]
+	"0-2-3-4-0-" [label="buy();
+beneficiaryMultiSigWithdraw(_amount);
+checkGoalReached();
+"]
+	"0-2-3-4-0-" -> "0-2-3-4-0-" [label="checkGoalReached();"]
+	"0-2-0-4-5-" [label="buy();
+checkGoalReached();
+refund();
+"]
+	"0-2-0-4-5-" [label="buy();
+checkGoalReached();
+refund();
+"]
+	"0-2-0-4-5-" -> "0-2-0-4-5-" [label="buy();"]
+	"0-2-0-4-5-" [label="buy();
+checkGoalReached();
+refund();
+"]
+	"0-2-0-4-5-" [label="buy();
+checkGoalReached();
+refund();
+"]
+	"0-2-0-4-5-" -> "0-2-0-4-5-" [label="checkGoalReached();"]
+	"0-2-0-4-5-" [label="buy();
+checkGoalReached();
+refund();
+"]
+	"0-2-0-4-5-" [label="buy();
+checkGoalReached();
+refund();
+"]
+	"0-2-0-4-5-" -> "0-2-0-4-5-" [label="refund();"]
+	init [label=init]
+	"1-0-0-0-0-" [label="SetupCrowdsale(_fundingStartBlock, _fundingEndBlock);
+"]
+	init -> "1-0-0-0-0-" [label=constructor]
+}

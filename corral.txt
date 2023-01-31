@@ -1,0 +1,17 @@
+Single threaded program detected
+Verifying program while tracking: {assertsPassed}
+Program has a potential bug: False bug
+Verifying program while tracking: {assertsPassed, auctionState_ValidatorAuction, maximalNumberOfParticipants_ValidatorAuction, bidders_ValidatorAuction, Length}
+Program has no bugs
+Reached recursion bound of 4
+
+Boogie verification time: 0.80 s
+Time spent reading-writing programs: 0.40 s
+
+Time spent checking a program (2): 1.08 s
+Time spent checking a path (3): 0.51 s
+
+Number of procedures inlined: 193
+Number of variables tracked: 5
+Total Time: 2.553844 s
+Total User CPU time: 6.2329193 s

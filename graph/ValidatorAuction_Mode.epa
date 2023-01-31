@@ -1,0 +1,152 @@
+// Prueba
+digraph {
+	"1-0-3-4-5-0-7-8-9-10-" [label="bid();
+depositBids();
+closeAuction();
+addToWhitelist(addressesToWhitelist);
+withdrawAfterAuctionEnded();
+withdrawAfterAuctionFailed();
+transitionToDepositPending();
+transitionToAuctionFailed();
+"]
+	"1-0-3-4-5-0-7-8-9-10-" [label="bid();
+depositBids();
+closeAuction();
+addToWhitelist(addressesToWhitelist);
+withdrawAfterAuctionEnded();
+withdrawAfterAuctionFailed();
+transitionToDepositPending();
+transitionToAuctionFailed();
+"]
+	"1-0-3-4-5-0-7-8-9-10-" -> "1-0-3-4-5-0-7-8-9-10-" [label="addToWhitelist(addressesToWhitelist);"]
+	"1-2-3-4-5-0-7-8-9-10-" [label="bid();
+startAuction();
+depositBids();
+closeAuction();
+addToWhitelist(addressesToWhitelist);
+withdrawAfterAuctionEnded();
+withdrawAfterAuctionFailed();
+transitionToDepositPending();
+transitionToAuctionFailed();
+"]
+	"1-2-3-4-5-0-7-8-9-10-" [label="bid();
+startAuction();
+depositBids();
+closeAuction();
+addToWhitelist(addressesToWhitelist);
+withdrawAfterAuctionEnded();
+withdrawAfterAuctionFailed();
+transitionToDepositPending();
+transitionToAuctionFailed();
+"]
+	"1-2-3-4-5-0-7-8-9-10-" -> "1-2-3-4-5-0-7-8-9-10-" [label="startAuction();"]
+	"1-2-3-4-5-0-7-8-9-10-" [label="bid();
+startAuction();
+depositBids();
+closeAuction();
+addToWhitelist(addressesToWhitelist);
+withdrawAfterAuctionEnded();
+withdrawAfterAuctionFailed();
+transitionToDepositPending();
+transitionToAuctionFailed();
+"]
+	"1-2-3-4-5-0-7-8-9-10-" [label="bid();
+startAuction();
+depositBids();
+closeAuction();
+addToWhitelist(addressesToWhitelist);
+withdrawAfterAuctionEnded();
+withdrawAfterAuctionFailed();
+transitionToDepositPending();
+transitionToAuctionFailed();
+"]
+	"1-2-3-4-5-0-7-8-9-10-" -> "1-2-3-4-5-0-7-8-9-10-" [label="addToWhitelist(addressesToWhitelist);"]
+	"1-2-3-4-5-0-7-8-9-10-" [label="bid();
+startAuction();
+depositBids();
+closeAuction();
+addToWhitelist(addressesToWhitelist);
+withdrawAfterAuctionEnded();
+withdrawAfterAuctionFailed();
+transitionToDepositPending();
+transitionToAuctionFailed();
+"]
+	"1-2-3-4-5-0-7-8-9-10-" [label="bid();
+startAuction();
+depositBids();
+closeAuction();
+addToWhitelist(addressesToWhitelist);
+withdrawAfterAuctionEnded();
+withdrawAfterAuctionFailed();
+transitionToDepositPending();
+transitionToAuctionFailed();
+"]
+	"1-2-3-4-5-0-7-8-9-10-" -> "1-2-3-4-5-0-7-8-9-10-" [label="transitionToDepositPending();"]
+	"1-2-3-4-5-0-7-8-9-10-" [label="bid();
+startAuction();
+depositBids();
+closeAuction();
+addToWhitelist(addressesToWhitelist);
+withdrawAfterAuctionEnded();
+withdrawAfterAuctionFailed();
+transitionToDepositPending();
+transitionToAuctionFailed();
+"]
+	"1-2-3-4-5-6-7-8-9-10-" [label="bid();
+startAuction();
+depositBids();
+closeAuction();
+addToWhitelist(addressesToWhitelist);
+withdraw();
+withdrawAfterAuctionEnded();
+withdrawAfterAuctionFailed();
+transitionToDepositPending();
+transitionToAuctionFailed();
+"]
+	"1-2-3-4-5-0-7-8-9-10-" -> "1-2-3-4-5-6-7-8-9-10-" [label="closeAuction();"]
+	"1-2-3-4-5-0-7-8-9-10-" [label="bid();
+startAuction();
+depositBids();
+closeAuction();
+addToWhitelist(addressesToWhitelist);
+withdrawAfterAuctionEnded();
+withdrawAfterAuctionFailed();
+transitionToDepositPending();
+transitionToAuctionFailed();
+"]
+	"1-2-3-4-5-6-7-8-9-10-" [label="bid();
+startAuction();
+depositBids();
+closeAuction();
+addToWhitelist(addressesToWhitelist);
+withdraw();
+withdrawAfterAuctionEnded();
+withdrawAfterAuctionFailed();
+transitionToDepositPending();
+transitionToAuctionFailed();
+"]
+	"1-2-3-4-5-0-7-8-9-10-" -> "1-2-3-4-5-6-7-8-9-10-" [label="transitionToAuctionFailed();"]
+	init [label=init]
+	"1-0-3-4-5-0-7-8-9-10-" [label="bid();
+depositBids();
+closeAuction();
+addToWhitelist(addressesToWhitelist);
+withdrawAfterAuctionEnded();
+withdrawAfterAuctionFailed();
+transitionToDepositPending();
+transitionToAuctionFailed();
+"]
+	init -> "1-0-3-4-5-0-7-8-9-10-" [label=constructor]
+	init [label=init]
+	"1-2-3-4-5-0-7-8-9-10-" [label="bid();
+startAuction();
+depositBids();
+closeAuction();
+addToWhitelist(addressesToWhitelist);
+withdrawAfterAuctionEnded();
+withdrawAfterAuctionFailed();
+transitionToDepositPending();
+transitionToAuctionFailed();
+"]
+	init -> "1-2-3-4-5-0-7-8-9-10-" [label=constructor]
+}

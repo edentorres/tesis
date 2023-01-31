@@ -1,0 +1,65 @@
+// Prueba
+digraph {
+	"1-0-0-" [label="Donate();
+"]
+	"1-0-0-" [label="Donate();
+"]
+	"1-0-0-" -> "1-0-0-" [label="Donate();"]
+	"1-2-0-" [label="Donate();
+GetFunds();
+"]
+	"1-0-0-" [label="Donate();
+"]
+	"1-2-0-" -> "1-0-0-" [label="GetFunds();"]
+	"1-0-0-" [label="Donate();
+"]
+	"1-2-0-" [label="Donate();
+GetFunds();
+"]
+	"1-0-0-" -> "1-2-0-" [label="Donate();"]
+	"1-2-0-" [label="Donate();
+GetFunds();
+"]
+	"1-2-0-" [label="Donate();
+GetFunds();
+"]
+	"1-2-0-" -> "1-2-0-" [label="Donate();"]
+	"1-0-3-" [label="Donate();
+Claim();
+"]
+	"1-2-0-" [label="Donate();
+GetFunds();
+"]
+	"1-0-3-" -> "1-2-0-" [label="Donate();"]
+	"1-2-0-" [label="Donate();
+GetFunds();
+"]
+	"1-2-0-" [label="Donate();
+GetFunds();
+"]
+	"1-2-0-" -> "1-2-0-" [label="GetFunds();"]
+	"1-0-3-" [label="Donate();
+Claim();
+"]
+	"1-0-3-" [label="Donate();
+Claim();
+"]
+	"1-0-3-" -> "1-0-3-" [label="Donate();"]
+	"1-0-3-" [label="Donate();
+Claim();
+"]
+	"1-0-3-" [label="Donate();
+Claim();
+"]
+	"1-0-3-" -> "1-0-3-" [label="Claim();"]
+	init [label=init]
+	"1-2-0-" [label="Donate();
+GetFunds();
+"]
+	init -> "1-2-0-" [label=constructor]
+	init [label=init]
+	"1-0-3-" [label="Donate();
+Claim();
+"]
+	init -> "1-0-3-" [label=constructor]
+}

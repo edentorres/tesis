@@ -1,0 +1,123 @@
+Boogie program verifier version 2.4.1.10503, Copyright (c) 2003-2014, Microsoft.
+__SolToBoogieTest_out.bpl(1088,3): Error BP5004: This loop invariant might not hold on entry.
+Execution trace:
+    __SolToBoogieTest_out.bpl(1084,1): anon0
+    __SolToBoogieTest_out.bpl(68,1): inline$Ownable_Ownable_NoBaseCtor$0$anon0
+    __SolToBoogieTest_out.bpl(1084,1): anon0$1
+__SolToBoogieTest_out.bpl(1176,3): Error BP5004: This loop invariant might not hold on entry.
+Execution trace:
+    __SolToBoogieTest_out.bpl(1172,1): anon0
+    __SolToBoogieTest_out.bpl(163,1): inline$DepositLocker_DepositLocker$0$anon0
+    __SolToBoogieTest_out.bpl(128,1): inline$DepositLockerInterface_DepositLockerInterface$0$anon0
+    __SolToBoogieTest_out.bpl(120,1): inline$DepositLockerInterface_DepositLockerInterface_NoBaseCtor$0$anon0
+    __SolToBoogieTest_out.bpl(68,1): inline$Ownable_Ownable_NoBaseCtor$0$anon0
+    __SolToBoogieTest_out.bpl(143,1): inline$DepositLocker_DepositLocker_NoBaseCtor$0$anon0
+    __SolToBoogieTest_out.bpl(29,1): inline$FreshRefGenerator$0$anon0
+    __SolToBoogieTest_out.bpl(143,1): inline$DepositLocker_DepositLocker_NoBaseCtor$0$anon0$1
+    __SolToBoogieTest_out.bpl(1172,1): anon0$1
+__SolToBoogieTest_out.bpl(1179,3): Error BP5004: This loop invariant might not hold on entry.
+Execution trace:
+    __SolToBoogieTest_out.bpl(1172,1): anon0
+    __SolToBoogieTest_out.bpl(163,1): inline$DepositLocker_DepositLocker$0$anon0
+    __SolToBoogieTest_out.bpl(128,1): inline$DepositLockerInterface_DepositLockerInterface$0$anon0
+    __SolToBoogieTest_out.bpl(120,1): inline$DepositLockerInterface_DepositLockerInterface_NoBaseCtor$0$anon0
+    __SolToBoogieTest_out.bpl(68,1): inline$Ownable_Ownable_NoBaseCtor$0$anon0
+    __SolToBoogieTest_out.bpl(143,1): inline$DepositLocker_DepositLocker_NoBaseCtor$0$anon0
+    __SolToBoogieTest_out.bpl(29,1): inline$FreshRefGenerator$0$anon0
+    __SolToBoogieTest_out.bpl(143,1): inline$DepositLocker_DepositLocker_NoBaseCtor$0$anon0$1
+    __SolToBoogieTest_out.bpl(1172,1): anon0$1
+__SolToBoogieTest_out.bpl(1181,3): Error BP5004: This loop invariant might not hold on entry.
+Execution trace:
+    __SolToBoogieTest_out.bpl(1172,1): anon0
+    __SolToBoogieTest_out.bpl(163,1): inline$DepositLocker_DepositLocker$0$anon0
+    __SolToBoogieTest_out.bpl(128,1): inline$DepositLockerInterface_DepositLockerInterface$0$anon0
+    __SolToBoogieTest_out.bpl(120,1): inline$DepositLockerInterface_DepositLockerInterface_NoBaseCtor$0$anon0
+    __SolToBoogieTest_out.bpl(68,1): inline$Ownable_Ownable_NoBaseCtor$0$anon0
+    __SolToBoogieTest_out.bpl(143,1): inline$DepositLocker_DepositLocker_NoBaseCtor$0$anon0
+    __SolToBoogieTest_out.bpl(29,1): inline$FreshRefGenerator$0$anon0
+    __SolToBoogieTest_out.bpl(143,1): inline$DepositLocker_DepositLocker_NoBaseCtor$0$anon0$1
+    __SolToBoogieTest_out.bpl(1172,1): anon0$1
+__SolToBoogieTest_out.bpl(1182,3): Error BP5004: This loop invariant might not hold on entry.
+Execution trace:
+    __SolToBoogieTest_out.bpl(1172,1): anon0
+    __SolToBoogieTest_out.bpl(163,1): inline$DepositLocker_DepositLocker$0$anon0
+    __SolToBoogieTest_out.bpl(128,1): inline$DepositLockerInterface_DepositLockerInterface$0$anon0
+    __SolToBoogieTest_out.bpl(120,1): inline$DepositLockerInterface_DepositLockerInterface_NoBaseCtor$0$anon0
+    __SolToBoogieTest_out.bpl(68,1): inline$Ownable_Ownable_NoBaseCtor$0$anon0
+    __SolToBoogieTest_out.bpl(143,1): inline$DepositLocker_DepositLocker_NoBaseCtor$0$anon0
+    __SolToBoogieTest_out.bpl(29,1): inline$FreshRefGenerator$0$anon0
+    __SolToBoogieTest_out.bpl(143,1): inline$DepositLocker_DepositLocker_NoBaseCtor$0$anon0$1
+    __SolToBoogieTest_out.bpl(1172,1): anon0$1
+__SolToBoogieTest_out.bpl(1184,3): Error BP5004: This loop invariant might not hold on entry.
+Execution trace:
+    __SolToBoogieTest_out.bpl(1172,1): anon0
+    __SolToBoogieTest_out.bpl(163,1): inline$DepositLocker_DepositLocker$0$anon0
+    __SolToBoogieTest_out.bpl(128,1): inline$DepositLockerInterface_DepositLockerInterface$0$anon0
+    __SolToBoogieTest_out.bpl(120,1): inline$DepositLockerInterface_DepositLockerInterface_NoBaseCtor$0$anon0
+    __SolToBoogieTest_out.bpl(68,1): inline$Ownable_Ownable_NoBaseCtor$0$anon0
+    __SolToBoogieTest_out.bpl(143,1): inline$DepositLocker_DepositLocker_NoBaseCtor$0$anon0
+    __SolToBoogieTest_out.bpl(29,1): inline$FreshRefGenerator$0$anon0
+    __SolToBoogieTest_out.bpl(143,1): inline$DepositLocker_DepositLocker_NoBaseCtor$0$anon0$1
+    __SolToBoogieTest_out.bpl(1172,1): anon0$1
+__SolToBoogieTest_out.bpl(427,1): Error BP5001: This assertion might not hold.
+Execution trace:
+    __SolToBoogieTest_out.bpl(1272,1): anon0
+    __SolToBoogieTest_out.bpl(68,1): inline$Ownable_Ownable_NoBaseCtor$0$anon0
+    __SolToBoogieTest_out.bpl(450,1): inline$ValidatorAuction_ValidatorAuction_NoBaseCtor$0$anon0
+    __SolToBoogieTest_out.bpl(29,1): inline$FreshRefGenerator$0$anon0
+    __SolToBoogieTest_out.bpl(450,1): inline$ValidatorAuction_ValidatorAuction_NoBaseCtor$0$anon0$1
+    __SolToBoogieTest_out.bpl(29,1): inline$FreshRefGenerator$1$anon0
+    __SolToBoogieTest_out.bpl(450,1): inline$ValidatorAuction_ValidatorAuction_NoBaseCtor$0$anon0$2
+    __SolToBoogieTest_out.bpl(29,1): inline$FreshRefGenerator$2$anon0
+    __SolToBoogieTest_out.bpl(450,1): inline$ValidatorAuction_ValidatorAuction_NoBaseCtor$0$anon0$3
+    __SolToBoogieTest_out.bpl(1272,1): anon0$1
+    __SolToBoogieTest_out.bpl(1275,1): anon38_LoopHead
+    __SolToBoogieTest_out.bpl(1279,1): anon38_LoopBody
+    __SolToBoogieTest_out.bpl(1279,1): anon39_Else
+    __SolToBoogieTest_out.bpl(1279,1): anon40_Else
+    __SolToBoogieTest_out.bpl(1279,1): anon41_Else
+    __SolToBoogieTest_out.bpl(1279,1): anon42_Else
+    __SolToBoogieTest_out.bpl(1279,1): anon43_Else
+    __SolToBoogieTest_out.bpl(1279,1): anon44_Else
+    __SolToBoogieTest_out.bpl(1279,1): anon45_Else
+    __SolToBoogieTest_out.bpl(1279,1): anon46_Else
+    __SolToBoogieTest_out.bpl(1279,1): anon47_Else
+    __SolToBoogieTest_out.bpl(1279,1): anon48_Else
+    __SolToBoogieTest_out.bpl(1279,1): anon49_Else
+    __SolToBoogieTest_out.bpl(1279,1): anon50_Else
+    __SolToBoogieTest_out.bpl(1279,1): anon51_Else
+    __SolToBoogieTest_out.bpl(1279,1): anon52_Else
+    __SolToBoogieTest_out.bpl(1279,1): anon53_Else
+    __SolToBoogieTest_out.bpl(1279,1): anon54_Else
+    __SolToBoogieTest_out.bpl(1279,1): anon55_Else
+    __SolToBoogieTest_out.bpl(1279,1): anon56_Else
+    __SolToBoogieTest_out.bpl(1279,1): anon57_Else
+    __SolToBoogieTest_out.bpl(1279,1): anon58_Else
+    __SolToBoogieTest_out.bpl(1279,1): anon59_Else
+    __SolToBoogieTest_out.bpl(1279,1): anon60_Else
+    __SolToBoogieTest_out.bpl(1279,1): anon61_Else
+    __SolToBoogieTest_out.bpl(1279,1): anon62_Else
+    __SolToBoogieTest_out.bpl(1279,1): anon63_Else
+    __SolToBoogieTest_out.bpl(1279,1): anon64_Else
+    __SolToBoogieTest_out.bpl(1279,1): anon65_Else
+    __SolToBoogieTest_out.bpl(1279,1): anon66_Else
+    __SolToBoogieTest_out.bpl(1412,1): anon67_Then
+    __SolToBoogieTest_out.bpl(29,1): inline$FreshRefGenerator$4$anon0
+    __SolToBoogieTest_out.bpl(393,1): inline$vc0x2x9_ValidatorAuction$0$anon0
+    __SolToBoogieTest_out.bpl(1471,1): inline$stateIs_pre$10$anon0
+    __SolToBoogieTest_out.bpl(994,1): inline$transitionToAuctionFailed_ValidatorAuction$1$anon0$1
+    __SolToBoogieTest_out.bpl(393,1): inline$vc0x2x9_ValidatorAuction$0$anon0$1
+__SolToBoogieTest_out.bpl(1276,3): Error BP5004: This loop invariant might not hold on entry.
+Execution trace:
+    __SolToBoogieTest_out.bpl(1272,1): anon0
+    __SolToBoogieTest_out.bpl(68,1): inline$Ownable_Ownable_NoBaseCtor$0$anon0
+    __SolToBoogieTest_out.bpl(450,1): inline$ValidatorAuction_ValidatorAuction_NoBaseCtor$0$anon0
+    __SolToBoogieTest_out.bpl(29,1): inline$FreshRefGenerator$0$anon0
+    __SolToBoogieTest_out.bpl(450,1): inline$ValidatorAuction_ValidatorAuction_NoBaseCtor$0$anon0$1
+    __SolToBoogieTest_out.bpl(29,1): inline$FreshRefGenerator$1$anon0
+    __SolToBoogieTest_out.bpl(450,1): inline$ValidatorAuction_ValidatorAuction_NoBaseCtor$0$anon0$2
+    __SolToBoogieTest_out.bpl(29,1): inline$FreshRefGenerator$2$anon0
+    __SolToBoogieTest_out.bpl(450,1): inline$ValidatorAuction_ValidatorAuction_NoBaseCtor$0$anon0$3
+    __SolToBoogieTest_out.bpl(1272,1): anon0$1
+
+Boogie program verifier finished with 1 verified, 8 errors
