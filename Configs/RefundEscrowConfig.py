@@ -5,20 +5,26 @@ functions = [
 "close();",
 "enableRefunds();",
 "beneficiaryWithdraw();",
+"withdraw(payee);",
+"transferPrimary(recipient);"
 ]
 statePreconditions = [
 "_state == State.Active",
 "_state == State.Active",
 "_state == State.Active",
 "_state == State.Closed",
+"true",
+"true"
 ]
 functionPreconditions = [
 "true",
 "true",
 "true",
 "true",
+"true",
+"recipient != address(0)"
 ]
-functionVariables = "address refundee"
+functionVariables = "address refundee, address payable payee, address recipient"
 tool_output = "Found a counterexample"
 
 statesModeState = [[1,0,0,0,0,0,0,0,0,0], [0,2,0,0,0,0,0,0,0,0], [0,0,3,0,0,0,0,0,0,0], [0,0,0,4,0,0,0,0,0,0], [0,0,0,0,5,0,0,0,0,0], [0,0,0,0,0,6,0,0,0,0], [0,0,0,0,0,0,7,0,0,0], [0,0,0,0,0,0,0,8,0,0], [0,0,0,0,0,0,0,0,9,0], [0,0,0,0,0,0,0,0,0,10]]

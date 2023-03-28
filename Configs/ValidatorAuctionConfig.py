@@ -7,35 +7,22 @@ functions = [
 "closeAuction();",
 "addToWhitelist(addressesToWhitelist);",
 "withdraw();",
-"withdrawAfterAuctionEnded();",
-"withdrawAfterAuctionFailed();",
-"transitionToDepositPending();",
-"transitionToAuctionFailed();",
-
 ]
 statePreconditions = [
-"(bidders.length < maximalNumberOfParticipants)",
-"depositLocker.initialized()",
-"true",
-"(bidders.length < maximalNumberOfParticipants)",
-"true",
+"((bidders.length < maximalNumberOfParticipants) && ((time - startTime) < (100 * 365 days) && time >= startTime && time <= (startTime + auctionDurationInDays * 1 days)) && auctionState == AuctionState.Started)",
+"depositLocker.initialized() && auctionState == AuctionState.Deployed",
+"auctionState == AuctionState.DepositPending",
+"((bidders.length < maximalNumberOfParticipants) && (time > (startTime + auctionDurationInDays * 1 days)) && auctionState == AuctionState.Started)",
+"auctionState == AuctionState.Deployed",
 "(auctionState == AuctionState.Ended || auctionState == AuctionState.Failed)",
-"true",
-"true",
-"true",
-"true",
 ]
 functionPreconditions = [
-"(now > startTime && now <= startTime + auctionDurationInDays * 1 days && msg.value >= currentPrice() && whitelist[msg.sender] && bids[msg.sender] == 0)",
+"(whitelist[msg.sender] && bids[msg.sender] == 0)",
 "true",
 "true",
-"(now > startTime + auctionDurationInDays * 1 days)",
+"true",
 "true",
 "true", 
-"(bids[msg.sender] > lowestSlotPrice)",
-"(bids[msg.sender] > 0)",
-"true",
-"true",
 ]
 functionVariables = "address[] memory addressesToWhitelist"
 tool_output = "Found a counterexample"
@@ -52,4 +39,4 @@ statePreconditionsModeState = ["State == StateType.Active",
 "State == StateType.SellerAccepted",
 "State == StateType.Accepted",
 "State == StateType.Terminated"]
-txBound = 4
+txBound = 6

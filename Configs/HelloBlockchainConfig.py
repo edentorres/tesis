@@ -16,4 +16,4 @@ statePreconditionsModeState = ["State == StateType.Request", "State == StateType
 txBound = 4
 
 epaExtraConditions = "true"
-statesExtraConditions = ["true", "false"]
+statesExtraConditions = ["true", "true"]

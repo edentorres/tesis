@@ -1,12 +1,14 @@
 import os
 import time
 import datetime 
+import subprocess
 from statistics import mean
 from tabulate import tabulate
 
 def runCommand(command):
     st = time.time()
-    os.system(command)
+    result = subprocess.run([command, ""], shell = True, stdout=subprocess.PIPE)
+    print(result.stdout.decode('utf-8'))
     et = time.time()
     result = et - st
     print(result)
@@ -62,5 +64,5 @@ for contract in contracts:
     print(str(datetime.timedelta(seconds=int(avg))))
 
     table.append([contract, avgEpa, avgStates]) 
-    with open('filename.txt', 'w') as outputfile:
-      print(tabulate(table, headers='firstrow', tablefmt='fancy_grid'), file=outputfile)
+    with open('Tiempos-'+ str(datetime.datetime.now())+'.txt', 'w') as outputfile:
+      print(tabulate(table, headers='firstrow', tablefmt='grid'), file=outputfile)

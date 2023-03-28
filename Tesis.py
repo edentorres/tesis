@@ -86,6 +86,7 @@ def getToolCommand(includeNumber, toolCommand, combinations, txBound):
     for indexCombination, combi in enumerate(combinations):
         if combi != includeNumber: 
             command += "/ignoreMethod:vc"+ combi +"@" + contractName + " "
+    print(command)
     return command
 
 def get_extra_condition_output(condition):

@@ -51,4 +51,4 @@ statePreconditionsModeState = ["State == StateType.Active",
 "State == StateType.SellerAccepted",
 "State == StateType.Accepted",
 "State == StateType.Terminated"]
-txBound = 6
+txBound = 8

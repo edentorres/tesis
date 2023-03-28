@@ -4,16 +4,19 @@ functions = [
 "bid();",
 "withdraw();",
 "auctionEnd();",
+# "t();"
 ]
 statePreconditions = [
-"true",
-"true",
-"!ended",
+"time <= (auctionStart + biddingTime)",
+"pendingReturnsArray.length != 0",
+"!ended && time >= (auctionStart + biddingTime)",
+# "true"
 ]
 functionPreconditions = [
-"now <= (auctionStart + biddingTime) && msg.value > highestBid",
+"msg.value > highestBid",
 "true",
-"now >= (auctionStart + biddingTime)",
+"true",
+# "true"
 ]
 functionVariables = "address refundee"
 tool_output = "Found a counterexample"
@@ -30,4 +33,4 @@ statePreconditionsModeState = ["State == StateType.Active",
 "State == StateType.SellerAccepted",
 "State == StateType.Accepted",
 "State == StateType.Terminated"]
-txBound = 6
+txBound = 10

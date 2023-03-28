@@ -3,23 +3,26 @@ contractName = "EPXCrowdsale"
 functions = [
 "SetupCrowdsale(_fundingStartBlock, _fundingEndBlock);",
 "buy();",
-"beneficiaryMultiSigWithdraw(_amount);",
+# "beneficiaryMultiSigWithdraw(_amount);",
 "checkGoalReached();",
-"refund();"
+"refund();",
+"t();"
 ]
 statePreconditions = [
 "(!isCrowdSaleSetup && !(beneficiaryWallet != address(0x0)))",
-"(tokensRemaining > 0)",
-"(areFundsReleasedToBeneficiary && (amountRaisedInWei >= fundingMinCapInWei))",
+"(tokensRemaining > 0 && (blockNumber <= fundingEndBlock) && (blockNumber >= fundingStartBlock))",
+# "(areFundsReleasedToBeneficiary && (amountRaisedInWei >= fundingMinCapInWei))",
 "isCrowdSaleSetup",
-"((amountRaisedInWei < fundingMinCapInWei) && (isCrowdSaleClosed))",
+"((amountRaisedInWei < fundingMinCapInWei) && (isCrowdSaleClosed) && (blockNumber > fundingEndBlock) && (usersEPXfundValueArray.length != 0))",
+"true"
 ]
 functionPreconditions = [
-"msg.sender == admin",
-"(!(msg.value == 0) && (block.number <= fundingEndBlock) && (block.number >= fundingStartBlock))",
-"true",
-"true",
-"((block.number > fundingEndBlock) && (usersEPXfundValue[msg.sender] > 0))",
+"msg.sender == admin && msg.sender == owner",
+"(!(msg.value == 0))",
+# "true",
+"msg.sender == owner",
+"(usersEPXfundValue[msg.sender] > 0)",
+"true"
 ]
 functionVariables = "uint256 _amount, uint256 _fundingStartBlock,  uint256 _fundingEndBlock"
 tool_output = "Found a counterexample"
@@ -36,4 +39,4 @@ statePreconditionsModeState = ["State == StateType.Active",
 "State == StateType.SellerAccepted",
 "State == StateType.Accepted",
 "State == StateType.Terminated"]
-txBound = 6
+txBound = 8

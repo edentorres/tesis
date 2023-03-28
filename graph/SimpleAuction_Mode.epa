@@ -1,5 +1,125 @@
 // Prueba
 digraph {
+	"0-0-3-" [label="auctionEnd();
+"]
+	"0-0-0-" [label=Vacio
+]
+	"0-0-3-" -> "0-0-0-" [label="auctionEnd();"]
+	"0-2-0-" [label="withdraw();
+"]
+	"0-0-0-" [label=Vacio
+]
+	"0-2-0-" -> "0-0-0-" [label="withdraw();"]
+	"1-0-3-" [label="bid();
+auctionEnd();
+"]
+	"0-0-0-" [label=Vacio
+]
+	"1-0-3-" -> "0-0-0-" [label="auctionEnd();"]
+	"1-0-0-" [label="bid();
+"]
+	"1-0-0-" [label="bid();
+"]
+	"1-0-0-" -> "1-0-0-" [label="bid();"]
+	"0-2-0-" [label="withdraw();
+"]
+	"0-2-0-" [label="withdraw();
+"]
+	"0-2-0-" -> "0-2-0-" [label="withdraw();"]
+	"0-2-3-" [label="withdraw();
+auctionEnd();
+"]
+	"0-2-0-" [label="withdraw();
+"]
+	"0-2-3-" -> "0-2-0-" [label="auctionEnd();"]
+	"1-0-3-" [label="bid();
+auctionEnd();
+"]
+	"0-0-3-" [label="auctionEnd();
+"]
+	"1-0-3-" -> "0-0-3-" [label="bid();"]
+	"0-2-3-" [label="withdraw();
+auctionEnd();
+"]
+	"0-0-3-" [label="auctionEnd();
+"]
+	"0-2-3-" -> "0-0-3-" [label="withdraw();"]
+	"1-2-0-" [label="bid();
+withdraw();
+"]
+	"1-0-0-" [label="bid();
+"]
+	"1-2-0-" -> "1-0-0-" [label="withdraw();"]
+	"1-2-3-" [label="bid();
+withdraw();
+auctionEnd();
+"]
+	"0-2-0-" [label="withdraw();
+"]
+	"1-2-3-" -> "0-2-0-" [label="auctionEnd();"]
+	"1-2-3-" [label="bid();
+withdraw();
+auctionEnd();
+"]
+	"0-0-3-" [label="auctionEnd();
+"]
+	"1-2-3-" -> "0-0-3-" [label="withdraw();"]
+	"1-0-0-" [label="bid();
+"]
+	"1-2-0-" [label="bid();
+withdraw();
+"]
+	"1-0-0-" -> "1-2-0-" [label="bid();"]
+	"1-0-3-" [label="bid();
+auctionEnd();
+"]
+	"0-2-3-" [label="withdraw();
+auctionEnd();
+"]
+	"1-0-3-" -> "0-2-3-" [label="bid();"]
+	"1-0-0-" [label="bid();
+"]
+	"1-0-3-" [label="bid();
+auctionEnd();
+"]
+	"1-0-0-" -> "1-0-3-" [label="bid();"]
+	"0-2-3-" [label="withdraw();
+auctionEnd();
+"]
+	"0-2-3-" [label="withdraw();
+auctionEnd();
+"]
+	"0-2-3-" -> "0-2-3-" [label="withdraw();"]
+	"1-0-0-" [label="bid();
+"]
+	"1-2-3-" [label="bid();
+withdraw();
+auctionEnd();
+"]
+	"1-0-0-" -> "1-2-3-" [label="bid();"]
+	"1-2-3-" [label="bid();
+withdraw();
+auctionEnd();
+"]
+	"0-2-3-" [label="withdraw();
+auctionEnd();
+"]
+	"1-2-3-" -> "0-2-3-" [label="bid();"]
+	"1-2-3-" [label="bid();
+withdraw();
+auctionEnd();
+"]
+	"0-2-3-" [label="withdraw();
+auctionEnd();
+"]
+	"1-2-3-" -> "0-2-3-" [label="withdraw();"]
+	"1-2-0-" [label="bid();
+withdraw();
+"]
+	"1-2-0-" [label="bid();
+withdraw();
+"]
+	"1-2-0-" -> "1-2-0-" [label="bid();"]
 	"1-2-0-" [label="bid();
 withdraw();
 "]
@@ -7,36 +127,40 @@ withdraw();
 withdraw();
 "]
 	"1-2-0-" -> "1-2-0-" [label="withdraw();"]
-	"1-2-3-" [label="bid();
-withdraw();
-auctionEnd();
-"]
 	"1-2-0-" [label="bid();
 withdraw();
 "]
-	"1-2-3-" -> "1-2-0-" [label="auctionEnd();"]
-	"1-2-3-" [label="bid();
-withdraw();
+	"1-0-3-" [label="bid();
 auctionEnd();
+"]
+	"1-2-0-" -> "1-0-3-" [label="withdraw();"]
+	"1-2-0-" [label="bid();
+withdraw();
 "]
 	"1-2-3-" [label="bid();
 withdraw();
 auctionEnd();
 "]
-	"1-2-3-" -> "1-2-3-" [label="bid();"]
-	"1-2-3-" [label="bid();
+	"1-2-0-" -> "1-2-3-" [label="bid();"]
+	"1-2-0-" [label="bid();
 withdraw();
-auctionEnd();
 "]
 	"1-2-3-" [label="bid();
 withdraw();
 auctionEnd();
 "]
-	"1-2-3-" -> "1-2-3-" [label="withdraw();"]
+	"1-2-0-" -> "1-2-3-" [label="withdraw();"]
 	init [label=init]
-	"1-2-3-" [label="bid();
-withdraw();
+	"1-0-0-" [label="bid();
+"]
+	init -> "1-0-0-" [label=constructor]
+	init [label=init]
+	"0-0-3-" [label="auctionEnd();
+"]
+	init -> "0-0-3-" [label=constructor]
+	init [label=init]
+	"1-0-3-" [label="bid();
 auctionEnd();
 "]
-	init -> "1-2-3-" [label=constructor]
+	init -> "1-0-3-" [label=constructor]
 }

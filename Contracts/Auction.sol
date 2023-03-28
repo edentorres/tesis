@@ -13,16 +13,21 @@ contract Auction {
     address payable highestBidder = address(0x0);
     uint highestBid = 0;
     mapping(address => uint) pendingReturns;
+    address[] pendingReturnsArray = new address[](0);
+    address[] auxArray;
+    uint pendingReturnsCount = 0;
+    uint blockNumber;
 
-    constructor(uint _auctionStart, uint _biddingTime, address payable _beneficiary) public {
+    constructor(uint _auctionStart, uint _biddingTime, address payable _beneficiary,  uint _blockNumber) public {
         auctionStart = _auctionStart;
         biddingTime = _biddingTime;
         beneficiary = _beneficiary;
+        blockNumber = _blockNumber;
     }
 
     function Bid() public payable {
         uint end = auctionStart + biddingTime;
-        if(end < block.number || ended) {
+        if(end < blockNumber) {
             revert();
         }
         else {
@@ -30,34 +35,57 @@ contract Auction {
                 revert();
             }
             else {
-                pendingReturns[highestBidder] += highestBid; 
+                pendingReturns[highestBidder] += highestBid;
+                pendingReturnsCount = 2;
+                pendingReturnsArray.push(msg.sender);
                 highestBidder = msg.sender;
                 highestBid = msg.value;
             }
         }
+        //t();
     }
 
     function Withdraw() public {
-        if(pendingReturns[msg.sender] != 0) {
+        if(pendingReturns[msg.sender] != 0 && pendingReturnsArray.length != 0) {
             uint pr = pendingReturns[msg.sender];
             pendingReturns[msg.sender] = 0;
-            msg.sender.transfer(pr);
+            pendingReturnsCount = pendingReturnsCount - 1;
+            pendingReturnsArray = remove(msg.sender, pendingReturnsArray);
+            //msg.sender.transfer(pr);
+            //t();
         }
         else {
             revert();
         }
+    }
+
+    function remove(address _valueToFindAndRemove, address[] memory _array) public  returns(address[] memory) {
+
+        auxArray = new address[](0); 
+
+        for (uint i = 0; i < _array.length; i++){
+             if(_array[i] != _valueToFindAndRemove) 
+                auxArray.push(_array[i]);
+        }
+
+        return auxArray;
     }
 
     function AuctionEnd() public {
         uint end = auctionStart + biddingTime;
 
         //!ended is a bug
-        if(block.number <= end || ended) {
+        if(blockNumber <= end || ended) {
             revert();
         }
         else {
+            //t();
             ended = true;
-            beneficiary.transfer(highestBid);
+            //beneficiary.transfer(highestBid);
         }
+    }
+
+    function t() public {
+        blockNumber = blockNumber + 1;
     }
 }

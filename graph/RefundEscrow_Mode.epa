@@ -1,37 +1,90 @@
 // Prueba
 digraph {
-	"0-0-0-4-" [label="beneficiaryWithdraw();
+	"0-0-0-0-5-6-" [label="withdraw(payee);
+transferPrimary(recipient);
 "]
-	"0-0-0-4-" [label="beneficiaryWithdraw();
+	"0-0-0-0-5-6-" [label="withdraw(payee);
+transferPrimary(recipient);
 "]
-	"0-0-0-4-" -> "0-0-0-4-" [label="beneficiaryWithdraw();"]
-	"1-2-3-0-" [label="deposit(refundee);
+	"0-0-0-0-5-6-" -> "0-0-0-0-5-6-" [label="withdraw(payee);"]
+	"0-0-0-0-5-6-" [label="withdraw(payee);
+transferPrimary(recipient);
+"]
+	"0-0-0-0-5-6-" [label="withdraw(payee);
+transferPrimary(recipient);
+"]
+	"0-0-0-0-5-6-" -> "0-0-0-0-5-6-" [label="transferPrimary(recipient);"]
+	"1-2-3-0-5-6-" [label="deposit(refundee);
 close();
 enableRefunds();
+withdraw(payee);
+transferPrimary(recipient);
 "]
-	"0-0-0-0-" [label=Vacio
-]
-	"1-2-3-0-" -> "0-0-0-0-" [label="enableRefunds();"]
-	"1-2-3-0-" [label="deposit(refundee);
+	"0-0-0-0-5-6-" [label="withdraw(payee);
+transferPrimary(recipient);
+"]
+	"1-2-3-0-5-6-" -> "0-0-0-0-5-6-" [label="enableRefunds();"]
+	"0-0-0-4-5-6-" [label="beneficiaryWithdraw();
+withdraw(payee);
+transferPrimary(recipient);
+"]
+	"0-0-0-4-5-6-" [label="beneficiaryWithdraw();
+withdraw(payee);
+transferPrimary(recipient);
+"]
+	"0-0-0-4-5-6-" -> "0-0-0-4-5-6-" [label="beneficiaryWithdraw();"]
+	"0-0-0-4-5-6-" [label="beneficiaryWithdraw();
+withdraw(payee);
+transferPrimary(recipient);
+"]
+	"0-0-0-4-5-6-" [label="beneficiaryWithdraw();
+withdraw(payee);
+transferPrimary(recipient);
+"]
+	"0-0-0-4-5-6-" -> "0-0-0-4-5-6-" [label="transferPrimary(recipient);"]
+	"1-2-3-0-5-6-" [label="deposit(refundee);
 close();
 enableRefunds();
+withdraw(payee);
+transferPrimary(recipient);
 "]
-	"0-0-0-4-" [label="beneficiaryWithdraw();
+	"0-0-0-4-5-6-" [label="beneficiaryWithdraw();
+withdraw(payee);
+transferPrimary(recipient);
 "]
-	"1-2-3-0-" -> "0-0-0-4-" [label="close();"]
-	"1-2-3-0-" [label="deposit(refundee);
+	"1-2-3-0-5-6-" -> "0-0-0-4-5-6-" [label="close();"]
+	"1-2-3-0-5-6-" [label="deposit(refundee);
 close();
 enableRefunds();
+withdraw(payee);
+transferPrimary(recipient);
 "]
-	"1-2-3-0-" [label="deposit(refundee);
+	"1-2-3-0-5-6-" [label="deposit(refundee);
 close();
 enableRefunds();
+withdraw(payee);
+transferPrimary(recipient);
 "]
-	"1-2-3-0-" -> "1-2-3-0-" [label="deposit(refundee);"]
+	"1-2-3-0-5-6-" -> "1-2-3-0-5-6-" [label="deposit(refundee);"]
+	"1-2-3-0-5-6-" [label="deposit(refundee);
+close();
+enableRefunds();
+withdraw(payee);
+transferPrimary(recipient);
+"]
+	"1-2-3-0-5-6-" [label="deposit(refundee);
+close();
+enableRefunds();
+withdraw(payee);
+transferPrimary(recipient);
+"]
+	"1-2-3-0-5-6-" -> "1-2-3-0-5-6-" [label="transferPrimary(recipient);"]
 	init [label=init]
-	"1-2-3-0-" [label="deposit(refundee);
+	"1-2-3-0-5-6-" [label="deposit(refundee);
 close();
 enableRefunds();
+withdraw(payee);
+transferPrimary(recipient);
 "]
-	init -> "1-2-3-0-" [label=constructor]
+	init -> "1-2-3-0-5-6-" [label=constructor]
 }

@@ -4,16 +4,19 @@ functions = [
 "Donate();",
 "GetFunds();",
 "Claim();",
+"t();"
 ]
 statePreconditions = [
-"true",
-"goal <= address(this).balance",
-"!funded && goal > address(this).balance"
+"(max_block > blockNumber)",
+"(max_block < blockNumber && goal <= address(this).balance)",
+"(blockNumber > max_block && !funded && goal > address(this).balance && backersArray.length != 0)",
+"true"
 ]
 functionPreconditions = [
-"max_block > block.number && backers[msg.sender] == 0",
-"max_block < block.number && msg.sender == owner",
-"block.number > max_block && backers[msg.sender] != 0"
+"backers[msg.sender] == 0",
+"msg.sender == owner",
+"backers[msg.sender] != 0",
+"true"
 ]
 functionVariables = ""
 tool_output = "Found a counterexample"
@@ -30,4 +33,4 @@ statePreconditionsModeState = ["State == StateType.Active",
 "State == StateType.SellerAccepted",
 "State == StateType.Accepted",
 "State == StateType.Terminated"]
-txBound = 6
+txBound = 10

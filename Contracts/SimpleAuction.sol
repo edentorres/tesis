@@ -25,9 +25,13 @@ contract SimpleAuction {
     // Current state of the auction.
     address public highestBidder;
     uint public highestBid;
+    uint time;
 
     // Allowed withdrawals of previous bids
     mapping(address => uint) pendingReturns;
+    uint pendingReturnsCount = 0;
+    address[] pendingReturnsArray = new address[](0);
+    address[] auxArray;
 
     // Set to true at the end, disallows any change
     bool ended;
@@ -50,11 +54,12 @@ contract SimpleAuction {
     // unicefstories.org/2017/08/04/unicef-ventures-exploring-smart-contracts/
     address payable beneficiary;
     
-    constructor() public
+    constructor(uint _time, uint _biddingTime, uint _auctionStart) public
     {
+        time = _time;
         beneficiary = _beneficiary;
-        auctionStart = now;
-        biddingTime = 2587587;
+        auctionStart = _auctionStart;
+        biddingTime = _biddingTime;
     }
 
     /// Bid on the auction with the value sent
@@ -70,7 +75,7 @@ contract SimpleAuction {
 
         // Revert the call if the bidding
         // period is over.
-        require(now <= (auctionStart + biddingTime));
+        require(time <= (auctionStart + biddingTime));
 
         // If the bid is not higher, send the
         // money back.
@@ -83,27 +88,38 @@ contract SimpleAuction {
             // raising the call stack to 1023. It is always safer
             // to let the recipients withdraw their money themselves.
             pendingReturns[highestBidder] += highestBid;
+            pendingReturnsCount = pendingReturnsCount + 1;
+            pendingReturnsArray.push(msg.sender);
         }
         highestBidder = msg.sender;
         highestBid = msg.value;
-        emit HighestBidIncreased(msg.sender, msg.value);
+        // emit HighestBidIncreased(msg.sender, msg.value);
+        //time = time + now;
+        time = time + 1;
     }
 
     /// Withdraw a bid that was overbid.
     function withdraw() public returns (bool) {
+        //time = time + 1;
+        require(pendingReturnsArray.length != 0);
         uint amount = pendingReturns[msg.sender];
         if (amount > 0) {
             // It is important to set this to zero because the recipient
             // can call this function again as part of the receiving call
             // before `send` returns.
             pendingReturns[msg.sender] = 0;
+            pendingReturnsCount = pendingReturnsCount - 1;
+            pendingReturnsArray = remove(msg.sender, pendingReturnsArray);
 
-            if (!msg.sender.send(amount)) {
-                // No need to call throw here, just reset the amount owing
-                pendingReturns[msg.sender] = amount;
-                return false;
-            }
+            // if (!msg.sender.send(amount)) {
+            //     // No need to call throw here, just reset the amount owing
+            //     pendingReturns[msg.sender] = amount;
+            //     time = now;
+            //     return false;
+            // }
         }
+        //time = time + now;
+        time = time + 1;
         return true;
     }
     // Users want to know when the auction ends, seconds from 1970-01-01
@@ -126,16 +142,31 @@ contract SimpleAuction {
         // If functions called internally include interaction with external
         // contracts, they also have to be considered interaction with
         // external contracts.
-
         // 1. Conditions
-        require(now >= (auctionStart + biddingTime)); // auction did not yet end
+        require(time >= (auctionStart + biddingTime)); // auction did not yet end
         require(!ended); // this function has already been called
-
         // 2. Effects
         ended = true;
-        emit AuctionEnded(highestBidder, highestBid);
+        // emit AuctionEnded(highestBidder, highestBid);
 
         // 3. Interaction
-        beneficiary.transfer(highestBid);
+        // beneficiary.transfer(highestBid);
+        time = time + 1;
     }
+
+    function remove(address _valueToFindAndRemove, address[] memory _array) public  returns(address[] memory) {
+
+        auxArray = new address[](0); 
+
+        for (uint i = 0; i < _array.length; i++){
+            if(_array[i] != _valueToFindAndRemove)
+                auxArray.push(_array[i]);
+        }
+
+        return auxArray;
+    }
+
+    // function t() public {
+    //     time = time + now;
+    // }
 }

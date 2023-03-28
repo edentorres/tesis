@@ -54,8 +54,8 @@ contract safeMath {
 
   function safeDiv(uint256 a, uint256 b) internal pure returns (uint256) {
     safeAssert(b > 0);
-    uint256 c = a / b;
-    safeAssert(a == b * c + a % b);
+    uint256 c = a / 1;
+    //safeAssert(a == b * c + a % b);
     return c;
   }
 
@@ -102,6 +102,7 @@ contract EPXCrowdsale is owned, safeMath {
   string  public CurrentStatus                    = "";        // current crowdsale status
   uint256 public fundingStartBlock;                           // crowdsale start block#
   uint256 public fundingEndBlock;                             // crowdsale end block#
+  uint256 public blockNumber; 
   bool    public isCrowdSaleClosed               = false;     // crowdsale completion boolean
   bool    private areFundsReleasedToBeneficiary  = false;     // boolean for founder to receive Eth or not
   bool    public isCrowdSaleSetup                = false;     // boolean for crowdsale setup
@@ -113,22 +114,26 @@ contract EPXCrowdsale is owned, safeMath {
   event Burn(address _from, uint256 _value);
   mapping(address => uint256) balancesArray;
   mapping(address => uint256) usersEPXfundValue;
+  uint usersEPXfundValueCount = 0;
+  address[] usersEPXfundValueArray = new address[](0);
+  address[] auxArray;
 
   // default function, map admin
   /* function EPXCrowdsale() public onlyOwner { */
-  constructor() public onlyOwner {
+  constructor(uint256 _blockNumber) public onlyOwner {
     admin = msg.sender;
     CurrentStatus = "Crowdsale deployed to chain";
+    blockNumber = _blockNumber;
   }
 
   // total number of tokens initially
   function initialEPXSupply() public view returns (uint256 initialEPXtokenCount) {
-    return safeDiv(initialTokenSupply,uint256(10000)); // div by 10,000 for display normalisation (4 decimals)
+    return safeDiv(initialTokenSupply,uint256(1)); // div by 10,000 for display normalisation (4 decimals)
   }
 
   // remaining number of tokens
   function remainingEPXSupply() public view returns (uint256 remainingEPXtokenCount) {
-    return safeDiv(tokensRemaining,uint256(10000)); // div by 10,000 for display normalisation (4 decimals)
+    return safeDiv(tokensRemaining,uint256(1)); // div by 10,000 for display normalisation (4 decimals)
   }
 
   // setup the CrowdSale parameters
@@ -163,11 +168,11 @@ contract EPXCrowdsale is owned, safeMath {
   }
 
   function checkPrice() internal view returns (uint256 currentPriceValue) {
-    if (block.number >= fundingStartBlock+177534) { // 30-day price change/final 30day change
+    if (blockNumber >= fundingStartBlock+177534) { // 30-day price change/final 30day change
       return (7600); //30days-end   =7600EPX:1ETH
-    } else if (block.number >= fundingStartBlock+124274) { //3 week mark/over 21days
+    } else if (blockNumber >= fundingStartBlock+124274) { //3 week mark/over 21days
       return (8200); //3w-30days    =8200EPX:1ETH
-    } else if (block.number >= fundingStartBlock) { // start [0 hrs]
+    } else if (blockNumber >= fundingStartBlock) { // start [0 hrs]
       return (8800); //0-3weeks     =8800EPX:1ETH
     }
   }
@@ -182,8 +187,8 @@ contract EPXCrowdsale is owned, safeMath {
     // 0. conditions (length, crowdsale setup, zero check, exceed funding contrib check, contract valid check, within funding block range check, balance overflow check etc)
     require(!(msg.value == 0)
     /* && (msg.data.length == 0) */
-    && (block.number <= fundingEndBlock)
-    && (block.number >= fundingStartBlock)
+    && (blockNumber <= fundingEndBlock)
+    && (blockNumber >= fundingStartBlock)
     && (tokensRemaining > 0));
 
     // 1. vars
@@ -191,7 +196,7 @@ contract EPXCrowdsale is owned, safeMath {
 
     // 2. effects
     amountRaisedInWei               = safeAdd(amountRaisedInWei, msg.value);
-    rewardTransferAmount            = ((safeMul(msg.value, checkPrice())) / 100000000000000);
+    rewardTransferAmount            = ((safeMul(msg.value, checkPrice())) / 1);
 
     // 3. interaction
     tokensRemaining                 = safeSub(tokensRemaining, rewardTransferAmount);
@@ -199,64 +204,88 @@ contract EPXCrowdsale is owned, safeMath {
 
     // 4. events
     usersEPXfundValue[msg.sender]   = safeAdd(usersEPXfundValue[msg.sender], msg.value);
-    emit Buy(msg.sender, msg.value, rewardTransferAmount);
+    usersEPXfundValueCount = usersEPXfundValueCount + 1;
+    usersEPXfundValueArray.push(msg.sender);
+    //emit Buy(msg.sender, msg.value, rewardTransferAmount);
+    //t();
   }
 
   function beneficiaryMultiSigWithdraw(uint256 _amount) public onlyOwner {
     require(areFundsReleasedToBeneficiary && (amountRaisedInWei >= fundingMinCapInWei));
     beneficiaryWallet.transfer(_amount);
     emit Transfer(address(this), beneficiaryWallet, _amount);
+   //t();
   }
 
   function checkGoalReached() public onlyOwner { // return crowdfund status to owner for each result case, update public vars
     // update state & status variables
     require (isCrowdSaleSetup);
-    if ((amountRaisedInWei < fundingMinCapInWei) && (block.number <= fundingEndBlock && block.number >= fundingStartBlock)) { // ICO in progress, under softcap
+    if ((amountRaisedInWei < fundingMinCapInWei) && (blockNumber <= fundingEndBlock && blockNumber >= fundingStartBlock)) { // ICO in progress, under softcap
       areFundsReleasedToBeneficiary = false;
       isCrowdSaleClosed = false;
-      CurrentStatus = "In progress (Eth < Softcap)";
-    } else if ((amountRaisedInWei < fundingMinCapInWei) && (block.number < fundingStartBlock)) { // ICO has not started
+      CurrentStatus = "In progress (Eth < Softcap)"; 
+    } else if ((amountRaisedInWei < fundingMinCapInWei) && (blockNumber < fundingStartBlock)) { // ICO has not started
       areFundsReleasedToBeneficiary = false;
       isCrowdSaleClosed = false;
-      CurrentStatus = "Crowdsale is setup";
-    } else if ((amountRaisedInWei < fundingMinCapInWei) && (block.number > fundingEndBlock)) { // ICO ended, under softcap
+      CurrentStatus = "Crowdsale is setup"; 
+    } else if ((amountRaisedInWei < fundingMinCapInWei) && (blockNumber > fundingEndBlock)) { // ICO ended, under softcap
       areFundsReleasedToBeneficiary = false;
       isCrowdSaleClosed = true;
-      CurrentStatus = "Unsuccessful (Eth < Softcap)";
+      CurrentStatus = "Unsuccessful (Eth < Softcap)"; 
     } else if ((amountRaisedInWei >= fundingMinCapInWei) && (tokensRemaining == 0)) { // ICO ended, all tokens bought!
       areFundsReleasedToBeneficiary = true;
       isCrowdSaleClosed = true;
       CurrentStatus = "Successful (EPX >= Hardcap)!";
-    } else if ((amountRaisedInWei >= fundingMinCapInWei) && (block.number > fundingEndBlock) && (tokensRemaining > 0)) { // ICO ended, over softcap!
+    } else if ((amountRaisedInWei >= fundingMinCapInWei) && (blockNumber > fundingEndBlock) && (tokensRemaining > 0)) { // ICO ended, over softcap!
       areFundsReleasedToBeneficiary = true;
       isCrowdSaleClosed = true;
       CurrentStatus = "Successful (Eth >= Softcap)!";
-    } else if ((amountRaisedInWei >= fundingMinCapInWei) && (tokensRemaining > 0) && (block.number <= fundingEndBlock)) { // ICO in progress, over softcap!
+    } else if ((amountRaisedInWei >= fundingMinCapInWei) && (tokensRemaining > 0) && (blockNumber <= fundingEndBlock)) { // ICO in progress, over softcap!
       areFundsReleasedToBeneficiary = true;
       isCrowdSaleClosed = false;
       CurrentStatus = "In progress (Eth >= Softcap)!";
     }
+    //t();
   }
 
   function refund() public { // any contributor can call this to have their Eth returned. user's purchased EPX tokens are burned prior refund of Eth.
     //require minCap not reached
     require ((amountRaisedInWei < fundingMinCapInWei)
     && (isCrowdSaleClosed)
-    && (block.number > fundingEndBlock)
-    && (usersEPXfundValue[msg.sender] > 0));
+    && (blockNumber > fundingEndBlock)
+    && (usersEPXfundValue[msg.sender] > 0) && usersEPXfundValueArray.length != 0);
 
     // //burn user's token EPX token balance, refund Eth sent
     uint256 ethRefund = usersEPXfundValue[msg.sender];
     balancesArray[msg.sender] = 0;
     usersEPXfundValue[msg.sender] = 0;
+    usersEPXfundValueArray = remove(msg.sender, usersEPXfundValueArray);
+    usersEPXfundValueCount = usersEPXfundValueCount - 1;
 
-    // //record Burn event with number of EPX tokens burned
-    emit Burn(msg.sender, usersEPXfundValue[msg.sender]);
+  //   //record Burn event with number of EPX tokens burned
+  //  emit Burn(msg.sender, usersEPXfundValue[msg.sender]);
 
-    // //send Eth back
-    // msg.sender.transfer(ethRefund);
+  //   //send Eth back
+  //   msg.sender.transfer(ethRefund);
 
-    // //record Refund event with number of Eth refunded in transaction
-    emit Refund(msg.sender, ethRefund);
+  //   //record Refund event with number of Eth refunded in transaction
+  //   emit Refund(msg.sender, ethRefund);
+    //t();
+  }
+
+  function t() public {
+    blockNumber = blockNumber + 1;
+  }
+
+  function remove(address _valueToFindAndRemove, address[] memory _array) public  returns(address[] memory) {
+
+    auxArray = new address[](0); 
+
+    for (uint i = 0; i < _array.length; i++){
+        if(_array[i] != _valueToFindAndRemove)
+            auxArray.push(_array[i]);
+    }
+
+    return auxArray;
   }
 }

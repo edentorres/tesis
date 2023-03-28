@@ -7,7 +7,8 @@ functions = [
 "withdrawAll();",
 "close();",
 "enableRefunds();",
-"refund(investor);"
+"refund(investor);",
+"transferOwnership(newOwner);"
 ]
 statePreconditions = [
 "(state == State.Active || state == State.GoalReached)",
@@ -16,7 +17,8 @@ statePreconditions = [
 "state == State.GoalReached",
 "state == State.GoalReached",
 "state == State.Active",
-"state == State.Refunding"
+"state == State.Refunding",
+"true"
 ]
 functionPreconditions = [
 "true",
@@ -25,9 +27,10 @@ functionPreconditions = [
 "true",
 "true",
 "true",
-"true"
+"true",
+"newOwner != address(0)"
 ]
-functionVariables = "uint256 _amount, address payable investor"
+functionVariables = "uint256 _amount, address payable investor, address newOwner"
 tool_output = "Found a counterexample"
 
 statesModeState = [[1,0,0,0,0,0,0,0,0,0], [0,2,0,0,0,0,0,0,0,0], [0,0,3,0,0,0,0,0,0,0], [0,0,0,4,0,0,0,0,0,0], [0,0,0,0,5,0,0,0,0,0], [0,0,0,0,0,6,0,0,0,0], [0,0,0,0,0,0,7,0,0,0], [0,0,0,0,0,0,0,8,0,0], [0,0,0,0,0,0,0,0,9,0], [0,0,0,0,0,0,0,0,0,10]]

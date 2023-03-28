@@ -8,5 +8,5 @@ tool_output = "Found a counterexample"
 
 statesModeState = [[1,0,0], [0,2,0],[0,0,3]]
 statesNamesModeState = ["ItemAvailable", "OfferPlaced", "Accepted"]
-statePreconditionsModeState = ["StateEnum == StateType.ItemAvailable", "true", "StateEnum == StateType.Accepted"]
+statePreconditionsModeState = ["StateEnum == StateType.ItemAvailable", "StateEnum == StateType.OfferPlaced", "StateEnum == StateType.Accepted"]
 txBound = 4
