@@ -1,0 +1,110 @@
+// Prueba
+digraph {
+	"0-0-0-0-5-0-" [label="withdrawA(payee);
+"]
+	"0-0-0-0-0-0-" [label=Vacio
+]
+	"0-0-0-0-5-0-" -> "0-0-0-0-0-0-" [label="withdrawA(payee);"]
+	"0-0-0-0-0-6-" [label="withdrawNoA(payee);
+"]
+	"0-0-0-0-0-0-" [label=Vacio
+]
+	"0-0-0-0-0-6-" -> "0-0-0-0-0-0-" [label="withdrawNoA(payee);"]
+	"0-0-0-0-5-6-" [label="withdrawA(payee);
+withdrawNoA(payee);
+"]
+	"0-0-0-0-0-0-" [label=Vacio
+]
+	"0-0-0-0-5-6-" -> "0-0-0-0-0-0-" [label="withdrawA(payee);"]
+	"0-0-0-4-0-0-" [label="beneficiaryWithdraw();
+"]
+	"0-0-0-4-0-0-" [label="beneficiaryWithdraw();
+"]
+	"0-0-0-4-0-0-" -> "0-0-0-4-0-0-" [label="beneficiaryWithdraw();"]
+	"0-0-0-0-5-6-" [label="withdrawA(payee);
+withdrawNoA(payee);
+"]
+	"0-0-0-0-0-0-" [label=Vacio
+]
+	"0-0-0-0-5-6-" -> "0-0-0-0-0-0-" [label="withdrawNoA(payee);"]
+	"1-2-3-0-0-0-" [label="deposit(refundee);
+close();
+enableRefunds();
+"]
+	"0-0-0-0-0-0-" [label=Vacio
+]
+	"1-2-3-0-0-0-" -> "0-0-0-0-0-0-" [label="enableRefunds();"]
+	"1-2-3-0-0-0-" [label="deposit(refundee);
+close();
+enableRefunds();
+"]
+	"0-0-0-4-0-0-" [label="beneficiaryWithdraw();
+"]
+	"1-2-3-0-0-0-" -> "0-0-0-4-0-0-" [label="close();"]
+	"0-0-0-0-5-0-" [label="withdrawA(payee);
+"]
+	"0-0-0-0-0-6-" [label="withdrawNoA(payee);
+"]
+	"0-0-0-0-5-0-" -> "0-0-0-0-0-6-" [label="withdrawA(payee);"]
+	"0-0-0-0-0-6-" [label="withdrawNoA(payee);
+"]
+	"0-0-0-0-0-6-" [label="withdrawNoA(payee);
+"]
+	"0-0-0-0-0-6-" -> "0-0-0-0-0-6-" [label="withdrawNoA(payee);"]
+	"0-0-0-0-5-6-" [label="withdrawA(payee);
+withdrawNoA(payee);
+"]
+	"0-0-0-0-5-0-" [label="withdrawA(payee);
+"]
+	"0-0-0-0-5-6-" -> "0-0-0-0-5-0-" [label="withdrawNoA(payee);"]
+	"1-2-3-0-0-0-" [label="deposit(refundee);
+close();
+enableRefunds();
+"]
+	"0-0-0-0-5-0-" [label="withdrawA(payee);
+"]
+	"1-2-3-0-0-0-" -> "0-0-0-0-5-0-" [label="enableRefunds();"]
+	"0-0-0-0-5-6-" [label="withdrawA(payee);
+withdrawNoA(payee);
+"]
+	"0-0-0-0-0-6-" [label="withdrawNoA(payee);
+"]
+	"0-0-0-0-5-6-" -> "0-0-0-0-0-6-" [label="withdrawA(payee);"]
+	"1-2-3-0-0-0-" [label="deposit(refundee);
+close();
+enableRefunds();
+"]
+	"0-0-0-0-0-6-" [label="withdrawNoA(payee);
+"]
+	"1-2-3-0-0-0-" -> "0-0-0-0-0-6-" [label="enableRefunds();"]
+	"0-0-0-0-5-6-" [label="withdrawA(payee);
+withdrawNoA(payee);
+"]
+	"0-0-0-0-5-6-" [label="withdrawA(payee);
+withdrawNoA(payee);
+"]
+	"0-0-0-0-5-6-" -> "0-0-0-0-5-6-" [label="withdrawNoA(payee);"]
+	"1-2-3-0-0-0-" [label="deposit(refundee);
+close();
+enableRefunds();
+"]
+	"0-0-0-0-5-6-" [label="withdrawA(payee);
+withdrawNoA(payee);
+"]
+	"1-2-3-0-0-0-" -> "0-0-0-0-5-6-" [label="enableRefunds();"]
+	"1-2-3-0-0-0-" [label="deposit(refundee);
+close();
+enableRefunds();
+"]
+	"1-2-3-0-0-0-" [label="deposit(refundee);
+close();
+enableRefunds();
+"]
+	"1-2-3-0-0-0-" -> "1-2-3-0-0-0-" [label="deposit(refundee);"]
+	init [label=init]
+	"1-2-3-0-0-0-" [label="deposit(refundee);
+close();
+enableRefunds();
+"]
+	init -> "1-2-3-0-0-0-" [label=constructor]
+}

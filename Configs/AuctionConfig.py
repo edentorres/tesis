@@ -4,19 +4,19 @@ functions = [
 "Bid();",
 "Withdraw();",
 "AuctionEnd();",
-"t();"
+# "t();",
 ]
 statePreconditions = [
 "(!ended && (auctionStart + biddingTime) >= blockNumber)",
 "pendingReturnsArray.length != 0",
 "(ended && blockNumber > (auctionStart + biddingTime))",
-"true"
+# "true",
 ]
 functionPreconditions = [
 "msg.value > highestBid",
 "pendingReturns[msg.sender] != 0",
 "true",
-"true"
+# "true",
 ]
 functionVariables = ""
 tool_output = "Found a counterexample"
@@ -33,4 +33,6 @@ statePreconditionsModeState = ["State == StateType.Active",
 "State == StateType.SellerAccepted",
 "State == StateType.Accepted",
 "State == StateType.Terminated"]
+
+# epaExtraConditions = "pendingReturnsArray[0] != address(0x0)"
 txBound = 6

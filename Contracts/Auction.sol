@@ -11,6 +11,7 @@ contract Auction {
 
     bool ended = false;
     address payable highestBidder = address(0x0);
+    address payable A = address(0x0);
     uint highestBid = 0;
     mapping(address => uint) pendingReturns;
     address[] pendingReturnsArray = new address[](0);
@@ -18,7 +19,7 @@ contract Auction {
     uint pendingReturnsCount = 0;
     uint blockNumber;
 
-    constructor(uint _auctionStart, uint _biddingTime, address payable _beneficiary,  uint _blockNumber) public {
+    constructor(uint _auctionStart, uint _biddingTime, address payable _beneficiary, address payable payable_a,  uint _blockNumber) public {
         auctionStart = _auctionStart;
         biddingTime = _biddingTime;
         beneficiary = _beneficiary;
@@ -27,7 +28,7 @@ contract Auction {
 
     function Bid() public payable {
         uint end = auctionStart + biddingTime;
-        if(end < blockNumber) {
+        if(end < blockNumber || ended) {
             revert();
         }
         else {
@@ -37,12 +38,14 @@ contract Auction {
             else {
                 pendingReturns[highestBidder] += highestBid;
                 pendingReturnsCount = 2;
-                pendingReturnsArray.push(msg.sender);
+                if (highestBidder != address(0x0)) {
+                    pendingReturnsArray.push(highestBidder);
+                }
                 highestBidder = msg.sender;
                 highestBid = msg.value;
             }
         }
-        //t();
+        t();
     }
 
     function Withdraw() public {
@@ -51,12 +54,12 @@ contract Auction {
             pendingReturns[msg.sender] = 0;
             pendingReturnsCount = pendingReturnsCount - 1;
             pendingReturnsArray = remove(msg.sender, pendingReturnsArray);
-            //msg.sender.transfer(pr);
-            //t();
+            //msg.sender.transfer(pr);  
         }
         else {
             revert();
         }
+        t();
     }
 
     function remove(address _valueToFindAndRemove, address[] memory _array) public  returns(address[] memory) {
@@ -75,14 +78,14 @@ contract Auction {
         uint end = auctionStart + biddingTime;
 
         //!ended is a bug
-        if(blockNumber <= end || ended) {
+        if(blockNumber <= end || !ended) {
             revert();
         }
         else {
-            //t();
             ended = true;
             //beneficiary.transfer(highestBid);
         }
+        t();
     }
 
     function t() public {

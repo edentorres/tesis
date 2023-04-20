@@ -11,11 +11,13 @@ contract Crowdfunding {
     address[] auxArray;
     uint countBackers = 0;
     bool funded = false;
+    uint balance = 0;
 
-    constructor(address payable _owner, uint _max_block, uint _goal, uint _blockNumber) public {
+    constructor(address payable _owner, uint _max_block, uint _goal, uint _blockNumber, uint _balance) public {
         owner = _owner;
         max_block = _max_block;
         goal = _goal;
+        balance = 0;
         blockNumber = _blockNumber;
     }
 
@@ -27,8 +29,8 @@ contract Crowdfunding {
             if(backers[msg.sender] == 0) {
                 backers[msg.sender] = msg.value;
                 backersArray.push(msg.sender);
-                countBackers = 3;
-                ///t();
+                balance = balance + msg.value;
+                t();
             }
             else {
                 revert();
@@ -38,10 +40,11 @@ contract Crowdfunding {
 
     function GetFunds() public {
         if(max_block < blockNumber && msg.sender == owner) {
-            if(goal <= address(this).balance) {
+            if(goal <= balance) {
                 funded = true;
-                owner.transfer(address(this).balance);
-                //t();
+                //owner.transfer(balance);
+                balance = 0;
+                t();
             }
             else {
                 revert();
@@ -57,16 +60,16 @@ contract Crowdfunding {
             revert();
         }
         else {
-            if(backers[msg.sender] == 0 || backersArray.length == 0 || funded || goal <= address(this).balance) {
+            if(backers[msg.sender] == 0 || backersArray.length == 0 || funded || goal <= balance) {
                 revert();
             }
             else {
                 uint val = backers[msg.sender];
                 backers[msg.sender] = 0;
-                countBackers = countBackers - 1;
                 backersArray = remove(msg.sender, backersArray);
-                msg.sender.transfer(val);
-                //t();
+                //msg.sender.transfer(val);
+                balance = balance - val;
+                t();
             }
         }
     }

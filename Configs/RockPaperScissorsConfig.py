@@ -18,16 +18,14 @@ functionPreconditions = [
 functionVariables = "int choice"
 tool_output = "Found a counterexample"
 
-statesModeState = [[1,0,0,0,0,0,0,0,0,0], [0,2,0,0,0,0,0,0,0,0], [0,0,3,0,0,0,0,0,0,0], [0,0,0,4,0,0,0,0,0,0], [0,0,0,0,5,0,0,0,0,0], [0,0,0,0,0,6,0,0,0,0], [0,0,0,0,0,0,7,0,0,0], [0,0,0,0,0,0,0,8,0,0], [0,0,0,0,0,0,0,0,9,0], [0,0,0,0,0,0,0,0,0,10]]
-statesNamesModeState = ["Active", "OfferPlaced", "PendingInspection", "Inspected", "Appraised", "NotionalAcceptance", "BuyerAccepted", "SellerAccepted", "Accepted", "Terminated"]
-statePreconditionsModeState = ["State == StateType.Active", 
-"State == StateType.OfferPlaced", 
-"State == StateType.PendingInspection", 
-"State == StateType.Inspected",
-"State == StateType.Appraised",
-"State == StateType.NotionalAcceptance",
-"State == StateType.BuyerAccepted",
-"State == StateType.SellerAccepted",
-"State == StateType.Accepted",
-"State == StateType.Terminated"]
+statesModeState = [[1,0,0,0,0,0], [0,2,0,0,0,0], [0,0,3,0,0,0], [0,0,0,4,0,0], [0,0,0,0,5,0], [0,0,0,0,0,6]]
+statesNamesModeState = ["Sin apuestas", "Solo apuesta 2", "Solo apuesta 1", "Apuestan ambos y gana 1", "Apuestan ambos y gana 2", "Apuestan ambos y gana Owner"]
+statePreconditionsModeState = [
+"p1Choice == -1 && p2Choice == -1", 
+"p1Choice != -1 && p2Choice == -1", 
+"p1Choice == -1 && p2Choice != -1", 
+"p1Choice != -1 && p2Choice != -1 && payoffMatrix[uint(p1Choice)][uint(p2Choice)] == 1",
+"p1Choice != -1 && p2Choice != -1 && payoffMatrix[uint(p1Choice)][uint(p2Choice)] == 2",
+"p1Choice != -1 && p2Choice != -1 && payoffMatrix[uint(p1Choice)][uint(p2Choice)] == 0",
+]
 txBound = 6

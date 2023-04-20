@@ -27,16 +27,17 @@ functionPreconditions = [
 functionVariables = "uint256 _amount, uint256 _fundingStartBlock,  uint256 _fundingEndBlock"
 tool_output = "Found a counterexample"
 
-statesModeState = [[1,0,0,0,0,0,0,0,0,0], [0,2,0,0,0,0,0,0,0,0], [0,0,3,0,0,0,0,0,0,0], [0,0,0,4,0,0,0,0,0,0], [0,0,0,0,5,0,0,0,0,0], [0,0,0,0,0,6,0,0,0,0], [0,0,0,0,0,0,7,0,0,0], [0,0,0,0,0,0,0,8,0,0], [0,0,0,0,0,0,0,0,9,0], [0,0,0,0,0,0,0,0,0,10]]
-statesNamesModeState = ["Active", "OfferPlaced", "PendingInspection", "Inspected", "Appraised", "NotionalAcceptance", "BuyerAccepted", "SellerAccepted", "Accepted", "Terminated"]
-statePreconditionsModeState = ["State == StateType.Active", 
-"State == StateType.OfferPlaced", 
-"State == StateType.PendingInspection", 
-"State == StateType.Inspected",
-"State == StateType.Appraised",
-"State == StateType.NotionalAcceptance",
-"State == StateType.BuyerAccepted",
-"State == StateType.SellerAccepted",
-"State == StateType.Accepted",
-"State == StateType.Terminated"]
-txBound = 8
+# statesModeState = [[1,0,0,0,0,0], [0,2,0,0,0,0], [0,0,3,0,0,0], [0,0,0,4,0,0], [0,0,0,0,5,0], [0,0,0,0,0,6]]
+statesModeState = [[1,0,0,0,0,0,0], [0,2,0,0,0,0,0], [0,0,3,0,0,0,0], [0,0,0,4,0,0,0], [0,0,0,0,5,0,0], [0,0,0,0,0,6,0], [0,0,0,0,0,0,7]]
+statesNamesModeState = ["Crowdsale is setup", "In progress (Eth < Softcap)", "Successful (EPX >= Hardcap)!", "Unsuccessful (Eth < Softcap)", "Crowdsale deployed to chain", "Successful (Eth >= Softcap)!", "In progress (Eth >= Softcap)!"]
+statePreconditionsModeState = [
+    "keccak256(abi.encodePacked(CurrentStatus)) == keccak256(abi.encodePacked('Crowdsale is setup'))",
+    "keccak256(abi.encodePacked(CurrentStatus)) == keccak256(abi.encodePacked('In progress (Eth < Softcap)'))",
+    "keccak256(abi.encodePacked(CurrentStatus)) == keccak256(abi.encodePacked('Successful (EPX >= Hardcap)!'))",
+    "keccak256(abi.encodePacked(CurrentStatus)) == keccak256(abi.encodePacked('Unsuccessful (Eth < Softcap)'))",
+    "keccak256(abi.encodePacked(CurrentStatus)) == keccak256(abi.encodePacked('Crowdsale deployed to chain'))",
+    "keccak256(abi.encodePacked(CurrentStatus)) == keccak256(abi.encodePacked('Successful (Eth >= Softcap)!'))",
+    "keccak256(abi.encodePacked(CurrentStatus)) == keccak256(abi.encodePacked('In progress (Eth >= Softcap)!'))",
+
+]
+txBound = 7

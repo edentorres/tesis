@@ -102,7 +102,7 @@ def output_transitions_function(preconditionRequire, function, preconditionAsser
         precondictionFunction = "true"
     extraConditionOutputPre = get_extra_condition_output(extraConditionPre)
     extraConditionOutputPost = get_extra_condition_output(extraConditionPost)
-    verisolFucntionOutput = "require("+preconditionRequire+");\nrequire("+precondictionFunction+");\n" + extraConditionOutputPre + function + "\n" + extraConditionOutputPost  + "assert(!(" + preconditionAssert + "));"
+    verisolFucntionOutput = "require("+preconditionRequire+");\nrequire("+precondictionFunction+");\n" + extraConditionOutputPre + function + "\n"  + "assert(!(" + preconditionAssert + "&& " + extraConditionPost + "));"
     return verisolFucntionOutput
 
 def output_init_function(preconditionAssert, extraCondition):
@@ -321,6 +321,7 @@ class Mode(Enum):
 def make_global_variables(config):
     global fileName, preconditions, dot, statesNames, functions, statePreconditions, contractName, functionVariables, functionPreconditions, txBound, statePreconditionsModeState, statesModeState
     fileName = "Contracts/" + config.fileName
+    print(config.fileName)
     functions = config.functions
     statePreconditions = config.statePreconditions
     statesNames = config.statesNamesModeState
@@ -435,7 +436,8 @@ def main():
     for thread in threads:
         thread.join()
     print("ENDED")
-    dot.render("graph/" + config.fileName.split('.')[0] + "_" + str(mode))
+    tempFileName = configFile.replace('Config','')
+    dot.render("graph/" + tempFileName + "_" + str(mode))
 
 states = []
 preconditions = []
@@ -447,7 +449,7 @@ if __name__ == "__main__":
     global mode, config, verbose, time
     epaMode = False
     statesMode = False
-    configFile = sys.argv[1] + "Config"
+    configFile = sys.argv[1]
     verbose = False
     time = False
     if len(sys.argv) > 2 and sys.argv[2] == "-v":
@@ -464,11 +466,12 @@ if __name__ == "__main__":
     
     if epaMode:
         mode = Mode.epa
+        print(configFile)
         config = __import__(configFile)
         main()
 
     if statesMode:
-        config = __import__(configFile)
+        config = __import__(configFile, level=0)
         mode = Mode.states
         main()
 

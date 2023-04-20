@@ -6,7 +6,9 @@ functions = [
 "depositBids();",
 "closeAuction();",
 "addToWhitelist(addressesToWhitelist);",
-"withdraw();",
+
+"withdrawA();",
+"withdrawNoA();",
 ]
 statePreconditions = [
 "((bidders.length < maximalNumberOfParticipants) && ((time - startTime) < (100 * 365 days) && time >= startTime && time <= (startTime + auctionDurationInDays * 1 days)) && auctionState == AuctionState.Started)",
@@ -14,15 +16,17 @@ statePreconditions = [
 "auctionState == AuctionState.DepositPending",
 "((bidders.length < maximalNumberOfParticipants) && (time > (startTime + auctionDurationInDays * 1 days)) && auctionState == AuctionState.Started)",
 "auctionState == AuctionState.Deployed",
-"(auctionState == AuctionState.Ended || auctionState == AuctionState.Failed)",
+"((auctionState == AuctionState.Ended || auctionState == AuctionState.Failed) && biddersArray.length != 0 && hasA)",
+"((auctionState == AuctionState.Ended || auctionState == AuctionState.Failed) && biddersArray.length != 0 && (!hasA || biddersArray.length > 1))",
 ]
 functionPreconditions = [
-"(whitelist[msg.sender] && bids[msg.sender] == 0)",
 "true",
 "true",
 "true",
 "true",
-"true", 
+"true",
+"msg.sender == A && bids[msg.sender] > 0",
+"msg.sender != A && bids[msg.sender] > 0", 
 ]
 functionVariables = "address[] memory addressesToWhitelist"
 tool_output = "Found a counterexample"

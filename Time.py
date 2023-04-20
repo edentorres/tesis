@@ -31,7 +31,16 @@ contracts = [
     "DefectiveComponentCounterFixed",
     "DigitalLockerFixed",
     "AssetTransferFixed",
-    "RefrigeratedTransportationFixed"
+    "RefrigeratedTransportationFixed",
+    # V2
+    "Auction",
+    "CrowdFunding",
+    "EPXCrowdSale",
+    "EscrowVault",
+    "RefundEscrow",
+    "RockPaperScissors",
+    "SimpleAcution",
+    "ValidatorAction",
 ]
 
 table = [['Contract', 'Epa Time', 'StateTimes']]

@@ -23,7 +23,8 @@ contract SimpleAuction {
     uint public biddingTime;
 
     // Current state of the auction.
-    address public highestBidder;
+    address public highestBidder = address(0x0);
+    address public highestBidderA;
     uint public highestBid;
     uint time;
 
@@ -54,12 +55,13 @@ contract SimpleAuction {
     // unicefstories.org/2017/08/04/unicef-ventures-exploring-smart-contracts/
     address payable beneficiary;
     
-    constructor(uint _time, uint _biddingTime, uint _auctionStart) public
+    constructor(uint _time, uint _biddingTime, uint _auctionStart, address _highestBidderA) public
     {
         time = _time;
         beneficiary = _beneficiary;
         auctionStart = _auctionStart;
         biddingTime = _biddingTime;
+        highestBidderA = _highestBidderA;
     }
 
     /// Bid on the auction with the value sent
@@ -94,8 +96,7 @@ contract SimpleAuction {
         highestBidder = msg.sender;
         highestBid = msg.value;
         // emit HighestBidIncreased(msg.sender, msg.value);
-        //time = time + now;
-        time = time + 1;
+        t();
     }
 
     /// Withdraw a bid that was overbid.
@@ -118,8 +119,7 @@ contract SimpleAuction {
             //     return false;
             // }
         }
-        //time = time + now;
-        time = time + 1;
+        t();
         return true;
     }
     // Users want to know when the auction ends, seconds from 1970-01-01
@@ -151,7 +151,7 @@ contract SimpleAuction {
 
         // 3. Interaction
         // beneficiary.transfer(highestBid);
-        time = time + 1;
+        t();
     }
 
     function remove(address _valueToFindAndRemove, address[] memory _array) public  returns(address[] memory) {
@@ -166,7 +166,7 @@ contract SimpleAuction {
         return auxArray;
     }
 
-    // function t() public {
-    //     time = time + now;
-    // }
+    function t() public {
+        time = time + 1;
+    }
 }

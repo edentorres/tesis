@@ -146,11 +146,11 @@ contract EPXCrowdsale is owned, safeMath {
       tokenReward                             = StandardToken(address(0x35BAA72038F127f9f8C8f9B491049f64f377914d));
 
       // funding targets
-      fundingMinCapInWei                      = 30000000000000000000;                       // ETH 300 + 000000000000000000 18 dec wei
+      fundingMinCapInWei                      = 3;                       // ETH 300 + 000000000000000000 18 dec wei
 
       // update values
       amountRaisedInWei                       = 0;
-      initialTokenSupply                      = 200000000000;                               // 20,000,000 + 4 dec resolution
+      initialTokenSupply                      = 6;                               // 20,000,000 + 4 dec resolution
       tokensRemaining                         = initialTokenSupply;
       fundingStartBlock                       = _fundingStartBlock;
       fundingEndBlock                         = _fundingEndBlock;
@@ -161,19 +161,21 @@ contract EPXCrowdsale is owned, safeMath {
       CurrentStatus                           = "Crowdsale is setup";
       return "Crowdsale is setup";
     } else if (msg.sender != admin) {
-      return "not authorised";
+      //return "not authorised";
+      revert();
     } else  {
-      return "campaign cannot be changed";
+      //return "campaign cannot be changed";
+      revert();
     }
   }
 
   function checkPrice() internal view returns (uint256 currentPriceValue) {
-    if (blockNumber >= fundingStartBlock+177534) { // 30-day price change/final 30day change
-      return (7600); //30days-end   =7600EPX:1ETH
-    } else if (blockNumber >= fundingStartBlock+124274) { //3 week mark/over 21days
-      return (8200); //3w-30days    =8200EPX:1ETH
+    if (blockNumber >= fundingStartBlock+2) { // 30-day price change/final 30day change
+      return (1); //30days-end   =7600EPX:1ETH
+    } else if (blockNumber >= fundingStartBlock+1) { //3 week mark/over 21days
+      return (2); //3w-30days    =8200EPX:1ETH
     } else if (blockNumber >= fundingStartBlock) { // start [0 hrs]
-      return (8800); //0-3weeks     =8800EPX:1ETH
+      return (3); //0-3weeks     =8800EPX:1ETH
     }
   }
 
@@ -196,7 +198,7 @@ contract EPXCrowdsale is owned, safeMath {
 
     // 2. effects
     amountRaisedInWei               = safeAdd(amountRaisedInWei, msg.value);
-    rewardTransferAmount            = ((safeMul(msg.value, checkPrice())) / 1);
+    rewardTransferAmount            = ((safeAdd(msg.value, checkPrice())));
 
     // 3. interaction
     tokensRemaining                 = safeSub(tokensRemaining, rewardTransferAmount);
@@ -213,7 +215,7 @@ contract EPXCrowdsale is owned, safeMath {
   function beneficiaryMultiSigWithdraw(uint256 _amount) public onlyOwner {
     require(areFundsReleasedToBeneficiary && (amountRaisedInWei >= fundingMinCapInWei));
     beneficiaryWallet.transfer(_amount);
-    emit Transfer(address(this), beneficiaryWallet, _amount);
+    //emit Transfer(address(this), beneficiaryWallet, _amount);
    //t();
   }
 

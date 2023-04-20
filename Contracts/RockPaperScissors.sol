@@ -8,7 +8,7 @@ contract RockPaperScissors {
     int p1Choice = -1;
     int p2Choice = -1;
     //mapping(uint => mapping(uint => uint)) payoffMatrix;
-    uint[3][3] payoffMatrix;
+    uint[3][3] public  payoffMatrix;
 
     constructor(address payable _player1, address payable _player2, address payable _owner) public {
         player1 = _player1;
@@ -61,13 +61,13 @@ contract RockPaperScissors {
         if(p1Choice != -1 && p2Choice != -1) {
             uint winner = payoffMatrix[uint(p1Choice)][uint(p2Choice)];
             if(winner == 1) {
-                player1.transfer(address(this).balance);
+                //player1.transfer(address(this).balance);
             }
             else if(winner == 2) {
-                player2.transfer(address(this).balance);
+                //player2.transfer(address(this).balance);
             }
             else {
-                owner.transfer(address(this).balance);
+                //owner.transfer(address(this).balance);
             }
         }
         else {
