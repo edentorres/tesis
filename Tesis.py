@@ -5,9 +5,10 @@ import shutil
 import numpy  as np
 import graphviz
 from threading import Thread
-from time import sleep
+import time
 from enum import Enum
 import sys
+import platform
 
 def getCombinations(funcionesNumeros):
     global statePreconditions
@@ -130,12 +131,12 @@ def output_combination(indexCombination, tempCombinations):
 
 def print_combination(indexCombination, tempCombinations):
     output = output_combination(indexCombination, tempCombinations)
-    if time == False:
+    if time_mode == False:
         print(output + "---------")
 
 def print_output(indexPreconditionRequire, indexFunction, indexPreconditionAssert, combinations, fullCombination):
     output ="Desde este estado:\n"+ output_combination(indexPreconditionRequire, combinations) + "\nHaciendo " + functions[indexFunction] + "\n\nLlegas al estado:\n" + output_combination(indexPreconditionAssert, fullCombination) + "\n---------"
-    if time == False:
+    if time_mode == False:
         print(output)
 
 def create_directory(index):
@@ -151,7 +152,8 @@ def delete_directory(final_directory):
 def create_file(index, final_directory):
     global contractName, fileName
     fileNameTemp = "OutputTemp"+str(index)+".sol"
-    fileNameTemp = final_directory +"/"+ fileNameTemp
+    #fileNameTemp = final_directory +"/"+ fileNameTemp
+    fileNameTemp = os.path.join(final_directory, fileNameTemp)#Javi
     tool = "Verisol " + fileNameTemp + " " + contractName
     if os.path.isfile(fileNameTemp):
         os.remove(fileNameTemp)
@@ -220,7 +222,7 @@ def try_preconditions(tool, tempFunctionNames, final_directory, statesTemp, prec
     extraConditionsTemp2 = []
     
     for functionName in tempFunctionNames:
-        if time == False:
+        if time_mode == False:
             print(functionName + "---" + str(arg))
         indexPreconditionRequire, _ , _ = get_params_from_function_name(functionName)
         if try_command(tool, functionName, tempFunctionNames, final_directory, txBound):
@@ -233,7 +235,7 @@ def try_preconditions(tool, tempFunctionNames, final_directory, statesTemp, prec
 def try_transaction(tool, tempFunctionNames, final_directory, statesTemp, states, arg):
     global txBound 
     for functionName in tempFunctionNames:
-        if time == False:
+        if time_mode == False:
             print(functionName + "---" + str(arg))
         indexPreconditionRequire, indexPreconditionAssert, indexFunction = get_params_from_function_name(functionName)
         if try_command(tool, functionName, tempFunctionNames, final_directory, txBound):
@@ -253,7 +255,10 @@ def try_command(tool, temp_function_name, tempFunctionNames, final_directory, tx
     global tool_output, verbose
     command = getToolCommand(temp_function_name, tool, tempFunctionNames, txBound)
     # print(command)
-    result = subprocess.run([command, ""], shell = True, cwd=final_directory, stdout=subprocess.PIPE)
+    if platform.system() == "Windows":
+        result = subprocess.run(command.split(" "), shell = True, cwd=None, stdout=subprocess.PIPE)#Javi
+    else:
+        result = subprocess.run([command, ""], shell = True, cwd=final_directory, stdout=subprocess.PIPE)
     if verbose:
         print(result.stdout.decode('utf-8'))
     return tool_output in str(result.stdout.decode('utf-8'))
@@ -280,7 +285,8 @@ def reduceCombinations(arg):
     fileNameTemp = create_file(arg, final_directory)
     body,fuctionCombinations = get_valid_preconditions_output(preconditionsTemp, extraConditionsTemp)
     write_file(fileNameTemp, body)
-    tool = "Verisol " + fileNameTemp + " " + contractName
+    #tool = "Verisol " + fileNameTemp + " " + contractName
+    tool = "VeriSol " + fileNameTemp + " " + contractName#Javi
     preconditionsTemp2, statesTemp2, extraConditionsTemp2 = try_preconditions(tool, fuctionCombinations, final_directory, statesTemp, preconditionsTemp, extraConditionsTemp , arg)
     preconditionsThreads[arg] = preconditionsTemp2
     statesThreads[arg] = statesTemp2
@@ -297,7 +303,8 @@ def validCombinations(arg):
     fileNameTemp = create_file(arg, final_directory)
     body, fuctionCombinations = get_valid_transitions_output(preconditionsTemp, preconditions, extraConditionsTemp, extraConditions, functions, statesTemp)
     write_file(fileNameTemp, body)
-    tool = "Verisol " + fileNameTemp + " " + contractName
+    #tool = "Verisol " + fileNameTemp + " " + contractName
+    tool = "VeriSol " + fileNameTemp + " " + contractName#Javi
     try_transaction(tool, fuctionCombinations, final_directory, statesTemp, states, arg)
     if not verbose:
         delete_directory(final_directory)
@@ -310,7 +317,8 @@ def validInit(arg):
     body, fuctionCombinations = get_init_output(preconditions, extraConditions)
     write_file(fileNameTemp, body)
     
-    tool = "Verisol " + fileNameTemp + " " + contractName
+    #tool = "Verisol " + fileNameTemp + " " + contractName
+    tool = "VeriSol " + fileNameTemp + " " + contractName#Javi
     try_init(tool, fuctionCombinations, final_directory, states)
     delete_directory(final_directory)
 
@@ -320,7 +328,8 @@ class Mode(Enum):
 
 def make_global_variables(config):
     global fileName, preconditions, dot, statesNames, functions, statePreconditions, contractName, functionVariables, functionPreconditions, txBound, statePreconditionsModeState, statesModeState
-    fileName = "Contracts/" + config.fileName
+    #fileName = "Contracts/" + config.fileName
+    fileName = os.path.join("Contracts", config.fileName)#Javi
     print(config.fileName)
     functions = config.functions
     statePreconditions = config.statePreconditions
@@ -340,7 +349,7 @@ def main():
     count = len(functions)
     funcionesNumeros = list(range(1, count + 1))
 
-    threadCount = 10
+    threadCount = 1
     threads = []
 
     dot = graphviz.Digraph(comment='Prueba')
@@ -370,7 +379,7 @@ def main():
     if len(extraConditionsThreads) != 0:
         extraConditionsThreads = np.array_split(extraConditions, threadCount)
 
-    if time == False:
+    if time_mode == False:
         print("Length")
         print(len(preconditions))
 
@@ -400,11 +409,11 @@ def main():
     divideThreads = 1
     moduleThreadsConut = 0
     divideCount = realThreadCount
-    if time == False:
+    if time_mode == False:
         print("Length")
         print(len(preconditionsThreads))
     if len(preconditionsThreads) > 30:
-        if time == False:
+        if time_mode == False:
             print("MAYOR A 200")
         divideCount = len(preconditionsThreads)
         divideThreads = int(divideCount/threadCount)
@@ -443,19 +452,21 @@ states = []
 preconditions = []
 tool_output = "Found a counterexample"
 
-sys.path.append("/Users/etorres/Proyectos/verisol-test/Configs")
+#sys.path.append("/Users/etorres/Proyectos/verisol-test/Configs")
+sys.path.append(os.path.join(os.getcwd(), "Configs"))#Javi
 
 if __name__ == "__main__":
-    global mode, config, verbose, time
+    global mode, config, verbose, time_mode
+    init = time.time()
     epaMode = False
     statesMode = False
     configFile = sys.argv[1]
     verbose = False
-    time = False
+    time_mode = False
     if len(sys.argv) > 2 and sys.argv[2] == "-v":
         verbose = True
     if len(sys.argv) > 2 and sys.argv[2] == "-t":
-        time = True
+        time_mode = True
     if len(sys.argv) > 3 and sys.argv[3] == "-e":
         epaMode = True
     if len(sys.argv) > 3 and sys.argv[3] == "-s":
@@ -474,4 +485,6 @@ if __name__ == "__main__":
         config = __import__(configFile, level=0)
         mode = Mode.states
         main()
+    end = time.time()
+    print("total time: " + str(end-init))
 
