@@ -1,0 +1,6 @@
+Config         Mode                   Time       Inital pre count    Pre count after true    Reduce Pr count    Functions count
+-------------  ---------------------  -------  ------------------  ----------------------  -----------------  -----------------
+AuctionConfig  epa                    0:01:49                   8                       8                  4                  3
+AuctionConfig  epa-noReduceTrue       0:01:49                   8                       8                  4                  3
+AuctionConfig  epa-noReduceEqual      0:01:49                   8                       8                  4                  3
+AuctionConfig  epa-noReduceTrueEqual  0:01:45                   8                       8                  4                  3

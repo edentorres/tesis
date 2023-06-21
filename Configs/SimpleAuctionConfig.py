@@ -9,7 +9,8 @@ functions = [
 statePreconditions = [
 "time <= (auctionStart + biddingTime)",
 "pendingReturnsArray.length != 0",
-# "!ended && time >= (auctionStart + biddingTime)","true"
+"!ended && time >= (auctionStart + biddingTime)",
+# "true"
 ]
 functionPreconditions = [
 "msg.value > highestBid",
@@ -30,4 +31,4 @@ statePreconditionsModeState = [
 "!ended && highestBidder != address(0x0) && highestBidder != highestBidderA",
 "ended && highestBidder != address(0x0) && highestBidder != highestBidderA",
 ]
-txBound = 10
+txBound = 6

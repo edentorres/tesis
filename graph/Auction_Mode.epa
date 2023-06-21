@@ -26,12 +26,6 @@ Withdraw();
 	"0-2-0-" [label="Withdraw();
 "]
 	"1-0-0-" -> "0-2-0-" [label="Bid();"]
-	"1-0-0-" [label="Bid();
-"]
-	"1-2-0-" [label="Bid();
-Withdraw();
-"]
-	"1-0-0-" -> "1-2-0-" [label="Bid();"]
 	"0-2-0-" [label="Withdraw();
 "]
 	"0-2-0-" [label="Withdraw();
@@ -43,6 +37,12 @@ Withdraw();
 	"1-0-0-" [label="Bid();
 "]
 	"1-2-0-" -> "1-0-0-" [label="Withdraw();"]
+	"1-0-0-" [label="Bid();
+"]
+	"1-2-0-" [label="Bid();
+Withdraw();
+"]
+	"1-0-0-" -> "1-2-0-" [label="Bid();"]
 	"1-2-0-" [label="Bid();
 Withdraw();
 "]

@@ -1,0 +1,14 @@
+Config                                 Mode             Time       Inital pre count    Pre count after true    Reduce Pr count    Functions count
+-------------------------------------  ---------------  -------  ------------------  ----------------------  -----------------  -----------------
+HelloBlockchainConfig                  epa-noReduceAll  0:01:26                   4                       4                  4                  2
+BasicProvenanceConfig                  epa-noReduceAll  0:01:36                   4                       4                  4                  2
+DefectiveComponentCounterConfig        epa-noReduceAll  0:01:29                   4                       4                  4                  2
+FrequentFlyerRewardsCalculatorConfig   epa-noReduceAll  0:05:22                   8                       8                  8                  3
+RefrigeratedTransportationConfig       epa-noReduceAll  0:06:28                   8                       8                  8                  3
+RoomThermostatConfig                   epa-noReduceAll  0:05:27                   8                       8                  8                  3
+SimpleMarketplaceConfig                epa-noReduceAll  0:04:32                   8                       8                  8                  3
+HelloBlockchainFixedConfig             epa-noReduceAll  0:01:09                   4                       4                  4                  2
+SimpleMarketplaceFixedConfig           epa-noReduceAll  0:04:35                   8                       8                  8                  3
+BasicProvenanceFixedConfig             epa-noReduceAll  0:01:11                   4                       4                  4                  2
+DefectiveComponentCounterFixedConfig   epa-noReduceAll  0:01:09                   4                       4                  4                  2
+RefrigeratedTransportationFixedConfig  epa-noReduceAll  0:05:20                   8                       8                  8                  3

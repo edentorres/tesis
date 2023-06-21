@@ -1,0 +1,7 @@
+Config                   Mode                   Time       Inital pre count    Pre count after true    Reduce Pr count    Functions count
+-----------------------  ---------------------  -------  ------------------  ----------------------  -----------------  -----------------
+RockPaperScissorsConfig  epa                    0:01:40                   8                       8                  4                  3
+RockPaperScissorsConfig  epa-noReduceTrue       0:01:42                   8                       8                  4                  3
+RockPaperScissorsConfig  epa-noReduceEqual      0:02:07                   8                       8                  4                  3
+RockPaperScissorsConfig  epa-noReduceTrueEqual  0:02:03                   8                       8                  4                  3
+RockPaperScissorsConfig  epa-noReduceStates     0:06:20                   8                       8                  8                  3

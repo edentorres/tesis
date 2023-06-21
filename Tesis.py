@@ -22,11 +22,14 @@ def getCombinations(funcionesNumeros):
     # Combinations
     for L in range(len(funcionesNumeros) + 1):
         for subset in itertools.combinations(funcionesNumeros, L):
-            isTrue = True
-            for truePre in truePreconditions:
-                if truePre not in subset:
-                    isTrue = False
-            if isTrue == True:
+            if reducedTrue:
+                isTrue = True
+                for truePre in truePreconditions:
+                    if truePre not in subset:
+                        isTrue = False
+                if isTrue == True:
+                    results.append(subset)
+            else:
                 results.append(subset)
 
     for partialResult in results:
@@ -39,20 +42,22 @@ def getCombinations(funcionesNumeros):
         statesTemp.append(paddingResult)
     statesTemp2 = []
     
-    for combination in statesTemp:
-        isCorrect = True
-        for iNumber, number in enumerate(combination):
-            for idx, x in enumerate(statePreconditions):
-                if iNumber != idx:
-                    if number == 0:
-                        if statePreconditions[iNumber] == x and combination[idx] != 0:
+    if not(reducedEqual):
+        for combination in statesTemp:
+            isCorrect = True
+            for iNumber, number in enumerate(combination):
+                for idx, x in enumerate(statePreconditions):
+                    if iNumber != idx:
+                        if number == 0:
+                            if statePreconditions[iNumber] == x and combination[idx] != 0:
+                                isCorrect = False
+                        elif statePreconditions[iNumber] == x and not((idx+1) in combination):
                             isCorrect = False
-                    elif statePreconditions[iNumber] == x and not((idx+1) in combination):
-                        isCorrect = False
-        
-        if isCorrect:
-            statesTemp2.append(combination)
             
+            if isCorrect:
+                statesTemp2.append(combination)
+    else:
+        statesTemp2 = statesTemp       
     return statesTemp2
 
 def getPreconditions(funcionesNumeros):
@@ -145,6 +150,13 @@ def create_directory(index):
         os.makedirs(final_directory)
     return final_directory
 
+def create_directory_base(name):
+    current_directory = os.getcwd()
+    final_directory = os.path.join(current_directory, name)
+    if not os.path.exists(final_directory):
+        os.makedirs(final_directory)
+    return final_directory
+
 def delete_directory(final_directory):
     shutil.rmtree(final_directory)
 
@@ -153,6 +165,14 @@ def create_file(index, final_directory):
     fileNameTemp = "OutputTemp"+str(index)+".sol"
     fileNameTemp = final_directory +"/"+ fileNameTemp
     tool = "Verisol " + fileNameTemp + " " + contractName
+    if os.path.isfile(fileNameTemp):
+        os.remove(fileNameTemp)
+    shutil.copyfile(fileName, fileNameTemp)
+    return fileNameTemp
+
+def create_file_base(final_directory, name):
+    global contractName, fileName
+    fileNameTemp = final_directory +"/"+ name
     if os.path.isfile(fileNameTemp):
         os.remove(fileNameTemp)
     shutil.copyfile(fileName, fileNameTemp)
@@ -340,12 +360,14 @@ def main():
     count = len(functions)
     funcionesNumeros = list(range(1, count + 1))
 
-    threadCount = 10
+    threadCount = 8
     threads = []
 
     dot = graphviz.Digraph(comment='Prueba')
 
     extraConditions = []
+    countPreInitial = 0
+    countPreFinal = 0
 
     if mode == Mode.epa :
         states = getCombinations(funcionesNumeros)
@@ -361,6 +383,11 @@ def main():
             extraConditions = config.statesExtraConditions
         except:
            extraConditions = ["true" for i in range(len(states))]
+    
+    tempDir = create_directory_base("temp")
+    # tempFilePre = create_file_base(tempDir, configFile + "-" + str(mode) + ".txt")
+
+    countPreInitial = len(preconditions)
 
     preconditionsThreads = preconditions
     preconditionsThreads = np.array_split(preconditionsThreads, threadCount)
@@ -374,7 +401,7 @@ def main():
         print("Length")
         print(len(preconditions))
 
-    if mode == Mode.epa :
+    if mode == Mode.epa and not(reduced):
         for i in range(threadCount):
             thread = Thread(target = reduceCombinations, args = [i])
             thread.start()
@@ -395,6 +422,12 @@ def main():
     preconditions = preconditionsThreads
     extraConditions = extraConditionsThreads
     realThreadCount = threadCount if len(preconditionsThreads) > threadCount else len(preconditionsThreads)
+
+    countPreFinal = len(preconditions)
+    f = open(tempDir + "/" + configFile + "-" + str(mode) + ".txt", "w")
+    f.write(str(countPreInitial) + "\n" + str(countPreFinal) + "\n" + str(len(functions)))
+    f.close()
+    # write_file(tempFilePre, str(countPreInitial) + "\n" + str(countPreFinal))
 
     threads = []
     divideThreads = 1
@@ -452,6 +485,9 @@ if __name__ == "__main__":
     configFile = sys.argv[1]
     verbose = False
     time = False
+    reduced = False
+    reducedTrue = True
+    reducedEqual = False
     if len(sys.argv) > 2 and sys.argv[2] == "-v":
         verbose = True
     if len(sys.argv) > 2 and sys.argv[2] == "-t":
@@ -463,6 +499,19 @@ if __name__ == "__main__":
     if len(sys.argv) > 3 and sys.argv[3] == "-a":
         statesMode = True
         epaMode = True
+    if len(sys.argv) > 4 and sys.argv[4] == "-rs":
+        reduced = True
+    if len(sys.argv) > 4 and sys.argv[4] == "-rt":
+        reducedTrue = False
+    if len(sys.argv) > 4 and sys.argv[4] == "-re":
+        reducedEqual = True
+    if len(sys.argv) > 4 and sys.argv[4] == "-rte":
+        reducedEqual = True 
+        reducedTrue = False       
+    if len(sys.argv) > 4 and sys.argv[4] == "-ra":
+        reducedTrue = False
+        reducedEqual = True
+        reduced = True
     
     if epaMode:
         mode = Mode.epa

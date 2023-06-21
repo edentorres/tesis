@@ -35,4 +35,4 @@ statePreconditionsModeState = ["State == StateType.Active",
 "State == StateType.Terminated"]
 
 # epaExtraConditions = "pendingReturnsArray[0] != address(0x0)"
-txBound = 6
+txBound = 4

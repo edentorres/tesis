@@ -11,13 +11,13 @@ functions = [
 "withdrawNoA();",
 ]
 statePreconditions = [
-"((bidders.length < maximalNumberOfParticipants) && ((time - startTime) < (100 * 365 days) && time >= startTime && time <= (startTime + auctionDurationInDays * 1 days)) && auctionState == AuctionState.Started)",
+"((bidders.length < maximalNumberOfParticipants) && ((time - startTime) < (100 * 365) && time >= startTime && time <= (startTime + auctionDurationInDays * 1)) && auctionState == AuctionState.Started)",
 "depositLocker.initialized() && auctionState == AuctionState.Deployed",
 "auctionState == AuctionState.DepositPending",
-"((bidders.length < maximalNumberOfParticipants) && (time > (startTime + auctionDurationInDays * 1 days)) && auctionState == AuctionState.Started)",
+"((bidders.length < maximalNumberOfParticipants) && (time > (startTime + auctionDurationInDays * 1)) && auctionState == AuctionState.Started)",
 "auctionState == AuctionState.Deployed",
-"((auctionState == AuctionState.Ended || auctionState == AuctionState.Failed) && biddersArray.length != 0 && hasA)",
-"((auctionState == AuctionState.Ended || auctionState == AuctionState.Failed) && biddersArray.length != 0 && (!hasA || biddersArray.length > 1))",
+"((auctionState == AuctionState.Ended || auctionState == AuctionState.Failed) && biddersArray.length > 0 && hasA)",
+"((auctionState == AuctionState.Ended || auctionState == AuctionState.Failed) && biddersArray.length > 0 && (!hasA || biddersArray.length > 1))",
 ]
 functionPreconditions = [
 "true",

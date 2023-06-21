@@ -14,41 +14,32 @@ def runCommand(command):
     print(result)
     return result
 
-contracts = [
-    "HelloBlockchain",
-    "BasicProvenance",
-    "DefectiveComponentCounter",
-    "DigitalLocker",
-    "FrequentFlyerRewardsCalculator",
-    "RefrigeratedTransportation",
-    "RoomThermostat",
-    "SimpleMarketplace",
-    "AssetTransfer",
+configs = [
+    "HelloBlockchainConfig",
+    "BasicProvenanceConfig",
+    "DefectiveComponentCounterConfig",
+    "DigitalLockerConfig",
+    "FrequentFlyerRewardsCalculatorConfig",
+    "RefrigeratedTransportationConfig",
+    "RoomThermostatConfig",
+    "SimpleMarketplaceConfig",
+    "AssetTransferConfig",
     # Fixed
-    "HelloBlockchainFixed",
-    "SimpleMarketplaceFixed",
-    "BasicProvenanceFixed",
-    "DefectiveComponentCounterFixed",
-    "DigitalLockerFixed",
-    "AssetTransferFixed",
-    "RefrigeratedTransportationFixed",
-    # V2
-    "Auction",
-    "CrowdFunding",
-    "EPXCrowdSale",
-    "EscrowVault",
-    "RefundEscrow",
-    "RockPaperScissors",
-    "SimpleAcution",
-    "ValidatorAction",
+    "HelloBlockchainFixedConfig",
+    "SimpleMarketplaceFixedConfig",
+    "BasicProvenanceFixedConfig",
+    "DefectiveComponentCounterFixedConfig",
+    "DigitalLockerFixedConfig",
+    "AssetTransferFixedConfig",
+    "RefrigeratedTransportationFixedConfig",
 ]
 
-table = [['Contract', 'Epa Time', 'StateTimes']]
+table = [['Config', 'Time', 'Inital Pre', 'Reduce Pre', 'Function count']]
 
-for contract in contracts:
-    print("Corriendo " + contract)
+for config in configs:
+    print("Corriendo " + config)
     
-    command = "python3 Tesis.py "  + contract + " -t"
+    command = "python3 Tesis.py "  + config + " -t"
     commandEpa = command + " -e"
     print("Modo epa")
     results = []
@@ -61,6 +52,13 @@ for contract in contracts:
     avgEpa = str(datetime.timedelta(seconds=int(avg)))
     print(str(datetime.timedelta(seconds=int(avg))))
 
+    f = open("temp/" + config + "-Mode.epa.txt", "r")
+    initEpa = f.readline()
+    finiEpa = f.readline()
+    functions = f.readline()
+
+    table.append([config+"-epa", avgEpa, initEpa, finiEpa, functions]) 
+    
     commandStates = command + " -s"
     print("Modo States")
     results = []
@@ -72,6 +70,11 @@ for contract in contracts:
     avgStates = str(datetime.timedelta(seconds=int(avg)))
     print(str(datetime.timedelta(seconds=int(avg))))
 
-    table.append([contract, avgEpa, avgStates]) 
+    f = open("temp/" + config + "-Mode.states.txt", "r")
+    initStates = f.readline()
+    finiStates = f.readline()
+    functions = f.readline()
+
+    table.append([config+"-states", avgStates, initStates, finiStates, functions]) 
     with open('Tiempos-'+ str(datetime.datetime.now())+'.txt', 'w') as outputfile:
-      print(tabulate(table, headers='firstrow', tablefmt='grid'), file=outputfile)
+      print(tabulate(table, headers='firstrow', tablefmt='simple'), file=outputfile)

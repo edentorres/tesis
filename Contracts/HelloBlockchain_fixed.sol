@@ -17,7 +17,7 @@ contract HelloBlockchain {
     {
         Requestor = msg.sender;
         RequestMessageCode = messageCode;
-        State = StateType.Request;
+        State = StateType.Respond;
     }
 
     // call this function to send a request

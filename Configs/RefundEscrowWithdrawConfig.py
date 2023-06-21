@@ -15,17 +15,17 @@ statePreconditions = [
 "_state == State.Active",
 "_state == State.Active",
 "_state == State.Closed",
-"length() != 0 && _state == State.Refunding && hasA",
-"length() != 0 && _state == State.Refunding && (!hasA || length() > 1)",
+"(depositsArray.length > 0 && _state == State.Refunding && hasA)",
+"(depositsArray.length > 0 && _state == State.Refunding && (!hasA || depositsArray.length > 1))",
 # "true"
 ]
 functionPreconditions = [
 "true",
+"msg.sender == _primary",
+"msg.sender == _primary",
 "true",
-"true",
-"true",
-"withdrawalAllowed(payee) && A == msg.sender",
-"withdrawalAllowed(payee) && A != msg.sender",
+"withdrawalAllowed(payee) && A == payee && _deposits[payee] > 0",
+"withdrawalAllowed(payee) && A != payee && _deposits[payee] > 0",
 # "recipient != address(0)"
 ]
 functionVariables = "address refundee, address payable payee, address recipient"
@@ -38,4 +38,4 @@ statePreconditionsModeState = [
 "_state == State.Refunding", 
 "_state == State.Closed", 
 ]
-txBound = 10
+txBound = 6

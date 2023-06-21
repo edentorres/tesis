@@ -39,23 +39,24 @@ contract Auction {
             }
             else {
                 pendingReturns[highestBidder] += highestBid;
-                pendingReturnsCount = 2;
-                pendingReturnsArray.push(msg.sender);
+                if (highestBidder != address(0x0)) {
+                    pendingReturnsArray.push(highestBidder);
+                    if (highestBidder == A) {
+                        hasA = true;
+                    }
+                }
                 highestBidder = msg.sender;
                 highestBid = msg.value;
-                if (highestBidder == A) {
-                    hasA = true;
-                }
             }
         }
         t();
     }
 
     function WithdrawA() public {
-        if(pendingReturns[msg.sender] != 0 && pendingReturnsArray.length != 0 && msg.sender == A && hasA) {
+        require(pendingReturnsArray.length > 0 && hasA);
+        if(pendingReturns[msg.sender] != 0 && msg.sender == A) {
             uint pr = pendingReturns[msg.sender];
             pendingReturns[msg.sender] = 0;
-            pendingReturnsCount = pendingReturnsCount - 1;
             pendingReturnsArray = remove(msg.sender, pendingReturnsArray);
             hasA = false;
             //msg.sender.transfer(pr);  
@@ -67,11 +68,11 @@ contract Auction {
     }
 
     function WithdrawOther() public {
-        if(pendingReturns[msg.sender] != 0 && pendingReturnsArray.length != 0 && msg.sender != A && !hasA) {
+        require(pendingReturnsArray.length > 0 && (!hasA|| pendingReturnsArray.length > 1));
+         if(pendingReturns[msg.sender] != 0 && msg.sender != A) {
             uint pr = pendingReturns[msg.sender];
             pendingReturns[msg.sender] = 0;
-            pendingReturnsCount = pendingReturnsCount - 1;
-            pendingReturnsArray = remove(msg.sender, pendingReturnsArray);
+             pendingReturnsArray = remove(msg.sender, pendingReturnsArray);
             //msg.sender.transfer(pr);  
         }
         else {

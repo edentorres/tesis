@@ -1,0 +1,8 @@
+Config                               Mode    Time       Inital pre count    Pre count after true    Reduce Pr count    Functions count
+-----------------------------------  ------  -------  ------------------  ----------------------  -----------------  -----------------
+EPXCrowdsaleConfig                   states  1:08:30                   7                       7                  7                  5
+EPXCrowdsaleIsCrowdsaleClosedConfig  states  0:35:24                   5                       5                  5                  5
+EscrowVaultConfig                    states  0:19:33                   4                       4                  4                  8
+RefundEscrowConfig                   states  0:05:29                   3                       3                  3                  6
+RockPaperScissorsConfig              states  0:07:36                   6                       6                  6                  3
+SimpleAuctionConfig                  states  0:15:17                   6                       6                  6                  3

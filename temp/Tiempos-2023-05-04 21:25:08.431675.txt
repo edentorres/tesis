@@ -1,0 +1,4 @@
+Config               Mode    Time       Inital pre count    Pre count after true    Reduce Pr count    Functions count
+-------------------  ------  -------  ------------------  ----------------------  -----------------  -----------------
+AssetTransferConfig  states  1:10:21                  10                      10                 10                 10
+DigitalLockerConfig  epa     0:00:56                1024                       1                  1                 10

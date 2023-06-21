@@ -17,7 +17,7 @@ contract Crowdfunding {
         owner = _owner;
         max_block = _max_block;
         goal = _goal;
-        balance = 0;
+        balance = 10000000000/500;
         blockNumber = _blockNumber;
     }
 
@@ -42,7 +42,7 @@ contract Crowdfunding {
         if(max_block < blockNumber && msg.sender == owner) {
             if(goal <= balance) {
                 funded = true;
-                //owner.transfer(balance);
+                owner.transfer(balance);
                 balance = 0;
                 t();
             }
@@ -67,7 +67,7 @@ contract Crowdfunding {
                 uint val = backers[msg.sender];
                 backers[msg.sender] = 0;
                 backersArray = remove(msg.sender, backersArray);
-                //msg.sender.transfer(val);
+                msg.sender.transfer(val);
                 balance = balance - val;
                 t();
             }

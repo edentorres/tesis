@@ -1,0 +1,3 @@
+Config              Mode    Time       Inital pre count    Pre count after true    Reduce Pr count    Functions count
+------------------  ------  -------  ------------------  ----------------------  -----------------  -----------------
+AuctionEndedConfig  states  0:10:05                   8                       8                  8                  3

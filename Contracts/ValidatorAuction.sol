@@ -254,10 +254,10 @@ contract ValidatorAuction is Ownable {
         DepositLocker _depositLocker,
         uint _time,
         address _A,
-        address[] memory _biddersArray
+        uint _lowestPrice
     ) public {
         require(
-            _auctionDurationInDays > 0,
+            _auctionDurationInDays >= 0,
             "Duration of auction must be greater than 0"
         );
         require(
@@ -288,7 +288,7 @@ contract ValidatorAuction is Ownable {
         minimalNumberOfParticipants = _minimalNumberOfParticipants;
         depositLocker = _depositLocker;
 
-        lowestSlotPrice = uint(115792089237316195423570985008687907853269984665640564039457584007913129639935);
+        lowestSlotPrice = _lowestPrice;
 
         /*emit AuctionDeployed(
             startPrice,
@@ -299,6 +299,7 @@ contract ValidatorAuction is Ownable {
         auctionState = AuctionState.Deployed;
         time = _time;
         A = _A;
+        t();
     }
 
     function() external payable stateIs(AuctionState.Started) {
@@ -308,10 +309,10 @@ contract ValidatorAuction is Ownable {
     function bid() public payable stateIs(AuctionState.Started) {
         require(time > startTime, "It is too early to bid.");
         require(
-            time <= startTime + auctionDurationInDays * 1 days,
+            time <= startTime + auctionDurationInDays,
             "Auction has already ended."
         );
-        uint slotPrice = currentPrice();
+        uint slotPrice = 1;
         require(
             msg.value >= slotPrice,
             "Not enough ether was provided for bidding."
@@ -359,16 +360,16 @@ contract ValidatorAuction is Ownable {
 
     function depositBids() public stateIs(AuctionState.DepositPending) {
         auctionState = AuctionState.Ended;
-        depositLocker.deposit.value(lowestSlotPrice * bidders.length)(
-            lowestSlotPrice
-        );
+        // depositLocker.deposit.value(lowestSlotPrice * bidders.length)(
+        //     lowestSlotPrice
+        // );
         t();
         //emit AuctionEnded(closeTime, lowestSlotPrice, bidders.length);
     }
 
     function closeAuction() public stateIs(AuctionState.Started) {
         require(
-            time > startTime + auctionDurationInDays * 1 days,
+            time > startTime + auctionDurationInDays,
             "The auction cannot be closed this early."
         );
         require(bidders.length < maximalNumberOfParticipants);
@@ -386,10 +387,10 @@ contract ValidatorAuction is Ownable {
         onlyOwner
         stateIs(AuctionState.Deployed)
     {
-        // for (uint32 i = 0; i < addressesToWhitelist.length; i++) {
-        //     whitelist[addressesToWhitelist[i]] = true;
-        //     //emit AddressWhitelisted(addressesToWhitelist[i]);
-        // }
+        for (uint32 i = 0; i < addressesToWhitelist.length; i++) {
+            whitelist[addressesToWhitelist[i]] = true;
+            //emit AddressWhitelisted(addressesToWhitelist[i]);
+        }
         //whitelist[A] = true;
         t();
     }
@@ -401,7 +402,7 @@ contract ValidatorAuction is Ownable {
             "You cannot withdraw before the auction is ended or it failed."
         );
 
-        require(biddersArray.length != 0 && hasA && msg.sender == A);
+        require(biddersArray.length > 0 && hasA && msg.sender == A);
 
         if (auctionState == AuctionState.Ended) {
             withdrawAfterAuctionEnded();
@@ -421,7 +422,7 @@ contract ValidatorAuction is Ownable {
                 auctionState == AuctionState.Failed) && bids[msg.sender] > 0),
             "You cannot withdraw before the auction is ended or it failed."
         );
-        require(biddersArray.length != 0 && (!hasA || biddersArray.length > 1)  && msg.sender != A);
+        require(biddersArray.length > 0 && (!hasA || biddersArray.length > 1)  && msg.sender != A);
 
         if (auctionState == AuctionState.Ended) {
             withdrawAfterAuctionEnded();
@@ -452,7 +453,7 @@ contract ValidatorAuction is Ownable {
     {
         // To prevent overflows
         require(
-            secondsSinceStart < 100 * 365 days,
+            secondsSinceStart < 100 * 365,
             "Times longer than 100 years are not supported."
         );
         uint msSinceStart = 1000 * secondsSinceStart;
@@ -465,13 +466,13 @@ contract ValidatorAuction is Ownable {
     }
 
     function withdrawAfterAuctionEnded() internal stateIs(AuctionState.Ended) {
-        require(
-            bids[msg.sender] > lowestSlotPrice,
-            "The sender has nothing to withdraw."
-        );
+        // require(
+        //     bids[msg.sender] > lowestSlotPrice,
+        //     "The sender has nothing to withdraw."
+        // );
 
         uint valueToWithdraw = bids[msg.sender] - lowestSlotPrice;
-        require(valueToWithdraw <= bids[msg.sender]);
+        // require(valueToWithdraw <= bids[msg.sender]);
 
         bids[msg.sender] = lowestSlotPrice;
         // if (lowestSlotPrice == 0) {
@@ -536,4 +537,5 @@ contract ValidatorAuction is Ownable {
     function t() public {
         time = time + 1;
     }
+
 }

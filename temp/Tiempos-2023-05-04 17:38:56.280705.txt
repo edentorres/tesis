@@ -1,0 +1,5 @@
+Config                            Mode    Time       Inital pre count    Pre count after true    Reduce Pr count    Functions count
+--------------------------------  ------  -------  ------------------  ----------------------  -----------------  -----------------
+RefrigeratedTransportationConfig  states  0:03:02                   4                       4                  4                  3
+RoomThermostatConfig              states  0:00:58                   2                       2                  2                  3
+SimpleMarketplaceConfig           states  0:01:38                   3                       3                  3                  3

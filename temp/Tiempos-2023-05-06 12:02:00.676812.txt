@@ -1,0 +1,5 @@
+Config                    Mode                   Time       Inital pre count    Pre count after true    Reduce Pr count    Functions count
+------------------------  ---------------------  -------  ------------------  ----------------------  -----------------  -----------------
+DigitalLockerFixedConfig  epa-noReduceTrue       0:07:35                1024                     128                  6                 10
+DigitalLockerFixedConfig  epa-noReduceEqual      0:20:55                1024                     512                  6                 10
+DigitalLockerFixedConfig  epa-noReduceTrueEqual  0:47:34                1024                    1024                  6                 10

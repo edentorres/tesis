@@ -1,0 +1,9 @@
+Config                 Mode                   Time       Inital pre count    Pre count after true    Reduce Pr count    Functions count
+---------------------  ---------------------  -------  ------------------  ----------------------  -----------------  -----------------
+HelloBlockchainConfig  epa-noReduceTrue       0:00:20                   4                       2                  1                  2
+HelloBlockchainConfig  epa-noReduceEqual      0:00:18                   4                       1                  1                  2
+HelloBlockchainConfig  epa-noReduceTrueEqual  0:00:18                   4                       4                  1                  2
+HelloBlockchainConfig  epa-noReduceStates     0:00:13                   4                       1                  1                  2
+BasicProvenanceConfig  epa-noReduceTrue       0:00:31                   4                       2                  2                  2
+BasicProvenanceConfig  epa-noReduceEqual      0:00:32                   4                       4                  2                  2
+BasicProvenanceConfig  epa-noReduceTrueEqual  0:00:32                   4                       4                  2                  2

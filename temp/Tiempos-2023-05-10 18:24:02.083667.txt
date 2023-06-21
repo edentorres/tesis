@@ -1,0 +1,2 @@
+Config    Mode    Time    Inital pre count    Pre count after true    Reduce Pr count    Functions count
+--------  ------  ------  ------------------  ----------------------  -----------------  -----------------

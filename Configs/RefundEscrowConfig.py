@@ -34,4 +34,4 @@ statePreconditionsModeState = [
 "_state == State.Refunding", 
 "_state == State.Closed", 
 ]
-txBound = 10
+txBound = 6

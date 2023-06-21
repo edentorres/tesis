@@ -14,16 +14,6 @@ transferPrimary(recipient);
 transferPrimary(recipient);
 "]
 	"0-0-0-0-5-6-" -> "0-0-0-0-5-6-" [label="transferPrimary(recipient);"]
-	"1-2-3-0-5-6-" [label="deposit(refundee);
-close();
-enableRefunds();
-withdraw(payee);
-transferPrimary(recipient);
-"]
-	"0-0-0-0-5-6-" [label="withdraw(payee);
-transferPrimary(recipient);
-"]
-	"1-2-3-0-5-6-" -> "0-0-0-0-5-6-" [label="enableRefunds();"]
 	"0-0-0-4-5-6-" [label="beneficiaryWithdraw();
 withdraw(payee);
 transferPrimary(recipient);
@@ -42,6 +32,16 @@ withdraw(payee);
 transferPrimary(recipient);
 "]
 	"0-0-0-4-5-6-" -> "0-0-0-4-5-6-" [label="transferPrimary(recipient);"]
+	"1-2-3-0-5-6-" [label="deposit(refundee);
+close();
+enableRefunds();
+withdraw(payee);
+transferPrimary(recipient);
+"]
+	"0-0-0-0-5-6-" [label="withdraw(payee);
+transferPrimary(recipient);
+"]
+	"1-2-3-0-5-6-" -> "0-0-0-0-5-6-" [label="enableRefunds();"]
 	"1-2-3-0-5-6-" [label="deposit(refundee);
 close();
 enableRefunds();

@@ -1,0 +1,7 @@
+Config              Mode                   Time       Inital pre count    Pre count after true    Reduce Pr count    Functions count
+------------------  ---------------------  -------  ------------------  ----------------------  -----------------  -----------------
+EPXCrowdsaleConfig  epa                    0:05:00                  32                      16                  4                  5
+EPXCrowdsaleConfig  epa-noReduceTrue       0:05:37                  32                      32                  4                  5
+EPXCrowdsaleConfig  epa-noReduceEqual      0:04:57                  32                      16                  4                  5
+EPXCrowdsaleConfig  epa-noReduceTrueEqual  0:05:50                  32                      32                  4                  5
+EPXCrowdsaleConfig  epa-noReduceStates     2:54:29                  32                      16                 16                  5

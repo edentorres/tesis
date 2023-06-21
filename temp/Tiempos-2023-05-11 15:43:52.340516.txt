@@ -1,0 +1,6 @@
+Config                      Mode                   Time       Inital pre count    Pre count after true    Reduce Pr count    Functions count
+--------------------------  ---------------------  -------  ------------------  ----------------------  -----------------  -----------------
+RefundEscrowWithdrawConfig  epa                    0:04:31                  64                      16                  6                  6
+RefundEscrowWithdrawConfig  epa-noReduceTrue       0:04:42                  64                      16                  6                  6
+RefundEscrowWithdrawConfig  epa-noReduceEqual      0:05:58                  64                      64                  6                  6
+RefundEscrowWithdrawConfig  epa-noReduceTrueEqual  0:06:14                  64                      64                  6                  6
