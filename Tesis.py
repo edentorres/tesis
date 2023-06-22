@@ -277,7 +277,7 @@ def try_command(tool, temp_function_name, tempFunctionNames, final_directory, tx
     command = getToolCommand(temp_function_name, tool, tempFunctionNames, txBound)
     # print(command)
     if platform.system() == "Windows":
-        result = subprocess.run(command.split(" "), shell = True, cwd=None, stdout=subprocess.PIPE)#Javi
+        result = subprocess.run(command.split(" "), shell = True, cwd=final_directory, stdout=subprocess.PIPE)#Javi
     else:
         result = subprocess.run([command, ""], shell = True, cwd=final_directory, stdout=subprocess.PIPE)
     if verbose:
