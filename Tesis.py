@@ -410,9 +410,9 @@ def main():
         for thread in threads:
             thread.join()
 
-    preconditionsThreads = [x for x in preconditionsThreads if x != []]
-    statesThreads = [x for x in statesThreads if x != []]
-    extraConditionsThreads = [x for x in extraConditionsThreads if x != []]
+    preconditionsThreads = [x for x in preconditionsThreads if len(x)]
+    statesThreads = [x for x in statesThreads if len(x)]
+    extraConditionsThreads = [x for x in extraConditionsThreads if len(x)]
 
     preconditionsThreads = np.concatenate(preconditionsThreads)
     statesThreads = np.concatenate(statesThreads)
