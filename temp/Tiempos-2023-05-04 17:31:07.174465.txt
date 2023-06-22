@@ -1,3 +1,0 @@
-Config                            Mode    Time       Inital pre count    Pre count after true    Reduce Pr count    Functions count
---------------------------------  ------  -------  ------------------  ----------------------  -----------------  -----------------
-RefrigeratedTransportationConfig  states  0:03:02                   4                       4                  4                  3

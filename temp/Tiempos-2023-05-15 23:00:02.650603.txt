@@ -1,4 +1,0 @@
-Config                               Mode    Time       Inital pre count    Pre count after true    Reduce Pr count    Functions count
------------------------------------  ------  -------  ------------------  ----------------------  -----------------  -----------------
-EPXCrowdsaleConfig                   states  1:08:30                   7                       7                  7                  5
-EPXCrowdsaleIsCrowdsaleClosedConfig  states  0:35:24                   5                       5                  5                  5

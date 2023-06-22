@@ -1,9 +1,0 @@
-Config                        Mode    Time       Inital pre count    Pre count after true    Reduce Pr count    Functions count
-----------------------------  ------  -------  ------------------  ----------------------  -----------------  -----------------
-SimpleMarketplaceConfig       epa     0:01:08                   8                       4                  3                  3
-SimpleMarketplaceFixedConfig  epa     0:00:58                   8                       4                  3                  3
-DigitalLockerConfig           states  0:17:21                   6                       6                  6                 10
-SimpleMarketplaceConfig       states  0:02:01                   3                       3                  3                  3
-DigitalLockerFixedConfig      epa     0:08:40                1024                      64                  6                 10
-AssetTransferFixedConfig      epa     0:36:53                1024                     256                  9                 10
-SimpleMarketplaceFixedConfig  states  0:01:30                   3                       3                  3                  3

@@ -1,7 +1,0 @@
-Config              Mode                   Time       Inital pre count    Pre count after true    Reduce Pr count    Functions count
-------------------  ---------------------  -------  ------------------  ----------------------  -----------------  -----------------
-RefundEscrowConfig  epa                    0:02:18                  64                       4                  3                  6
-RefundEscrowConfig  epa-noReduceTrue       0:02:16                  64                       8                  3                  6
-RefundEscrowConfig  epa-noReduceEqual      0:02:30                  64                      16                  3                  6
-RefundEscrowConfig  epa-noReduceTrueEqual  0:03:55                  64                      64                  3                  6
-RefundEscrowConfig  epa-noReduceStates     0:03:47                  64                       4                  4                  6
