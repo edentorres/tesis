@@ -87,10 +87,12 @@ def combinationToString(combination):
 def functionOutput(number):
     return "function vc" + number + "(" + functionVariables + ") payable public {"
 
-def getToolCommand(includeNumber, toolCommand, combinations, txBound):
+def getToolCommand(includeNumber, toolCommand, combinations, txBound, trackAllVars):
     global contractName
     command = toolCommand + " " 
     command = command + "/txBound:" + str(txBound) + " "
+    if trackAllVars:
+        command = command + "/trackAllVars"+ " "
     for indexCombination, combi in enumerate(combinations):
         if combi != includeNumber: 
             command += "/ignoreMethod:vc"+ combi +"@" + contractName + " "
@@ -242,7 +244,7 @@ def get_init_output(preconditions, extraConditions):
     return temp_output, tempFunctionNames
 
 def try_preconditions(tool, tempFunctionNames, final_directory, statesTemp, preconditionsTemp, extraConditionsTemp, arg): 
-    global txBound
+    global txBound, time_out
     preconditionsTemp2 = []
     statesTemp2 = []
     extraConditionsTemp2 = []
@@ -251,7 +253,9 @@ def try_preconditions(tool, tempFunctionNames, final_directory, statesTemp, prec
         if time_mode == False:
             print(functionName + "---" + str(arg))
         indexPreconditionRequire, _, indexFunction = get_params_from_function_name(functionName)
-        query_result = try_command(tool, functionName, tempFunctionNames, final_directory, statesTemp, txBound)
+        query_result = try_command(tool, functionName, tempFunctionNames, final_directory, statesTemp, txBound, time_out, False)
+        if query_result[1] == TRACK_VARS:
+            query_result = try_command(tool, functionName, tempFunctionNames, final_directory, statesTemp, txBound, time_out, True)
         success = query_result[0]
         if success:
             # print_combination(indexPreconditionRequire, statesTemp)
@@ -265,13 +269,15 @@ def try_preconditions(tool, tempFunctionNames, final_directory, statesTemp, prec
     return preconditionsTemp2, statesTemp2, extraConditionsTemp2
 
 def try_transaction(tool, tempFunctionNames, final_directory, statesTemp, states, arg):
-    global txBound
+    global txBound, time_out
     for functionName in tempFunctionNames:
         if time_mode == False:
             print(functionName + "---" + str(arg))
         indexPreconditionRequire, indexPreconditionAssert, indexFunction = get_params_from_function_name(functionName)
         
-        query_result = try_command(tool, functionName, tempFunctionNames, final_directory, statesTemp, txBound)
+        query_result = try_command(tool, functionName, tempFunctionNames, final_directory, statesTemp, txBound, time_out, False)
+        if query_result[1] == TRACK_VARS:
+            query_result = try_command(tool, functionName, tempFunctionNames, final_directory, statesTemp, txBound, time_out, True)
         success = query_result[0]
         succes_by_timeout = query_result[1]
         if success:
@@ -279,10 +285,13 @@ def try_transaction(tool, tempFunctionNames, final_directory, statesTemp, states
             print_output(indexPreconditionRequire, indexFunction, indexPreconditionAssert, statesTemp, states, succes_by_timeout)
 
 def try_init(tool, tempFunctionNames, final_directory, states):
-    global dot
+    global dot, time_out
     for functionName in tempFunctionNames:
         indexPreconditionAssert, _, _ = get_params_from_function_name(functionName)
-        query_result = try_command(tool, functionName, tempFunctionNames, final_directory, [], 1)
+        txBound_constructor = 1
+        query_result = try_command(tool, functionName, tempFunctionNames, final_directory, [], txBound_constructor, time_out, False)
+        if query_result[1] == TRACK_VARS:
+            query_result = try_command(tool, functionName, tempFunctionNames, final_directory, [], txBound_constructor, time_out, True)
         success = query_result[0]
         succes_by_to = query_result[1]
         if success:
@@ -290,8 +299,8 @@ def try_init(tool, tempFunctionNames, final_directory, states):
             dot.node(combinationToString(states[indexPreconditionAssert]), output_combination(indexPreconditionAssert, states))
             dot.edge("init",combinationToString(states[indexPreconditionAssert]) , "constructor"+succes_by_to)
 
-def try_command(tool, temp_function_name, tempFunctionNames, final_directory, statesTemp, txBound):
-    global tool_output, verbose, number_to
+def try_command(tool, temp_function_name, tempFunctionNames, final_directory, statesTemp, txBound, time_out, trackAllVars):
+    global tool_output, verbose, number_to, number_corral_fail, number_corral_fail_with_tackvars
     
     #Evito chequear funciones "dummy"
     if len(statesTemp) > 0:
@@ -304,12 +313,10 @@ def try_command(tool, temp_function_name, tempFunctionNames, final_directory, st
             else:
                 return (True,"")
     
-    command = getToolCommand(temp_function_name, tool, tempFunctionNames, txBound)
+    command = getToolCommand(temp_function_name, tool, tempFunctionNames, txBound, trackAllVars)
     # if verbose:
     #     print(command)
     result = ""
-    # time_out = None
-    time_out = 600.0
     try:    
         if platform.system() == "Windows":
             proc = subprocess.Popen(command.split(" "), stdout=subprocess.PIPE, cwd=final_directory)
@@ -319,10 +326,9 @@ def try_command(tool, temp_function_name, tempFunctionNames, final_directory, st
             #TODO: run with timeout in unix
             result = subprocess.run([command, ""], shell = True, cwd=final_directory, stdout=subprocess.PIPE)
     except Exception as e:
-        number_to +=1
+        number_to += 1
         print("---EXCEPTION por time out de {} segs ".format(time_out))
         indexPreconditionRequire, indexPreconditionAssert, indexFunction = get_params_from_function_name(temp_function_name)
-        # print(str(e))
         process = psutil.Process(proc.pid)
         for proc in process.children(recursive=True):
             proc.kill()
@@ -330,9 +336,19 @@ def try_command(tool, temp_function_name, tempFunctionNames, final_directory, st
         process.wait(2)
         return True,"?"
 
-    # if verbose:
-    #     print(result[0].decode('utf-8'))
-    return tool_output in str(result[0].decode('utf-8')), ""
+    output_verisol = str(result[0].decode('utf-8'))
+    if verbose and not tool_output in output_verisol:
+        print(output_verisol)
+    
+    #Corral can "fail"
+    if "Corral may have aborted abnormally" in output_verisol:
+        if not trackAllVars:
+            number_corral_fail += 1
+            return False,TRACK_VARS
+        else:
+            number_corral_fail_with_tackvars += 1
+            return True,"fail?"
+    return tool_output in output_verisol, ""
 
 def get_temp_function_name(indexPrecondtion, indexAssert, indexFunction):
     return str(indexPrecondtion) + "x" + str(indexAssert) + "x" + str(indexFunction)
@@ -399,9 +415,8 @@ class Mode(Enum):
 
 def make_global_variables(config):
     global fileName, preconditions, dot, statesNames, functions, statePreconditions, contractName, functionVariables
-    global functionPreconditions, txBound, statePreconditionsModeState, statesModeState, SAVE_GRAPH_PATH
-    #fileName = "Contracts/" + config.fileName
-    fileName = os.path.join("Contracts", config.fileName)#Javi
+    global functionPreconditions, txBound, time_out, statePreconditionsModeState, statesModeState, SAVE_GRAPH_PATH
+    fileName = os.path.join("Contracts", config.fileName)
     print(config.fileName)
     functions = config.functions
     statePreconditions = config.statePreconditions
@@ -414,6 +429,13 @@ def make_global_variables(config):
         txBound = config.txBound
     else:
         print("txBound en config ignorado. Usando parámetro txBound="+ str(txBound))
+    if time_out == None:
+        try:
+            time_out = float(config.time_out)
+        except Exception:
+            time_out = 600
+    else:
+        print("time_out en config ignorado. Usando parámetro time_out="+ str(time_out))
     statePreconditionsModeState = config.statePreconditionsModeState
     statesModeState = config.statesModeState
     SAVE_GRAPH_PATH = "graph/k_"+str(txBound)+"/"
@@ -551,6 +573,9 @@ states = []
 preconditions = []
 tool_output = "Found a counterexample"
 number_to = 0
+number_corral_fail = 0
+number_corral_fail_with_tackvars = 0
+TRACK_VARS = "trackAllVars"
 
 #sys.path.append("/Users/etorres/Proyectos/verisol-test/Configs")
 sys.path.append(os.path.join(os.getcwd(), "Configs"))#Javi
@@ -558,6 +583,7 @@ sys.path.append(os.path.join(os.getcwd(), "Configs"))#Javi
 if __name__ == "__main__":
     global mode, config, verbose, time_mode, txBound
     txBound = None
+    time_out = None
     init = time.time()
     epaMode = False
     statesMode = False
@@ -601,8 +627,15 @@ if __name__ == "__main__":
             reducedTrue = False
             reducedEqual = True
             reduced = True
-        if "-txbound=" in sys.argv[i]:
-            txBound = int(sys.argv[i].replace("-txbound=","").strip())
+        if "txbound=" in sys.argv[i]:
+            txBound = int(sys.argv[i].replace("txbound=","").strip())
+        if "time_out=" in sys.argv[i]:
+            to = sys.argv[i].replace("time_out=","").strip()
+            if to == "0":
+                time_out = None
+            else:
+                time_out = float(to)
+            
     
     if epaMode:
         mode = Mode.epa
@@ -616,6 +649,18 @@ if __name__ == "__main__":
         main()
     
     end = time.time()
-    print("total time: " + str(end-init))
-    print("# Time Out:" + str(number_to))
-
+    total_time = "Total time: {}".format(str(end-init))
+    total_to = "# Time Out: {}".format(str(number_to))
+    total_cfail1 = "# Corral Fail without trackvars: {}".format(str(number_corral_fail))
+    total_cfail2 = "# Corral Fail with trackvars: {}".format(str(number_corral_fail_with_tackvars))
+    
+    print(total_time)
+    print(total_to)
+    print(total_cfail1)
+    print(total_cfail2)
+    tempFileName = configFile.replace('Config','')+"-"+str(mode)+".txt"
+    with open(os.path.join(SAVE_GRAPH_PATH,tempFileName), 'w') as file:
+        file.write(total_time+"\n")
+        file.write(total_to+"\n")
+        file.write(total_cfail1+"\n")
+        file.write(total_cfail2+"\n")
